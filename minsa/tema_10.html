@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tema X — Inteligência Artificial | Secretário Clínico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.7;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#020617,#172554,#3730a3);
+    color:#fff;
+    padding:80px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+}
+
+.hero:before{
+    width:450px;
+    height:450px;
+    right:-170px;
+    top:-220px;
+}
+
+.hero:after{
+    width:320px;
+    height:320px;
+    left:-160px;
+    bottom:-200px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    background:#6366f1;
+    padding:8px 17px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(36px,6vw,62px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:900px;
+    font-size:18px;
+    color:#e0e7ff;
+}
+
+/* NAV */
+
+.nav{
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-inner{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:12px 0;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#374151;
+    white-space:nowrap;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav a:hover{
+    background:#eef2ff;
+    color:#4338ca;
+}
+
+/* CONTENT */
+
+section{
+    padding:55px 0;
+}
+
+.section-title{
+    font-size:31px;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.section-subtitle{
+    color:#6b7280;
+    margin-bottom:28px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+}
+
+.card h3{
+    color:#4338ca;
+    margin-bottom:12px;
+}
+
+.icon-title{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:15px;
+}
+
+.icon{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef2ff;
+    color:#4f46e5;
+    border-radius:12px;
+    font-size:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.mini-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:22px;
+}
+
+.mini-card i{
+    color:#4f46e5;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.big-number{
+    font-size:34px;
+    font-weight:800;
+    color:#4338ca;
+    margin:5px 0;
+}
+
+.highlight{
+    border-left:5px solid #4f46e5;
+    background:#eef2ff;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.warning{
+    border-left:5px solid #f59e0b;
+    background:#fffbeb;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.danger{
+    border-left:5px solid #dc2626;
+    background:#fef2f2;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.success{
+    border-left:5px solid #16a34a;
+    background:#f0fdf4;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+}
+
+th,td{
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+    vertical-align:top;
+}
+
+th{
+    background:#eef2ff;
+    color:#3730a3;
+}
+
+.question{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:24px;
+    margin-bottom:18px;
+}
+
+.answer{
+    margin-top:12px;
+    background:#f0fdf4;
+    color:#166534;
+    padding:13px 15px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.term{
+    display:inline-block;
+    background:#eef2ff;
+    color:#3730a3;
+    padding:4px 9px;
+    border-radius:6px;
+    font-weight:700;
+    font-size:14px;
+}
+
+footer{
+    background:#020617;
+    color:#cbd5e1;
+    text-align:center;
+    padding:45px 20px;
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:55px 15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    section{
+        padding:40px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">
+<i class="fa-solid fa-brain"></i>
+CONCURSO — SECRETÁRIO CLÍNICO DE 3.ª CLASSE
+</span>
+
+<h1>X — Inteligência Artificial</h1>
+
+<p>
+Conceitos fundamentais, funcionamento, aplicações,
+aprendizagem automática, IA generativa, vantagens, riscos,
+ética e utilização responsável da Inteligência Artificial.
+</p>
+
+</div>
+
+</header>
+
+<!-- NAVEGAÇÃO -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="#conceito">Conceito</a> <a href="#historia">História</a> <a href="#funcionamento">Funcionamento</a> <a href="#tipos">Tipos</a> <a href="#machine">Machine Learning</a> <a href="#generativa">IA Generativa</a> <a href="#aplicacoes">Aplicações</a> <a href="#saude">Saúde</a> <a href="#vantagens">Vantagens</a> <a href="#riscos">Riscos</a> <a href="#etica">Ética</a> <a href="#angola">Angola</a> <a href="#questoes">Questões</a>
+
+</div>
+
+</nav>
+
+<main class="container">
+
+<!-- CONCEITO -->
+
+<section id="conceito">
+
+<h2 class="section-title">
+1. O que é Inteligência Artificial?
+</h2>
+
+<p class="section-subtitle">
+A definição é o primeiro ponto que deves dominar.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-brain"></i>
+</div>
+
+<h3>Definição</h3>
+
+</div>
+
+<p>
+<strong>Inteligência Artificial (IA)</strong> é um campo da
+ciência da computação dedicado à criação de sistemas capazes
+de executar tarefas que normalmente exigiriam capacidades
+associadas à inteligência humana.
+</p>
+
+<p style="margin-top:15px;">
+Entre essas capacidades estão:
+</p>
+
+<ul style="margin:12px 0 0 25px;">
+
+<li>Aprender a partir de dados;</li>
+<li>Reconhecer padrões;</li>
+<li>Interpretar linguagem;</li>
+<li>Classificar informações;</li>
+<li>Fazer previsões;</li>
+<li>Resolver determinados problemas;</li>
+<li>Gerar conteúdo;</li>
+<li>Apoiar processos de decisão.</li>
+
+</ul>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+Fórmula para memorizar:
+</strong>
+
+<p style="font-size:22px;font-weight:800;margin-top:8px;">
+IA = SISTEMAS COMPUTACIONAIS + DADOS + ALGORITMOS + TAREFAS INTELIGENTES
+</p>
+
+</div>
+
+</section>
+
+<!-- HISTORIA -->
+
+<section id="historia">
+
+<h2 class="section-title">
+2. Breve História da Inteligência Artificial
+</h2>
+
+<div class="card">
+
+<h3>1950 — Alan Turing</h3>
+
+<p>
+O matemático britânico <strong>Alan Turing</strong> publicou
+trabalhos fundamentais sobre a possibilidade de máquinas
+apresentarem comportamento inteligente.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>1956 — Conferência de Dartmouth</h3>
+
+<p>
+O termo <strong>Artificial Intelligence</strong> ficou associado
+ao campo de investigação formalizado durante a conferência
+de Dartmouth, nos Estados Unidos.
+</p>
+
+<p style="margin-top:12px;">
+<strong>John McCarthy</strong> é frequentemente associado à
+introdução do termo "Artificial Intelligence".
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Décadas seguintes</h3>
+
+<p>
+A área passou por períodos de grande entusiasmo e também por
+períodos de menor financiamento e expectativa, conhecidos como
+<strong>AI Winters</strong>.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Era moderna</h3>
+
+<p>
+O crescimento da capacidade computacional, a disponibilidade
+de grandes volumes de dados e avanços em aprendizagem automática
+e redes neuronais impulsionaram fortemente a IA.
+</p>
+
+</div>
+
+</section>
+
+<!-- FUNCIONAMENTO -->
+
+<section id="funcionamento">
+
+<h2 class="section-title">
+3. Como funciona a Inteligência Artificial?
+</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>1. Dados</h3>
+
+<p>
+Os sistemas utilizam dados para encontrar padrões e aprender.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-code"></i>
+
+<h3>2. Algoritmos</h3>
+
+<p>
+Procedimentos matemáticos e computacionais processam os dados.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h3>3. Modelo</h3>
+
+<p>
+O sistema aprende uma representação matemática dos padrões
+existentes nos dados.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-arrow-right"></i>
+
+<h3>4. Inferência</h3>
+
+<p>
+Depois do treino, o modelo pode produzir previsões,
+classificações ou gerar respostas.
+</p>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+<strong>
+Atenção:
+</strong>
+
+<p>
+Uma IA não "pensa" necessariamente da mesma forma que um ser humano.
+Muitos sistemas atuais identificam padrões estatísticos e produzem
+resultados a partir dos dados e objetivos para os quais foram
+desenvolvidos.
+</p>
+
+</div>
+
+</section>
+
+<!-- TIPOS -->
+
+<section id="tipos">
+
+<h2 class="section-title">
+4. Tipos de Inteligência Artificial
+</h2>
+
+<div class="card">
+
+<h3>IA Estreita — ANI</h3>
+
+<p>
+A <strong>Artificial Narrow Intelligence (ANI)</strong> é uma IA
+desenvolvida para tarefas ou conjuntos específicos de tarefas.
+</p>
+
+<p style="margin-top:12px;">
+Exemplos: reconhecimento facial, filtros de spam,
+recomendação de conteúdos e sistemas de tradução.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Inteligência Artificial Geral — AGI</h3>
+
+<p>
+A <strong>Artificial General Intelligence (AGI)</strong> refere-se
+à ideia de uma inteligência artificial com capacidade geral para
+realizar uma ampla variedade de tarefas intelectuais.
+</p>
+
+<div class="danger">
+
+<strong>
+Importante:
+</strong>
+
+<p>
+AGI é um conceito e objetivo de investigação. Não deve ser
+confundida com os sistemas especializados disponíveis atualmente.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Superinteligência Artificial — ASI</h3>
+
+<p>
+A <strong>Artificial Superintelligence (ASI)</strong> é uma hipótese
+de sistemas que ultrapassariam amplamente as capacidades cognitivas
+humanas em praticamente todos os domínios intelectuais.
+</p>
+
+<p style="margin-top:12px;">
+É um conceito teórico, não uma tecnologia comprovadamente existente.
+</p>
+
+</div>
+
+</section>
+
+<!-- MACHINE LEARNING -->
+
+<section id="machine">
+
+<h2 class="section-title">
+5. Machine Learning — Aprendizagem Automática
+</h2>
+
+<div class="card">
+
+<h3>O que é?</h3>
+
+<p>
+<strong>Machine Learning (ML)</strong> é uma área da IA na qual
+algoritmos aprendem padrões a partir de dados para realizar
+determinadas tarefas sem que todas as regras sejam programadas
+manualmente.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-chalkboard"></i>
+
+<h3>Supervisionada</h3>
+
+<p>
+O modelo aprende com dados acompanhados das respostas ou rótulos
+corretos.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-magnifying-glass-chart"></i>
+
+<h3>Não supervisionada</h3>
+
+<p>
+O algoritmo procura estruturas ou padrões nos dados sem rótulos
+predefinidos.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-gamepad"></i>
+
+<h3>Por reforço</h3>
+
+<p>
+Um agente aprende através de recompensas e penalizações resultantes
+das suas ações.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DEEP LEARNING -->
+
+<section>
+
+<h2 class="section-title">
+6. Deep Learning
+</h2>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-network-wired"></i>
+</div>
+
+<h3>Aprendizagem profunda</h3>
+
+</div>
+
+<p>
+<strong>Deep Learning</strong> é uma abordagem de aprendizagem
+automática baseada principalmente em redes neuronais com múltiplas
+camadas.
+</p>
+
+<p style="margin-top:15px;">
+É utilizada em áreas como:
+</p>
+
+<ul style="margin:12px 0 0 25px;">
+
+<li>Visão computacional;</li>
+<li>Reconhecimento de voz;</li>
+<li>Processamento de linguagem natural;</li>
+<li>Reconhecimento de imagens;</li>
+<li>Tradução automática;</li>
+<li>IA generativa.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- GENERATIVA -->
+
+<section id="generativa">
+
+<h2 class="section-title">
+7. Inteligência Artificial Generativa
+</h2>
+
+<div class="card">
+
+<h3>Definição</h3>
+
+<p>
+A <strong>IA generativa</strong> é capaz de produzir novos conteúdos
+a partir de padrões aprendidos durante o treinamento.
+</p>
+
+<p style="margin-top:15px;">
+Pode gerar:
+</p>
+
+<ul style="margin:12px 0 0 25px;">
+
+<li>Textos;</li>
+<li>Imagens;</li>
+<li>Áudio;</li>
+<li>Vídeos;</li>
+<li>Código;</li>
+<li>Outros tipos de conteúdo digital.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Modelos de linguagem</h3>
+
+<p>
+Os <strong>Large Language Models (LLMs)</strong> são modelos
+treinados com grandes quantidades de dados textuais e capazes de
+processar e gerar linguagem.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>
+Erro comum:
+</strong>
+
+<p>
+Uma resposta bem escrita de uma IA não garante que seja verdadeira.
+Modelos generativos podem produzir informações incorretas,
+incompletas ou inventadas.
+</p>
+
+</div>
+
+</section>
+
+<!-- APLICAÇÕES -->
+
+<section id="aplicacoes">
+
+<h2 class="section-title">
+8. Aplicações da Inteligência Artificial
+</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hospital"></i>
+
+<h3>Saúde</h3>
+
+<p>
+Apoio ao diagnóstico, análise de imagens, triagem e investigação.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<h3>Administração Pública</h3>
+
+<p>
+Automação, análise de dados, atendimento e apoio à decisão.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h3>Educação</h3>
+
+<p>
+Tutoria personalizada, geração de materiais e apoio ao ensino.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-car"></i>
+
+<h3>Transportes</h3>
+
+<p>
+Otimização de rotas, previsão e sistemas de assistência.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-money-bill-trend-up"></i>
+
+<h3>Finanças</h3>
+
+<p>
+Deteção de fraude, análise de risco e automação.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-industry"></i>
+
+<h3>Indústria</h3>
+
+<p>
+Automação, controlo de qualidade e manutenção preditiva.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SAUDE -->
+
+<section id="saude">
+
+<h2 class="section-title">
+9. Inteligência Artificial na Saúde
+</h2>
+
+<div class="card">
+
+<h3>Aplicações</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Análise de imagens médicas;</li>
+
+<li>Apoio à deteção de determinadas doenças;</li>
+
+<li>Triagem de pacientes;</li>
+
+<li>Previsão de riscos;</li>
+
+<li>Apoio à investigação médica;</li>
+
+<li>Gestão hospitalar;</li>
+
+<li>Automação de tarefas administrativas;</li>
+
+<li>Organização e análise de grandes volumes de dados.</li>
+
+</ul>
+
+</div>
+
+<div class="danger">
+
+<strong>
+No contexto do Secretário Clínico:
+</strong>
+
+<p style="margin-top:10px;">
+A IA pode ajudar na organização de informação, automatização
+administrativa, gestão de documentos e apoio a processos.
+</p>
+
+<p style="margin-top:10px;">
+<strong>
+Mas não substitui automaticamente o profissional de saúde
+nem elimina a necessidade de supervisão humana.
+</strong>
+</p>
+
+</div>
+
+</section>
+
+<!-- VANTAGENS -->
+
+<section id="vantagens">
+
+<h2 class="section-title">
+10. Vantagens da Inteligência Artificial
+</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>Velocidade</h3>
+
+<p>
+Pode processar grandes volumes de informação rapidamente.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>Automação</h3>
+
+<p>
+Pode executar tarefas repetitivas de forma automatizada.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Análise</h3>
+
+<p>
+Pode identificar padrões em grandes conjuntos de dados.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>Produtividade</h3>
+
+<p>
+Pode reduzir o tempo gasto em determinadas tarefas.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-user-check"></i>
+
+<h3>Personalização</h3>
+
+<p>
+Pode adaptar determinados serviços às necessidades dos utilizadores.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-lightbulb"></i>
+
+<h3>Inovação</h3>
+
+<p>
+Permite desenvolver novos produtos, serviços e formas de trabalho.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RISCOS -->
+
+<section id="riscos">
+
+<h2 class="section-title">
+11. Riscos e Desafios
+</h2>
+
+<div class="card">
+
+<h3>1. Erros</h3>
+
+<p>
+Sistemas de IA podem produzir resultados incorretos.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>2. Viés algorítmico</h3>
+
+<p>
+Se os dados utilizados forem inadequados ou enviesados,
+o sistema pode reproduzir ou ampliar determinados vieses.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3. Privacidade</h3>
+
+<p>
+O processamento de grandes quantidades de dados pode criar riscos
+para a privacidade das pessoas.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>4. Segurança</h3>
+
+<p>
+Sistemas de IA podem ser utilizados de forma inadequada ou sofrer
+ataques e manipulações.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>5. Desemprego e transformação profissional</h3>
+
+<p>
+A automação pode substituir algumas tarefas e transformar profissões,
+criando simultaneamente novas funções e exigindo novas competências.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>6. Desinformação</h3>
+
+<p>
+Ferramentas generativas podem facilitar a produção de conteúdos
+falsos ou enganosos.
+</p>
+
+</div>
+
+</section>
+
+<!-- ETICA -->
+
+<section id="etica">
+
+<h2 class="section-title">
+12. Ética na Inteligência Artificial
+</h2>
+
+<div class="card">
+
+<h3>Princípios importantes</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li><strong>Transparência:</strong> compreender como e para que o sistema é utilizado.</li>
+
+<li><strong>Responsabilidade:</strong> definir quem responde pelas decisões e resultados.</li>
+
+<li><strong>Privacidade:</strong> proteger os dados pessoais.</li>
+
+<li><strong>Segurança:</strong> reduzir riscos e utilização indevida.</li>
+
+<li><strong>Justiça:</strong> evitar discriminação injustificada.</li>
+
+<li><strong>Supervisão humana:</strong> manter intervenção humana adequada em decisões importantes.</li>
+
+</ul>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+Regra fundamental:
+</strong>
+
+<p style="font-size:21px;font-weight:800;margin-top:8px;">
+
+IA deve servir como ferramenta de apoio,
+não como desculpa para abandonar a responsabilidade humana.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ANGOLA -->
+
+<section id="angola">
+
+<h2 class="section-title">
+13. Inteligência Artificial em Angola
+</h2>
+
+<div class="card">
+
+<p>
+A adoção de tecnologias de IA pode contribuir para a transformação
+digital de Angola em áreas como:
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Administração Pública;</li>
+
+<li>Saúde;</li>
+
+<li>Educação;</li>
+
+<li>Agricultura;</li>
+
+<li>Finanças;</li>
+
+<li>Telecomunicações;</li>
+
+<li>Transportes;</li>
+
+<li>Segurança cibernética;</li>
+
+<li>Serviços digitais.</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<strong>
+Oportunidade:
+</strong>
+
+<p>
+Para países em desenvolvimento, a IA pode ajudar a ampliar a
+capacidade de análise, automatizar processos e melhorar determinados
+serviços públicos.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>
+Mas existe uma condição:
+</strong>
+
+<p>
+A adoção responsável exige infraestrutura, conectividade,
+qualificação profissional, proteção de dados, segurança e
+governação adequada.
+</p>
+
+</div>
+
+</section>
+
+<!-- IA E ADMINISTRACAO -->
+
+<section>
+
+<h2 class="section-title">
+14. IA e Administração Pública
+</h2>
+
+<div class="card">
+
+<h3>Possíveis aplicações</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Automatização de processos;</li>
+
+<li>Classificação de documentos;</li>
+
+<li>Atendimento ao cidadão;</li>
+
+<li>Análise de grandes bases de dados;</li>
+
+<li>Deteção de irregularidades;</li>
+
+<li>Previsão de necessidades;</li>
+
+<li>Gestão de recursos;</li>
+
+<li>Apoio à tomada de decisão.</li>
+
+</ul>
+
+</div>
+
+<div class="danger">
+
+<strong>
+Nunca esquecer:
+</strong>
+
+<p>
+Uma decisão administrativa de grande impacto não deve ser tratada
+como automaticamente correta apenas porque foi produzida por um
+algoritmo ou sistema de IA.
+</p>
+
+</div>
+
+</section>
+
+<!-- TERMOS -->
+
+<section>
+
+<h2 class="section-title">
+15. Vocabulário Essencial
+</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Termo</th>
+<th>Significado</th>
+</tr>
+
+<tr>
+<td><span class="term">IA</span></td>
+<td>Inteligência Artificial.</td>
+</tr>
+
+<tr>
+<td><span class="term">ML</span></td>
+<td>Machine Learning — aprendizagem automática.</td>
+</tr>
+
+<tr>
+<td><span class="term">Deep Learning</span></td>
+<td>Aprendizagem profunda baseada em redes neuronais com múltiplas camadas.</td>
+</tr>
+
+<tr>
+<td><span class="term">IA Generativa</span></td>
+<td>IA capaz de gerar novos conteúdos.</td>
+</tr>
+
+<tr>
+<td><span class="term">LLM</span></td>
+<td>Large Language Model — grande modelo de linguagem.</td>
+</tr>
+
+<tr>
+<td><span class="term">Algoritmo</span></td>
+<td>Conjunto de procedimentos utilizados para resolver um problema ou executar uma tarefa.</td>
+</tr>
+
+<tr>
+<td><span class="term">Dados</span></td>
+<td>Informações utilizadas pelo sistema para análise, treino ou processamento.</td>
+</tr>
+
+<tr>
+<td><span class="term">Modelo</span></td>
+<td>Representação matemática/computacional aprendida a partir dos dados.</td>
+</tr>
+
+<tr>
+<td><span class="term">Viés</span></td>
+<td>Tendência sistemática que pode conduzir a resultados injustos ou inadequados.</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MEMORIZACAO -->
+
+<section>
+
+<h2 class="section-title">
+16. O que DEVES memorizar
+</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Pergunta</th>
+<th>Resposta curta</th>
+</tr>
+
+<tr>
+<td>O que é IA?</td>
+<td>Sistemas computacionais capazes de executar tarefas associadas à inteligência humana.</td>
+</tr>
+
+<tr>
+<td>O que é Machine Learning?</td>
+<td>Aprendizagem automática a partir de dados.</td>
+</tr>
+
+<tr>
+<td>O que é Deep Learning?</td>
+<td>Aprendizagem baseada em redes neuronais profundas.</td>
+</tr>
+
+<tr>
+<td>O que é IA Generativa?</td>
+<td>IA capaz de gerar novos conteúdos.</td>
+</tr>
+
+<tr>
+<td>O que é LLM?</td>
+<td>Grande modelo de linguagem.</td>
+</tr>
+
+<tr>
+<td>Principal risco?</td>
+<td>Não existe um único risco: erros, vieses, privacidade, segurança e desinformação são exemplos.</td>
+</tr>
+
+<tr>
+<td>IA substitui sempre o ser humano?</td>
+<td>Não.</td>
+</tr>
+
+<tr>
+<td>IA pode ser usada na saúde?</td>
+<td>Sim, como ferramenta de apoio.</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<h3>
+Fórmula de memorização
+</h3>
+
+<p style="font-size:21px;font-weight:800;margin-top:10px;">
+
+IA → DADOS → ALGORITMOS → MODELOS → PREVISÕES/GERAÇÃO → SUPERVISÃO HUMANA
+
+</p>
+
+</div>
+
+</section>
+
+<!-- QUESTOES -->
+
+<section id="questoes">
+
+<h2 class="section-title">
+17. Questões de Concurso
+</h2>
+
+<div class="question">
+
+<strong>
+1. O que significa IA?
+</strong>
+
+<div class="answer">
+Resposta: Inteligência Artificial.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+2. O que é Inteligência Artificial?
+</strong>
+
+<div class="answer">
+Resposta: Campo da ciência da computação dedicado ao desenvolvimento
+de sistemas capazes de executar tarefas que normalmente exigiriam
+capacidades associadas à inteligência humana.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+3. O que é Machine Learning?
+</strong>
+
+<div class="answer">
+Resposta: Área da IA em que algoritmos aprendem padrões a partir
+de dados para executar determinadas tarefas.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+4. Quais são três formas comuns de aprendizagem automática?
+</strong>
+
+<div class="answer">
+Resposta: Aprendizagem supervisionada, não supervisionada e por reforço.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+5. O que é Deep Learning?
+</strong>
+
+<div class="answer">
+Resposta: Abordagem de aprendizagem automática baseada principalmente
+em redes neuronais com múltiplas camadas.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+6. O que é Inteligência Artificial Generativa?
+</strong>
+
+<div class="answer">
+Resposta: IA capaz de produzir novos conteúdos, como texto,
+imagem, áudio, vídeo ou código.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+7. O que significa LLM?
+</strong>
+
+<div class="answer">
+Resposta: Large Language Model — grande modelo de linguagem.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+8. Quem está associado à introdução do termo Artificial Intelligence?
+</strong>
+
+<div class="answer">
+Resposta: John McCarthy.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+9. Em que ano ocorreu a Conferência de Dartmouth associada
+à formalização do campo da IA?
+</strong>
+
+<div class="answer">
+Resposta: 1956.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+10. A IA pode ser aplicada na área da saúde?
+</strong>
+
+<div class="answer">
+Resposta: Sim. Pode apoiar análise de imagens, triagem,
+investigação, gestão e outras tarefas.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+11. A IA substitui obrigatoriamente o profissional de saúde?
+</strong>
+
+<div class="answer">
+Resposta: Não. A utilização de IA deve considerar supervisão,
+responsabilidade profissional e contexto.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+12. O que é viés algorítmico?
+</strong>
+
+<div class="answer">
+Resposta: Tendência sistemática de um sistema ou modelo produzir
+resultados enviesados ou potencialmente injustos.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+13. Cite três riscos da Inteligência Artificial.
+</strong>
+
+<div class="answer">
+Resposta possível: erros, violação de privacidade, viés,
+desinformação ou riscos de segurança.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+14. Cite três princípios da IA responsável.
+</strong>
+
+<div class="answer">
+Resposta possível: transparência, responsabilidade, privacidade,
+segurança, justiça e supervisão humana.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+15. A IA pode apoiar a Administração Pública?
+</strong>
+
+<div class="answer">
+Resposta: Sim. Pode ser utilizada em automação, análise de dados,
+atendimento, classificação de documentos e apoio à decisão.
+</div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist final
+</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>☐ Sei definir Inteligência Artificial.</li>
+
+<li>☐ Sei quem foi Alan Turing.</li>
+
+<li>☐ Sei o significado de 1956 para a história da IA.</li>
+
+<li>☐ Sei quem é associado ao termo Artificial Intelligence.</li>
+
+<li>☐ Sei o que é Machine Learning.</li>
+
+<li>☐ Sei os três principais tipos de aprendizagem automática.</li>
+
+<li>☐ Sei o que é Deep Learning.</li>
+
+<li>☐ Sei o que é IA Generativa.</li>
+
+<li>☐ Sei o significado de LLM.</li>
+
+<li>☐ Conheço aplicações da IA na saúde.</li>
+
+<li>☐ Conheço aplicações na Administração Pública.</li>
+
+<li>☐ Conheço os principais benefícios.</li>
+
+<li>☐ Conheço os principais riscos.</li>
+
+<li>☐ Sei explicar o conceito de viés algorítmico.</li>
+
+<li>☐ Sei os princípios básicos da IA responsável.</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<h3>
+<i class="fa-solid fa-star"></i>
+Resumo final
+</h3>
+
+<p style="font-size:20px;font-weight:800;margin-top:10px;">
+
+IA = tecnologia que processa dados e utiliza algoritmos/modelos
+para executar tarefas, fazer previsões ou gerar conteúdos.
+
+</p>
+
+<p style="margin-top:12px;">
+<strong>
+Mas IA não significa automaticamente verdade, consciência,
+infalibilidade ou substituição do ser humano.
+</strong>
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+<strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong>
+</p>
+
+<p style="margin-top:8px;">
+Tema X — Inteligência Artificial
+</p>
+
+<p style="margin-top:15px;font-size:13px;">
+Estude • Memorize • Resolva questões • Revise
+</p>
+
+</footer>
+
+</body>
+</html>

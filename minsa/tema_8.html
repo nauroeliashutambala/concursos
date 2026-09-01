@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tema VIII — Censo 2024 | Secretário Clínico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.7;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#07152f,#164e63,#0f766e);
+    color:white;
+    padding:75px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+}
+
+.hero:before{
+    width:420px;
+    height:420px;
+    right:-170px;
+    top:-190px;
+}
+
+.hero:after{
+    width:270px;
+    height:270px;
+    left:-130px;
+    bottom:-150px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    background:#14b8a6;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(34px,6vw,60px);
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:850px;
+    color:#ccfbf1;
+    font-size:18px;
+}
+
+/* NAV */
+
+.nav{
+    background:white;
+    border-bottom:1px solid #e2e8f0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-inner{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:12px 0;
+}
+
+.nav a{
+    color:#334155;
+    text-decoration:none;
+    white-space:nowrap;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav a:hover{
+    background:#ccfbf1;
+    color:#0f766e;
+}
+
+/* SECTIONS */
+
+section{
+    padding:55px 0;
+}
+
+.section-title{
+    font-size:31px;
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.section-subtitle{
+    color:#64748b;
+    margin-bottom:28px;
+}
+
+/* CARDS */
+
+.card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+}
+
+.card h3{
+    color:#0f766e;
+    margin-bottom:12px;
+}
+
+.icon-title{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:15px;
+}
+
+.icon{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ccfbf1;
+    color:#0f766e;
+    border-radius:12px;
+    font-size:20px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.mini-card{
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    padding:22px;
+}
+
+.mini-card i{
+    color:#0f766e;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.big-number{
+    font-size:36px;
+    font-weight:800;
+    color:#0f766e;
+    margin:5px 0;
+}
+
+/* ALERTS */
+
+.highlight{
+    border-left:5px solid #0f766e;
+    background:#ccfbf1;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.warning{
+    border-left:5px solid #f59e0b;
+    background:#fffbeb;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.success{
+    border-left:5px solid #16a34a;
+    background:#f0fdf4;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.danger{
+    border-left:5px solid #dc2626;
+    background:#fef2f2;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-top:18px;
+}
+
+th,td{
+    padding:13px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+}
+
+th{
+    background:#ccfbf1;
+    color:#115e59;
+}
+
+/* QUESTION */
+
+.question{
+    background:white;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    padding:24px;
+    margin-bottom:18px;
+}
+
+.question strong{
+    display:block;
+    margin-bottom:10px;
+}
+
+.answer{
+    background:#f0fdf4;
+    color:#166534;
+    padding:12px 15px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+/* FOOTER */
+
+footer{
+    background:#07152f;
+    color:#cbd5e1;
+    text-align:center;
+    padding:40px 20px;
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:52px 15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    section{
+        padding:40px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">
+<i class="fa-solid fa-chart-column"></i>
+CONCURSO — SECRETÁRIO CLÍNICO DE 3.ª CLASSE
+</span>
+
+<h1>VIII — Censo 2024</h1>
+
+<p>
+Recenseamento Geral da População e Habitação de Angola 2024,
+com os principais resultados definitivos, conceitos, indicadores
+demográficos e números que podem ser cobrados no concurso.
+</p>
+
+</div>
+
+</header>
+
+<!-- NAVEGAÇÃO -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="#conceito">Conceito</a> <a href="#identificacao">Identificação</a> <a href="#populacao">População</a> <a href="#sexo">Sexo</a> <a href="#provincias">Províncias</a> <a href="#urbano">Urbano/Rural</a> <a href="#idade">Idade</a> <a href="#familias">Agregados</a> <a href="#densidade">Densidade</a> <a href="#habitação">Habitação</a> <a href="#questoes">Questões</a>
+
+</div>
+
+</nav>
+
+<main class="container">
+
+<!-- CONCEITO -->
+
+<section id="conceito">
+
+<h2 class="section-title">1. O que é um Censo?</h2>
+
+<p class="section-subtitle">
+Começamos pelo conceito fundamental.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-users"></i>
+</div>
+
+<h3>Definição</h3>
+
+</div>
+
+<p>
+O <strong>Recenseamento Geral da População e Habitação (RGPH)</strong>,
+popularmente chamado de <strong>Censo</strong>, é uma operação estatística
+destinada a contar e caracterizar a população e as condições de habitação
+de um país num determinado momento.
+</p>
+
+<p style="margin-top:15px;">
+O Censo permite conhecer características demográficas, sociais,
+económicas e habitacionais da população.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+<i class="fa-solid fa-lightbulb"></i>
+Por que o Censo é importante?
+</strong>
+
+<ul style="margin:10px 0 0 25px;">
+
+<li>Conhecer o número de habitantes;</li>
+<li>Conhecer a distribuição da população;</li>
+<li>Planejar escolas e hospitais;</li>
+<li>Planejar infraestruturas;</li>
+<li>Definir políticas públicas;</li>
+<li>Apoiar decisões do Estado;</li>
+<li>Conhecer as condições de habitação.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- IDENTIFICAÇÃO -->
+
+<section id="identificacao">
+
+<h2 class="section-title">2. Censo 2024 — Identificação</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Elemento</th>
+<th>Informação</th>
+</tr>
+
+<tr>
+<td>Nome</td>
+<td>Recenseamento Geral da População e Habitação 2024</td>
+</tr>
+
+<tr>
+<td>Sigla</td>
+<td>RGPH 2024</td>
+</tr>
+
+<tr>
+<td>Instituição responsável</td>
+<td>Instituto Nacional de Estatística — INE</td>
+</tr>
+
+<tr>
+<td>País</td>
+<td>República de Angola</td>
+</tr>
+
+<tr>
+<td>Momento censitário</td>
+<td><strong>19 de Setembro de 2024</strong></td>
+</tr>
+
+<tr>
+<td>Censo anterior</td>
+<td>2014</td>
+</tr>
+
+<tr>
+<td>Periodicidade de comparação</td>
+<td>10 anos</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+<strong>
+<i class="fa-solid fa-triangle-exclamation"></i>
+Atenção:
+</strong>
+
+<p>
+O <strong>momento censitário</strong> é 19 de Setembro de 2024.
+A recolha de dados foi posteriormente estendida até 20 de Dezembro
+de 2024 por razões relacionadas com a melhoria da cobertura censitária.
+Não confunda essas duas datas.
+</p>
+
+</div>
+
+</section>
+
+<!-- POPULAÇÃO -->
+
+<section id="populacao">
+
+<h2 class="section-title">3. População de Angola em 2024</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-users"></i>
+
+<div class="big-number">36 604 681</div>
+
+<h3>População total</h3>
+
+<p>
+Habitantes residentes em Angola no momento censitário.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-person"></i>
+
+<div class="big-number">17 931 985</div>
+
+<h3>Homens</h3>
+
+<p>
+Representam aproximadamente 49% da população.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-person-dress"></i>
+
+<div class="big-number">18 672 696</div>
+
+<h3>Mulheres</h3>
+
+<p>
+Representam aproximadamente 51% da população.
+</p>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<strong>
+<i class="fa-solid fa-star"></i>
+NÚMERO PRINCIPAL DO CENSO 2024
+</strong>
+
+<p style="font-size:24px;font-weight:800;margin-top:8px;">
+36 604 681 habitantes
+</p>
+
+<p>
+Este é um dos números que o candidato deve memorizar.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Comparação com o Censo 2014</h3>
+
+<p>
+Em 2014, Angola tinha <strong>25 789 024 habitantes</strong>.
+Em 2024, passou para <strong>36 604 681 habitantes</strong>.
+</p>
+
+<p style="margin-top:15px;">
+O aumento foi de <strong>10 815 656 habitantes</strong>.
+</p>
+
+<p style="margin-top:15px;">
+A taxa média de crescimento anual no período intercensitário
+foi de aproximadamente <strong>3,5%</strong>.
+</p>
+
+</div>
+
+</section>
+
+<!-- SEXO -->
+
+<section id="sexo">
+
+<h2 class="section-title">4. Distribuição por Sexo</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Sexo</th>
+<th>População</th>
+<th>Percentagem</th>
+</tr>
+
+<tr>
+<td>Homens</td>
+<td>17 931 985</td>
+<td>49%</td>
+</tr>
+
+<tr>
+<td>Mulheres</td>
+<td>18 672 696</td>
+<td>51%</td>
+</tr>
+
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>36 604 681</strong></td>
+<td><strong>100%</strong></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<strong>Memorização:</strong>
+
+<p style="font-size:21px;font-weight:800;margin-top:8px;">
+51% mulheres → 49% homens
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Índice de masculinidade</h3>
+
+<p>
+O índice de masculinidade no país é de aproximadamente
+<strong>96 homens por cada 100 mulheres</strong>.
+</p>
+
+<p style="margin-top:12px;">
+As províncias da <strong>Lunda Norte</strong> e do
+<strong>Cuando</strong> apresentam os índices mais elevados,
+enquanto <strong>Benguela</strong> e <strong>Cunene</strong>
+apresentam os mais baixos.
+</p>
+
+</div>
+
+</section>
+
+<!-- PROVINCIAS -->
+
+<section id="provincias">
+
+<h2 class="section-title">5. População por Província</h2>
+
+<p class="section-subtitle">
+Luanda continua a ser a província mais populosa.
+</p>
+
+<div class="card">
+
+<h3>Província mais populosa</h3>
+
+<p>
+<strong>Luanda</strong> possui <strong>8 816 297 habitantes</strong>,
+representando cerca de <strong>24,1%</strong> da população nacional.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Província menos populosa</h3>
+
+<p>
+<strong>Cuando</strong> é a província menos populosa, com
+<strong>138 770 habitantes</strong>, correspondendo a cerca de
+<strong>0,4%</strong> da população nacional.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Distribuição percentual</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Província</th>
+<th>% da população</th>
+</tr>
+
+<tr><td>Luanda</td><td>24,1%</td></tr>
+<tr><td>Huíla</td><td>9,0%</td></tr>
+<tr><td>Huambo</td><td>7,4%</td></tr>
+<tr><td>Benguela</td><td>7,1%</td></tr>
+<tr><td>Cuanza Sul</td><td>6,4%</td></tr>
+<tr><td>Bié</td><td>6,2%</td></tr>
+<tr><td>Uíge</td><td>5,5%</td></tr>
+<tr><td>Cunene</td><td>4,9%</td></tr>
+<tr><td>Lunda Norte</td><td>4,8%</td></tr>
+<tr><td>Icolo e Bengo</td><td>3,7%</td></tr>
+<tr><td>Malanje</td><td>3,5%</td></tr>
+<tr><td>Cabinda</td><td>2,4%</td></tr>
+<tr><td>Lunda Sul</td><td>2,4%</td></tr>
+<tr><td>Namibe</td><td>2,2%</td></tr>
+<tr><td>Bengo</td><td>2,0%</td></tr>
+<tr><td>Zaire</td><td>1,9%</td></tr>
+<tr><td>Cuanza Norte</td><td>1,8%</td></tr>
+<tr><td>Moxico</td><td>1,6%</td></tr>
+<tr><td>Cubango</td><td>1,6%</td></tr>
+<tr><td>Moxico Leste</td><td>1,1%</td></tr>
+<tr><td>Cuando</td><td>0,4%</td></tr>
+
+</table>
+
+</div>
+
+<p style="margin-top:15px;">
+Fonte: Resultados Definitivos do Censo 2024 — INE.
+</p>
+
+</div>
+
+</section>
+
+<!-- URBANO/RURAL -->
+
+<section id="urbano">
+
+<h2 class="section-title">6. População Urbana e Rural</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-city"></i>
+
+<div class="big-number">65,5%</div>
+
+<h3>Área urbana</h3>
+
+<p>
+23 991 388 habitantes.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-tree-city"></i>
+
+<div class="big-number">34,5%</div>
+
+<h3>Área rural</h3>
+
+<p>
+12 613 293 habitantes.
+</p>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<strong>Conclusão:</strong>
+
+<p>
+A maioria da população angolana vive em áreas urbanas:
+aproximadamente <strong>2 em cada 3 habitantes</strong>.
+</p>
+
+</div>
+
+</section>
+
+<!-- IDADE -->
+
+<section id="idade">
+
+<h2 class="section-title">7. Estrutura Etária</h2>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-people-group"></i>
+</div>
+
+<h3>População jovem</h3>
+
+</div>
+
+<p>
+A população residente em Angola é maioritariamente jovem.
+A <strong>idade média nacional é de 23 anos</strong>.
+</p>
+
+<p style="margin-top:12px;">
+A idade média é de aproximadamente <strong>23 anos na área urbana</strong>
+e <strong>22 anos na área rural</strong>.
+</p>
+
+</div>
+
+<div class="success">
+
+<strong>
+<i class="fa-solid fa-chart-line"></i>
+Interpretação:
+</strong>
+
+<p>
+Uma população jovem significa que Angola possui uma grande proporção
+de pessoas em idades iniciais da vida, o que cria necessidades importantes
+em áreas como educação, saúde, emprego, habitação e formação profissional.
+</p>
+
+</div>
+
+</section>
+
+<!-- AGREGADOS -->
+
+<section id="familias">
+
+<h2 class="section-title">8. Agregados Familiares</h2>
+
+<div class="card">
+
+<h3>Número de agregados familiares</h3>
+
+<p style="font-size:24px;font-weight:800;color:#0f766e;">
+9 110 616 agregados familiares
+</p>
+
+<p style="margin-top:12px;">
+O Censo 2024 registou mais de nove milhões de agregados familiares
+em Angola.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Chefes dos agregados</h3>
+
+<p>
+A maioria dos chefes dos agregados familiares são homens.
+A faixa etária com maior concentração de chefes de agregado é
+a dos <strong>25 aos 34 anos</strong>, representando cerca de
+<strong>27%</strong>.
+</p>
+
+</div>
+
+</section>
+
+<!-- DENSIDADE -->
+
+<section id="densidade">
+
+<h2 class="section-title">9. Área e Densidade Populacional</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-map"></i>
+
+<div class="big-number">1 246 700 km²</div>
+
+<h3>Área de Angola</h3>
+
+<p>
+Extensão territorial considerada nos resultados censitários.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-people-arrows"></i>
+
+<div class="big-number">29,4 hab/km²</div>
+
+<h3>Densidade média</h3>
+
+<p>
+Número médio de habitantes por quilómetro quadrado.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Província mais densamente povoada</h3>
+
+<p>
+<strong>Luanda</strong> apresenta uma densidade populacional de
+aproximadamente <strong>5 349,3 habitantes por km²</strong>.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Província menos densamente povoada</h3>
+
+<p>
+<strong>Cuando</strong> apresenta aproximadamente
+<strong>1,3 habitantes por km²</strong>.
+</p>
+
+</div>
+
+</section>
+
+<!-- HABITAÇÃO -->
+
+<section id="habitação">
+
+<h2 class="section-title">10. Habitação e Condições de Vida</h2>
+
+<div class="card">
+
+<p>
+O Censo 2024 não se limitou a contar pessoas.
+O Recenseamento Geral da População e Habitação também recolheu
+informações sobre as condições dos alojamentos e dos agregados familiares.
+</p>
+
+<p style="margin-top:15px;">
+Entre os indicadores analisados encontram-se:
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Acesso à água;</li>
+<li>Fonte de iluminação;</li>
+<li>Combustível utilizado para cozinhar;</li>
+<li>Tipo de habitação;</li>
+<li>Materiais das paredes;</li>
+<li>Materiais do teto;</li>
+<li>Material do piso;</li>
+<li>Condições de saneamento;</li>
+<li>Características dos agregados familiares.</li>
+
+</ul>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+Por que isso é importante?
+</strong>
+
+<p>
+Os dados habitacionais permitem ao Estado identificar necessidades
+de infraestrutura e orientar políticas públicas de água, energia,
+saneamento, habitação e saúde.
+</p>
+
+</div>
+
+</section>
+
+<!-- IMPORTÂNCIA -->
+
+<section>
+
+<h2 class="section-title">11. Importância do Censo para Angola</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hospital"></i>
+
+<h3>Saúde</h3>
+
+<p>
+Planeamento da localização e capacidade dos serviços de saúde.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-school"></i>
+
+<h3>Educação</h3>
+
+<p>
+Estimativa da necessidade de escolas, professores e formação.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-house"></i>
+
+<h3>Habitação</h3>
+
+<p>
+Conhecimento das condições habitacionais da população.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-road"></i>
+
+<h3>Infraestruturas</h3>
+
+<p>
+Planeamento de estradas, água, energia e saneamento.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<h3>Estatística</h3>
+
+<p>
+Produção de informação oficial para tomada de decisões.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-landmark"></i>
+
+<h3>Governação</h3>
+
+<p>
+Apoio à elaboração e avaliação das políticas públicas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MEMORIZAÇÃO -->
+
+<section>
+
+<h2 class="section-title">12. Números que DEVES Memorizar</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Indicador</th>
+<th>Valor</th>
+</tr>
+
+<tr>
+<td>População total</td>
+<td><strong>36 604 681</strong></td>
+</tr>
+
+<tr>
+<td>Homens</td>
+<td><strong>17 931 985</strong></td>
+</tr>
+
+<tr>
+<td>Mulheres</td>
+<td><strong>18 672 696</strong></td>
+</tr>
+
+<tr>
+<td>População urbana</td>
+<td><strong>23 991 388</strong></td>
+</tr>
+
+<tr>
+<td>População rural</td>
+<td><strong>12 613 293</strong></td>
+</tr>
+
+<tr>
+<td>Agregados familiares</td>
+<td><strong>9 110 616</strong></td>
+</tr>
+
+<tr>
+<td>Idade média</td>
+<td><strong>23 anos</strong></td>
+</tr>
+
+<tr>
+<td>Densidade média</td>
+<td><strong>29,4 hab/km²</strong></td>
+</tr>
+
+<tr>
+<td>Área territorial</td>
+<td><strong>1 246 700 km²</strong></td>
+</tr>
+
+<tr>
+<td>População de Luanda</td>
+<td><strong>8 816 297</strong></td>
+</tr>
+
+<tr>
+<td>População do Cuando</td>
+<td><strong>138 770</strong></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<h3>
+<i class="fa-solid fa-bolt"></i>
+SUPER-MEMORIZAÇÃO
+</h3>
+
+<p style="margin-top:12px;font-size:20px;font-weight:800;">
+
+36,6 milhões → população<br>
+51% → mulheres<br>
+49% → homens<br>
+65,5% → urbana<br>
+34,5% → rural<br>
+23 anos → idade média<br>
+9,1 milhões → agregados familiares
+
+</p>
+
+</div>
+
+</section>
+
+<!-- QUESTÕES -->
+
+<section id="questoes">
+
+<h2 class="section-title">13. Questões de Concurso</h2>
+
+<p class="section-subtitle">
+Agora teste a memória.
+</p>
+
+<div class="question">
+
+<strong>
+1. Qual é a população de Angola segundo os resultados definitivos
+do Censo 2024?
+</strong>
+
+<div class="answer">
+Resposta: 36 604 681 habitantes.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+2. Qual foi o momento censitário do Censo 2024?
+</strong>
+
+<div class="answer">
+Resposta: 19 de Setembro de 2024.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+3. Quantos homens foram registados?
+</strong>
+
+<div class="answer">
+Resposta: 17 931 985 homens.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+4. Quantas mulheres foram registadas?
+</strong>
+
+<div class="answer">
+Resposta: 18 672 696 mulheres.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+5. Qual sexo representa a maior parcela da população?
+</strong>
+
+<div class="answer">
+Resposta: Mulheres, com aproximadamente 51%.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+6. Qual é a província mais populosa de Angola?
+</strong>
+
+<div class="answer">
+Resposta: Luanda, com 8 816 297 habitantes.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+7. Qual é a província menos populosa?
+</strong>
+
+<div class="answer">
+Resposta: Cuando, com 138 770 habitantes.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+8. Qual é a idade média da população angolana?
+</strong>
+
+<div class="answer">
+Resposta: 23 anos.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+9. Qual é a percentagem da população urbana?
+</strong>
+
+<div class="answer">
+Resposta: 65,5%.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+10. Qual é a percentagem da população rural?
+</strong>
+
+<div class="answer">
+Resposta: 34,5%.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+11. Quantos agregados familiares foram registados?
+</strong>
+
+<div class="answer">
+Resposta: 9 110 616 agregados familiares.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+12. Qual é a densidade populacional média de Angola?
+</strong>
+
+<div class="answer">
+Resposta: 29,4 habitantes por quilómetro quadrado.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+13. Qual é a província mais densamente povoada?
+</strong>
+
+<div class="answer">
+Resposta: Luanda.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+14. Qual é a província menos densamente povoada?
+</strong>
+
+<div class="answer">
+Resposta: Cuando.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+15. Qual instituição realizou o Censo 2024?
+</strong>
+
+<div class="answer">
+Resposta: Instituto Nacional de Estatística (INE).
+</div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist final
+</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>☐ Sei o significado de RGPH.</li>
+
+<li>☐ Sei qual instituição realizou o Censo.</li>
+
+<li>☐ Sei a data do momento censitário.</li>
+
+<li>☐ Sei a população total de Angola.</li>
+
+<li>☐ Sei a população masculina e feminina.</li>
+
+<li>☐ Sei as percentagens por sexo.</li>
+
+<li>☐ Sei qual é a província mais populosa.</li>
+
+<li>☐ Sei qual é a província menos populosa.</li>
+
+<li>☐ Sei a população urbana e rural.</li>
+
+<li>☐ Sei a idade média da população.</li>
+
+<li>☐ Sei o número de agregados familiares.</li>
+
+<li>☐ Sei a densidade populacional média.</li>
+
+<li>☐ Sei a área territorial de Angola.</li>
+
+<li>☐ Sei por que o Censo é importante para o Estado.</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<h3>
+<i class="fa-solid fa-star"></i>
+Fórmula final
+</h3>
+
+<p style="font-size:21px;font-weight:800;margin-top:10px;">
+
+36 604 681 → 51/49 → 65,5/34,5 → 23 → 9 110 616
+
+</p>
+
+<p style="margin-top:10px;">
+População → Sexo → Urbano/Rural → Idade média → Agregados familiares.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+<strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong>
+</p>
+
+<p style="margin-top:8px;">
+Tema VIII — Censo 2024
+</p>
+
+<p style="margin-top:15px;font-size:13px;">
+Estude • Memorize • Resolva questões • Revise
+</p>
+
+</footer>
+
+</body>
+</html>

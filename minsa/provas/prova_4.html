@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simulado 04 — Nível Muito Difícil | Secretário Clínico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,Arial,sans-serif;
+background:#f3f6fa;
+color:#172033;
+line-height:1.6;
+}
+
+.hero{
+background:
+radial-gradient(circle at 80% 10%,rgba(220,38,38,.28),transparent 28%),
+radial-gradient(circle at 10% 80%,rgba(245,158,11,.20),transparent 30%),
+linear-gradient(135deg,#111827,#1f2937,#450a0a);
+color:white;
+padding:55px 20px 70px;
+}
+
+.container,
+.hero-container{
+width:min(1050px,92%);
+margin:auto;
+}
+
+.badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 15px;
+border-radius:30px;
+background:rgba(255,255,255,.10);
+border:1px solid rgba(255,255,255,.15);
+font-size:11px;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:clamp(34px,6vw,58px);
+line-height:1.05;
+margin-bottom:15px;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+max-width:800px;
+color:#e5e7eb;
+}
+
+.nav{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(15px);
+border-bottom:1px solid #e5e7eb;
+}
+
+.nav-container{
+width:min(1050px,92%);
+margin:auto;
+min-height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+text-decoration:none;
+color:#111827;
+font-weight:900;
+}
+
+.logo i{
+color:#dc2626;
+margin-right:7px;
+}
+
+.nav-info{
+display:flex;
+gap:20px;
+font-size:12px;
+font-weight:900;
+}
+
+.timer{
+color:#dc2626;
+}
+
+main{
+padding:45px 0 80px;
+}
+
+.instructions,
+.progress-card,
+.question,
+#resultado{
+background:white;
+border:1px solid #e5e7eb;
+box-shadow:0 10px 30px rgba(15,23,42,.06);
+}
+
+.instructions{
+padding:25px;
+border-radius:20px;
+margin-bottom:25px;
+}
+
+.instructions h2{
+font-size:20px;
+margin-bottom:12px;
+}
+
+.instructions ul{
+margin-left:20px;
+color:#4b5563;
+}
+
+.instructions li{
+margin:5px 0;
+}
+
+.warning{
+margin-top:15px;
+padding:14px 16px;
+background:#fff7ed;
+border-left:4px solid #f97316;
+border-radius:8px;
+font-size:13px;
+color:#9a3412;
+font-weight:600;
+}
+
+.progress-card{
+padding:20px;
+border-radius:18px;
+margin-bottom:25px;
+}
+
+.progress-top{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+font-weight:900;
+margin-bottom:10px;
+}
+
+.progress-bar{
+height:10px;
+background:#e5e7eb;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+width:0;
+background:#dc2626;
+transition:.3s;
+}
+
+.question{
+padding:28px;
+border-radius:20px;
+margin-bottom:22px;
+}
+
+.question-header{
+display:flex;
+justify-content:space-between;
+gap:15px;
+align-items:center;
+margin-bottom:18px;
+}
+
+.question-number{
+font-weight:900;
+color:#dc2626;
+}
+
+.question-topic{
+font-size:10px;
+font-weight:900;
+padding:5px 10px;
+border-radius:20px;
+background:#fef2f2;
+color:#991b1b;
+}
+
+.question h3{
+font-size:17px;
+line-height:1.55;
+margin-bottom:20px;
+}
+
+.context{
+background:#f8fafc;
+border-left:4px solid #64748b;
+padding:17px;
+border-radius:8px;
+margin-bottom:18px;
+font-size:14px;
+color:#475569;
+}
+
+.options{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.option{
+position:relative;
+}
+
+.option input{
+position:absolute;
+opacity:0;
+}
+
+.option label{
+display:block;
+padding:14px 16px;
+border:1px solid #dbe1e8;
+border-radius:12px;
+cursor:pointer;
+font-size:14px;
+transition:.2s;
+}
+
+.option label:hover{
+border-color:#dc2626;
+background:#fff7f7;
+}
+
+.option input:checked + label{
+border-color:#dc2626;
+background:#fef2f2;
+color:#991b1b;
+font-weight:700;
+}
+
+.submit-area{
+text-align:center;
+margin-top:35px;
+}
+
+.btn{
+border:none;
+cursor:pointer;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:15px 27px;
+border-radius:12px;
+font-family:inherit;
+font-size:14px;
+font-weight:900;
+}
+
+.btn-primary{
+background:#dc2626;
+color:white;
+}
+
+.btn-primary:hover{
+background:#b91c1c;
+}
+
+#resultado{
+display:none;
+border-radius:25px;
+padding:40px 30px;
+text-align:center;
+margin-top:30px;
+}
+
+.result-icon{
+width:80px;
+height:80px;
+margin:auto auto 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#fef2f2;
+color:#dc2626;
+font-size:34px;
+}
+
+.resultado-score{
+font-size:58px;
+font-weight:900;
+margin:8px 0;
+}
+
+.resultado-msg{
+max-width:720px;
+margin:auto;
+color:#6b7280;
+}
+
+.result-details{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin-top:28px;
+}
+
+.result-box{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+border-radius:15px;
+padding:17px;
+}
+
+.result-box strong{
+display:block;
+font-size:24px;
+}
+
+.result-box span{
+font-size:11px;
+color:#6b7280;
+}
+
+.review{
+text-align:left;
+margin-top:30px;
+}
+
+.review-item{
+padding:15px;
+border-radius:12px;
+margin-bottom:10px;
+font-size:13px;
+}
+
+.review-correct{
+background:#ecfdf5;
+border-left:4px solid #10b981;
+}
+
+.review-wrong{
+background:#fef2f2;
+border-left:4px solid #ef4444;
+}
+
+footer{
+background:#111827;
+color:#9ca3af;
+padding:35px 20px;
+text-align:center;
+font-size:12px;
+}
+
+@media(max-width:700px){
+
+.nav-container{
+display:block;
+padding:12px 0;
+}
+
+.nav-info{
+margin-top:7px;
+}
+
+.question{
+padding:21px;
+}
+
+.result-details{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="hero-container">
+
+<span class="badge">
+<i class="fa-solid fa-skull-crossbones"></i>
+SIMULADO 04 — NÍVEL MUITO DIFÍCIL
+</span>
+
+<h1>
+Prova <span>Desafio Máximo</span>
+</h1>
+
+<p>
+20 questões destinadas a testar interpretação, raciocínio,
+conhecimentos administrativos, deontologia, saúde pública,
+cultura geral, estatística, organização territorial e tecnologia.
+</p>
+
+</div>
+
+</header>
+
+<nav class="nav">
+
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+<i class="fa-solid fa-arrow-left"></i>
+Voltar
+</a>
+
+<div class="nav-info">
+
+<span>
+<i class="fa-solid fa-list"></i>
+20 questões
+</span>
+
+<span>
+<i class="fa-solid fa-clock"></i>
+<span class="timer" id="tempo">30:00</span>
+</span>
+
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<div class="container">
+
+<div class="instructions">
+
+<h2>
+<i class="fa-solid fa-circle-info"></i>
+Instruções
+</h2>
+
+<ul>
+
+<li>Tempo máximo: <strong>30 minutos</strong>.</li>
+
+<li>Existem alternativas deliberadamente semelhantes.</li>
+
+<li>Algumas questões exigem mais de uma etapa de raciocínio.</li>
+
+<li>Não responda apenas pela palavra que parece familiar.</li>
+
+<li>Cada questão vale 1 ponto.</li>
+
+</ul>
+
+<div class="warning">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+Esta prova é de nível elevado. Uma nota baixa não significa
+necessariamente falta de conhecimento: algumas questões foram
+concebidas para testar atenção e capacidade de distinção conceptual.
+
+</div>
+
+</div>
+
+<div class="progress-card">
+
+<div class="progress-top">
+
+<span>Progresso</span>
+
+<span id="contador">
+0 / 20
+</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill" id="progressFill"></div>
+
+</div>
+
+</div>
+
+<form id="provaForm">
+
+<!-- 01 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 01</span>
+
+<span class="question-topic">Administração Pública</span>
+
+</div>
+
+<div class="context">
+
+Um órgão público decide adoptar um procedimento segundo o qual
+todos os cidadãos devem apresentar os mesmos documentos para
+determinado serviço, salvo quando uma norma legal estabelecer
+tratamento diferenciado.
+
+</div>
+
+<h3>
+Qual princípio é mais directamente concretizado por essa prática?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q1" value="A" id="q1a">
+<label for="q1a">A) Igualdade e tratamento imparcial dos administrados.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q1" value="B" id="q1b">
+<label for="q1b">B) Liberdade absoluta do funcionário.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q1" value="C" id="q1c">
+<label for="q1c">C) Hierarquia privada.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q1" value="D" id="q1d">
+<label for="q1d">D) Exclusividade administrativa.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 02 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 02</span>
+
+<span class="question-topic">Deontologia</span>
+
+</div>
+
+<h3>
+Um funcionário toma conhecimento de informação obtida no exercício
+das suas funções que não deve ser divulgada publicamente.
+
+Qual conduta é mais compatível com a ética da função pública?
+
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q2" value="A" id="q2a">
+<label for="q2a">
+A) Divulgá-la nas redes sociais se não mencionar o nome do cidadão.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q2" value="B" id="q2b">
+<label for="q2b">
+B) Preservar a confidencialidade, respeitando as normas aplicáveis.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q2" value="C" id="q2c">
+<label for="q2c">
+C) Partilhá-la com amigos próximos.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q2" value="D" id="q2d">
+<label for="q2d">
+D) Utilizá-la para obter vantagem pessoal.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 03 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 03</span>
+
+<span class="question-topic">Raciocínio Verbal</span>
+
+</div>
+
+<div class="context">
+
+“Nem todo atendimento célere é eficiente, embora a eficiência
+possa exigir celeridade em determinadas circunstâncias.”
+
+</div>
+
+<h3>
+Qual afirmação decorre logicamente do texto?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q3" value="A" id="q3a">
+<label for="q3a">
+A) Todo atendimento célere é eficiente.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q3" value="B" id="q3b">
+<label for="q3b">
+B) Nenhum atendimento eficiente é célere.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q3" value="C" id="q3c">
+<label for="q3c">
+C) Rapidez, isoladamente, não garante eficiência.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q3" value="D" id="q3d">
+<label for="q3d">
+D) Eficiência e celeridade são exactamente o mesmo conceito.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 04 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 04</span>
+
+<span class="question-topic">Raciocínio Numérico</span>
+
+</div>
+
+<h3>
+Um serviço tinha 800 processos pendentes. Após uma campanha,
+o número de processos foi reduzido em 25%. Na semana seguinte,
+houve aumento de 20% sobre o número já reduzido.
+
+Quantos processos existem agora?
+
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q4" value="A" id="q4a">
+<label for="q4a">A) 720</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q4" value="B" id="q4b">
+<label for="q4b">B) 740</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q4" value="C" id="q4c">
+<label for="q4c">C) 760</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q4" value="D" id="q4d">
+<label for="q4d">D) 780</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 05 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 05</span>
+
+<span class="question-topic">COVID-19</span>
+
+</div>
+
+<h3>
+Qual distinção é cientificamente mais adequada?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q5" value="A" id="q5a">
+<label for="q5a">
+A) SARS-CoV-2 é a doença e COVID-19 é o vírus.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q5" value="B" id="q5b">
+<label for="q5b">
+B) SARS-CoV-2 é o vírus associado à COVID-19, que é a doença.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q5" value="C" id="q5c">
+<label for="q5c">
+C) SARS-CoV-2 e COVID-19 são nomes diferentes para exactamente a mesma coisa.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q5" value="D" id="q5d">
+<label for="q5d">
+D) COVID-19 é uma bactéria.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 06 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 06</span>
+
+<span class="question-topic">Cultura Geral</span>
+
+</div>
+
+<h3>
+Qual das seguintes combinações apresenta apenas países da África
+Austral?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q6" value="A" id="q6a">
+<label for="q6a">
+A) Angola, Namíbia e África do Sul.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q6" value="B" id="q6b">
+<label for="q6b">
+B) Angola, Egipto e Marrocos.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q6" value="C" id="q6c">
+<label for="q6c">
+C) Nigéria, Angola e Senegal.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q6" value="D" id="q6d">
+<label for="q6d">
+D) Quénia, Uganda e Angola.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 07 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 07</span>
+
+<span class="question-topic">Divisão Administrativa</span>
+
+</div>
+
+<h3>
+Qual afirmação representa melhor a função de uma divisão
+político-administrativa?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q7" value="A" id="q7a">
+<label for="q7a">
+A) Organizar o território para fins de administração e governação.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q7" value="B" id="q7b">
+<label for="q7b">
+B) Definir exclusivamente os limites entre propriedades privadas.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q7" value="C" id="q7c">
+<label for="q7c">
+C) Determinar a nacionalidade de cada habitante.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q7" value="D" id="q7d">
+<label for="q7d">
+D) Substituir a Constituição.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 08 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 08</span>
+
+<span class="question-topic">Censo</span>
+
+</div>
+
+<h3>
+Qual é a principal diferença entre um Censo e uma pesquisa
+amostral?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q8" value="A" id="q8a">
+<label for="q8a">
+A) O Censo procura abranger toda a população-alvo, enquanto a pesquisa amostral observa uma parte dela.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q8" value="B" id="q8b">
+<label for="q8b">
+B) O Censo utiliza apenas dados de hospitais.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q8" value="C" id="q8c">
+<label for="q8c">
+C) Uma pesquisa amostral obrigatoriamente entrevista todas as pessoas.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q8" value="D" id="q8d">
+<label for="q8d">
+D) Não existe diferença metodológica entre ambos.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 09 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 09</span>
+
+<span class="question-topic">IIMS / Estatística</span>
+
+</div>
+
+<h3>
+Uma pesquisa observa 2.500 mulheres e identifica 375 que apresentam
+determinada característica.
+
+Qual é a percentagem correspondente?
+
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q9" value="A" id="q9a">
+<label for="q9a">A) 10%</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q9" value="B" id="q9b">
+<label for="q9b">B) 12%</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q9" value="C" id="q9c">
+<label for="q9c">C) 15%</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q9" value="D" id="q9d">
+<label for="q9d">D) 18%</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 10 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 10</span>
+
+<span class="question-topic">Inteligência Artificial</span>
+
+</div>
+
+<h3>
+Um sistema de IA foi treinado com dados que contêm erros e
+representações desequilibradas. Depois, o sistema apresenta
+resultados sistematicamente desfavoráveis para determinado grupo.
+
+Qual conceito melhor descreve o problema?
+
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q10" value="A" id="q10a">
+<label for="q10a">A) Viés algorítmico.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q10" value="B" id="q10b">
+<label for="q10b">B) Compressão de dados.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q10" value="C" id="q10c">
+<label for="q10c">C) Criptografia assimétrica.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q10" value="D" id="q10d">
+<label for="q10d">D) Virtualização.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 11 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 11</span>
+
+<span class="question-topic">Administração Pública</span>
+
+</div>
+
+<h3>
+Um funcionário decide criar uma exigência adicional para um
+procedimento público simplesmente porque considera que seria
+“mais conveniente”.
+
+Qual é o principal problema dessa decisão?
+
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q11" value="A" id="q11a">
+<label for="q11a">
+A) A Administração não pode criar exigências arbitrárias sem fundamento jurídico ou administrativo adequado.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q11" value="B" id="q11b">
+<label for="q11b">
+B) Todo funcionário público possui poder legislativo individual.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q11" value="C" id="q11c">
+<label for="q11c">
+C) A conveniência pessoal sempre prevalece sobre a lei.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q11" value="D" id="q11d">
+<label for="q11d">
+D) Os cidadãos não têm direito a conhecer os procedimentos.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 12 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 12</span>
+
+<span class="question-topic">Deontologia</span>
+
+</div>
+
+<div class="context">
+
+Um funcionário percebe que cometeu um erro num processo.
+O erro ainda pode ser corrigido antes de causar consequências
+maiores. Para evitar repreensão, ele considera ocultá-lo.
+
+</div>
+
+<h3>
+Qual conduta demonstra maior responsabilidade profissional?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q12" value="A" id="q12a">
+<label for="q12a">
+A) Ocultar o erro até que alguém descubra.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q12" value="B" id="q12b">
+<label for="q12b">
+B) Alterar os registos para eliminar qualquer evidência.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q12" value="C" id="q12c">
+<label for="q12c">
+C) Comunicar adequadamente o erro e procurar a sua correcção conforme os procedimentos aplicáveis.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q12" value="D" id="q12d">
+<label for="q12d">
+D) Transferir a responsabilidade para um colega.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 13 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 13</span>
+
+<span class="question-topic">Raciocínio Verbal</span>
+
+</div>
+
+<h3>
+Assinale a alternativa que apresenta uma relação de causa e efeito:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q13" value="A" id="q13a">
+<label for="q13a">
+A) O sistema ficou indisponível; por isso, o atendimento foi interrompido.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q13" value="B" id="q13b">
+<label for="q13b">
+B) O sistema ficou indisponível; contudo, o atendimento foi interrompido.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q13" value="C" id="q13c">
+<label for="q13c">
+C) O sistema ficou indisponível; entretanto, o atendimento existia.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q13" value="D" id="q13d">
+<label for="q13d">
+D) O sistema ficou indisponível; igualmente, o funcionário chegou cedo.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 14 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 14</span>
+
+<span class="question-topic">Raciocínio Numérico</span>
+
+</div>
+
+<h3>
+Um candidato acertou 42 questões de uma prova com 60 questões.
+Qual foi a sua taxa de aproveitamento?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q14" value="A" id="q14a">
+<label for="q14a">A) 65%</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q14" value="B" id="q14b">
+<label for="q14b">B) 70%</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q14" value="C" id="q14c">
+<label for="q14c">C) 72%</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q14" value="D" id="q14d">
+<label for="q14d">D) 75%</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 15 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 15</span>
+
+<span class="question-topic">COVID-19 / Saúde Pública</span>
+
+</div>
+
+<h3>
+Uma medida de saúde pública procura reduzir a possibilidade de
+transmissão de um agente infeccioso através da redução da exposição
+entre indivíduos.
+
+Em termos gerais, essa medida enquadra-se principalmente em:
+
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q15" value="A" id="q15a">
+<label for="q15a">A) Prevenção da transmissão.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q15" value="B" id="q15b">
+<label for="q15b">B) Diagnóstico definitivo de todas as doenças.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q15" value="C" id="q15c">
+<label for="q15c">C) Tratamento obrigatório de pessoas saudáveis.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q15" value="D" id="q15d">
+<label for="q15d">D) Exclusão das estatísticas sanitárias.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 16 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 16</span>
+
+<span class="question-topic">Cultura Geral</span>
+
+</div>
+
+<h3>
+Qual instrumento é utilizado para medir a pressão atmosférica?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q16" value="A" id="q16a">
+<label for="q16a">A) Termómetro.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q16" value="B" id="q16b">
+<label for="q16b">B) Barómetro.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q16" value="C" id="q16c">
+<label for="q16c">C) Higrómetro.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q16" value="D" id="q16d">
+<label for="q16d">D) Anemómetro.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 17 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 17</span>
+
+<span class="question-topic">Divisão Territorial</span>
+
+</div>
+
+<h3>
+Uma alteração da divisão político-administrativa de um país pode
+ter consequências sobre:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q17" value="A" id="q17a">
+<label for="q17a">
+A) Organização dos serviços públicos e planeamento territorial.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q17" value="B" id="q17b">
+<label for="q17b">
+B) Apenas a cor dos mapas.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q17" value="C" id="q17c">
+<label for="q17c">
+C) Exclusivamente o clima.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q17" value="D" id="q17d">
+<label for="q17d">
+D) Apenas os nomes das ruas.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 18 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 18</span>
+
+<span class="question-topic">Raciocínio Numérico</span>
+
+</div>
+
+<h3>
+Determine o próximo termo da sequência:
+
+<strong>2, 5, 11, 23, 47, ?</strong>
+
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q18" value="A" id="q18a">
+<label for="q18a">A) 89</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q18" value="B" id="q18b">
+<label for="q18b">B) 93</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q18" value="C" id="q18c">
+<label for="q18c">C) 95</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q18" value="D" id="q18d">
+<label for="q18d">D) 97</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 19 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 19</span>
+
+<span class="question-topic">Estatística</span>
+
+</div>
+
+<h3>
+Cinco funcionários registaram os seguintes números de atendimentos:
+
+<br><br>
+
+<strong>
+12, 15, 18, 20, 25
+</strong>
+
+<br><br>
+
+Qual é a média aritmética?
+
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q19" value="A" id="q19a">
+<label for="q19a">A) 17</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q19" value="B" id="q19b">
+<label for="q19b">B) 18</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q19" value="C" id="q19c">
+<label for="q19c">C) 18,5</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q19" value="D" id="q19d">
+<label for="q19d">D) 19</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- 20 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">Questão 20</span>
+
+<span class="question-topic">Inteligência Artificial</span>
+
+</div>
+
+<div class="context">
+
+Um funcionário utiliza uma ferramenta de IA para elaborar um
+documento administrativo. A ferramenta produz uma referência
+legal que parece correcta, mas o funcionário não verifica a fonte
+antes de inserir a informação no documento oficial.
+
+</div>
+
+<h3>
+Qual é o principal erro cometido?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q20" value="A" id="q20a">
+<label for="q20a">
+A) Utilizar qualquer ferramenta tecnológica é sempre proibido.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q20" value="B" id="q20b">
+<label for="q20b">
+B) Confiar cegamente na saída da IA sem verificar a informação.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q20" value="C" id="q20c">
+<label for="q20c">
+C) Utilizar computadores para produzir documentos.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q20" value="D" id="q20d">
+<label for="q20d">
+D) Consultar legislação antes de escrever.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<div class="submit-area">
+
+<button
+type="button"
+class="btn btn-primary"
+onclick="finalizarProva()">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Entregar Prova
+
+</button>
+
+</div>
+
+</form>
+
+<div id="resultado">
+
+<div class="result-icon">
+
+<i class="fa-solid fa-trophy"></i>
+
+</div>
+
+<h2>Resultado Final</h2>
+
+<div class="resultado-score" id="score">
+0%
+</div>
+
+<p class="resultado-msg" id="mensagem"></p>
+
+<div class="result-details">
+
+<div class="result-box">
+<strong id="acertos">0</strong>
+<span>Acertos</span>
+</div>
+
+<div class="result-box">
+<strong id="erros">0</strong>
+<span>Erros</span>
+</div>
+
+<div class="result-box">
+<strong id="respondidas">0</strong>
+<span>Respondidas</span>
+</div>
+
+<div class="result-box">
+<strong id="brancas">0</strong>
+<span>Em branco</span>
+</div>
+
+</div>
+
+<div class="review" id="review"></div>
+
+<br>
+
+<button
+class="btn btn-primary"
+onclick="location.reload()">
+
+<i class="fa-solid fa-rotate-right"></i>
+
+Fazer novamente
+
+</button>
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+Preparação para o Concurso de Secretário Clínico
+
+<br><br>
+
+Simulado 04 — Nível Muito Difícil
+
+</footer>
+
+<script>
+
+const respostas={
+
+q1:"A",
+q2:"B",
+q3:"C",
+q4:"A",
+q5:"B",
+q6:"A",
+q7:"A",
+q8:"A",
+q9:"C",
+q10:"A",
+q11:"A",
+q12:"C",
+q13:"A",
+q14:"B",
+q15:"A",
+q16:"B",
+q17:"A",
+q18:"C",
+q19:"B",
+q20:"B"
+
+};
+
+
+let segundos=30*60;
+let finalizada=false;
+
+
+const timer=setInterval(()=>{
+
+if(finalizada){
+clearInterval(timer);
+return;
+}
+
+segundos--;
+
+let min=Math.floor(segundos/60);
+let seg=segundos%60;
+
+document.getElementById("tempo").textContent=
+String(min).padStart(2,"0")+":"+
+String(seg).padStart(2,"0");
+
+
+if(segundos<=0){
+
+clearInterval(timer);
+
+finalizarProva(true);
+
+}
+
+},1000);
+
+
+/* PROGRESSO */
+
+document.querySelectorAll(
+'input[type="radio"]'
+).forEach(input=>{
+
+input.addEventListener(
+"change",
+atualizarProgresso
+);
+
+});
+
+
+function atualizarProgresso(){
+
+let total=0;
+
+for(let i=1;i<=20;i++){
+
+if(document.querySelector(
+'input[name="q'+i+'"]:checked'
+)){
+
+total++;
+
+}
+
+}
+
+document.getElementById("contador").textContent=
+total+" / 20";
+
+document.getElementById("progressFill").style.width=
+(total/20*100)+"%";
+
+}
+
+
+/* CORRECÇÃO */
+
+function finalizarProva(tempoEsgotado=false){
+
+if(finalizada){
+return;
+}
+
+finalizada=true;
+
+let acertos=0;
+let erros=0;
+let respondidas=0;
+
+let review="";
+
+
+for(let i=1;i<=20;i++){
+
+let marcada=document.querySelector(
+'input[name="q'+i+'"]:checked'
+);
+
+let resposta=marcada ? marcada.value : null;
+
+let correta=respostas["q"+i];
+
+
+if(resposta){
+
+respondidas++;
+
+}
+
+
+if(resposta===correta){
+
+acertos++;
+
+review+=`
+
+<div class="review-item review-correct">
+
+<strong>Questão ${String(i).padStart(2,"0")}</strong>
+
+<br>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Resposta correcta.
+
+</div>
+
+`;
+
+}else{
+
+erros++;
+
+review+=`
+
+<div class="review-item review-wrong">
+
+<strong>Questão ${String(i).padStart(2,"0")}</strong>
+
+<br>
+
+<i class="fa-solid fa-circle-xmark"></i>
+
+Sua resposta:
+<strong>${resposta || "Não respondida"}</strong>
+
+<br>
+
+Resposta correcta:
+<strong>${correta}</strong>
+
+</div>
+
+`;
+
+}
+
+}
+
+
+let brancas=20-respondidas;
+
+let percentual=Math.round(
+(acertos/20)*100
+);
+
+
+document.getElementById("score").textContent=
+percentual+"%";
+
+document.getElementById("acertos").textContent=
+acertos;
+
+document.getElementById("erros").textContent=
+erros;
+
+document.getElementById("respondidas").textContent=
+respondidas;
+
+document.getElementById("brancas").textContent=
+brancas;
+
+
+let mensagem;
+
+
+if(percentual>=90){
+
+mensagem=
+"Excelente. Este resultado demonstra um domínio muito forte dos conteúdos.";
+
+}else if(percentual>=80){
+
+mensagem=
+"Muito bom. O desempenho é elevado, mas ainda existem pontos que podem ser refinados.";
+
+}else if(percentual>=70){
+
+mensagem=
+"Bom desempenho. Para uma prova competitiva, procure transformar os erros em pontos de estudo.";
+
+}else if(percentual>=60){
+
+mensagem=
+"Desempenho razoável. É necessário reforçar conceitos e praticar questões mais complexas.";
+
+}else{
+
+mensagem=
+"Resultado abaixo do esperado para este nível. Volte às aulas, identifique os temas fracos e tente novamente.";
+
+}
+
+
+if(tempoEsgotado){
+
+mensagem+=
+" O tempo disponível terminou.";
+
+}
+
+
+document.getElementById("mensagem").textContent=
+mensagem;
+
+document.getElementById("review").innerHTML=
+"<h3>Revisão das respostas</h3>"+review;
+
+document.getElementById("resultado").style.display=
+"block";
+
+
+document.querySelectorAll(
+"#provaForm input"
+).forEach(input=>{
+input.disabled=true;
+});
+
+
+document.querySelector(
+".submit-area"
+).style.display="none";
+
+
+document.getElementById("resultado")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+</html>

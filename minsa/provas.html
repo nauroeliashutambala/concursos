@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Provas — Preparação para o Concurso</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,Arial,sans-serif;
+background:#f5f7fa;
+color:#172033;
+line-height:1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.hero{
+background:linear-gradient(
+135deg,
+#020617,
+#172554,
+#450a0a
+);
+color:white;
+padding:60px 20px;
+}
+
+.container{
+width:min(1100px,92%);
+margin:auto;
+}
+
+.back{
+display:inline-flex;
+align-items:center;
+gap:8px;
+color:#cbd5e1;
+text-decoration:none;
+font-size:13px;
+font-weight:800;
+margin-bottom:25px;
+}
+
+.back:hover{
+color:white;
+}
+
+.badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+background:rgba(255,255,255,.1);
+border:1px solid rgba(255,255,255,.15);
+padding:8px 14px;
+border-radius:30px;
+font-size:11px;
+font-weight:900;
+margin-bottom:18px;
+}
+
+.hero h1{
+font-size:clamp(38px,6vw,62px);
+line-height:1.05;
+margin-bottom:15px;
+}
+
+.hero h1 span{
+color:#fbbf24;
+}
+
+.hero p{
+max-width:780px;
+color:#dbe4f0;
+font-size:15px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+main{
+padding:55px 0 80px;
+}
+
+.section-header{
+margin-bottom:30px;
+}
+
+.section-header h2{
+font-size:28px;
+margin-bottom:7px;
+}
+
+.section-header p{
+color:#64748b;
+font-size:14px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.provas-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.prova{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:20px;
+padding:25px;
+box-shadow:0 10px 30px rgba(15,23,42,.06);
+transition:.25s;
+position:relative;
+overflow:hidden;
+}
+
+.prova:hover{
+transform:translateY(-5px);
+box-shadow:0 18px 40px rgba(15,23,42,.11);
+border-color:#fecaca;
+}
+
+.prova-numero{
+position:absolute;
+right:20px;
+top:15px;
+font-size:42px;
+font-weight:900;
+color:#f1f5f9;
+}
+
+.prova-icon{
+width:55px;
+height:55px;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#fef2f2;
+color:#dc2626;
+font-size:22px;
+margin-bottom:18px;
+position:relative;
+z-index:2;
+}
+
+.prova h3{
+font-size:18px;
+margin-bottom:10px;
+position:relative;
+z-index:2;
+}
+
+.prova p{
+font-size:13px;
+color:#64748b;
+margin-bottom:18px;
+}
+
+.prova-info{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.info{
+display:inline-flex;
+align-items:center;
+gap:6px;
+padding:6px 9px;
+border-radius:8px;
+background:#f8fafc;
+color:#475569;
+font-size:10px;
+font-weight:800;
+}
+
+.info i{
+color:#dc2626;
+}
+
+.prova-link{
+display:flex;
+align-items:center;
+justify-content:space-between;
+text-decoration:none;
+background:#dc2626;
+color:white;
+padding:12px 14px;
+border-radius:10px;
+font-size:12px;
+font-weight:900;
+transition:.2s;
+}
+
+.prova-link:hover{
+background:#b91c1c;
+}
+
+.prova-link i{
+transition:.2s;
+}
+
+.prova-link:hover i{
+transform:translateX(4px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+background:#111827;
+color:#9ca3af;
+padding:35px 20px;
+text-align:center;
+font-size:11px;
+}
+
+.footer-title{
+color:white;
+font-weight:900;
+margin-bottom:6px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+.provas-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+padding:45px 20px;
+}
+
+.provas-grid{
+grid-template-columns:1fr;
+}
+
+.prova{
+padding:22px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+<div class="container">
+
+<a href="../index.html" class="back">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Voltar para a página principal
+
+</a>
+
+<br>
+
+<span class="badge">
+
+<i class="fa-solid fa-file-circle-check"></i>
+
+BANCO DE PROVAS
+
+</span>
+
+<h1>
+
+Simulados <span>de Preparação</span>
+
+</h1>
+
+<p>
+
+Teste os seus conhecimentos através de provas progressivas.
+Cada simulado foi desenvolvido para avaliar conhecimentos,
+interpretação, raciocínio verbal, raciocínio numérico,
+deontologia, cultura geral e os demais conteúdos do programa.
+
+</p>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     PROVAS
+===================================================== -->
+
+<main>
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-layer-group"></i>
+
+Lista de Provas
+
+</h2>
+
+<p>
+
+Selecione uma prova para iniciar o simulado.
+
+</p>
+
+</div>
+
+<div class="provas-grid" id="provasGrid">
+
+<!--
+As provas serão geradas automaticamente
+pelo JavaScript.
+-->
+
+</div>
+
+</div>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-title">
+
+Preparação para o Concurso de Secretário Clínico
+
+</div>
+
+Banco de provas e simulados
+
+</footer>
+
+<script>
+
+/*
+=========================================================
+CONFIGURAÇÃO
+=========================================================
+
+Quantidade de provas disponíveis.
+
+Para adicionar novas provas:
+
+1. Crie o arquivo:
+
+/provas/prova_11.html
+
+2. Altere:
+
+const totalProvas = 10;
+
+para:
+
+const totalProvas = 11;
+
+*/
+
+const totalProvas = 10;
+
+
+/*
+=========================================================
+GERAÇÃO DAS PROVAS
+=========================================================
+*/
+
+const provasGrid =
+document.getElementById("provasGrid");
+
+
+for(let i = 1; i <= totalProvas; i++){
+
+/*
+Número formatado:
+
+1  → 01
+2  → 02
+10 → 10
+*/
+
+const numero =
+String(i).padStart(2,"0");
+
+
+/*
+Criação do artigo
+*/
+
+const article =
+document.createElement("article");
+
+article.className = "prova";
+
+
+/*
+Conteúdo do cartão
+*/
+
+article.innerHTML = `
+
+<div class="prova-numero">
+
+${numero}
+
+</div>
+
+
+<div class="prova-icon">
+
+<i class="fa-solid fa-file-lines"></i>
+
+</div>
+
+
+<h3>
+
+Prova ${i}
+
+</h3>
+
+
+<p>
+
+Simulado de preparação para o concurso,
+com questões de múltipla escolha e avaliação
+automática do desempenho.
+
+</p>
+
+
+<div class="prova-info">
+
+<span class="info">
+
+<i class="fa-solid fa-list"></i>
+
+30 questões
+
+</span>
+
+
+<span class="info">
+
+<i class="fa-solid fa-clock"></i>
+
+40 minutos
+
+</span>
+
+
+<span class="info">
+
+<i class="fa-solid fa-signal"></i>
+
+Nível avançado
+
+</span>
+
+</div>
+
+
+<a
+href="provas/prova_${i}.html"
+class="prova-link"
+>
+
+<span>
+
+Iniciar Prova ${i}
+
+</span>
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+`;
+
+
+/*
+Adicionar cartão à página
+*/
+
+provasGrid.appendChild(article);
+
+}
+
+</script>
+
+</body>
+</html>

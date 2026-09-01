@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tema I — Organização da Administração Pública</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.75;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#111827,#1e3a8a,#312e81);
+    color:white;
+    padding:80px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before,
+.hero::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+}
+
+.hero::before{
+    width:500px;
+    height:500px;
+    right:-200px;
+    top:-260px;
+}
+
+.hero::after{
+    width:350px;
+    height:350px;
+    left:-180px;
+    bottom:-230px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#6366f1;
+    padding:9px 17px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(34px,6vw,62px);
+    line-height:1.05;
+    max-width:950px;
+    margin-bottom:22px;
+}
+
+.hero p{
+    max-width:900px;
+    color:#dbeafe;
+    font-size:18px;
+}
+
+/* ================= NAV ================= */
+
+.nav{
+    background:#fff;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-inner{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:12px 0;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#374151;
+    white-space:nowrap;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav a:hover{
+    background:#eef2ff;
+    color:#4338ca;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:55px 0;
+}
+
+.section-title{
+    font-size:32px;
+    line-height:1.2;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.section-subtitle{
+    color:#6b7280;
+    margin-bottom:28px;
+}
+
+/* ================= CARDS ================= */
+
+.card{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+}
+
+.card h3{
+    color:#4338ca;
+    margin-bottom:12px;
+}
+
+.card h4{
+    margin-top:18px;
+    margin-bottom:7px;
+    color:#1f2937;
+}
+
+.icon-title{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:15px;
+}
+
+.icon{
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef2ff;
+    color:#4f46e5;
+    border-radius:13px;
+    font-size:21px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.mini-card{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:23px;
+    box-shadow:0 5px 18px rgba(15,23,42,.04);
+}
+
+.mini-card i{
+    color:#4f46e5;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.mini-card h3{
+    margin-bottom:8px;
+}
+
+/* ================= ALERTS ================= */
+
+.highlight,
+.warning,
+.success,
+.danger{
+    padding:20px;
+    margin:20px 0;
+    border-radius:0 12px 12px 0;
+}
+
+.highlight{
+    background:#eef2ff;
+    border-left:5px solid #4f46e5;
+}
+
+.warning{
+    background:#fffbeb;
+    border-left:5px solid #f59e0b;
+}
+
+.success{
+    background:#f0fdf4;
+    border-left:5px solid #16a34a;
+}
+
+.danger{
+    background:#fef2f2;
+    border-left:5px solid #dc2626;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,
+td{
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+    vertical-align:top;
+}
+
+th{
+    background:#eef2ff;
+    color:#3730a3;
+}
+
+/* ================= QUESTIONS ================= */
+
+.question{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:24px;
+    margin-bottom:18px;
+}
+
+.options{
+    margin-top:15px;
+    display:grid;
+    gap:8px;
+}
+
+.option{
+    padding:10px 13px;
+    background:#f8fafc;
+    border-radius:8px;
+}
+
+.answer{
+    margin-top:15px;
+    padding:13px 15px;
+    border-radius:9px;
+    background:#f0fdf4;
+    color:#166534;
+    font-weight:600;
+}
+
+.term{
+    display:inline-block;
+    background:#eef2ff;
+    color:#3730a3;
+    padding:4px 9px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:800;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#111827;
+    color:#cbd5e1;
+    text-align:center;
+    padding:45px 20px;
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:55px 15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    section{
+        padding:42px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">
+<i class="fa-solid fa-landmark"></i>
+CONCURSO — SECRETÁRIO CLÍNICO DE 3.ª CLASSE
+</span>
+
+<h1>
+I — Noções Gerais sobre a Organização da Administração Pública
+</h1>
+
+<p>
+Estrutura, princípios, órgãos, serviços públicos, Administração
+Central e Local, organização administrativa de Angola e conceitos
+fundamentais para a função pública.
+</p>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+NAV
+===================================================== -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="#introducao">Introdução</a> <a href="#administracao">Administração Pública</a> <a href="#estado">Estado</a> <a href="#principios">Princípios</a> <a href="#organizacao">Organização</a> <a href="#central">Administração Central</a> <a href="#local">Administração Local</a> <a href="#servicos">Serviços Públicos</a> <a href="#funcao">Função Pública</a> <a href="#servidor">Servidor Público</a> <a href="#secretario">Secretário Clínico</a> <a href="#questoes">Questões</a>
+
+</div>
+
+</nav>
+
+<main class="container">
+
+<!-- =====================================================
+1 INTRODUÇÃO
+===================================================== -->
+
+<section id="introducao">
+
+<h2 class="section-title">
+1. Introdução à Administração Pública
+</h2>
+
+<p class="section-subtitle">
+Antes de estudar a estrutura, é necessário compreender o conceito.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+<h3>O que é Administração Pública?</h3>
+
+</div>
+
+<p>
+A <strong>Administração Pública</strong> corresponde ao conjunto
+de órgãos, serviços, entidades, agentes e atividades através dos
+quais o Estado e outras entidades públicas procuram satisfazer
+necessidades coletivas e executar as políticas públicas.
+</p>
+
+<p style="margin-top:15px;">
+Em termos simples, é a estrutura através da qual o poder público
+transforma decisões e políticas em ações e serviços destinados
+à sociedade.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+Para memorizar:
+</strong>
+
+<p style="font-size:21px;font-weight:800;margin-top:8px;">
+
+ADMINISTRAÇÃO PÚBLICA =
+ÓRGÃOS + SERVIÇOS + AGENTES + ATIVIDADES PÚBLICAS
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+2 ADMINISTRAÇÃO PÚBLICA
+===================================================== -->
+
+<section id="administracao">
+
+<h2 class="section-title">
+2. Finalidades da Administração Pública
+</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>Satisfazer necessidades coletivas</h3>
+
+<p>
+Prestar serviços e desenvolver ações destinadas ao interesse da coletividade.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hospital"></i>
+
+<h3>Prestar serviços públicos</h3>
+
+<p>
+Saúde, educação, segurança, justiça, transportes e outros serviços.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+<h3>Executar leis e políticas</h3>
+
+<p>
+Aplicar e executar as normas e políticas aprovadas pelos órgãos competentes.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Promover o desenvolvimento</h3>
+
+<p>
+Contribuir para o desenvolvimento económico e social do país.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+3 ESTADO
+===================================================== -->
+
+<section id="estado">
+
+<h2 class="section-title">
+3. Estado e Administração Pública
+</h2>
+
+<div class="card">
+
+<h3>O que é o Estado?</h3>
+
+<p>
+O <strong>Estado</strong> é uma organização política e jurídica
+soberana que exerce autoridade sobre uma população situada num
+determinado território.
+</p>
+
+<p style="margin-top:15px;">
+Tradicionalmente, são apontados como elementos fundamentais:
+</p>
+
+<ul style="margin:12px 0 0 25px;">
+
+<li><strong>Povo</strong> — conjunto de pessoas ligadas juridicamente ao Estado;</li>
+
+<li><strong>Território</strong> — espaço sobre o qual o Estado exerce soberania;</li>
+
+<li><strong>Soberania</strong> — poder superior de autoridade do Estado;</li>
+
+<li><strong>Governo/poder político</strong> — direção política do Estado.</li>
+
+</ul>
+
+</div>
+
+<div class="warning">
+
+<strong>
+Não confundir:
+</strong>
+
+<p style="margin-top:8px;">
+<strong>Estado</strong> é mais amplo que <strong>Governo</strong>.
+</p>
+
+<p style="margin-top:8px;">
+O Governo é uma das estruturas através das quais se exerce
+a direção política do Estado. A Administração Pública é responsável
+por grande parte da execução administrativa das decisões e políticas públicas.
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+4 PRINCIPIOS
+===================================================== -->
+
+<section id="principios">
+
+<h2 class="section-title">
+4. Princípios Fundamentais da Administração Pública
+</h2>
+
+<p class="section-subtitle">
+Os princípios orientam a atuação da Administração Pública.
+</p>
+
+<div class="card">
+
+<h3>
+1. Princípio da legalidade
+</h3>
+
+<p>
+A Administração Pública deve atuar de acordo com a Constituição,
+as leis e demais normas jurídicas aplicáveis.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+2. Princípio da prossecução do interesse público
+</h3>
+
+<p>
+A atuação administrativa deve procurar satisfazer o interesse
+público e as necessidades coletivas.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+3. Princípio da imparcialidade
+</h3>
+
+<p>
+Os agentes públicos devem atuar de forma objetiva e sem favorecer
+indevidamente interesses particulares.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+4. Princípio da igualdade
+</h3>
+
+<p>
+Os cidadãos devem ser tratados de forma igual perante a Administração,
+sem discriminações arbitrárias.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+5. Princípio da proporcionalidade
+</h3>
+
+<p>
+As medidas administrativas devem ser adequadas e não ultrapassar
+o necessário para alcançar os objetivos legítimos pretendidos.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+6. Princípio da justiça
+</h3>
+
+<p>
+A Administração deve procurar decisões justas e compatíveis
+com o ordenamento jurídico.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+7. Princípio da boa-fé
+</h3>
+
+<p>
+A Administração e os cidadãos devem atuar com correção, confiança
+e lealdade nas relações administrativas.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+8. Princípio da responsabilidade
+</h3>
+
+<p>
+Os agentes e entidades públicas podem responder pelos seus atos
+quando atuam de forma ilícita ou causam danos nos termos da lei.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+Memorização:
+</strong>
+
+<p style="margin-top:8px;font-weight:800;">
+LEGALIDADE → INTERESSE PÚBLICO → IGUALDADE → IMPARCIALIDADE
+→ PROPORCIONALIDADE → JUSTIÇA → BOA-FÉ → RESPONSABILIDADE
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+5 ORGANIZACAO
+===================================================== -->
+
+<section id="organizacao">
+
+<h2 class="section-title">
+5. Organização da Administração Pública
+</h2>
+
+<div class="card">
+
+<p>
+A Administração Pública organiza-se através de diferentes órgãos,
+serviços e entidades, distribuindo competências e responsabilidades.
+</p>
+
+<p style="margin-top:15px;">
+Uma organização administrativa eficiente exige:
+</p>
+
+<ul style="margin:12px 0 0 25px;">
+
+<li>Definição clara de competências;</li>
+<li>Hierarquia quando aplicável;</li>
+<li>Coordenação;</li>
+<li>Descentralização e desconcentração quando previstas;</li>
+<li>Responsabilização;</li>
+<li>Controlo;</li>
+<li>Eficiência na utilização dos recursos públicos.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+6 ADMINISTRACAO CENTRAL
+===================================================== -->
+
+<section id="central">
+
+<h2 class="section-title">
+6. Administração Central do Estado
+</h2>
+
+<div class="card">
+
+<h3>Conceito</h3>
+
+<p>
+A <strong>Administração Central</strong> compreende os órgãos
+e serviços da Administração que exercem competências de âmbito
+nacional, de acordo com a organização do Estado.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-landmark"></i>
+
+<h3>Órgãos centrais</h3>
+
+<p>
+Atuam na definição e execução de políticas de âmbito nacional.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-building"></i>
+
+<h3>Ministérios</h3>
+
+<p>
+Estruturas governamentais responsáveis por determinados setores
+da atividade do Estado.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-sitemap"></i>
+
+<h3>Órgãos e serviços</h3>
+
+<p>
+Executam funções administrativas específicas dentro da estrutura estatal.
+</p>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<strong>Exemplo:</strong>
+
+<p style="margin-top:8px;">
+O <strong>Ministério da Saúde</strong> integra a estrutura da
+Administração Central do Estado e atua no domínio da saúde pública.
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+7 ADMINISTRACAO LOCAL
+===================================================== -->
+
+<section id="local">
+
+<h2 class="section-title">
+7. Administração Local do Estado
+</h2>
+
+<div class="card">
+
+<h3>Conceito</h3>
+
+<p>
+A <strong>Administração Local do Estado</strong> corresponde à
+organização administrativa do Estado no território, permitindo
+a execução das funções administrativas a nível provincial e
+noutros níveis territoriais definidos pela legislação.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Por que existe?</h3>
+
+<p>
+A Administração não pode concentrar todas as suas atividades
+num único ponto. A presença territorial permite aproximar a
+execução administrativa das populações e das necessidades locais.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>
+Atenção:
+</strong>
+
+<p>
+Administração Local do Estado e Administração Autárquica
+<strong>não são exatamente a mesma coisa</strong>.
+</p>
+
+<p style="margin-top:8px;">
+A Administração Local do Estado integra a estrutura do Estado.
+As autarquias locais correspondem a entidades autónomas previstas
+no ordenamento jurídico.
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+8 DESCENTRALIZACAO E DESCONCENTRACAO
+===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+8. Descentralização e Desconcentração
+</h2>
+
+<div class="card">
+
+<h3>Desconcentração administrativa</h3>
+
+<p>
+Consiste na distribuição de competências dentro da própria
+estrutura administrativa do Estado, transferindo ou repartindo
+atribuições para órgãos ou serviços subordinados ou territorialmente
+distribuídos.
+</p>
+
+<div class="highlight">
+
+<strong>
+Palavra-chave:
+</strong>
+
+<p style="font-weight:800;">
+DESCONCENTRAÇÃO = DISTRIBUIR COMPETÊNCIAS DENTRO DA ESTRUTURA DO ESTADO
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Descentralização administrativa</h3>
+
+<p>
+Consiste na atribuição de competências administrativas a entidades
+dotadas de autonomia, nos termos da Constituição e da lei.
+</p>
+
+<div class="highlight">
+
+<strong>
+Palavra-chave:
+</strong>
+
+<p style="font-weight:800;">
+DESCENTRALIZAÇÃO = ATRIBUIÇÃO DE COMPETÊNCIAS A ENTIDADES AUTÓNOMAS
+</p>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<strong>
+Pegadinha de prova:
+</strong>
+
+<p style="margin-top:8px;">
+<strong>Desconcentração ≠ Descentralização.</strong>
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+9 SERVICOS PUBLICOS
+===================================================== -->
+
+<section id="servicos">
+
+<h2 class="section-title">
+9. Serviços Públicos
+</h2>
+
+<div class="card">
+
+<h3>Conceito</h3>
+
+<p>
+Serviço público é uma atividade ou prestação realizada pelo
+Estado ou por entidades públicas, e em determinados casos por
+entidades privadas nos termos legalmente previstos, destinada
+à satisfação de necessidades de interesse público.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>Saúde</h3>
+
+<p>
+Hospitais, centros e postos de saúde e outros serviços sanitários.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-school"></i>
+
+<h3>Educação</h3>
+
+<p>
+Escolas e instituições públicas de ensino.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Segurança</h3>
+
+<p>
+Serviços destinados à proteção e segurança da sociedade.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<h3>Registo e documentação</h3>
+
+<p>
+Serviços administrativos destinados ao cidadão.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+10 FUNCAO PUBLICA
+===================================================== -->
+
+<section id="funcao">
+
+<h2 class="section-title">
+10. Função Pública
+</h2>
+
+<div class="card">
+
+<h3>O que é?</h3>
+
+<p>
+A <strong>Função Pública</strong> está relacionada com o conjunto
+de atividades e relações de trabalho exercidas por agentes que
+prestam serviço ao Estado e às demais entidades públicas,
+nos termos da legislação aplicável.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Objetivo</h3>
+
+<p>
+O objetivo fundamental da função pública é garantir a prestação
+regular e eficiente de serviços ao interesse público.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+O funcionário público não trabalha para interesses pessoais.
+</strong>
+
+<p style="margin-top:8px;">
+A sua atuação deve estar orientada pelo interesse público,
+pela legalidade, responsabilidade e ética profissional.
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+11 AGENTE / FUNCIONARIO
+===================================================== -->
+
+<section id="servidor">
+
+<h2 class="section-title">
+11. Funcionário Público e Agente Público
+</h2>
+
+<div class="card">
+
+<h3>Funcionário público</h3>
+
+<p>
+É o trabalhador integrado na Administração Pública mediante
+uma relação jurídica de emprego público, nos termos definidos
+pela legislação aplicável.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Agente público</h3>
+
+<p>
+A expressão <strong>agente público</strong> pode ter alcance mais
+amplo, abrangendo pessoas que exercem funções públicas em
+diferentes condições jurídicas.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>
+Para a prova:
+</strong>
+
+<p>
+Não assumas que <strong>todo agente público é necessariamente
+funcionário público</strong>. O conceito de agente público pode
+ser mais abrangente.
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+12 DIREITOS E DEVERES
+===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+12. Deveres Gerais do Funcionário Público
+</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+<h3>Legalidade</h3>
+
+<p>
+Cumprir a Constituição, leis e demais normas aplicáveis.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<h3>Probidade</h3>
+
+<p>
+Atuar com honestidade, integridade e correção.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-lock"></i>
+
+<h3>Sigilo</h3>
+
+<p>
+Proteger informações que devam permanecer confidenciais.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>Assiduidade</h3>
+
+<p>
+Cumprir regularmente o horário e as obrigações funcionais.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-handshake"></i>
+
+<h3>Respeito</h3>
+
+<p>
+Tratar colegas e cidadãos com respeito e profissionalismo.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-check"></i>
+
+<h3>Responsabilidade</h3>
+
+<p>
+Responder pelos atos praticados no exercício das funções.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+13 SECRETARIO CLINICO
+===================================================== -->
+
+<section id="secretario">
+
+<h2 class="section-title">
+13. O Secretário Clínico dentro da Administração Pública
+</h2>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-user-nurse"></i>
+</div>
+
+<h3>Função administrativa na saúde</h3>
+
+</div>
+
+<p>
+O Secretário Clínico exerce funções administrativas ligadas ao
+funcionamento dos serviços de saúde, contribuindo para a organização
+e circulação adequada da informação administrativa e clínica,
+dentro dos limites das suas competências.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<h3>Documentação</h3>
+
+<p>
+Organização e tratamento da documentação relacionada com os serviços.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>Atendimento</h3>
+
+<p>
+Apoio administrativo e atendimento dos utentes.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>Registos</h3>
+
+<p>
+Registo e gestão administrativa de informações.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-lock"></i>
+
+<h3>Confidencialidade</h3>
+
+<p>
+Proteção das informações a que tenha acesso no exercício da função.
+</p>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<strong>
+Ponto crítico:
+</strong>
+
+<p style="margin-top:8px;">
+O Secretário Clínico pode ter acesso a informações pessoais
+e de saúde dos utentes. Isso torna a <strong>confidencialidade,
+ética, segurança da informação e proteção dos dados</strong>
+particularmente importantes.
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+14 ORGANIZACAO RESUMIDA
+===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+14. Mapa Mental do Tema
+</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Conceito</th>
+<th>Ideia principal</th>
+</tr>
+
+<tr>
+<td>Estado</td>
+<td>Organização política e jurídica soberana.</td>
+</tr>
+
+<tr>
+<td>Administração Pública</td>
+<td>Estrutura e atividade administrativa destinada ao interesse público.</td>
+</tr>
+
+<tr>
+<td>Administração Central</td>
+<td>Órgãos e serviços de âmbito nacional.</td>
+</tr>
+
+<tr>
+<td>Administração Local</td>
+<td>Execução administrativa do Estado no território.</td>
+</tr>
+
+<tr>
+<td>Serviço Público</td>
+<td>Atividade destinada à satisfação de necessidades de interesse público.</td>
+</tr>
+
+<tr>
+<td>Função Pública</td>
+<td>Atividades e relações de trabalho no âmbito da Administração Pública.</td>
+</tr>
+
+<tr>
+<td>Desconcentração</td>
+<td>Distribuição de competências dentro da estrutura administrativa.</td>
+</tr>
+
+<tr>
+<td>Descentralização</td>
+<td>Atribuição de competências a entidades com autonomia.</td>
+</tr>
+
+<tr>
+<td>Interesse público</td>
+<td>Necessidades e interesses da coletividade.</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+15 DIFERENCAS
+===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+15. Diferenças que podem aparecer na prova
+</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Conceito A</th>
+<th>Conceito B</th>
+<th>Diferença</th>
+</tr>
+
+<tr>
+<td>Estado</td>
+<td>Governo</td>
+<td>O Estado é permanente e mais amplo; o Governo exerce a direção política em determinado período.</td>
+</tr>
+
+<tr>
+<td>Administração Central</td>
+<td>Administração Local</td>
+<td>Uma exerce competências de âmbito nacional; a outra executa funções administrativas territorialmente.</td>
+</tr>
+
+<tr>
+<td>Desconcentração</td>
+<td>Descentralização</td>
+<td>Na desconcentração há distribuição interna de competências; na descentralização há atribuição a entidades autónomas.</td>
+</tr>
+
+<tr>
+<td>Funcionário público</td>
+<td>Agente público</td>
+<td>Agente público pode ser conceito mais amplo.</td>
+</tr>
+
+<tr>
+<td>Interesse público</td>
+<td>Interesse particular</td>
+<td>O primeiro está ligado às necessidades coletivas; o segundo aos interesses individuais ou privados.</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+16 QUESTOES
+===================================================== -->
+
+<section id="questoes">
+
+<h2 class="section-title">
+16. Questões de Concurso
+</h2>
+
+<p class="section-subtitle">
+Treina estas perguntas até conseguires responder sem consultar a aula.
+</p>
+
+<div class="question">
+
+<strong>
+1. O que se entende por Administração Pública?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Apenas os ministros do Governo</div>
+<div class="option">B) Conjunto de órgãos, serviços, agentes e atividades administrativas públicas</div>
+<div class="option">C) Apenas empresas privadas</div>
+<div class="option">D) Apenas os tribunais</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+2. Qual é uma das principais finalidades da Administração Pública?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Obter lucro para os funcionários</div>
+<div class="option">B) Satisfazer necessidades coletivas e prosseguir o interesse público</div>
+<div class="option">C) Favorecer empresas privadas</div>
+<div class="option">D) Substituir todas as organizações privadas</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+3. Qual dos seguintes é um princípio fundamental da atuação administrativa?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Arbitrariedade</div>
+<div class="option">B) Legalidade</div>
+<div class="option">C) Favoritismo</div>
+<div class="option">D) Interesse pessoal</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+4. O que significa o princípio da legalidade?
+</strong>
+
+<div class="options">
+
+<div class="option">A) O funcionário pode fazer tudo o que quiser</div>
+<div class="option">B) A Administração deve atuar de acordo com a lei e demais normas aplicáveis</div>
+<div class="option">C) Apenas os cidadãos devem cumprir a lei</div>
+<div class="option">D) A Administração não está sujeita à Constituição</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+5. A Administração Pública deve prosseguir principalmente:
+</strong>
+
+<div class="options">
+
+<div class="option">A) O interesse pessoal dos funcionários</div>
+<div class="option">B) O interesse público</div>
+<div class="option">C) O interesse de empresas privadas</div>
+<div class="option">D) O interesse de grupos específicos</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+6. O que caracteriza a desconcentração administrativa?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Distribuição de competências dentro da própria estrutura administrativa</div>
+<div class="option">B) Privatização dos serviços públicos</div>
+<div class="option">C) Extinção dos órgãos públicos</div>
+<div class="option">D) Transferência para empresas estrangeiras</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+7. A descentralização administrativa está relacionada com:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Atribuição de competências a entidades dotadas de autonomia</div>
+<div class="option">B) Extinção das entidades públicas</div>
+<div class="option">C) Concentração absoluta de competências</div>
+<div class="option">D) Eliminação dos serviços locais</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+8. Qual é a diferença fundamental entre desconcentração e descentralização?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Não existe diferença</div>
+<div class="option">B) Desconcentração é interna; descentralização envolve entidades autónomas</div>
+<div class="option">C) Ambas significam privatização</div>
+<div class="option">D) Descentralização significa concentração de poderes</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+9. Qual dos seguintes é um serviço público?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Serviço de saúde público</div>
+<div class="option">B) Uma atividade exclusivamente pessoal</div>
+<div class="option">C) Uma reunião familiar</div>
+<div class="option">D) Um negócio particular sem função pública</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+10. O funcionário público deve orientar a sua atuação principalmente por:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Interesse pessoal</div>
+<div class="option">B) Interesse público e cumprimento da lei</div>
+<div class="option">C) Favoritismo</div>
+<div class="option">D) Vantagem financeira pessoal</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+11. Qual é uma obrigação importante do Secretário Clínico?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Divulgar livremente os dados dos utentes</div>
+<div class="option">B) Preservar a confidencialidade das informações a que tenha acesso</div>
+<div class="option">C) Ignorar os procedimentos administrativos</div>
+<div class="option">D) Alterar documentos sem autorização</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+12. Estado e Governo são conceitos exatamente iguais?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Sim</div>
+<div class="option">B) Não</div>
+<div class="option">C) Apenas em hospitais</div>
+<div class="option">D) Apenas em períodos eleitorais</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+13. O princípio da imparcialidade exige que o agente público:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Favoreça familiares</div>
+<div class="option">B) Atue de forma objetiva e sem favoritismo indevido</div>
+<div class="option">C) Ignore as leis</div>
+<div class="option">D) Priorize os seus interesses</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+14. O princípio da igualdade significa que:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Todos devem ser tratados de forma arbitrariamente diferente</div>
+<div class="option">B) Os cidadãos devem ser tratados de forma igual, sem discriminações arbitrárias</div>
+<div class="option">C) Funcionários podem favorecer amigos</div>
+<div class="option">D) Apenas funcionários públicos têm direitos</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+15. Qual destas palavras melhor resume a finalidade da Administração Pública?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Interesse público</div>
+<div class="option">B) Lucro pessoal</div>
+<div class="option">C) Favoritismo</div>
+<div class="option">D) Privilégio</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist de domínio
+</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>☐ Sei definir Administração Pública.</li>
+
+<li>☐ Sei explicar o interesse público.</li>
+
+<li>☐ Sei diferenciar Estado e Governo.</li>
+
+<li>☐ Conheço os principais princípios administrativos.</li>
+
+<li>☐ Sei explicar o princípio da legalidade.</li>
+
+<li>☐ Sei diferenciar Administração Central e Local.</li>
+
+<li>☐ Sei diferenciar desconcentração e descentralização.</li>
+
+<li>☐ Sei explicar o conceito de serviço público.</li>
+
+<li>☐ Sei o que significa função pública.</li>
+
+<li>☐ Sei diferenciar funcionário público e agente público.</li>
+
+<li>☐ Conheço deveres básicos do funcionário.</li>
+
+<li>☐ Sei relacionar a função do Secretário Clínico com a Administração Pública.</li>
+
+<li>☐ Sei explicar por que a confidencialidade é importante na função.</li>
+
+</ul>
+
+</div>
+
+<!-- RESUMO -->
+
+<div class="success">
+
+<h3>
+<i class="fa-solid fa-star"></i>
+Resumo de 30 segundos
+</h3>
+
+<p style="font-size:19px;font-weight:800;margin-top:10px;">
+
+ADMINISTRAÇÃO PÚBLICA → INTERESSE PÚBLICO → LEGALIDADE
+→ ÓRGÃOS → SERVIÇOS → AGENTES → RESPONSABILIDADE
+
+</p>
+
+<p style="margin-top:12px;">
+
+<strong>
+Desconcentração = distribuição interna de competências.
+</strong>
+<br>
+
+<strong>
+Descentralização = competências atribuídas a entidades autónomas.
+</strong>
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong>
+</p>
+
+<p style="margin-top:8px;">
+Tema I — Noções Gerais sobre a Organização da Administração Pública
+</p>
+
+<p style="margin-top:15px;font-size:13px;">
+Estude • Memorize • Revise • Resolva questões
+</p>
+
+</footer>
+
+</body>
+</html>

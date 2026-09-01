@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aula VI — Cultura Geral | Secretário Clínico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.7;
+}
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    padding:70px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+}
+
+.hero:before{
+    width:300px;
+    height:300px;
+    right:-100px;
+    top:-100px;
+}
+
+.hero:after{
+    width:200px;
+    height:200px;
+    left:-80px;
+    bottom:-80px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    background:#2563eb;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(32px,6vw,58px);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:750px;
+    color:#dbeafe;
+    font-size:18px;
+}
+
+/* NAV */
+
+.nav{
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-inner{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:12px 0;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#334155;
+    white-space:nowrap;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav a:hover{
+    background:#eff6ff;
+    color:#1d4ed8;
+}
+
+/* SECTIONS */
+
+section{
+    padding:55px 0;
+}
+
+.section-title{
+    font-size:30px;
+    margin-bottom:10px;
+    color:#0f172a;
+}
+
+.section-subtitle{
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+/* CARDS */
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+    border:1px solid #e8edf5;
+}
+
+.card h3{
+    color:#1d4ed8;
+    margin-bottom:12px;
+}
+
+.icon-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:15px;
+}
+
+.icon{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eff6ff;
+    color:#2563eb;
+    border-radius:12px;
+    font-size:20px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.mini-card{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:22px;
+}
+
+.mini-card i{
+    color:#2563eb;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+/* HIGHLIGHT */
+
+.highlight{
+    border-left:5px solid #2563eb;
+    background:#eff6ff;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.warning{
+    border-left:5px solid #f59e0b;
+    background:#fffbeb;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.success{
+    border-left:5px solid #16a34a;
+    background:#f0fdf4;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    background:white;
+}
+
+th,td{
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+}
+
+th{
+    background:#eff6ff;
+    color:#1e3a8a;
+}
+
+/* QUESTION */
+
+.question{
+    background:white;
+    padding:24px;
+    border-radius:16px;
+    border:1px solid #e2e8f0;
+    margin-bottom:18px;
+}
+
+.question strong{
+    display:block;
+    margin-bottom:12px;
+}
+
+.answer{
+    background:#f0fdf4;
+    padding:12px 15px;
+    border-radius:8px;
+    color:#166534;
+    font-weight:600;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0f172a;
+    color:#cbd5e1;
+    padding:40px 20px;
+    text-align:center;
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:50px 15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    section{
+        padding:40px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">
+<i class="fa-solid fa-book-open"></i>
+CONCURSO — SECRETÁRIO CLÍNICO DE 3.ª CLASSE
+</span>
+
+<h1>VI — Cultura Geral</h1>
+
+<p>
+Aula completa de Cultura Geral para preparação de concursos públicos,
+com foco em conhecimentos fundamentais sobre Angola, África, mundo,
+ciência, sociedade, história, geografia, instituições e atualidade.
+</p>
+
+</div>
+
+</header>
+
+<!-- NAVEGAÇÃO -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="#introducao">Introdução</a> <a href="#angola">Angola</a> <a href="#africa">África</a> <a href="#mundo">Mundo</a> <a href="#historia">História</a> <a href="#geografia">Geografia</a> <a href="#ciencia">Ciência</a> <a href="#sociedade">Sociedade</a> <a href="#revisao">Revisão</a>
+
+</div>
+
+</nav>
+
+<main class="container">
+
+<!-- INTRODUÇÃO -->
+
+<section id="introducao">
+
+<h2 class="section-title">1. O que é Cultura Geral?</h2>
+
+<p class="section-subtitle">
+Compreender o conceito é o primeiro passo para estudar corretamente.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-brain"></i>
+</div>
+
+<h3>Conceito</h3>
+
+</div>
+
+<p>
+<strong>Cultura geral</strong> é o conjunto de conhecimentos básicos e
+diversificados que uma pessoa possui sobre diferentes áreas da vida,
+incluindo história, geografia, ciência, política, sociedade, economia,
+arte, tecnologia, ambiente e acontecimentos relevantes.
+</p>
+
+<p style="margin-top:15px;">
+Num concurso público, cultura geral serve para avaliar se o candidato
+possui conhecimentos fundamentais sobre o país e sobre o mundo.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+<i class="fa-solid fa-lightbulb"></i>
+Atenção para o concurso:
+</strong>
+
+<p>
+Cultura Geral não significa decorar absolutamente tudo.
+O objetivo é dominar os factos fundamentais, conceitos importantes,
+personalidades, instituições, datas históricas relevantes e acontecimentos
+que tenham importância nacional ou internacional.
+</p>
+
+</div>
+
+</section>
+
+<!-- ANGOLA -->
+
+<section id="angola">
+
+<h2 class="section-title">2. Cultura Geral de Angola</h2>
+
+<p class="section-subtitle">
+Conhecimentos fundamentais sobre a República de Angola.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-flag"></i>
+</div>
+
+<h3>Identidade Nacional</h3>
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Elemento</th>
+<th>Informação</th>
+</tr>
+
+<tr>
+<td>Nome oficial</td>
+<td>República de Angola</td>
+</tr>
+
+<tr>
+<td>Capital</td>
+<td>Luanda</td>
+</tr>
+
+<tr>
+<td>Continente</td>
+<td>África</td>
+</tr>
+
+<tr>
+<td>Moeda</td>
+<td>Kwanza (Kz)</td>
+</tr>
+
+<tr>
+<td>Língua oficial</td>
+<td>Português</td>
+</tr>
+
+<tr>
+<td>Independência</td>
+<td>11 de Novembro de 1975</td>
+</tr>
+
+<tr>
+<td>Hino nacional</td>
+<td>“Angola Avante”</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-landmark"></i>
+
+<h3>Capital</h3>
+
+<p>
+Luanda é a capital e um dos principais centros políticos,
+económicos e administrativos de Angola.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-coins"></i>
+
+<h3>Moeda</h3>
+
+<p>
+A moeda oficial de Angola é o Kwanza, cujo código monetário
+internacional é AOA.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-language"></i>
+
+<h3>Língua oficial</h3>
+
+<p>
+O português é a língua oficial da República de Angola.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h3>Independência</h3>
+
+<p>
+Angola tornou-se independente de Portugal em 11 de Novembro de 1975.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Principais rios de Angola</h3>
+
+<p>
+Entre os rios importantes do território angolano encontram-se:
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Kwanza</li>
+<li>Cunene</li>
+<li>Cuango</li>
+<li>Cuando</li>
+<li>Catumbela</li>
+<li>Longa</li>
+<li>Keve</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Principais recursos naturais</h3>
+
+<p>
+Angola possui importantes recursos naturais, entre os quais:
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Petróleo</li>
+<li>Diamantes</li>
+<li>Ferro</li>
+<li>Gás natural</li>
+<li>Ouro</li>
+<li>Recursos florestais</li>
+<li>Recursos hídricos</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ÁFRICA -->
+
+<section id="africa">
+
+<h2 class="section-title">3. África</h2>
+
+<p class="section-subtitle">
+Conhecimentos essenciais sobre o continente africano.
+</p>
+
+<div class="card">
+
+<h3>Características fundamentais</h3>
+
+<p>
+África é o segundo maior continente do mundo em área e população,
+sendo constituída por numerosos países e apresentando enorme diversidade
+cultural, linguística, étnica, climática e geográfica.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-earth-africa"></i>
+
+<h3>Maior país africano</h3>
+
+<p>
+A Argélia é o maior país de África em área territorial.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-city"></i>
+
+<h3>País mais populoso</h3>
+
+<p>
+A Nigéria é o país mais populoso do continente africano.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-water"></i>
+
+<h3>Rio Nilo</h3>
+
+<p>
+O Nilo é um dos rios mais importantes do continente africano.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<h3>União Africana</h3>
+
+<p>
+A União Africana é uma organização continental que promove
+a cooperação e integração entre os Estados africanos.
+</p>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<strong>Para memorizar:</strong>
+
+<p>
+África → continente de grande diversidade → numerosos Estados →
+União Africana → importantes recursos naturais → grande diversidade
+cultural e linguística.
+</p>
+
+</div>
+
+</section>
+
+<!-- MUNDO -->
+
+<section id="mundo">
+
+<h2 class="section-title">4. Conhecimentos Gerais sobre o Mundo</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-globe"></i>
+
+<h3>Continentes</h3>
+
+<p>
+Os continentes são grandes massas terrestres separadas por oceanos
+e outras características geográficas.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-water"></i>
+
+<h3>Oceanos</h3>
+
+<p>
+Os principais oceanos são Pacífico, Atlântico, Índico, Glacial Ártico
+e Glacial Antártico.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<h3>ONU</h3>
+
+<p>
+A Organização das Nações Unidas promove a cooperação internacional,
+a paz e a segurança entre os países.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-handshake"></i>
+
+<h3>Cooperação internacional</h3>
+
+<p>
+Os Estados cooperam em áreas como saúde, segurança, educação,
+economia, ambiente e desenvolvimento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HISTÓRIA -->
+
+<section id="historia">
+
+<h2 class="section-title">5. História</h2>
+
+<p class="section-subtitle">
+Datas e acontecimentos que o candidato deve conhecer.
+</p>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Data</th>
+<th>Acontecimento</th>
+</tr>
+
+<tr>
+<td>1884–1885</td>
+<td>Conferência de Berlim, relacionada à partilha colonial de África.</td>
+</tr>
+
+<tr>
+<td>1914–1918</td>
+<td>Primeira Guerra Mundial.</td>
+</tr>
+
+<tr>
+<td>1939–1945</td>
+<td>Segunda Guerra Mundial.</td>
+</tr>
+
+<tr>
+<td>1945</td>
+<td>Criação da Organização das Nações Unidas.</td>
+</tr>
+
+<tr>
+<td>1975</td>
+<td>Independência de Angola.</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+<strong>
+<i class="fa-solid fa-triangle-exclamation"></i>
+Não confundir:
+</strong>
+
+<p>
+A Primeira Guerra Mundial ocorreu entre <strong>1914 e 1918</strong>,
+enquanto a Segunda Guerra Mundial ocorreu entre
+<strong>1939 e 1945</strong>.
+</p>
+
+</div>
+
+</section>
+
+<!-- GEOGRAFIA -->
+
+<section id="geografia">
+
+<h2 class="section-title">6. Geografia</h2>
+
+<div class="card">
+
+<h3>Conceitos fundamentais</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li><strong>Latitude:</strong> distância angular em relação ao Equador.</li>
+
+<li><strong>Longitude:</strong> distância angular em relação ao meridiano de Greenwich.</li>
+
+<li><strong>Equador:</strong> linha imaginária que divide a Terra em hemisfério Norte e Sul.</li>
+
+<li><strong>Meridiano de Greenwich:</strong> referência para a longitude.</li>
+
+<li><strong>Clima:</strong> comportamento médio das condições atmosféricas durante longos períodos.</li>
+
+<li><strong>Tempo atmosférico:</strong> estado momentâneo da atmosfera.</li>
+
+</ul>
+
+</div>
+
+<div class="highlight">
+
+<strong>Questão clássica:</strong>
+
+<p>
+Qual é a diferença entre tempo e clima?
+</p>
+
+<p>
+<strong>Resposta:</strong> tempo refere-se às condições atmosféricas
+num determinado momento ou período curto; clima refere-se ao comportamento
+médio dessas condições durante longos períodos.
+</p>
+
+</div>
+
+</section>
+
+<!-- CIÊNCIA -->
+
+<section id="ciencia">
+
+<h2 class="section-title">7. Ciência e Tecnologia</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-atom"></i>
+
+<h3>Física</h3>
+
+<p>
+Estuda fenómenos relacionados com matéria, energia, movimento,
+forças e interações.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-flask"></i>
+
+<h3>Química</h3>
+
+<p>
+Estuda a matéria, a sua composição, propriedades e transformações.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-dna"></i>
+
+<h3>Biologia</h3>
+
+<p>
+Estuda os seres vivos e os fenómenos relacionados com a vida.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h3>Tecnologia</h3>
+
+<p>
+Aplicação de conhecimentos científicos e técnicos para resolver
+problemas e criar ferramentas, processos e sistemas.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Revolução tecnológica</h3>
+
+<p>
+A sociedade contemporânea é profundamente influenciada pelas tecnologias
+digitais. Computadores, smartphones, Internet, inteligência artificial,
+redes de comunicação e sistemas de informação transformaram a educação,
+saúde, administração pública, comércio e comunicação.
+</p>
+
+</div>
+
+</section>
+
+<!-- SOCIEDADE -->
+
+<section id="sociedade">
+
+<h2 class="section-title">8. Sociedade e Cidadania</h2>
+
+<div class="card">
+
+<h3>Cidadania</h3>
+
+<p>
+Cidadania corresponde à participação do indivíduo na sociedade,
+incluindo o exercício de direitos e o cumprimento de deveres.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+<h3>Direitos</h3>
+
+<p>
+São garantias reconhecidas ao indivíduo para assegurar dignidade,
+liberdade e participação social.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-list-check"></i>
+
+<h3>Deveres</h3>
+
+<p>
+São responsabilidades que devem ser cumpridas pelo cidadão perante
+a sociedade e o Estado.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-people-group"></i>
+
+<h3>Sociedade</h3>
+
+<p>
+Conjunto de pessoas que convivem e estabelecem relações,
+instituições, normas e valores.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hand-holding-heart"></i>
+
+<h3>Solidariedade</h3>
+
+<p>
+Valor social relacionado com a cooperação e apoio entre indivíduos
+e grupos.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SAÚDE -->
+
+<section>
+
+<h2 class="section-title">9. Cultura Geral e Saúde</h2>
+
+<div class="card">
+
+<h3>Conhecimentos básicos</h3>
+
+<p>
+Como candidato a uma função de Secretário Clínico, é particularmente
+importante possuir conhecimentos gerais sobre saúde pública.
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Prevenção de doenças</li>
+<li>Higiene pessoal e coletiva</li>
+<li>Vacinação</li>
+<li>Educação sanitária</li>
+<li>Promoção da saúde</li>
+<li>Prevenção de epidemias</li>
+<li>Importância dos serviços de saúde</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<strong>
+<i class="fa-solid fa-circle-check"></i>
+Ponto estratégico:
+</strong>
+
+<p>
+A cultura geral do candidato deve estar relacionada com a realidade
+da função. Para Secretário Clínico, conhecimentos sobre saúde,
+administração, cidadania, ética, sociedade e comunicação têm especial
+importância.
+</p>
+
+</div>
+
+</section>
+
+<!-- REVISÃO -->
+
+<section id="revisao">
+
+<h2 class="section-title">10. Revisão para o Concurso</h2>
+
+<p class="section-subtitle">
+Teste rapidamente os seus conhecimentos.
+</p>
+
+<div class="question">
+
+<strong>
+1. Qual é a capital de Angola?
+</strong>
+
+<div class="answer">
+Resposta: Luanda.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+2. Qual é a moeda oficial de Angola?
+</strong>
+
+<div class="answer">
+Resposta: Kwanza.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+3. Em que data Angola conquistou a independência?
+</strong>
+
+<div class="answer">
+Resposta: 11 de Novembro de 1975.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+4. Qual é a língua oficial de Angola?
+</strong>
+
+<div class="answer">
+Resposta: Português.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+5. Qual é o maior país africano em área territorial?
+</strong>
+
+<div class="answer">
+Resposta: Argélia.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+6. Qual é o país mais populoso de África?
+</strong>
+
+<div class="answer">
+Resposta: Nigéria.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+7. Em que período ocorreu a Primeira Guerra Mundial?
+</strong>
+
+<div class="answer">
+Resposta: 1914–1918.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+8. Em que período ocorreu a Segunda Guerra Mundial?
+</strong>
+
+<div class="answer">
+Resposta: 1939–1945.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+9. Qual é a diferença entre tempo atmosférico e clima?
+</strong>
+
+<div class="answer">
+Resposta: tempo refere-se às condições atmosféricas de curto prazo;
+clima refere-se ao comportamento médio dessas condições durante longos períodos.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+10. O que é cidadania?
+</strong>
+
+<div class="answer">
+Resposta: é a condição de participação do indivíduo na sociedade,
+envolvendo direitos e deveres.
+</div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist de estudo
+</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>☐ Conheço os principais símbolos nacionais de Angola.</li>
+
+<li>☐ Sei a data da independência de Angola.</li>
+
+<li>☐ Sei a capital e a moeda nacional.</li>
+
+<li>☐ Conheço os principais elementos geográficos de Angola.</li>
+
+<li>☐ Conheço informações básicas sobre África.</li>
+
+<li>☐ Sei diferenciar Primeira e Segunda Guerra Mundial.</li>
+
+<li>☐ Conheço conceitos básicos de geografia.</li>
+
+<li>☐ Conheço conceitos básicos de ciência e tecnologia.</li>
+
+<li>☐ Compreendo cidadania, direitos e deveres.</li>
+
+<li>☐ Consigo responder perguntas gerais sobre saúde e sociedade.</li>
+
+</ul>
+
+</div>
+
+<div class="highlight">
+
+<h3>
+<i class="fa-solid fa-star"></i>
+Regra de ouro para esta matéria
+</h3>
+
+<p>
+Em Cultura Geral, procure memorizar primeiro os conhecimentos
+<strong>nacionais</strong>, depois os conhecimentos sobre
+<strong>África</strong> e, por fim, os conhecimentos
+<strong>internacionais</strong>.
+</p>
+
+<p style="margin-top:10px;">
+Para concursos públicos, fatos relacionados com Angola tendem a ser
+mais relevantes do que curiosidades internacionais de pouca importância.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+<strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong>
+</p>
+
+<p style="margin-top:8px;">
+Tema VI — Cultura Geral
+</p>
+
+<p style="margin-top:15px;font-size:13px;">
+Estude • Revise • Pratique • Repita
+</p>
+
+</footer>
+
+</body>
+</html>

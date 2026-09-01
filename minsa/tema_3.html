@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema III — Raciocínio Verbal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Inter,Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+line-height:1.75
+}
+
+.container{
+width:min(1150px,92%);
+margin:auto
+}
+
+.hero{
+background:linear-gradient(135deg,#111827,#312e81,#4f46e5);
+color:white;
+padding:75px 20px;
+position:relative;
+overflow:hidden
+}
+
+.hero-content{position:relative;z-index:2}
+
+.badge{
+display:inline-flex;
+gap:8px;
+align-items:center;
+background:#6366f1;
+padding:9px 16px;
+border-radius:30px;
+font-size:13px;
+font-weight:800;
+margin-bottom:22px
+}
+
+.hero h1{
+font-size:clamp(36px,6vw,62px);
+line-height:1.08;
+margin-bottom:20px
+}
+
+.hero p{
+font-size:18px;
+color:#dbeafe;
+max-width:850px
+}
+
+.nav{
+background:#fff;
+border-bottom:1px solid #e5e7eb;
+position:sticky;
+top:0;
+z-index:100
+}
+
+.nav-inner{
+display:flex;
+gap:7px;
+overflow-x:auto;
+padding:12px 0
+}
+
+.nav a{
+white-space:nowrap;
+text-decoration:none;
+color:#374151;
+padding:9px 13px;
+border-radius:8px;
+font-size:13px;
+font-weight:700
+}
+
+.nav a:hover{
+background:#eef2ff;
+color:#4338ca
+}
+
+section{padding:55px 0}
+
+.section-title{
+font-size:32px;
+line-height:1.2;
+margin-bottom:8px;
+color:#111827
+}
+
+.section-subtitle{
+color:#6b7280;
+margin-bottom:28px
+}
+
+.card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:18px;
+padding:28px;
+margin-bottom:22px;
+box-shadow:0 8px 25px rgba(15,23,42,.06)
+}
+
+.card h3{
+color:#4338ca;
+margin-bottom:12px
+}
+
+.card h4{
+margin-top:18px;
+margin-bottom:8px
+}
+
+.icon-title{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:15px
+}
+
+.icon{
+width:48px;
+height:48px;
+border-radius:13px;
+background:#eef2ff;
+color:#4f46e5;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:21px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px
+}
+
+.mini-card{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:16px;
+padding:23px;
+box-shadow:0 5px 18px rgba(15,23,42,.04)
+}
+
+.mini-card i{
+font-size:25px;
+color:#4f46e5;
+margin-bottom:12px
+}
+
+.mini-card h3{margin-bottom:8px}
+
+.highlight,.warning,.success,.danger{
+padding:20px;
+border-radius:0 12px 12px 0;
+margin:20px 0
+}
+
+.highlight{
+background:#eef2ff;
+border-left:5px solid #4f46e5
+}
+
+.warning{
+background:#fffbeb;
+border-left:5px solid #f59e0b
+}
+
+.success{
+background:#f0fdf4;
+border-left:5px solid #16a34a
+}
+
+.danger{
+background:#fef2f2;
+border-left:5px solid #dc2626
+}
+
+.example{
+background:#f8fafc;
+border:1px dashed #cbd5e1;
+padding:18px;
+border-radius:12px;
+margin-top:15px
+}
+
+.example strong{color:#4338ca}
+
+ul,ol{margin-left:25px}
+
+table{
+width:100%;
+border-collapse:collapse
+}
+
+th,td{
+padding:14px;
+border-bottom:1px solid #e5e7eb;
+text-align:left;
+vertical-align:top
+}
+
+th{
+background:#eef2ff;
+color:#3730a3
+}
+
+.table-wrap{
+overflow-x:auto
+}
+
+.question{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:16px;
+padding:24px;
+margin-bottom:18px
+}
+
+.options{
+display:grid;
+gap:8px;
+margin-top:15px
+}
+
+.option{
+background:#f8fafc;
+padding:10px 13px;
+border-radius:8px
+}
+
+.answer{
+margin-top:15px;
+padding:14px;
+background:#f0fdf4;
+color:#166534;
+border-radius:9px;
+font-weight:600
+}
+
+.term{
+display:inline-block;
+background:#eef2ff;
+color:#3730a3;
+padding:4px 9px;
+border-radius:6px;
+font-size:13px;
+font-weight:800
+}
+
+footer{
+background:#111827;
+color:#cbd5e1;
+padding:45px 20px;
+text-align:center
+}
+
+@media(max-width:600px){
+.hero{padding:55px 15px}
+.card{padding:20px}
+section{padding:42px 0}
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="hero">
+<div class="container hero-content">
+
+<span class="badge">
+<i class="fa-solid fa-language"></i>
+TEMA III — PREPARAÇÃO PARA O CONCURSO
+</span>
+
+<h1>Raciocínio Verbal</h1>
+
+<p>
+Desenvolvimento da capacidade de compreender, interpretar,
+analisar e relacionar informações apresentadas através da linguagem.
+</p>
+
+</div>
+</header>
+
+<nav class="nav">
+<div class="container nav-inner">
+
+<a href="#introducao">Introdução</a> <a href="#interpretacao">Interpretação</a> <a href="#vocabulario">Vocabulário</a> <a href="#gramatica">Gramática</a> <a href="#frases">Frases</a> <a href="#logica">Lógica Verbal</a> <a href="#pegadinhas">Pegadinhas</a> <a href="#questoes">Questões</a>
+
+</div>
+</nav>
+
+<main class="container">
+
+<!-- INTRODUÇÃO -->
+
+<section id="introducao">
+
+<h2 class="section-title">1. Introdução ao Raciocínio Verbal</h2>
+
+<p class="section-subtitle">
+O raciocínio verbal avalia a capacidade de compreender e trabalhar corretamente com informações linguísticas.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+<div class="icon">
+<i class="fa-solid fa-brain"></i>
+</div>
+
+<h3>O que é raciocínio verbal?</h3>
+</div>
+
+<p>
+É a capacidade de compreender palavras, frases e textos,
+identificar relações entre ideias, interpretar informações,
+retirar conclusões e utilizar corretamente a linguagem.
+</p>
+
+<p style="margin-top:15px">
+Em concursos públicos, as questões podem exigir muito mais
+do que simplesmente saber português. O candidato precisa
+<strong>raciocinar a partir daquilo que está escrito</strong>.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>Regra fundamental:</strong>
+
+<p style="font-size:20px;font-weight:800;margin-top:8px">
+NÃO RESPONDA COM BASE NO QUE VOCÊ ACHA.
+RESPONDA COM BASE NO QUE O TEXTO PERMITE CONCLUIR.
+</p>
+
+</div>
+
+</section>
+
+<!-- INTERPRETAÇÃO -->
+
+<section id="interpretacao">
+
+<h2 class="section-title">2. Interpretação de Textos</h2>
+
+<p class="section-subtitle">
+Esta é uma das partes mais importantes do raciocínio verbal.
+</p>
+
+<div class="card">
+
+<h3>2.1 Compreensão textual</h3>
+
+<p>
+Compreender um texto significa identificar corretamente
+as informações que estão explícitas ou claramente apresentadas.
+</p>
+
+<div class="example">
+
+<strong>Texto:</strong>
+
+<p>
+"João chegou cedo ao trabalho porque precisava preparar
+os documentos para a reunião."
+</p>
+
+<strong>Conclusão:</strong>
+
+<p>
+João chegou cedo porque precisava preparar os documentos.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>2.2 Ideia principal</h3>
+
+<p>
+É a informação central em torno da qual o texto ou parágrafo
+é desenvolvido.
+</p>
+
+<div class="example">
+
+<p>
+"Os livros são importantes para o desenvolvimento intelectual.
+A leitura amplia o vocabulário, melhora a compreensão e estimula
+o pensamento crítico."
+</p>
+
+<strong>Ideia principal:</strong>
+
+<p>
+A leitura contribui para o desenvolvimento intelectual.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>2.3 Ideias secundárias</h3>
+
+<p>
+São informações que explicam, desenvolvem, justificam ou
+complementam a ideia principal.
+</p>
+
+<div class="example">
+
+<p>
+No exemplo anterior, ampliar o vocabulário, melhorar a compreensão
+e estimular o pensamento crítico são ideias secundárias.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>2.4 Inferência</h3>
+
+<p>
+Inferir significa chegar a uma conclusão que não está escrita
+literalmente, mas que pode ser deduzida logicamente das informações
+apresentadas.
+</p>
+
+<div class="example">
+
+<p>
+"Maria saiu de casa levando um guarda-chuva. Quando chegou ao
+trabalho, sua roupa estava molhada."
+</p>
+
+<strong>Inferência possível:</strong>
+
+<p>
+Provavelmente estava a chover ou Maria entrou em contacto com água.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>Atenção:</strong>
+
+<p>
+Inferência não significa inventar informação. A conclusão precisa
+ser sustentada pelo texto.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>2.5 Conclusão</h3>
+
+<p>
+A conclusão é o resultado lógico obtido a partir das informações
+apresentadas.
+</p>
+
+<div class="example">
+
+<p>
+Todos os funcionários que participaram da formação receberam
+certificado. Pedro participou da formação.
+</p>
+
+<strong>Conclusão:</strong>
+
+<p>
+Pedro recebeu certificado.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>2.6 Tema do texto</h3>
+
+<p>
+O tema é o assunto geral sobre o qual o texto fala.
+</p>
+
+<p style="margin-top:12px">
+<strong>Tema ≠ ideia principal.</strong>
+</p>
+
+<div class="highlight">
+
+<strong>Exemplo:</strong>
+
+<p>
+Tema: <strong>Educação</strong>
+</p>
+
+<p>
+Ideia principal: <strong>A educação contribui para o desenvolvimento social.</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VOCABULÁRIO -->
+
+<section id="vocabulario">
+
+<h2 class="section-title">3. Vocabulário</h2>
+
+<p class="section-subtitle">
+Conhecer as relações entre palavras ajuda a interpretar corretamente as questões.
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-arrows-left-right"></i>
+
+<h3>Sinónimos</h3>
+
+<p>
+Palavras com significado igual ou semelhante.
+</p>
+
+<p style="margin-top:8px">
+<strong>Exemplo:</strong><br>
+feliz → contente
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-code-compare"></i>
+
+<h3>Antónimos</h3>
+
+<p>
+Palavras com significados opostos.
+</p>
+
+<p style="margin-top:8px">
+<strong>Exemplo:</strong><br>
+alto → baixo
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-link"></i>
+
+<h3>Homónimos</h3>
+
+<p>
+Palavras que apresentam a mesma forma sonora ou gráfica,
+mas possuem significados diferentes, conforme o caso.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-code-branch"></i>
+
+<h3>Parónimos</h3>
+
+<p>
+Palavras semelhantes na escrita ou pronúncia,
+mas com significados diferentes.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>3.1 Sinónimos</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Palavra</th>
+<th>Possível sinónimo</th>
+</tr>
+
+<tr>
+<td>Rápido</td>
+<td>Veloz</td>
+</tr>
+
+<tr>
+<td>Bonito</td>
+<td>Belo</td>
+</tr>
+
+<tr>
+<td>Começar</td>
+<td>Iniciar</td>
+</tr>
+
+<tr>
+<td>Terminar</td>
+<td>Concluir</td>
+</tr>
+
+<tr>
+<td>Auxiliar</td>
+<td>Ajudar</td>
+</tr>
+
+<tr>
+<td>Difícil</td>
+<td>Complicado</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>3.2 Antónimos</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Palavra</th>
+<th>Antónimo</th>
+</tr>
+
+<tr>
+<td>Grande</td>
+<td>Pequeno</td>
+</tr>
+
+<tr>
+<td>Rico</td>
+<td>Pobre</td>
+</tr>
+
+<tr>
+<td>Claro</td>
+<td>Escuro</td>
+</tr>
+
+<tr>
+<td>Entrar</td>
+<td>Sair</td>
+</tr>
+
+<tr>
+<td>Verdadeiro</td>
+<td>Falso</td>
+</tr>
+
+<tr>
+<td>Presente</td>
+<td>Ausente</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>3.3 Homónimos e parónimos</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Palavras</th>
+<th>Significados</th>
+</tr>
+
+<tr>
+<td>Acender / Ascender</td>
+<td>Acender = ligar; Ascender = subir/progredir</td>
+</tr>
+
+<tr>
+<td>Descrição / Discrição</td>
+<td>Descrição = ato de descrever; Discrição = prudência/reserva</td>
+</tr>
+
+<tr>
+<td>Comprimento / Cumprimento</td>
+<td>Comprimento = extensão; Cumprimento = saudação ou ato de cumprir</td>
+</tr>
+
+<tr>
+<td>Ratificar / Retificar</td>
+<td>Ratificar = confirmar; Retificar = corrigir</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>3.4 Significado da palavra no contexto</h3>
+
+<p>
+Uma palavra pode assumir significados diferentes dependendo
+da frase em que aparece.
+</p>
+
+<div class="example">
+
+<p>
+"O funcionário <strong>atendeu</strong> o utente."
+</p>
+
+<p>
+Aqui, "atendeu" significa prestar assistência ou serviço.
+</p>
+
+<p style="margin-top:10px">
+"O funcionário <strong>atendeu</strong> ao pedido do diretor."
+</p>
+
+<p>
+Aqui, "atendeu" significa dar resposta ou cumprir determinado pedido.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>Regra:</strong>
+Não escolha automaticamente o significado mais comum de uma palavra.
+Observe sempre o contexto.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GRAMATICA -->
+
+<section id="gramatica">
+
+<h2 class="section-title">4. Gramática</h2>
+
+<div class="card">
+
+<h3>4.1 Classes gramaticais</h3>
+
+<p>
+As palavras podem ser classificadas de acordo com a função
+que desempenham na língua.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Classe</th>
+<th>Função</th>
+<th>Exemplo</th>
+</tr>
+
+<tr>
+<td>Substantivo</td>
+<td>Nomeia seres, objetos, lugares, sentimentos etc.</td>
+<td>aluno, hospital, alegria</td>
+</tr>
+
+<tr>
+<td>Adjetivo</td>
+<td>Caracteriza o substantivo.</td>
+<td>inteligente, rápido</td>
+</tr>
+
+<tr>
+<td>Verbo</td>
+<td>Indica ação, estado ou fenómeno.</td>
+<td>estudar, ser, chover</td>
+</tr>
+
+<tr>
+<td>Advérbio</td>
+<td>Modifica verbo, adjetivo ou outro advérbio.</td>
+<td>rapidamente, ontem</td>
+</tr>
+
+<tr>
+<td>Pronome</td>
+<td>Pode substituir ou acompanhar o substantivo.</td>
+<td>ele, este, meu</td>
+</tr>
+
+<tr>
+<td>Preposição</td>
+<td>Estabelece relação entre termos.</td>
+<td>de, para, com</td>
+</tr>
+
+<tr>
+<td>Conjunção</td>
+<td>Liga palavras ou orações.</td>
+<td>e, mas, porque</td>
+</tr>
+
+<tr>
+<td>Artigo</td>
+<td>Determina o substantivo.</td>
+<td>o, a, um, uma</td>
+</tr>
+
+<tr>
+<td>Numeral</td>
+<td>Indica quantidade, ordem etc.</td>
+<td>dois, primeiro</td>
+</tr>
+
+<tr>
+<td>Interjeição</td>
+<td>Exprime emoção ou reação.</td>
+<td>Ah! Oh!</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>4.2 Verbos</h3>
+
+<p>
+Os verbos podem indicar ações, estados ou fenómenos da natureza.
+</p>
+
+<div class="example">
+
+<p>
+<strong>Ação:</strong> O funcionário <u>trabalhou</u>.</p>
+<p><strong>Estado:</strong> O paciente <u>está</u> tranquilo.</p>
+<p><strong>Fenómeno:</strong> <u>Choveu</u> durante a noite.</p>
+
+</div>
+
+<h4>Tempos verbais</h4>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Tempo</th>
+<th>Exemplo</th>
+</tr>
+
+<tr>
+<td>Presente</td>
+<td>Eu estudo.</td>
+</tr>
+
+<tr>
+<td>Pretérito</td>
+<td>Eu estudei.</td>
+</tr>
+
+<tr>
+<td>Futuro</td>
+<td>Eu estudarei.</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>4.3 Pronomes</h3>
+
+<p>
+Os pronomes podem substituir ou acompanhar nomes.
+</p>
+
+<div class="example">
+
+<p>
+<strong>João chegou.</strong></p>
+
+<p>
+<strong>Ele</strong> chegou.</p>
+
+<p>
+"Ele" substitui o nome João.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>4.4 Advérbios</h3>
+
+<p>
+Modificam principalmente verbos, indicando circunstâncias como
+tempo, lugar, modo, intensidade, negação etc.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Tipo</th>
+<th>Exemplo</th>
+</tr>
+
+<tr>
+<td>Tempo</td>
+<td>hoje, ontem, amanhã</td>
+</tr>
+
+<tr>
+<td>Lugar</td>
+<td>aqui, ali, longe</td>
+</tr>
+
+<tr>
+<td>Modo</td>
+<td>bem, mal, rapidamente</td>
+</tr>
+
+<tr>
+<td>Intensidade</td>
+<td>muito, pouco, bastante</td>
+</tr>
+
+<tr>
+<td>Negação</td>
+<td>não, jamais</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>4.5 Preposições</h3>
+
+<p>
+Estabelecem relações entre palavras.
+</p>
+
+<p style="margin-top:12px">
+<strong>Exemplos:</strong>
+a, ante, após, até, com, contra, de, desde, em, entre,
+para, perante, por, sem, sob, sobre, trás.
+</p>
+
+<div class="example">
+
+<p>
+Livro <strong>de</strong> português.</p>
+<p>Vou <strong>para</strong> casa.</p>
+<p>Trabalho <strong>com</strong> dedicação.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>4.6 Conjunções</h3>
+
+<p>
+Ligam palavras ou orações e estabelecem relações de sentido.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Relação</th>
+<th>Exemplos</th>
+</tr>
+
+<tr>
+<td>Adição</td>
+<td>e, nem</td>
+</tr>
+
+<tr>
+<td>Oposição</td>
+<td>mas, porém, contudo</td>
+</tr>
+
+<tr>
+<td>Causa</td>
+<td>porque, pois, visto que</td>
+</tr>
+
+<tr>
+<td>Conclusão</td>
+<td>portanto, logo</td>
+</tr>
+
+<tr>
+<td>Condição</td>
+<td>se, caso</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ESTRUTURA -->
+
+<section id="frases">
+
+<h2 class="section-title">5. Estrutura das Frases</h2>
+
+<div class="card">
+
+<h3>5.1 Frase, oração e período</h3>
+
+<p>
+<strong>Frase:</strong> enunciado com sentido completo.
+</p>
+
+<div class="example">
+"Silêncio!"
+</div>
+
+<p style="margin-top:15px">
+<strong>Oração:</strong> enunciado organizado em torno de um verbo
+ou locução verbal.
+</p>
+
+<div class="example">
+"O funcionário trabalha."
+</div>
+
+<p style="margin-top:15px">
+<strong>Período:</strong> enunciado constituído por uma ou mais orações.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>5.2 Sujeito e predicado</h3>
+
+<p>
+O <strong>sujeito</strong> é, em termos gerais, o termo sobre o qual
+se declara algo.
+</p>
+
+<p>
+O <strong>predicado</strong> é aquilo que se declara sobre o sujeito.
+</p>
+
+<div class="example">
+
+<p>
+<strong>O funcionário</strong> / <strong>atendeu o utente.</strong>
+</p>
+
+<p>
+Sujeito: <strong>O funcionário</strong>
+</p>
+
+<p>
+Predicado: <strong>atendeu o utente</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>5.3 Concordância</h3>
+
+<p>
+A concordância verbal estabelece relação entre o verbo e o sujeito.
+</p>
+
+<div class="example">
+
+<p>✅ Os funcionários <strong>trabalham</strong>.</p>
+
+<p>❌ Os funcionários <strong>trabalha</strong>.</p>
+
+</div>
+
+<p style="margin-top:15px">
+Também existe concordância nominal entre palavras que acompanham
+ou caracterizam o substantivo.
+</p>
+
+<div class="example">
+
+<p>✅ As funcionárias <strong>dedicadas</strong>.</p>
+
+<p>❌ As funcionárias <strong>dedicado</strong>.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>5.4 Pontuação e sentido</h3>
+
+<p>
+A pontuação pode alterar a interpretação de uma frase.
+</p>
+
+<div class="example">
+
+<p>
+<strong>Vamos comer, crianças.</strong>
+</p>
+
+<p>
+A vírgula indica que estamos a chamar as crianças.
+</p>
+
+<p style="margin-top:12px">
+<strong>Vamos comer crianças.</strong>
+</p>
+
+<p>
+Sem vírgula, a frase assume outro sentido.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>Para concursos:</strong>
+Observe cuidadosamente vírgulas, conectores e palavras negativas.
+Uma pequena alteração pode modificar completamente a resposta.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOGICA -->
+
+<section id="logica">
+
+<h2 class="section-title">6. Raciocínio Lógico-Verbal</h2>
+
+<div class="card">
+
+<h3>6.1 Relações entre afirmações</h3>
+
+<p>
+O candidato deve identificar se uma afirmação implica,
+contradiz ou simplesmente não permite concluir outra.
+</p>
+
+<div class="example">
+
+<p>
+"Todos os técnicos receberam formação."</p>
+
+<p>
+"Paulo é técnico."</p>
+
+<p>
+<strong>Conclusão:</strong> Paulo recebeu formação.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>6.2 Negação</h3>
+
+<p>
+A negação de uma afirmação deve produzir uma afirmação logicamente
+contrária à original.
+</p>
+
+<div class="example">
+
+<p>
+Afirmação: <strong>Todos os candidatos estudaram.</strong>
+</p>
+
+<p>
+Negação correta: <strong>Nem todos os candidatos estudaram.</strong>
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>Armadilha:</strong>
+
+<p>
+"Todos estudaram" não tem como negação "Todos não estudaram".
+</p>
+
+<p>
+A negação correta é: <strong>Pelo menos um não estudou.</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>6.3 Condição</h3>
+
+<p>
+Observe cuidadosamente expressões como:
+</p>
+
+<ul>
+<li>se;</li>
+<li>somente se;</li>
+<li>se e somente se;</li>
+<li>desde que;</li>
+<li>caso;</li>
+<li>quando;</li>
+<li>sempre que.</li>
+</ul>
+
+<div class="example">
+
+<p>
+"Se estudar, então terá melhores condições de responder às questões."
+</p>
+
+<p>
+Isso estabelece uma relação condicional.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>6.4 Causa e consequência</h3>
+
+<div class="example">
+
+<p>
+"Como estudou bastante, conseguiu responder corretamente."
+</p>
+
+<p>
+<strong>Causa:</strong> estudou bastante.</p>
+
+<p>
+<strong>Consequência:</strong> conseguiu responder corretamente.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>6.5 Comparação</h3>
+
+<p>
+Observe expressões como:
+mais que, menos que, maior que, menor que,
+tão... quanto, melhor que, pior que.
+</p>
+
+<div class="example">
+
+<p>
+"João estuda mais do que Pedro."
+</p>
+
+<p>
+Conclusão: João dedica mais tempo ao estudo do que Pedro,
+<strong>mas isso não permite concluir automaticamente que João
+tem melhores notas</strong>.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PEGADINHAS -->
+
+<section id="pegadinhas">
+
+<h2 class="section-title">7. Pegadinhas Frequentes</h2>
+
+<div class="card">
+
+<h3>⚠️ 1. Confundir possibilidade com certeza</h3>
+
+<p>
+Se o texto diz "pode", "talvez", "possivelmente" ou "provavelmente",
+não transforme a informação em certeza.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚠️ 2. Acrescentar informação externa</h3>
+
+<p>
+A questão pode fornecer um pequeno texto e perguntar sobre ele.
+Não acrescente conhecimentos pessoais à interpretação.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚠️ 3. Ignorar palavras negativas</h3>
+
+<p>
+Palavras como <strong>não, nunca, jamais, ninguém, nenhum</strong>
+podem mudar completamente o sentido.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚠️ 4. Confundir tema com ideia principal</h3>
+
+<p>
+O tema é o assunto geral. A ideia principal é a mensagem central
+defendida ou apresentada pelo texto.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚠️ 5. Sinónimo depende do contexto</h3>
+
+<p>
+Duas palavras podem ser semelhantes em determinado contexto,
+mas não serem substituíveis em todos os contextos.
+</p>
+
+</div>
+
+</section>
+
+<!-- QUESTÕES -->
+
+<section id="questoes">
+
+<h2 class="section-title">8. Questões de Concurso</h2>
+
+<p class="section-subtitle">
+Resolva primeiro sem olhar para a resposta.
+</p>
+
+<div class="question">
+
+<strong>1. Leia:</strong>
+
+<p style="margin-top:10px">
+"Pedro estudou durante várias horas. No dia seguinte,
+conseguiu responder corretamente às questões."
+</p>
+
+<p style="margin-top:10px">
+Qual foi a provável causa do bom desempenho?
+</p>
+
+<div class="options">
+
+<div class="option">A) Pedro faltou à prova.</div>
+<div class="option">B) Pedro estudou durante várias horas.</div>
+<div class="option">C) Pedro não conhecia a matéria.</div>
+<div class="option">D) Pedro não respondeu às questões.</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>2. Qual é o antónimo de "eficiente"?</strong>
+
+<div class="options">
+
+<div class="option">A) Eficaz</div>
+<div class="option">B) Competente</div>
+<div class="option">C) Ineficiente</div>
+<div class="option">D) Produtivo</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>3. Na frase "O funcionário respondeu rapidamente",
+a palavra "rapidamente" é:</strong>
+
+<div class="options">
+
+<div class="option">A) Substantivo</div>
+<div class="option">B) Adjetivo</div>
+<div class="option">C) Advérbio</div>
+<div class="option">D) Pronome</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>4. Qual palavra completa corretamente a frase?</strong>
+
+<p style="margin-top:10px">
+"O funcionário deve agir com ______."
+</p>
+
+<div class="options">
+
+<div class="option">A) discrição</div>
+<div class="option">B) descrição</div>
+<div class="option">C) descrisão</div>
+<div class="option">D) discrisão</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>. "Discrição" significa prudência,
+reserva ou comportamento reservado.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>5. Qual é a ideia principal?</strong>
+
+<p style="margin-top:10px">
+"A leitura regular contribui para aumentar o vocabulário,
+melhorar a escrita e desenvolver a capacidade de interpretação."
+</p>
+
+<div class="options">
+
+<div class="option">A) A leitura é uma atividade inútil.</div>
+<div class="option">B) A leitura contribui para várias capacidades linguísticas.</div>
+<div class="option">C) Apenas a escrita é importante.</div>
+<div class="option">D) O vocabulário não pode ser desenvolvido.</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>6. Qual é a negação de "Todos os candidatos estudaram"?</strong>
+
+<div class="options">
+
+<div class="option">A) Nenhum candidato estudou.</div>
+<div class="option">B) Todos os candidatos não estudaram.</div>
+<div class="option">C) Pelo menos um candidato não estudou.</div>
+<div class="option">D) Alguns candidatos estudaram.</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>7. Na frase "João é funcionário e trabalha no hospital",
+a palavra "e" indica:</strong>
+
+<div class="options">
+
+<div class="option">A) Oposição</div>
+<div class="option">B) Condição</div>
+<div class="option">C) Adição</div>
+<div class="option">D) Conclusão</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>8. Identifique a palavra parónima corretamente relacionada:</strong>
+
+<div class="options">
+
+<div class="option">A) Ratificar — Retificar</div>
+<div class="option">B) Grande — Pequeno</div>
+<div class="option">C) Feliz — Contente</div>
+<div class="option">D) Alto — Baixo</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>9. Em "Os funcionários trabalham diariamente",
+o sujeito é:</strong>
+
+<div class="options">
+
+<div class="option">A) trabalham</div>
+<div class="option">B) diariamente</div>
+<div class="option">C) os funcionários</div>
+<div class="option">D) funcionários trabalham</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>10. Leia:</strong>
+
+<p style="margin-top:10px">
+"Embora estivesse cansado, Paulo continuou a estudar."
+</p>
+
+<p style="margin-top:10px">
+A palavra "embora" introduz uma ideia de:
+</p>
+
+<div class="options">
+
+<div class="option">A) Concessão</div>
+<div class="option">B) Adição</div>
+<div class="option">C) Conclusão</div>
+<div class="option">D) Causa</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>11. Qual frase apresenta concordância correta?</strong>
+
+<div class="options">
+
+<div class="option">A) Os candidato estudou.</div>
+<div class="option">B) Os candidatos estudaram.</div>
+<div class="option">C) Os candidatos estudou.</div>
+<div class="option">D) O candidatos estudaram.</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>12. Se "todos os enfermeiros participaram da reunião"
+e Ana é enfermeira, podemos concluir que:</strong>
+
+<div class="options">
+
+<div class="option">A) Ana não participou.</div>
+<div class="option">B) Ana participou.</div>
+<div class="option">C) Ana talvez tenha participado.</div>
+<div class="option">D) Não existe nenhuma informação sobre Ana.</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>13. Na frase "O paciente chegou ontem",
+a palavra "ontem" indica:</strong>
+
+<div class="options">
+
+<div class="option">A) Lugar</div>
+<div class="option">B) Modo</div>
+<div class="option">C) Tempo</div>
+<div class="option">D) Intensidade</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>14. Qual palavra apresenta sentido oposto a "provisório"?</strong>
+
+<div class="options">
+
+<div class="option">A) Temporário</div>
+<div class="option">B) Transitório</div>
+<div class="option">C) Definitivo</div>
+<div class="option">D) Passageiro</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>15. Qual afirmação é necessariamente verdadeira?</strong>
+
+<p style="margin-top:10px">
+"Todos os candidatos aprovados fizeram a prova."
+</p>
+
+<div class="options">
+
+<div class="option">A) Todos que fizeram a prova foram aprovados.</div>
+<div class="option">B) Nenhum candidato fez a prova.</div>
+<div class="option">C) Quem foi aprovado fez a prova.</div>
+<div class="option">D) Apenas os aprovados fizeram a prova.</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C</strong>.
+A frase garante que todo aprovado fez a prova,
+mas não afirma que todo aquele que fez a prova foi aprovado.
+</div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist de domínio
+</h3>
+
+<ul>
+
+<li>☐ Sei identificar a ideia principal de um texto.</li>
+<li>☐ Sei diferenciar ideia principal e ideias secundárias.</li>
+<li>☐ Sei fazer inferências sem inventar informações.</li>
+<li>☐ Sei identificar conclusões lógicas.</li>
+<li>☐ Conheço sinónimos e antónimos.</li>
+<li>☐ Sei diferenciar homónimos e parónimos.</li>
+<li>☐ Consigo determinar o significado de uma palavra pelo contexto.</li>
+<li>☐ Conheço as principais classes gramaticais.</li>
+<li>☐ Sei identificar verbos, pronomes e advérbios.</li>
+<li>☐ Sei reconhecer preposições e conjunções.</li>
+<li>☐ Compreendo sujeito e predicado.</li>
+<li>☐ Sei analisar concordância.</li>
+<li>☐ Sei interpretar relações de causa e consequência.</li>
+<li>☐ Sei interpretar condições.</li>
+<li>☐ Sei trabalhar com negações.</li>
+<li>☐ Consigo identificar pegadinhas de interpretação.</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<h3>
+<i class="fa-solid fa-star"></i>
+Resumo para revisão rápida
+</h3>
+
+<p style="margin-top:12px;font-weight:800;font-size:18px">
+
+TEXTO → COMPREENDER → IDENTIFICAR IDEIAS →
+INFERIR → CONCLUIR → RESPONDER COM BASE NO TEXTO
+
+</p>
+
+<p style="margin-top:12px">
+No raciocínio verbal, a maior armadilha é responder aquilo
+que parece verdadeiro em vez daquilo que é logicamente sustentado
+pelas informações apresentadas.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+<strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong>
+</p>
+
+<p style="margin-top:8px">
+Tema III — Raciocínio Verbal
+</p>
+
+<p style="margin-top:15px;font-size:13px">
+Estudar • Praticar • Revisar • Resolver questões
+</p>
+
+</footer>
+
+</body>
+</html>

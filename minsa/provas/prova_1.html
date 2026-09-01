@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simulado — Concurso de Secretário Clínico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Inter",Arial,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.hero{
+    background:
+    radial-gradient(circle at 80% 20%,rgba(59,130,246,.25),transparent 30%),
+    radial-gradient(circle at 10% 80%,rgba(16,185,129,.20),transparent 30%),
+    linear-gradient(135deg,#0f172a,#111827,#064e3b);
+
+    color:white;
+    padding:55px 20px 75px;
+}
+
+.hero-container{
+    width:min(1050px,92%);
+    margin:auto;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.15);
+
+    padding:8px 14px;
+    border-radius:30px;
+
+    font-size:12px;
+    font-weight:800;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(35px,6vw,58px);
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#34d399;
+}
+
+.hero p{
+    max-width:750px;
+    color:#d1fae5;
+}
+
+
+/* =====================================================
+   NAV
+===================================================== */
+
+.nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid #e5e7eb;
+}
+
+.nav-container{
+    width:min(1050px,92%);
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    text-decoration:none;
+    color:#111827;
+
+    font-weight:900;
+    padding:16px 0;
+}
+
+.logo i{
+    color:#059669;
+    margin-right:7px;
+}
+
+.nav-info{
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.timer{
+    color:#dc2626;
+}
+
+.timer i{
+    margin-right:5px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:min(1050px,92%);
+    margin:auto;
+}
+
+main{
+    padding:45px 0 80px;
+}
+
+
+/* =====================================================
+   INSTRUCTIONS
+===================================================== */
+
+.instructions{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 25px rgba(15,23,42,.05);
+}
+
+.instructions h2{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.instructions ul{
+    margin-left:20px;
+    color:#4b5563;
+}
+
+.instructions li{
+    margin-bottom:5px;
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress-card{
+    background:white;
+    border:1px solid #e5e7eb;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+}
+
+.progress-top{
+    display:flex;
+    justify-content:space-between;
+
+    font-size:13px;
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.progress-bar{
+    width:100%;
+    height:10px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+
+    background:#10b981;
+
+    transition:.3s;
+}
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+.question{
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    margin-bottom:22px;
+
+    box-shadow:0 8px 25px rgba(15,23,42,.05);
+}
+
+.question-header{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+
+    margin-bottom:18px;
+}
+
+.question-number{
+    color:#059669;
+    font-weight:900;
+}
+
+.question-topic{
+    background:#ecfdf5;
+    color:#047857;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.question h3{
+    font-size:17px;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.option{
+    position:relative;
+}
+
+.option input{
+    position:absolute;
+    opacity:0;
+}
+
+.option label{
+    display:block;
+
+    border:1px solid #dbe1e8;
+
+    padding:14px 16px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    color:#374151;
+}
+
+.option label:hover{
+    border-color:#10b981;
+    background:#f0fdf4;
+}
+
+.option input:checked + label{
+    border-color:#10b981;
+    background:#ecfdf5;
+    color:#065f46;
+    font-weight:700;
+}
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+.submit-area{
+    text-align:center;
+    margin-top:35px;
+}
+
+.btn{
+    border:none;
+    cursor:pointer;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    font-family:inherit;
+    font-size:14px;
+    font-weight:900;
+
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#059669;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#047857;
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   RESULTADO
+===================================================== */
+
+#resultado{
+    display:none;
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:25px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    margin-top:30px;
+
+    box-shadow:0 15px 40px rgba(15,23,42,.1);
+}
+
+.result-icon{
+    width:80px;
+    height:80px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:#ecfdf5;
+
+    color:#059669;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:35px;
+}
+
+.resultado-score{
+    font-size:55px;
+    font-weight:900;
+
+    color:#111827;
+
+    margin:10px 0;
+}
+
+.resultado-msg{
+    color:#6b7280;
+
+    max-width:650px;
+
+    margin:0 auto 25px;
+}
+
+.result-details{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.result-box{
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:15px;
+
+    padding:18px;
+}
+
+.result-box strong{
+    display:block;
+
+    font-size:25px;
+
+    color:#111827;
+}
+
+.result-box span{
+    font-size:12px;
+    color:#6b7280;
+}
+
+
+/* =====================================================
+   REVIEW
+===================================================== */
+
+.review{
+    margin-top:30px;
+    text-align:left;
+}
+
+.review-item{
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:10px;
+
+    font-size:13px;
+}
+
+.review-correct{
+    background:#ecfdf5;
+    border-left:4px solid #10b981;
+}
+
+.review-wrong{
+    background:#fef2f2;
+    border-left:4px solid #ef4444;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#0f172a;
+
+    color:#94a3b8;
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media(max-width:700px){
+
+    .nav-container{
+        display:block;
+    }
+
+    .nav-info{
+        padding-bottom:12px;
+    }
+
+    .question{
+        padding:21px;
+    }
+
+    .result-details{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+<div class="hero-container">
+
+<span class="badge">
+<i class="fa-solid fa-file-circle-question"></i>
+SIMULADO ONLINE
+</span>
+
+<h1>
+Prova de <span>Preparação</span>
+</h1>
+
+<p>
+Teste os seus conhecimentos sobre os principais conteúdos
+do Concurso de Secretário Clínico. Responda sem consultar
+as aulas e descubra o seu nível de preparação.
+</p>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
+<nav class="nav">
+
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Secretário Clínico
+
+</a>
+
+<div class="nav-info">
+
+<span>
+<i class="fa-solid fa-list-check"></i>
+20 questões
+</span>
+
+<span class="timer">
+
+<i class="fa-solid fa-clock"></i>
+
+<span id="tempo">30:00</span>
+
+</span>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+<div class="container">
+
+<!-- INSTRUÇÕES -->
+
+<div class="instructions">
+
+<h2>
+<i class="fa-solid fa-circle-info"></i>
+Instruções
+</h2>
+
+<ul>
+
+<li>A prova contém <strong>20 questões</strong>.</li>
+
+<li>Cada questão possui apenas uma resposta correta.</li>
+
+<li>Escolha a alternativa que considera correta.</li>
+
+<li>Evite consultar as aulas durante o teste.</li>
+
+<li>O tempo disponível é de <strong>30 minutos</strong>.</li>
+
+<li>Ao terminar, clique em <strong>Finalizar Prova</strong>.</li>
+
+</ul>
+
+</div>
+
+<!-- PROGRESSO -->
+
+<div class="progress-card">
+
+<div class="progress-top">
+
+<span>Progresso da prova</span>
+
+<span id="contador">0 / 20 respondidas</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill" id="progressFill"></div>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+     FORMULÁRIO
+===================================================== -->
+
+<form id="provaForm">
+
+<!-- QUESTÃO 1 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 01
+</span>
+
+<span class="question-topic">
+Administração Pública
+</span>
+
+</div>
+
+<h3>
+A Administração Pública pode ser entendida como:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q1" value="A" id="q1a">
+<label for="q1a">
+A) O conjunto de actividades destinadas exclusivamente ao sector privado.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q1" value="B" id="q1b">
+<label for="q1b">
+B) O conjunto de órgãos, serviços e agentes que exercem funções administrativas visando o interesse público.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q1" value="C" id="q1c">
+<label for="q1c">
+C) Apenas os órgãos pertencentes ao Poder Judicial.
+</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q1" value="D" id="q1d">
+<label for="q1d">
+D) Uma organização destinada exclusivamente à obtenção de lucro.
+</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 2 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 02
+</span>
+
+<span class="question-topic">
+Deontologia
+</span>
+
+</div>
+
+<h3>
+A deontologia profissional está relacionada principalmente:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q2" value="A" id="q2a">
+<label for="q2a">A) À definição dos preços dos serviços.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q2" value="B" id="q2b">
+<label for="q2b">B) Às regras e princípios que orientam a conduta profissional.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q2" value="C" id="q2c">
+<label for="q2c">C) À organização de empresas privadas.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q2" value="D" id="q2d">
+<label for="q2d">D) À realização de cálculos financeiros.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 3 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 03
+</span>
+
+<span class="question-topic">
+Raciocínio Verbal
+</span>
+
+</div>
+
+<h3>
+Qual alternativa apresenta um sinónimo de “rápido”?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q3" value="A" id="q3a">
+<label for="q3a">A) Lento</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q3" value="B" id="q3b">
+<label for="q3b">B) Veloz</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q3" value="C" id="q3c">
+<label for="q3c">C) Fraco</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q3" value="D" id="q3d">
+<label for="q3d">D) Distante</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 4 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 04
+</span>
+
+<span class="question-topic">
+Raciocínio Numérico
+</span>
+
+</div>
+
+<h3>
+Quanto é 25% de 200?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q4" value="A" id="q4a">
+<label for="q4a">A) 25</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q4" value="B" id="q4b">
+<label for="q4b">B) 40</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q4" value="C" id="q4c">
+<label for="q4c">C) 50</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q4" value="D" id="q4d">
+<label for="q4d">D) 75</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 5 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 05
+</span>
+
+<span class="question-topic">
+COVID-19
+</span>
+
+</div>
+
+<h3>
+A COVID-19 é uma doença causada pelo:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q5" value="A" id="q5a">
+<label for="q5a">A) VIH</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q5" value="B" id="q5b">
+<label for="q5b">B) SARS-CoV-2</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q5" value="C" id="q5c">
+<label for="q5c">C) Plasmodium</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q5" value="D" id="q5d">
+<label for="q5d">D) Mycobacterium tuberculosis</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 6 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 06
+</span>
+
+<span class="question-topic">
+Cultura Geral
+</span>
+
+</div>
+
+<h3>
+Qual é a capital da República de Angola?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q6" value="A" id="q6a">
+<label for="q6a">A) Lubango</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q6" value="B" id="q6b">
+<label for="q6b">B) Benguela</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q6" value="C" id="q6c">
+<label for="q6c">C) Luanda</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q6" value="D" id="q6d">
+<label for="q6d">D) Huambo</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 7 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 07
+</span>
+
+<span class="question-topic">
+Divisão Administrativa
+</span>
+
+</div>
+
+<h3>
+A divisão político-administrativa de um país tem como principal finalidade:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q7" value="A" id="q7a">
+<label for="q7a">A) Organizar o território e a administração pública.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q7" value="B" id="q7b">
+<label for="q7b">B) Eliminar todos os municípios.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q7" value="C" id="q7c">
+<label for="q7c">C) Substituir a Constituição.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q7" value="D" id="q7d">
+<label for="q7d">D) Extinguir a Administração Pública.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 8 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 08
+</span>
+
+<span class="question-topic">
+Censo
+</span>
+
+</div>
+
+<h3>
+O principal objectivo de um Censo da População e Habitação é:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q8" value="A" id="q8a">
+<label for="q8a">A) Recolher informações sobre a população e as habitações.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q8" value="B" id="q8b">
+<label for="q8b">B) Fazer apenas o registo de empresas.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q8" value="C" id="q8c">
+<label for="q8c">C) Controlar exclusivamente os preços.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q8" value="D" id="q8d">
+<label for="q8d">D) Registar somente os funcionários públicos.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 9 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 09
+</span>
+
+<span class="question-topic">
+IIMS
+</span>
+
+</div>
+
+<h3>
+O IIMS está relacionado principalmente com a recolha de indicadores:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q9" value="A" id="q9a">
+<label for="q9a">A) Exclusivamente económicos.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q9" value="B" id="q9b">
+<label for="q9b">B) Demográficos, sociais e de saúde.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q9" value="C" id="q9c">
+<label for="q9c">C) Apenas militares.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q9" value="D" id="q9d">
+<label for="q9d">D) Exclusivamente ambientais.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 10 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 10
+</span>
+
+<span class="question-topic">
+Inteligência Artificial
+</span>
+
+</div>
+
+<h3>
+A Inteligência Artificial pode ser definida, de forma geral, como:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q10" value="A" id="q10a">
+<label for="q10a">A) Uma tecnologia utilizada exclusivamente para jogos.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q10" value="B" id="q10b">
+<label for="q10b">B) Sistemas capazes de executar tarefas que normalmente exigem capacidades associadas à inteligência humana.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q10" value="C" id="q10c">
+<label for="q10c">C) Um tipo de sistema operativo.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q10" value="D" id="q10d">
+<label for="q10d">D) Uma linguagem de programação específica.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 11 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 11
+</span>
+
+<span class="question-topic">
+Administração Pública
+</span>
+
+</div>
+
+<h3>
+Qual princípio exige que a Administração Pública actue de acordo com a lei?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q11" value="A" id="q11a">
+<label for="q11a">A) Princípio da legalidade.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q11" value="B" id="q11b">
+<label for="q11b">B) Princípio da informalidade.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q11" value="C" id="q11c">
+<label for="q11c">C) Princípio do lucro.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q11" value="D" id="q11d">
+<label for="q11d">D) Princípio da publicidade comercial.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 12 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 12
+</span>
+
+<span class="question-topic">
+Deontologia
+</span>
+
+</div>
+
+<h3>
+O sigilo profissional exige que o funcionário:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q12" value="A" id="q12a">
+<label for="q12a">A) Divulgue todas as informações que recebe.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q12" value="B" id="q12b">
+<label for="q12b">B) Proteja informações que devem permanecer confidenciais.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q12" value="C" id="q12c">
+<label for="q12c">C) Ignore as regras institucionais.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q12" value="D" id="q12d">
+<label for="q12d">D) Publique informações pessoais dos cidadãos.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 13 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 13
+</span>
+
+<span class="question-topic">
+Raciocínio Verbal
+</span>
+
+</div>
+
+<h3>
+Qual é o antónimo de “aceitar”?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q13" value="A" id="q13a">
+<label for="q13a">A) Concordar</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q13" value="B" id="q13b">
+<label for="q13b">B) Receber</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q13" value="C" id="q13c">
+<label for="q13c">C) Recusar</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q13" value="D" id="q13d">
+<label for="q13d">D) Aprovar</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 14 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 14
+</span>
+
+<span class="question-topic">
+Raciocínio Numérico
+</span>
+
+</div>
+
+<h3>
+Se 5 cadernos custam 1.000 Kz, quanto custarão 10 cadernos ao mesmo preço unitário?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q14" value="A" id="q14a">
+<label for="q14a">A) 1.500 Kz</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q14" value="B" id="q14b">
+<label for="q14b">B) 2.000 Kz</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q14" value="C" id="q14c">
+<label for="q14c">C) 2.500 Kz</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q14" value="D" id="q14d">
+<label for="q14d">D) 5.000 Kz</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 15 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 15
+</span>
+
+<span class="question-topic">
+COVID-19
+</span>
+
+</div>
+
+<h3>
+Uma das principais medidas para reduzir a transmissão de doenças respiratórias é:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q15" value="A" id="q15a">
+<label for="q15a">A) Ignorar sintomas.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q15" value="B" id="q15b">
+<label for="q15b">B) Manter ambientes sem ventilação.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q15" value="C" id="q15c">
+<label for="q15c">C) Adoptar medidas adequadas de higiene e ventilação.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q15" value="D" id="q15d">
+<label for="q15d">D) Partilhar objectos pessoais indiscriminadamente.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 16 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 16
+</span>
+
+<span class="question-topic">
+Cultura Geral
+</span>
+
+</div>
+
+<h3>
+Angola está localizada no continente:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q16" value="A" id="q16a">
+<label for="q16a">A) Europeu</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q16" value="B" id="q16b">
+<label for="q16b">B) Asiático</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q16" value="C" id="q16c">
+<label for="q16c">C) Africano</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q16" value="D" id="q16d">
+<label for="q16d">D) Americano</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 17 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 17
+</span>
+
+<span class="question-topic">
+Divisão Administrativa
+</span>
+
+</div>
+
+<h3>
+Os municípios fazem parte da organização:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q17" value="A" id="q17a">
+<label for="q17a">A) Territorial e administrativa.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q17" value="B" id="q17b">
+<label for="q17b">B) Exclusivamente empresarial.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q17" value="C" id="q17c">
+<label for="q17c">C) Apenas militar.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q17" value="D" id="q17d">
+<label for="q17d">D) Apenas económica.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 18 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 18
+</span>
+
+<span class="question-topic">
+Censo
+</span>
+
+</div>
+
+<h3>
+Os dados de um Censo são importantes principalmente para:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q18" value="A" id="q18a">
+<label for="q18a">A) O planeamento e definição de políticas públicas.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q18" value="B" id="q18b">
+<label for="q18b">B) Substituir todas as leis do país.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q18" value="C" id="q18c">
+<label for="q18c">C) Controlar apenas empresas privadas.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q18" value="D" id="q18d">
+<label for="q18d">D) Eliminar os serviços públicos.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 19 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 19
+</span>
+
+<span class="question-topic">
+IIMS
+</span>
+
+</div>
+
+<h3>
+Um dos objectivos dos inquéritos de saúde é fornecer dados que permitam:
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q19" value="A" id="q19a">
+<label for="q19a">A) Apoiar a análise e planeamento das políticas de saúde.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q19" value="B" id="q19b">
+<label for="q19b">B) Eliminar a necessidade de serviços de saúde.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q19" value="C" id="q19c">
+<label for="q19c">C) Substituir os profissionais de saúde.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q19" value="D" id="q19d">
+<label for="q19d">D) Impedir a realização de estatísticas.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- QUESTÃO 20 -->
+
+<div class="question">
+
+<div class="question-header">
+
+<span class="question-number">
+Questão 20
+</span>
+
+<span class="question-topic">
+Inteligência Artificial
+</span>
+
+</div>
+
+<h3>
+Qual destas tecnologias está directamente relacionada com a IA generativa?
+</h3>
+
+<div class="options">
+
+<div class="option">
+<input type="radio" name="q20" value="A" id="q20a">
+<label for="q20a">A) Modelos capazes de gerar texto, imagens ou outros conteúdos.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q20" value="B" id="q20b">
+<label for="q20b">B) Calculadoras tradicionais sem programação.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q20" value="C" id="q20c">
+<label for="q20c">C) Cabos eléctricos convencionais.</label>
+</div>
+
+<div class="option">
+<input type="radio" name="q20" value="D" id="q20d">
+<label for="q20d">D) Impressoras sem processamento digital.</label>
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTÃO -->
+
+<div class="submit-area">
+
+<button type="button" class="btn btn-primary" onclick="finalizarProva()">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Finalizar Prova
+
+</button>
+
+</div>
+
+</form>
+
+<!-- =====================================================
+     RESULTADO
+===================================================== -->
+
+<div id="resultado">
+
+<div class="result-icon">
+
+<i class="fa-solid fa-trophy"></i>
+
+</div>
+
+<h2>
+Resultado da Prova
+</h2>
+
+<div class="resultado-score" id="score">
+0%
+</div>
+
+<p class="resultado-msg" id="mensagem">
+Resultado
+</p>
+
+<div class="result-details">
+
+<div class="result-box">
+
+<strong id="acertos">
+0
+</strong>
+
+<span>
+Respostas correctas
+</span>
+
+</div>
+
+<div class="result-box">
+
+<strong id="erros">
+0
+</strong>
+
+<span>
+Respostas erradas
+</span>
+
+</div>
+
+<div class="result-box">
+
+<strong id="respondidas">
+0
+</strong>
+
+<span>
+Questões respondidas
+</span>
+
+</div>
+
+</div>
+
+<div class="review" id="review">
+
+</div>
+
+<div style="margin-top:25px">
+
+<button class="btn btn-primary" onclick="location.reload()">
+
+<i class="fa-solid fa-rotate-right"></i>
+
+Fazer novamente
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+Preparação para o Concurso de Secretário Clínico
+
+<br><br>
+
+© 2026 — Material de estudo
+
+</footer>
+
+<script>
+
+/* =====================================================
+   GABARITO
+===================================================== */
+
+const respostas = {
+
+q1:"B",
+q2:"B",
+q3:"B",
+q4:"C",
+q5:"B",
+q6:"C",
+q7:"A",
+q8:"A",
+q9:"B",
+q10:"B",
+q11:"A",
+q12:"B",
+q13:"C",
+q14:"B",
+q15:"C",
+q16:"C",
+q17:"A",
+q18:"A",
+q19:"A",
+q20:"A"
+
+};
+
+
+/* =====================================================
+   CRONÓMETRO
+===================================================== */
+
+let segundos = 30 * 60;
+
+let provaFinalizada = false;
+
+const timer = setInterval(function(){
+
+if(provaFinalizada){
+    clearInterval(timer);
+    return;
+}
+
+segundos--;
+
+let minutos = Math.floor(segundos / 60);
+
+let segundosRestantes = segundos % 60;
+
+document.getElementById("tempo").textContent =
+String(minutos).padStart(2,"0") +
+":" +
+String(segundosRestantes).padStart(2,"0");
+
+
+if(segundos <= 0){
+
+clearInterval(timer);
+
+finalizarProva(true);
+
+}
+
+},1000);
+
+
+/* =====================================================
+   PROGRESSO
+===================================================== */
+
+document.querySelectorAll("input[type=radio]").forEach(function(input){
+
+input.addEventListener("change", atualizarProgresso);
+
+});
+
+
+function atualizarProgresso(){
+
+let respondidas = 0;
+
+for(let i=1;i<=20;i++){
+
+if(document.querySelector(
+'input[name="q'+i+'"]:checked'
+)){
+
+respondidas++;
+
+}
+
+}
+
+document.getElementById("contador").textContent =
+respondidas + " / 20 respondidas";
+
+document.getElementById("progressFill").style.width =
+((respondidas / 20) * 100) + "%";
+
+}
+
+
+/* =====================================================
+   FINALIZAR
+===================================================== */
+
+function finalizarProva(tempoEsgotado=false){
+
+if(provaFinalizada){
+    return;
+}
+
+provaFinalizada=true;
+
+let acertos=0;
+let erros=0;
+let respondidas=0;
+
+let reviewHTML="";
+
+
+for(let i=1;i<=20;i++){
+
+let selecionada =
+document.querySelector(
+'input[name="q'+i+'"]:checked'
+);
+
+let respostaUsuario =
+selecionada ? selecionada.value : null;
+
+let correta =
+respostas["q"+i];
+
+if(respostaUsuario){
+
+respondidas++;
+
+}
+
+if(respostaUsuario === correta){
+
+acertos++;
+
+reviewHTML += `
+<div class="review-item review-correct">
+<strong>Questão ${String(i).padStart(2,"0")}</strong>
+<br>
+<i class="fa-solid fa-check"></i>
+Resposta correcta.
+</div>
+`;
+
+}else{
+
+erros++;
+
+reviewHTML += `
+<div class="review-item review-wrong">
+<strong>Questão ${String(i).padStart(2,"0")}</strong>
+<br>
+<i class="fa-solid fa-xmark"></i>
+
+Sua resposta:
+<strong>${respostaUsuario || "Não respondida"}</strong>
+
+<br>
+
+Resposta correcta:
+<strong>${correta}</strong>
+
+</div>
+`;
+
+}
+
+}
+
+
+/* =====================================================
+   PERCENTAGEM
+===================================================== */
+
+let percentual =
+Math.round((acertos / 20) * 100);
+
+
+document.getElementById("score").textContent =
+percentual + "%";
+
+document.getElementById("acertos").textContent =
+acertos;
+
+document.getElementById("erros").textContent =
+erros;
+
+document.getElementById("respondidas").textContent =
+respondidas;
+
+
+let mensagem="";
+
+
+if(percentual >= 90){
+
+mensagem =
+"Excelente desempenho. O seu nível de preparação está muito forte.";
+
+}else if(percentual >= 75){
+
+mensagem =
+"Bom desempenho. Você possui uma boa base, mas ainda deve rever alguns conteúdos.";
+
+}else if(percentual >= 60){
+
+mensagem =
+"Desempenho razoável. É necessário reforçar os temas onde apresentou dificuldades.";
+
+}else{
+
+mensagem =
+"O resultado mostra que precisa reforçar significativamente os conteúdos antes da prova.";
+
+}
+
+
+if(tempoEsgotado){
+
+mensagem +=
+" O tempo da prova terminou.";
+
+}
+
+
+document.getElementById("mensagem").textContent =
+mensagem;
+
+document.getElementById("review").innerHTML =
+"<h3 style='margin-bottom:15px'>Revisão das respostas</h3>" +
+reviewHTML;
+
+
+document.getElementById("resultado").style.display =
+"block";
+
+
+document.getElementById("resultado").scrollIntoView({
+behavior:"smooth"
+});
+
+
+/* Bloquear respostas */
+
+document.querySelectorAll(
+'#provaForm input'
+).forEach(function(input){
+
+input.disabled=true;
+
+});
+
+}
+
+
+/* =====================================================
+   PREVENIR ENVIO NORMAL
+===================================================== */
+
+document.getElementById("provaForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+});
+
+</script>
+
+</body>
+</html>
+x

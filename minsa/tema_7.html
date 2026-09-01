@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tema VII — Divisão Político-Administrativa de Angola</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.7;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+.hero{
+    background:linear-gradient(135deg,#07152f,#123c7a,#155e75);
+    color:#fff;
+    padding:75px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+}
+
+.hero:before{
+    width:400px;
+    height:400px;
+    right:-150px;
+    top:-180px;
+}
+
+.hero:after{
+    width:260px;
+    height:260px;
+    left:-120px;
+    bottom:-150px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    background:#0ea5e9;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(32px,6vw,58px);
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:850px;
+    color:#dbeafe;
+    font-size:18px;
+}
+
+.nav{
+    background:#fff;
+    border-bottom:1px solid #e2e8f0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-inner{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:12px 0;
+}
+
+.nav a{
+    color:#334155;
+    text-decoration:none;
+    white-space:nowrap;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav a:hover{
+    background:#e0f2fe;
+    color:#0369a1;
+}
+
+section{
+    padding:55px 0;
+}
+
+.section-title{
+    font-size:31px;
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.section-subtitle{
+    color:#64748b;
+    margin-bottom:28px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+}
+
+.card h3{
+    color:#075985;
+    margin-bottom:12px;
+}
+
+.icon-title{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:15px;
+}
+
+.icon{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#e0f2fe;
+    color:#0284c7;
+    border-radius:12px;
+    font-size:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.mini-card{
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    padding:22px;
+}
+
+.mini-card i{
+    color:#0284c7;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.highlight{
+    border-left:5px solid #0284c7;
+    background:#e0f2fe;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.warning{
+    border-left:5px solid #f59e0b;
+    background:#fffbeb;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.success{
+    border-left:5px solid #16a34a;
+    background:#f0fdf4;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.danger{
+    border-left:5px solid #dc2626;
+    background:#fef2f2;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:18px;
+    background:#fff;
+}
+
+th,td{
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+}
+
+th{
+    background:#e0f2fe;
+    color:#075985;
+}
+
+.number{
+    font-size:42px;
+    font-weight:800;
+    color:#0369a1;
+}
+
+.question{
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    padding:24px;
+    margin-bottom:18px;
+}
+
+.answer{
+    margin-top:12px;
+    background:#f0fdf4;
+    color:#166534;
+    padding:12px 15px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+footer{
+    background:#07152f;
+    color:#cbd5e1;
+    text-align:center;
+    padding:40px 20px;
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:52px 15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    section{
+        padding:40px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">
+<i class="fa-solid fa-map"></i>
+CONCURSO — SECRETÁRIO CLÍNICO DE 3.ª CLASSE
+</span>
+
+<h1>VII — Divisão Político-Administrativa de Angola</h1>
+
+<p>
+Estudo completo da nova Divisão Político-Administrativa aprovada
+pela Lei n.º 14/24, de 5 de Setembro, com foco nos conhecimentos
+essenciais para concursos públicos.
+</p>
+
+</div>
+
+</header>
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="#conceito">Conceito</a> <a href="#lei">Lei 14/24</a> <a href="#estrutura">Estrutura</a> <a href="#novidades">Novidades</a> <a href="#provincias">Províncias</a> <a href="#municipios">Municípios</a> <a href="#comunas">Comunas</a> <a href="#objetivos">Objetivos</a> <a href="#questoes">Questões</a>
+
+</div>
+
+</nav>
+
+<main class="container">
+
+<!-- CONCEITO -->
+
+<section id="conceito">
+
+<h2 class="section-title">1. O que é a Divisão Político-Administrativa?</h2>
+
+<p class="section-subtitle">
+Compreender o conceito antes de decorar números.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-map-location-dot"></i>
+</div>
+
+<h3>Definição</h3>
+
+</div>
+
+<p>
+A <strong>Divisão Político-Administrativa (DPA)</strong> é a forma como
+o território de um Estado é organizado em diferentes unidades territoriais
+para efeitos de administração, governação e prestação de serviços públicos.
+</p>
+
+<p style="margin-top:15px;">
+Em Angola, a DPA define a organização territorial do país em
+<strong>províncias, municípios e comunas</strong>.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+<i class="fa-solid fa-lightbulb"></i>
+Ideia fundamental:
+</strong>
+
+<p>
+A DPA não significa apenas desenhar novas linhas no mapa.
+Ela procura organizar o território de forma a facilitar a administração
+pública e aproximar os serviços do cidadão.
+</p>
+
+</div>
+
+</section>
+
+<!-- LEI -->
+
+<section id="lei">
+
+<h2 class="section-title">
+2. Lei da Divisão Político-Administrativa
+</h2>
+
+<div class="card">
+
+<h3>Lei n.º 14/24, de 5 de Setembro</h3>
+
+<p>
+A nova Divisão Político-Administrativa de Angola foi aprovada pela
+<strong>Lei n.º 14/24, de 5 de Setembro</strong>.
+</p>
+
+<p style="margin-top:15px;">
+A legislação estabeleceu uma nova organização territorial do país,
+passando Angola a comportar:
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<div class="number">21</div>
+
+<h3>Províncias</h3>
+
+<p>
+O território nacional passou a estar organizado em 21 províncias.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-city"></i>
+
+<div class="number">326</div>
+
+<h3>Municípios</h3>
+
+<p>
+A nova organização territorial estabeleceu 326 municípios.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<div class="number">378</div>
+
+<h3>Comunas</h3>
+
+<p>
+A nova DPA estabeleceu 378 comunas.
+</p>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<strong>
+<i class="fa-solid fa-triangle-exclamation"></i>
+MEMORIZE ESTES NÚMEROS
+</strong>
+
+<p style="margin-top:8px;">
+<strong>21 Províncias → 326 Municípios → 378 Comunas.</strong>
+</p>
+
+<p>
+Esta é uma das informações com maior potencial para aparecer
+numa questão objetiva.
+</p>
+
+</div>
+
+</section>
+
+<!-- ESTRUTURA -->
+
+<section id="estrutura">
+
+<h2 class="section-title">3. Estrutura Territorial</h2>
+
+<p class="section-subtitle">
+Como as unidades territoriais estão organizadas.
+</p>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Nível</th>
+<th>Unidade</th>
+<th>Quantidade</th>
+</tr>
+
+<tr>
+<td>1.º nível</td>
+<td><strong>Província</strong></td>
+<td>21</td>
+</tr>
+
+<tr>
+<td>2.º nível</td>
+<td><strong>Município</strong></td>
+<td>326</td>
+</tr>
+
+<tr>
+<td>3.º nível</td>
+<td><strong>Comuna</strong></td>
+<td>378</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<p>
+<strong>Forma simples de memorizar:</strong>
+</p>
+
+<p style="font-size:20px;font-weight:800;margin-top:8px;">
+PROVÍNCIA → MUNICÍPIO → COMUNA
+</p>
+
+</div>
+
+</section>
+
+<!-- NOVIDADES -->
+
+<section id="novidades">
+
+<h2 class="section-title">4. Principais Mudanças</h2>
+
+<div class="card">
+
+<h3>Criação de novas províncias</h3>
+
+<p>
+A nova DPA criou três novas províncias:
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li><strong>Cuando</strong></li>
+
+<li><strong>Icolo e Bengo</strong></li>
+
+<li><strong>Moxico Leste</strong></li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Alteração do número de municípios</h3>
+
+<p>
+Uma das principais alterações foi a elevação de várias comunas
+e distritos urbanos à categoria de município.
+</p>
+
+<p style="margin-top:15px;">
+O resultado foi a criação de numerosos novos municípios,
+chegando o país ao total de <strong>326 municípios</strong>.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Alteração das comunas</h3>
+
+<p>
+O número de comunas passou para <strong>378</strong>.
+A nova organização também prevê uma estrutura diferenciada
+para a administração das comunas.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>
+<i class="fa-solid fa-circle-exclamation"></i>
+Atenção:
+</strong>
+
+<p>
+Não confundir a proposta inicial da reforma com a configuração
+aprovada posteriormente.
+Durante a fase de proposta foram divulgados números diferentes.
+Para a prova baseada na Lei n.º 14/24, memorize a configuração final:
+<strong>21 províncias, 326 municípios e 378 comunas.</strong>
+</p>
+
+</div>
+
+</section>
+
+<!-- PROVINCIAS -->
+
+<section id="provincias">
+
+<h2 class="section-title">5. As 21 Províncias</h2>
+
+<p class="section-subtitle">
+Lista atual resultante da nova Divisão Político-Administrativa.
+</p>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>N.º</th>
+<th>Província</th>
+</tr>
+
+<tr><td>1</td><td>Bengo</td></tr>
+<tr><td>2</td><td>Benguela</td></tr>
+<tr><td>3</td><td>Bié</td></tr>
+<tr><td>4</td><td>Cabinda</td></tr>
+<tr><td>5</td><td>Cuando</td></tr>
+<tr><td>6</td><td>Cuanza Norte</td></tr>
+<tr><td>7</td><td>Cuanza Sul</td></tr>
+<tr><td>8</td><td>Cunene</td></tr>
+<tr><td>9</td><td>Huambo</td></tr>
+<tr><td>10</td><td>Huíla</td></tr>
+<tr><td>11</td><td>Icolo e Bengo</td></tr>
+<tr><td>12</td><td>Luanda</td></tr>
+<tr><td>13</td><td>Lunda Norte</td></tr>
+<tr><td>14</td><td>Lunda Sul</td></tr>
+<tr><td>15</td><td>Malanje</td></tr>
+<tr><td>16</td><td>Moxico</td></tr>
+<tr><td>17</td><td>Moxico Leste</td></tr>
+<tr><td>18</td><td>Namibe</td></tr>
+<tr><td>19</td><td>Uíge</td></tr>
+<tr><td>20</td><td>Zaire</td></tr>
+<tr><td>21</td><td>Cubango</td></tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="success">
+
+<strong>
+<i class="fa-solid fa-check"></i>
+Três novas províncias a memorizar:
+</strong>
+
+<p style="margin-top:8px;">
+<strong>Cuando + Icolo e Bengo + Moxico Leste</strong>
+</p>
+
+</div>
+
+</section>
+
+<!-- MUNICIPIOS -->
+
+<section id="municipios">
+
+<h2 class="section-title">6. Municípios</h2>
+
+<div class="card">
+
+<h3>O que é um município?</h3>
+
+<p>
+O município é uma unidade territorial administrativa integrante
+de uma província.
+</p>
+
+<p style="margin-top:15px;">
+Com a nova DPA, Angola passou a contar com
+<strong>326 municípios</strong>.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Por que foram criados novos municípios?</h3>
+
+<p>
+A elevação de várias unidades territoriais à categoria de município
+está relacionada com a necessidade de aproximar a administração pública
+das populações e promover maior capacidade de gestão local.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>Para a prova:</strong>
+
+<p>
+Se a pergunta for:
+<strong>“Quantos municípios existem na nova DPA de Angola?”</strong>
+</p>
+
+<p style="margin-top:8px;font-size:20px;font-weight:800;">
+Resposta: 326 municípios.
+</p>
+
+</div>
+
+</section>
+
+<!-- COMUNAS -->
+
+<section id="comunas">
+
+<h2 class="section-title">7. Comunas</h2>
+
+<div class="card">
+
+<h3>Conceito</h3>
+
+<p>
+A comuna constitui uma unidade territorial administrativa
+integrada na organização territorial do município.
+</p>
+
+<p style="margin-top:15px;">
+A nova DPA estabelece <strong>378 comunas</strong>.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Comunas com estrutura administrativa</h3>
+
+<p>
+A implementação da nova organização prevê que nem todas as comunas
+tenham necessariamente estruturas administrativas próprias.
+O modelo procura adaptar a administração às características e
+necessidades de cada território.
+</p>
+
+</div>
+
+</section>
+
+<!-- OBJETIVOS -->
+
+<section id="objetivos">
+
+<h2 class="section-title">8. Objetivos da Nova DPA</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>Aproximar os serviços</h3>
+
+<p>
+Aproximar a Administração Pública das populações.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Desenvolvimento</h3>
+
+<p>
+Promover o desenvolvimento equilibrado do território.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+<h3>Reduzir assimetrias</h3>
+
+<p>
+Contribuir para reduzir desigualdades regionais.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-building"></i>
+
+<h3>Melhor administração</h3>
+
+<p>
+Melhorar a organização, eficácia e eficiência administrativa.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-road"></i>
+
+<h3>Infraestruturas</h3>
+
+<p>
+Facilitar o planeamento e desenvolvimento das infraestruturas.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hand-holding-heart"></i>
+
+<h3>Serviço ao cidadão</h3>
+
+<p>
+Melhorar a prestação dos serviços públicos às populações.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Principais finalidades</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Aproximar a administração dos cidadãos;</li>
+
+<li>Melhorar a prestação dos serviços públicos;</li>
+
+<li>Promover o desenvolvimento local;</li>
+
+<li>Reduzir assimetrias regionais;</li>
+
+<li>Melhorar a gestão territorial;</li>
+
+<li>Considerar fatores demográficos, económicos e sociais;</li>
+
+<li>Promover uma organização territorial mais eficiente.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- DIFERENÇAS -->
+
+<section>
+
+<h2 class="section-title">9. O que NÃO deve confundir</h2>
+
+<div class="card">
+
+<h3>DPA ≠ Autarquias Locais</h3>
+
+<p>
+A Divisão Político-Administrativa organiza o território.
+As autarquias locais constituem uma forma de administração autónoma
+prevista constitucionalmente.
+</p>
+
+<p style="margin-top:15px;">
+Portanto, <strong>não são conceitos equivalentes</strong>.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>DPA ≠ Administração Local do Estado</h3>
+
+<p>
+A divisão territorial define as unidades administrativas.
+A Administração Local do Estado refere-se à organização dos órgãos
+e serviços do Estado nos níveis territoriais correspondentes.
+</p>
+
+</div>
+
+</section>
+
+<!-- IMPLEMENTAÇÃO -->
+
+<section>
+
+<h2 class="section-title">10. Implementação da Nova DPA</h2>
+
+<div class="card">
+
+<p>
+A implementação da nova divisão não ocorreu simplesmente com a
+publicação da lei. Foi necessário estabelecer um processo de transição,
+organização administrativa, criação das estruturas e preparação dos
+recursos necessários.
+</p>
+
+<p style="margin-top:15px;">
+O <strong>Decreto Presidencial n.º 268/24, de 29 de Novembro</strong>,
+aprovou o Plano de Acção para a implementação da nova DPA e respetivo
+cronograma.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>Objetivo da implementação:</strong>
+
+<p>
+Criar condições administrativas, humanas, materiais e financeiras
+para o funcionamento das novas unidades territoriais.
+</p>
+
+</div>
+
+</section>
+
+<!-- RESUMO -->
+
+<section>
+
+<h2 class="section-title">11. Resumo de Alta Memorização</h2>
+
+<div class="card">
+
+<p style="font-size:21px;font-weight:800;text-align:center;color:#075985;">
+
+21 PROVÍNCIAS<br>
+↓<br>
+326 MUNICÍPIOS<br>
+↓<br>
+378 COMUNAS
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Lei fundamental</h3>
+
+<p>
+<strong>Lei n.º 14/24, de 5 de Setembro</strong>
+</p>
+
+<p style="margin-top:10px;">
+Lei da Divisão Político-Administrativa.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Três novas províncias</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Cuando</li>
+<li>Icolo e Bengo</li>
+<li>Moxico Leste</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- QUESTÕES -->
+
+<section id="questoes">
+
+<h2 class="section-title">12. Questões de Concurso</h2>
+
+<p class="section-subtitle">
+Teste-se antes de avançar para o próximo tema.
+</p>
+
+<div class="question">
+
+<strong>
+1. Qual diploma aprovou a nova Divisão Político-Administrativa
+de Angola?
+</strong>
+
+<div class="answer">
+Resposta: Lei n.º 14/24, de 5 de Setembro.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+2. Quantas províncias existem segundo a nova DPA?
+</strong>
+
+<div class="answer">
+Resposta: 21 províncias.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+3. Quantos municípios existem?
+</strong>
+
+<div class="answer">
+Resposta: 326 municípios.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+4. Quantas comunas existem?
+</strong>
+
+<div class="answer">
+Resposta: 378 comunas.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+5. Quais são as três novas províncias criadas pela nova DPA?
+</strong>
+
+<div class="answer">
+Resposta: Cuando, Icolo e Bengo e Moxico Leste.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+6. Qual é a sequência hierárquica básica da organização territorial?
+</strong>
+
+<div class="answer">
+Resposta: Província → Município → Comuna.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+7. Qual é um dos principais objetivos da nova DPA?
+</strong>
+
+<div class="answer">
+Resposta: Aproximar os serviços públicos das populações e melhorar
+a organização e prestação dos serviços.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+8. A Divisão Político-Administrativa e as autarquias locais são a mesma coisa?
+</strong>
+
+<div class="answer">
+Resposta: Não. São conceitos distintos.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+9. Que diploma aprovou o Plano de Acção para implementação da nova DPA?
+</strong>
+
+<div class="answer">
+Resposta: Decreto Presidencial n.º 268/24, de 29 de Novembro.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+10. Qual é o número que deve ser imediatamente associado à nova DPA?
+</strong>
+
+<div class="answer">
+Resposta: 21 — 326 — 378.
+</div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist final
+</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>☐ Sei o que significa DPA.</li>
+
+<li>☐ Sei o número da Lei da DPA.</li>
+
+<li>☐ Sei a data da Lei n.º 14/24.</li>
+
+<li>☐ Sei que Angola possui 21 províncias.</li>
+
+<li>☐ Sei que existem 326 municípios.</li>
+
+<li>☐ Sei que existem 378 comunas.</li>
+
+<li>☐ Sei identificar as três novas províncias.</li>
+
+<li>☐ Sei diferenciar província, município e comuna.</li>
+
+<li>☐ Conheço os principais objetivos da nova DPA.</li>
+
+<li>☐ Sei que DPA e autarquias locais não são a mesma coisa.</li>
+
+<li>☐ Sei qual diploma aprovou o plano de implementação.</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<h3>
+<i class="fa-solid fa-star"></i>
+Fórmula para decorar
+</h3>
+
+<p style="font-size:22px;font-weight:800;margin-top:10px;">
+14/24 → 21 → 326 → 378
+</p>
+
+<p>
+Lei n.º 14/24 → 21 províncias → 326 municípios → 378 comunas.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+<strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong>
+</p>
+
+<p style="margin-top:8px;">
+Tema VII — Divisão Político-Administrativa de Angola
+</p>
+
+<p style="margin-top:15px;font-size:13px;">
+Estude • Memorize • Resolva questões • Revise
+</p>
+
+</footer>
+
+</body>
+</html>

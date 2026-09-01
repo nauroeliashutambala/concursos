@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Preparação para Concurso Público</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --primary: #111827;
+        --secondary: #1f2937;
+        --gold: #e8a400;
+        --gold-light: #fff4d6;
+        --bg: #f3f4f6;
+        --white: #ffffff;
+        --text: #111827;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --green: #15803d;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+        background: linear-gradient(135deg, #111827, #1f2937);
+        color: white;
+        padding: 70px 20px 80px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::before {
+        content: "";
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: rgba(232, 164, 0, .08);
+        top: -160px;
+        right: -100px;
+    }
+
+    header::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .03);
+        bottom: -100px;
+        left: -60px;
+    }
+
+    .header-content {
+        max-width: 1100px;
+        margin: auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .badge {
+        display: inline-block;
+        background: rgba(232, 164, 0, .15);
+        color: #ffd76a;
+        border: 1px solid rgba(232, 164, 0, .3);
+        padding: 7px 14px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: clamp(30px, 5vw, 52px);
+        line-height: 1.1;
+        margin-bottom: 18px;
+        max-width: 800px;
+    }
+
+    header h1 span {
+        color: var(--gold);
+    }
+
+    header p {
+        max-width: 760px;
+        color: #d1d5db;
+        font-size: 17px;
+    }
+
+    /* CONTAINER */
+    .container {
+        width: min(1100px, calc(100% - 30px));
+        margin: auto;
+    }
+
+    /* INTRO */
+    .intro {
+        margin-top: -35px;
+        position: relative;
+        z-index: 5;
+    }
+
+    .intro-card {
+        background: white;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 15px 40px rgba(0,0,0,.08);
+        border: 1px solid var(--border);
+    }
+
+    .intro-card h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .intro-card p {
+        color: var(--muted);
+    }
+
+    /* SECTIONS */
+    section {
+        padding: 55px 0 0;
+    }
+
+    .section-title {
+        margin-bottom: 25px;
+    }
+
+    .section-title small {
+        display: block;
+        color: var(--gold);
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .section-title p {
+        color: var(--muted);
+        margin-top: 5px;
+    }
+
+    /* FINALIDADE */
+    .purpose-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .purpose-card {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+    }
+
+    .icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gold-light);
+        font-size: 23px;
+        margin-bottom: 15px;
+    }
+
+    .purpose-card h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
+    }
+
+    .purpose-card p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* AULAS */
+    .lessons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .lesson {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 17px;
+        padding: 22px;
+        display: flex;
+        gap: 18px;
+        transition: .2s ease;
+    }
+
+    .lesson:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0,0,0,.08);
+        border-color: #d8b45b;
+    }
+
+    .lesson-number {
+        flex: 0 0 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .lesson-content {
+        flex: 1;
+    }
+
+    .lesson-content h3 {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .lesson-content p {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 13px;
+    }
+
+    .btn {
+        display: inline-block;
+        text-decoration: none;
+        background: var(--gold);
+        color: #111;
+        font-weight: bold;
+        padding: 9px 15px;
+        border-radius: 8px;
+        font-size: 13px;
+    }
+
+    .btn:hover {
+        filter: brightness(.95);
+    }
+
+    /* METODO */
+    .method {
+        background: var(--primary);
+        color: white;
+        border-radius: 20px;
+        padding: 32px;
+    }
+
+    .method h2 {
+        margin-bottom: 20px;
+    }
+
+    .method-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .step {
+        border: 1px solid rgba(255,255,255,.1);
+        background: rgba(255,255,255,.04);
+        padding: 18px;
+        border-radius: 13px;
+    }
+
+    .step strong {
+        color: var(--gold);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .step span {
+        color: #d1d5db;
+        font-size: 13px;
+    }
+
+    /* AVISO */
+    .notice {
+        background: #fffbeb;
+        border: 1px solid #f3d98b;
+        border-left: 5px solid var(--gold);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 30px;
+    }
+
+    .notice strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .notice p {
+        color: #66551f;
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+        margin-top: 60px;
+        background: #111827;
+        color: #9ca3af;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+        .purpose-grid,
+        .lessons {
+            grid-template-columns: 1fr;
+        }
+
+        .method-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 500px) {
+        header {
+            padding: 50px 18px 65px;
+        }
+
+        .container {
+            width: min(100% - 22px, 1100px);
+        }
+
+        .intro-card {
+            padding: 22px;
+        }
+
+        section {
+            padding-top: 40px;
+        }
+
+        .lesson {
+            padding: 18px;
+            gap: 13px;
+        }
+
+        .lesson-number {
+            flex-basis: 44px;
+            height: 44px;
+            font-size: 15px;
+        }
+
+        .method {
+            padding: 22px;
+        }
+
+        .method-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+
+```
+    <div class="badge">
+        📚 SISTEMA DE PREPARAÇÃO
+    </div>
+
+    <h1>
+        Preparação para o <span>Concurso Público</span>
+    </h1>
+
+    <p>
+        Plataforma de estudo organizada para preparar o candidato
+        de forma progressiva, objetiva e prática para a prova.
+    </p>
+
+</div>
+```
+
+</header>
+
+<main class="container">
+
+```
+<!-- APRESENTAÇÃO -->
+<div class="intro">
+
+    <div class="intro-card">
+
+        <h2>Sobre este sistema</h2>
+
+        <p>
+            Este sistema foi desenvolvido para centralizar os conteúdos
+            necessários à preparação para o concurso público. As matérias
+            estão organizadas em aulas independentes, permitindo estudar
+            cada tema de forma estruturada e revisar os conhecimentos
+            antes da realização da prova.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- FINALIDADE -->
+<section>
+
+    <div class="section-title">
+        <small>Objetivo</small>
+        <h2>Finalidade do sistema</h2>
+        <p>
+            O sistema foi pensado para transformar o estudo em um processo
+            organizado e progressivo.
+        </p>
+    </div>
+
+    <div class="purpose-grid">
+
+        <div class="purpose-card">
+            <div class="icon">📖</div>
+            <h3>Aprender</h3>
+            <p>
+                Apresentar os conteúdos fundamentais de cada matéria
+                de maneira clara, organizada e aprofundada.
+            </p>
+        </div>
+
+        <div class="purpose-card">
+            <div class="icon">🧠</div>
+            <h3>Compreender</h3>
+            <p>
+                Explicar conceitos, estruturas, acontecimentos históricos
+                e princípios importantes para a prova.
+            </p>
+        </div>
+
+        <div class="purpose-card">
+            <div class="icon">🎯</div>
+            <h3>Preparar</h3>
+            <p>
+                Direcionar o candidato para os assuntos que podem ser
+                cobrados durante o processo de seleção.
+            </p>
+        </div>
+
+        <div class="purpose-card">
+            <div class="icon">🔄</div>
+            <h3>Revisar</h3>
+            <p>
+                Facilitar a revisão dos conteúdos através de resumos,
+                pontos importantes e questões.
+            </p>
+        </div>
+
+        <div class="purpose-card">
+            <div class="icon">📝</div>
+            <h3>Praticar</h3>
+            <p>
+                Utilizar questões e simulados para testar o conhecimento
+                adquirido durante as aulas.
+            </p>
+        </div>
+
+        <div class="purpose-card">
+            <div class="icon">🏆</div>
+            <h3>Conquistar</h3>
+            <p>
+                Aumentar a preparação e a confiança do candidato para
+                enfrentar a prova.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ORGANIZAÇÃO -->
+<section>
+
+    <div class="section-title">
+        <small>Conteúdo</small>
+        <h2>Organização das aulas</h2>
+        <p>
+            O conteúdo está dividido em cinco grandes áreas de estudo.
+        </p>
+    </div>
+
+
+    <div class="lessons">
+
+        <!-- AULA 1 -->
+        <article class="lesson">
+
+            <div class="lesson-number">01</div>
+
+            <div class="lesson-content">
+
+                <h3>História de Angola</h3>
+
+                <p>
+                    Principais acontecimentos da história de Angola,
+                    desde os períodos anteriores à colonização até
+                    à independência e à construção da paz.
+                </p>
+
+                <a href="aula1.html" class="btn">
+                    Acessar aula →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- AULA 2 -->
+        <article class="lesson">
+
+            <div class="lesson-number">02</div>
+
+            <div class="lesson-content">
+
+                <h3>Organização Política e Administrativa</h3>
+
+                <p>
+                    Organização do Estado angolano, órgãos de soberania,
+                    Administração Pública e organização territorial.
+                </p>
+
+                <a href="aula2.html" class="btn">
+                    Acessar aula →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- AULA 3 -->
+        <article class="lesson">
+
+            <div class="lesson-number">03</div>
+
+            <div class="lesson-content">
+
+                <h3>Noções Gerais de Administração Pública</h3>
+
+                <p>
+                    Princípios, organização, funcionamento, direitos,
+                    deveres, ética e responsabilidade na Administração Pública.
+                </p>
+
+                <a href="aula3.html" class="btn">
+                    Acessar aula →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- AULA 4 -->
+        <article class="lesson">
+
+            <div class="lesson-number">04</div>
+
+            <div class="lesson-content">
+
+                <h3>Ministério do Interior</h3>
+
+                <p>
+                    Organização, estrutura, órgãos e serviços do Ministério
+                    do Interior e suas principais atribuições.
+                </p>
+
+                <a href="aula4.html" class="btn">
+                    Acessar aula →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- AULA 5 -->
+        <article class="lesson">
+
+            <div class="lesson-number">05</div>
+
+            <div class="lesson-content">
+
+                <h3>Patriotismo</h3>
+
+                <p>
+                    Conceitos de pátria, nação, Estado, cidadania,
+                    símbolos nacionais, soberania, unidade e deveres
+                    do cidadão.
+                </p>
+
+                <a href="aula5.html" class="btn">
+                    Acessar aula →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- MÉTODO -->
+<section>
+
+    <div class="method">
+
+        <h2>📌 Como utilizar o sistema</h2>
+
+        <div class="method-grid">
+
+            <div class="step">
+                <strong>01 — Estude</strong>
+                <span>
+                    Leia uma aula do início ao fim e procure compreender
+                    os conceitos apresentados.
+                </span>
+            </div>
+
+            <div class="step">
+                <strong>02 — Revise</strong>
+                <span>
+                    Volte aos pontos principais e memorize datas,
+                    conceitos e diferenças importantes.
+                </span>
+            </div>
+
+            <div class="step">
+                <strong>03 — Pratique</strong>
+                <span>
+                    Resolva questões para verificar se realmente
+                    compreendeu o conteúdo.
+                </span>
+            </div>
+
+            <div class="step">
+                <strong>04 — Simule</strong>
+                <span>
+                    Faça simulados completos para testar seu desempenho
+                    em condições semelhantes às da prova.
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ORIENTAÇÃO -->
+<section>
+
+    <div class="notice">
+
+        <strong>💡 Estratégia de estudo</strong>
+
+        <p>
+            Não estude apenas para memorizar respostas. Procure compreender
+            os conceitos, as diferenças entre instituições, as funções dos
+            órgãos públicos e a relação entre os acontecimentos históricos.
+            Questões de concurso podem apresentar alternativas muito
+            semelhantes, por isso a compreensão é fundamental.
+        </p>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<footer>
+
+```
+<p>
+    <strong>Sistema de Preparação para Concurso Público</strong>
+</p>
+
+<p>
+    Estude. Revise. Pratique. Prepare-se.
+</p>
+    
+
+</footer>
+
+</body>
+</html>

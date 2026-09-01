@@ -1,0 +1,3429 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tema 1 — Noções sobre História de Angola</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --preto: #111111;
+            --preto-2: #191919;
+            --preto-3: #252525;
+
+            --amarelo: #E8A400;
+            --amarelo-claro: #FFF3C4;
+            --amarelo-suave: #FFF9E8;
+
+            --vermelho: #C92A2A;
+            --verde: #18864B;
+            --azul: #2463EB;
+
+            --texto: #1e1e1e;
+            --texto-secundario: #5d626b;
+
+            --fundo: #F4F5F7;
+            --branco: #FFFFFF;
+
+            --linha: #E1E4E8;
+
+            --radius: 14px;
+            --shadow: 0 10px 35px rgba(0, 0, 0, .07);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: var(--fundo);
+            color: var(--texto);
+            line-height: 1.72;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* ======================================================
+           HEADER
+        ====================================================== */
+
+        .topo {
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(232, 164, 0, .18),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #090909,
+                    #1b1b1b
+                );
+
+            color: #fff;
+            border-bottom: 5px solid var(--amarelo);
+        }
+
+        .topo-inner {
+            max-width: 1250px;
+            margin: auto;
+            padding: 55px 25px 50px;
+        }
+
+        .breadcrumb {
+            color: #bfc3c9;
+            font-size: .9rem;
+            margin-bottom: 18px;
+        }
+
+        .etiqueta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 13px;
+            margin-bottom: 18px;
+
+            border: 1px solid rgba(232, 164, 0, .55);
+            border-radius: 999px;
+
+            background: rgba(232, 164, 0, .09);
+            color: #ffd66c;
+
+            font-size: .82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .07em;
+        }
+
+        .topo h1 {
+            max-width: 850px;
+            font-size: clamp(2rem, 5vw, 4.1rem);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .topo h1 span {
+            color: var(--amarelo);
+        }
+
+        .topo p {
+            max-width: 800px;
+            color: #d4d6da;
+            font-size: 1.05rem;
+        }
+
+        .dados-topo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .dados-topo span {
+            padding: 8px 13px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .05);
+            color: #ddd;
+            font-size: .86rem;
+        }
+
+        /* ======================================================
+           LAYOUT
+        ====================================================== */
+
+        .layout {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 30px 25px 80px;
+
+            display: grid;
+            grid-template-columns: 280px minmax(0, 1fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        /* ======================================================
+           MENU LATERAL
+        ====================================================== */
+
+        .sidebar {
+            position: sticky;
+            top: 20px;
+
+            background: var(--branco);
+            border: 1px solid var(--linha);
+            border-radius: var(--radius);
+
+            padding: 20px;
+            box-shadow: var(--shadow);
+
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .sidebar h3 {
+            font-size: .82rem;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--texto-secundario);
+            margin-bottom: 14px;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 9px 10px;
+            border-radius: 7px;
+
+            color: #444;
+            font-size: .88rem;
+
+            transition: .2s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--amarelo-suave);
+            color: #9b6d00;
+        }
+
+        .sidebar-nav strong {
+            color: var(--preto);
+        }
+
+        /* ======================================================
+           CONTEÚDO
+        ====================================================== */
+
+        main {
+            min-width: 0;
+        }
+
+        .section {
+            background: var(--branco);
+            border: 1px solid var(--linha);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+
+            padding: 32px;
+            margin-bottom: 26px;
+        }
+
+        .section-numero {
+            display: inline-block;
+            color: var(--amarelo);
+            font-weight: 900;
+            font-size: .8rem;
+
+            text-transform: uppercase;
+            letter-spacing: .1em;
+
+            margin-bottom: 6px;
+        }
+
+        .section h2 {
+            color: var(--preto);
+            font-size: clamp(1.5rem, 3vw, 2.1rem);
+            line-height: 1.2;
+            margin-bottom: 18px;
+            letter-spacing: -.6px;
+        }
+
+        .section h3 {
+            margin: 30px 0 10px;
+            font-size: 1.25rem;
+            color: #1d1d1d;
+
+            padding-left: 12px;
+            border-left: 4px solid var(--amarelo);
+        }
+
+        .section h4 {
+            margin: 22px 0 8px;
+            font-size: 1.03rem;
+            color: #222;
+        }
+
+        .section p {
+            margin: 0 0 14px;
+        }
+
+        .section ul,
+        .section ol {
+            padding-left: 22px;
+            margin: 10px 0 18px;
+        }
+
+        .section li {
+            margin-bottom: 7px;
+        }
+
+        .lead {
+            font-size: 1.08rem;
+            color: #444;
+        }
+
+        mark {
+            background: #FFF0A7;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        /* ======================================================
+           CAIXAS
+        ====================================================== */
+
+        .box {
+            margin: 20px 0;
+            padding: 18px 20px;
+
+            border-radius: 10px;
+            border: 1px solid var(--linha);
+        }
+
+        .box strong.titulo {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .box.importante {
+            background: #FFF9E8;
+            border-left: 5px solid var(--amarelo);
+        }
+
+        .box.prova {
+            background: #F3F7FF;
+            border-left: 5px solid var(--azul);
+        }
+
+        .box.alerta {
+            background: #FFF2F2;
+            border-left: 5px solid var(--vermelho);
+        }
+
+        .box.conceito {
+            background: #F2FAF5;
+            border-left: 5px solid var(--verde);
+        }
+
+        /* ======================================================
+           GRID
+        ====================================================== */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .card {
+            border: 1px solid var(--linha);
+            border-radius: 11px;
+            padding: 19px;
+            background: #fafafa;
+        }
+
+        .card h4 {
+            margin: 0 0 7px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: .93rem;
+            color: #555;
+        }
+
+        /* ======================================================
+           LINHA DO TEMPO
+        ====================================================== */
+
+        .timeline {
+            position: relative;
+            margin-top: 25px;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 6px;
+            bottom: 6px;
+            width: 3px;
+            background: #e1e1e1;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -30px;
+            top: 6px;
+
+            width: 15px;
+            height: 15px;
+
+            border-radius: 50%;
+            background: var(--amarelo);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px var(--amarelo);
+        }
+
+        .timeline-data {
+            font-weight: 900;
+            color: #9a6b00;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item p {
+            margin: 0;
+        }
+
+        /* ======================================================
+           TABELAS
+        ====================================================== */
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dadde2;
+            padding: 12px 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--preto);
+            color: white;
+        }
+
+        tr:nth-child(even) td {
+            background: #fafafa;
+        }
+
+        /* ======================================================
+           PERGUNTAS
+        ====================================================== */
+
+        .questao {
+            border: 1px solid var(--linha);
+            border-radius: 11px;
+            padding: 20px;
+            margin: 18px 0;
+            background: #fff;
+        }
+
+        .questao-numero {
+            color: var(--amarelo);
+            font-weight: 900;
+            margin-bottom: 7px;
+        }
+
+        .alternativas {
+            display: grid;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .alternativa {
+            border: 1px solid #dedede;
+            border-radius: 8px;
+            padding: 11px 13px;
+            background: #fafafa;
+        }
+
+        details {
+            margin-top: 12px;
+            border-radius: 8px;
+            background: #f4f5f6;
+            padding: 10px 13px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 800;
+        }
+
+        /* ======================================================
+           RESUMO
+        ====================================================== */
+
+        .resumo-final {
+            background: var(--preto);
+            color: #fff;
+        }
+
+        .resumo-final h2,
+        .resumo-final h3 {
+            color: #fff;
+        }
+
+        .resumo-final h3 {
+            border-left-color: var(--amarelo);
+        }
+
+        .resumo-final li {
+            color: #ddd;
+        }
+
+        /* ======================================================
+           BOTÃO TOPO
+        ====================================================== */
+
+        #btnTopo {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: var(--amarelo);
+            color: #111;
+
+            font-size: 1.2rem;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,.18);
+
+            display: none;
+        }
+
+        /* ======================================================
+           RESPONSIVO
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .topo-inner {
+                padding: 40px 18px;
+            }
+
+            .layout {
+                padding: 20px 12px 70px;
+            }
+
+            .section {
+                padding: 22px 17px;
+                border-radius: 10px;
+            }
+
+            .topo h1 {
+                letter-spacing: -1px;
+            }
+        }
+
+        @media print {
+
+            body {
+                background: #fff;
+            }
+
+            .sidebar,
+            #btnTopo {
+                display: none !important;
+            }
+
+            .layout {
+                display: block;
+                max-width: none;
+                padding: 0;
+            }
+
+            .section {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+
+            .topo {
+                background: #fff;
+                color: #111;
+                border-bottom: 3px solid #111;
+            }
+
+            .topo p,
+            .breadcrumb {
+                color: #333;
+            }
+
+            .topo h1 span {
+                color: #111;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="topo" id="inicio">
+
+    <div class="topo-inner">
+
+        <div class="breadcrumb">
+            Preparação para Concurso Público › Prova Escrita › Tema 1
+        </div>
+
+        <div class="etiqueta">
+            História de Angola
+        </div>
+
+        <h1>
+            Noções sobre a
+            <span>História de Angola</span>
+        </h1>
+
+        <p>
+            Estudo aprofundado da formação histórica de Angola:
+            sociedades pré-coloniais, antigos reinos africanos,
+            presença portuguesa, resistência, colonialismo,
+            nacionalismo, luta de libertação, independência,
+            conflito armado, democratização, paz e reconstrução nacional.
+        </p>
+
+        <div class="dados-topo">
+            <span>📚 Tema 1</span>
+            <span>🎯 Preparação para concurso</span>
+            <span>🧠 Teoria + revisão</span>
+            <span>❓ Questões comentadas</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="layout">
+
+    <!-- ======================================================
+         MENU LATERAL
+    ======================================================= -->
+
+    <aside class="sidebar">
+
+        <h3>Conteúdo do tema</h3>
+
+        <nav class="sidebar-nav">
+
+            <a href="#introducao">
+                <strong>01.</strong> Introdução
+            </a>
+
+            <a href="#antes-colonizacao">
+                <strong>02.</strong> Angola antes da colonização
+            </a>
+
+            <a href="#reinos">
+                <strong>03.</strong> Reinos históricos
+            </a>
+
+            <a href="#portugueses">
+                <strong>04.</strong> Chegada dos portugueses
+            </a>
+
+            <a href="#escravatura">
+                <strong>05.</strong> Escravatura e tráfico
+            </a>
+
+            <a href="#resistencia">
+                <strong>06.</strong> Resistência africana
+            </a>
+
+            <a href="#colonialismo">
+                <strong>07.</strong> Dominação colonial
+            </a>
+
+            <a href="#nacionalismo">
+                <strong>08.</strong> Nacionalismo angolano
+            </a>
+
+            <a href="#movimentos">
+                <strong>09.</strong> MPLA, FNLA e UNITA
+            </a>
+
+            <a href="#1961">
+                <strong>10.</strong> O ano de 1961
+            </a>
+
+            <a href="#independencia">
+                <strong>11.</strong> Independência
+            </a>
+
+            <a href="#guerra">
+                <strong>12.</strong> Guerra pós-independência
+            </a>
+
+            <a href="#paz">
+                <strong>13.</strong> Processo de paz
+            </a>
+
+            <a href="#cronologia">
+                <strong>14.</strong> Cronologia
+            </a>
+
+            <a href="#conceitos">
+                <strong>15.</strong> Conceitos-chave
+            </a>
+
+            <a href="#questoes">
+                <strong>16.</strong> Questões
+            </a>
+
+            <a href="#resumo">
+                <strong>17.</strong> Resumo final
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main>
+
+        <!-- ======================================================
+             1 - INTRODUÇÃO
+        ======================================================= -->
+
+        <section class="section" id="introducao">
+
+            <span class="section-numero">Capítulo 01</span>
+
+            <h2>
+                O que significa estudar a História de Angola?
+            </h2>
+
+            <p class="lead">
+                A História de Angola não começa com a chegada dos portugueses
+                no século XV. Muito antes do contacto europeu, o território
+                que hoje constitui Angola era habitado por diversas
+                comunidades africanas que desenvolveram organizações sociais,
+                económicas e políticas complexas.
+            </p>
+
+            <p>
+                Ao longo dos séculos surgiram importantes estruturas políticas,
+                entre elas os reinos do Kongo, Ndongo, Matamba e Lunda,
+                além de outras formações políticas existentes no actual
+                território angolano.
+            </p>
+
+            <p>
+                A partir do final do século XV, o contacto com Portugal
+                transformou profundamente as relações económicas e políticas
+                da região. Posteriormente desenvolveram-se processos de
+                ocupação colonial, resistência africana, nacionalismo,
+                luta anticolonial e construção do Estado angolano moderno.
+            </p>
+
+            <div class="box importante">
+
+                <strong class="titulo">
+                    ⚠️ Ideia fundamental
+                </strong>
+
+                Angola possui uma história muito anterior ao colonialismo.
+
+                Por isso, uma resposta como
+                <em>"a História de Angola começou quando os portugueses chegaram"</em>
+                é historicamente incorrecta.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             2 - ANGOLA PRÉ-COLONIAL
+        ======================================================= -->
+
+        <section class="section" id="antes-colonizacao">
+
+            <span class="section-numero">Capítulo 02</span>
+
+            <h2>
+                Angola antes da colonização europeia
+            </h2>
+
+            <p>
+                O actual território angolano foi ocupado por diferentes
+                populações ao longo de um processo histórico muito antigo.
+                Entre as populações mais antigas da África Austral encontram-se
+                grupos associados aos povos San.
+            </p>
+
+            <p>
+                Posteriormente ocorreram movimentos migratórios de povos
+                falantes de línguas bantu que tiveram enorme importância
+                na formação cultural, linguística, económica e política
+                das populações da região.
+            </p>
+
+            <h3>2.1 Os povos bantu</h3>
+
+            <p>
+                A expressão <strong>bantu</strong> não representa um único povo
+                nem uma única etnia. Refere-se principalmente a um vasto
+                conjunto de povos africanos cujas línguas pertencem à família
+                linguística bantu.
+            </p>
+
+            <p>
+                Ao longo de vários séculos, diferentes grupos bantu
+                estabeleceram-se em zonas da África Central, Oriental e Austral.
+            </p>
+
+            <h4>Contribuições associadas às sociedades bantu</h4>
+
+            <ul>
+                <li>desenvolvimento da agricultura;</li>
+                <li>criação de animais em determinadas regiões;</li>
+                <li>trabalho do ferro;</li>
+                <li>produção de instrumentos agrícolas e armas;</li>
+                <li>formação de aldeias e comunidades organizadas;</li>
+                <li>desenvolvimento de estruturas políticas;</li>
+                <li>comércio entre diferentes comunidades;</li>
+                <li>formação de reinos e outras unidades políticas.</li>
+            </ul>
+
+            <div class="box prova">
+
+                <strong class="titulo">
+                    🎯 Possível pergunta de prova
+                </strong>
+
+                Os povos bantu devem ser entendidos como um único povo?
+
+                <br><br>
+
+                <strong>Não.</strong>
+                A designação reúne numerosos povos relacionados,
+                sobretudo, por características linguísticas e históricas.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             3 - REINOS
+        ======================================================= -->
+
+        <section class="section" id="reinos">
+
+            <span class="section-numero">Capítulo 03</span>
+
+            <h2>
+                Reinos e organizações políticas anteriores ao domínio colonial
+            </h2>
+
+            <p>
+                Antes da consolidação do colonialismo português,
+                existiam organizações políticas africanas estruturadas.
+                Algumas controlavam territórios extensos,
+                mantinham autoridades políticas e realizavam comércio
+                regional e de longa distância.
+            </p>
+
+
+            <!-- KONGO -->
+
+            <h3>3.1 Reino do Kongo</h3>
+
+            <p>
+                O Reino do Kongo foi uma das mais importantes formações
+                políticas da África Central.
+            </p>
+
+            <p>
+                O seu território abrangia áreas que actualmente pertencem
+                a diferentes Estados, incluindo partes do norte da actual Angola.
+            </p>
+
+            <p>
+                O soberano do reino era conhecido pelo título de
+                <strong>Manikongo</strong>.
+            </p>
+
+            <h4>Características importantes</h4>
+
+            <ul>
+                <li>existência de autoridade central;</li>
+                <li>divisão territorial e administrativa;</li>
+                <li>actividade agrícola;</li>
+                <li>produção artesanal;</li>
+                <li>comércio interno e externo;</li>
+                <li>relações diplomáticas com outros poderes.</li>
+            </ul>
+
+
+            <!-- NDONGO -->
+
+            <h3>3.2 Reino do Ndongo</h3>
+
+            <p>
+                O Reino do Ndongo desenvolveu-se na região associada
+                aos povos Mbundu.
+            </p>
+
+            <p>
+                O título utilizado pelo soberano era
+                <strong>Ngola</strong>.
+            </p>
+
+            <div class="box importante">
+
+                <strong class="titulo">
+                    💡 Atenção ao termo "Angola"
+                </strong>
+
+                O nome <strong>Angola</strong> está historicamente associado
+                ao título <strong>Ngola</strong>, utilizado pelos governantes
+                do Ndongo.
+
+            </div>
+
+
+            <!-- MATAMBA -->
+
+            <h3>3.3 Reino da Matamba</h3>
+
+            <p>
+                Matamba constituiu outra importante formação política
+                da região.
+            </p>
+
+            <p>
+                A sua história está particularmente associada à figura
+                de <strong>Njinga Mbande</strong>, também conhecida por
+                diferentes grafias como Nzinga, Jinga ou Ginga,
+                dependendo da fonte histórica.
+            </p>
+
+
+            <!-- LUNDA -->
+
+            <h3>3.4 Reino ou Império Lunda</h3>
+
+            <p>
+                A formação política Lunda teve grande influência
+                na região oriental do actual território angolano
+                e em territórios actualmente pertencentes
+                a países vizinhos.
+            </p>
+
+            <p>
+                Desenvolveu sistemas de autoridade,
+                relações comerciais e redes políticas extensas.
+            </p>
+
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Formação política</th>
+                            <th>Elemento importante</th>
+                            <th>Zona associada</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Reino do Kongo</td>
+                            <td>Manikongo</td>
+                            <td>Norte de Angola e África Central</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ndongo</td>
+                            <td>Título Ngola</td>
+                            <td>Região Mbundu</td>
+                        </tr>
+
+                        <tr>
+                            <td>Matamba</td>
+                            <td>Associado à resistência de Njinga</td>
+                            <td>Interior norte/centro</td>
+                        </tr>
+
+                        <tr>
+                            <td>Lunda</td>
+                            <td>Grande rede política e comercial</td>
+                            <td>Leste de Angola e regiões vizinhas</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             4 - CHEGADA DOS PORTUGUESES
+        ======================================================= -->
+
+        <section class="section" id="portugueses">
+
+            <span class="section-numero">Capítulo 04</span>
+
+            <h2>
+                A chegada dos portugueses
+            </h2>
+
+            <p>
+                Durante o século XV, Portugal intensificou a exploração
+                marítima da costa ocidental africana.
+            </p>
+
+            <p>
+                O navegador português <strong>Diogo Cão</strong>
+                chegou à região da foz do rio Congo durante a década
+                de 1480, iniciando contactos entre portugueses
+                e o Reino do Kongo.
+            </p>
+
+            <p>
+                Inicialmente, essas relações envolveram diplomacia,
+                comércio, missões religiosas e intercâmbios políticos.
+            </p>
+
+            <p>
+                Ao longo do tempo, porém, os interesses portugueses
+                passaram a envolver cada vez mais o controlo comercial,
+                a expansão territorial e o tráfico de pessoas escravizadas.
+            </p>
+
+            <div class="box alerta">
+
+                <strong class="titulo">
+                    ❗ Erro comum
+                </strong>
+
+                A chegada de Diogo Cão não significou que Portugal
+                tivesse automaticamente conquistado todo o território
+                que actualmente corresponde a Angola.
+
+                <br><br>
+
+                A ocupação efectiva foi um processo longo,
+                marcado por conflitos e resistências.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             5 - ESCRAVATURA
+        ======================================================= -->
+
+        <section class="section" id="escravatura">
+
+            <span class="section-numero">Capítulo 05</span>
+
+            <h2>
+                Escravatura e tráfico atlântico
+            </h2>
+
+            <p>
+                Um dos processos mais devastadores ligados à expansão
+                europeia em África foi o tráfico transatlântico
+                de pessoas escravizadas.
+            </p>
+
+            <p>
+                Durante vários séculos, grande número de africanos
+                foi capturado, vendido e transportado à força
+                para outras regiões, principalmente para as Américas.
+            </p>
+
+            <p>
+                Angola tornou-se uma das regiões africanas profundamente
+                afectadas por esse comércio.
+            </p>
+
+            <h3>Consequências</h3>
+
+            <ul>
+                <li>perda de população;</li>
+                <li>desestruturação de comunidades;</li>
+                <li>conflitos políticos e militares;</li>
+                <li>alteração de sistemas económicos;</li>
+                <li>crescimento de redes de captura e comércio humano;</li>
+                <li>fortalecimento da presença portuguesa em certas zonas;</li>
+                <li>impactos demográficos de longa duração.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- ======================================================
+             6 - RESISTÊNCIA
+        ======================================================= -->
+
+        <section class="section" id="resistencia">
+
+            <span class="section-numero">Capítulo 06</span>
+
+            <h2>
+                Resistência africana à expansão portuguesa
+            </h2>
+
+            <p>
+                A expansão portuguesa não ocorreu sem oposição.
+                Diversos reinos, chefes políticos e comunidades
+                africanas resistiram militar, diplomática,
+                económica e culturalmente.
+            </p>
+
+
+            <h3>6.1 Njinga Mbande</h3>
+
+            <p>
+                Uma das figuras históricas mais conhecidas da resistência
+                africana na região de Angola é
+                <strong>Njinga Mbande</strong>.
+            </p>
+
+            <p>
+                Njinga esteve ligada politicamente aos reinos do
+                Ndongo e da Matamba e destacou-se na resistência
+                à expansão portuguesa durante o século XVII.
+            </p>
+
+            <p>
+                Utilizou diferentes estratégias:
+            </p>
+
+            <ul>
+                <li>diplomacia;</li>
+                <li>negociação política;</li>
+                <li>alianças;</li>
+                <li>estratégias militares;</li>
+                <li>reorganização política.</li>
+            </ul>
+
+
+            <h3>6.2 Resistência não foi um único acontecimento</h3>
+
+            <p>
+                A resistência à ocupação colonial ocorreu em diferentes
+                momentos e regiões.
+            </p>
+
+            <p>
+                Portanto, não deve ser reduzida apenas à actuação
+                de uma personalidade.
+            </p>
+
+            <div class="box conceito">
+
+                <strong class="titulo">
+                    🧠 Conceito
+                </strong>
+
+                <strong>Resistência anticolonial</strong>
+                corresponde ao conjunto de acções militares,
+                políticas, diplomáticas, económicas e culturais
+                realizadas contra a dominação colonial.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             7 - COLONIALISMO
+        ======================================================= -->
+
+        <section class="section" id="colonialismo">
+
+            <span class="section-numero">Capítulo 07</span>
+
+            <h2>
+                Consolidação do domínio colonial português
+            </h2>
+
+            <p>
+                Durante séculos, o controlo português esteve concentrado
+                sobretudo em determinados pontos costeiros e áreas
+                estratégicas.
+            </p>
+
+            <p>
+                A ocupação mais efectiva do interior foi intensificada
+                posteriormente, principalmente nos séculos XIX e XX.
+            </p>
+
+
+            <h3>7.1 Conferência de Berlim</h3>
+
+            <p>
+                Entre 1884 e 1885 ocorreu a
+                <strong>Conferência de Berlim</strong>,
+                no contexto da disputa europeia por territórios africanos.
+            </p>
+
+            <p>
+                O princípio da ocupação efectiva pressionou as potências
+                europeias a demonstrarem controlo real sobre os territórios
+                que reivindicavam.
+            </p>
+
+            <p>
+                Portugal intensificou então campanhas de ocupação
+                e controlo administrativo em Angola.
+            </p>
+
+
+            <h3>7.2 Administração colonial</h3>
+
+            <p>
+                O sistema colonial português desenvolveu estruturas
+                administrativas destinadas a controlar a população,
+                o território e a economia.
+            </p>
+
+            <p>
+                Durante diferentes períodos existiram distinções jurídicas
+                e sociais entre grupos da população.
+            </p>
+
+
+            <h3>7.3 Estatuto do Indigenato</h3>
+
+            <p>
+                O sistema colonial português aplicou durante parte
+                do século XX regimes jurídicos diferenciados.
+            </p>
+
+            <p>
+                O chamado <strong>indigenato</strong> estabelecia
+                uma posição jurídica desigual para grande parte
+                das populações africanas sob domínio colonial.
+            </p>
+
+            <p>
+                Existia também a categoria dos chamados
+                <strong>assimilados</strong>, para africanos que,
+                preenchendo requisitos determinados pela administração,
+                adquiriam estatuto jurídico diferente.
+            </p>
+
+
+            <h3>7.4 Trabalho forçado</h3>
+
+            <p>
+                Diferentes formas de trabalho obrigatório ou coercivo
+                constituíram um importante elemento de exploração
+                no sistema colonial.
+            </p>
+
+            <div class="box prova">
+
+                <strong class="titulo">
+                    🎯 Para memorizar
+                </strong>
+
+                Colonialismo não significa apenas presença estrangeira.
+
+                Envolve domínio político, económico e administrativo
+                de um território e da sua população por outro Estado.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             8 - NACIONALISMO
+        ======================================================= -->
+
+        <section class="section" id="nacionalismo">
+
+            <span class="section-numero">Capítulo 08</span>
+
+            <h2>
+                O nascimento do nacionalismo angolano
+            </h2>
+
+            <p>
+                Durante o século XX fortaleceu-se entre diferentes sectores
+                da população a defesa da autodeterminação
+                e da independência de Angola.
+            </p>
+
+            <p>
+                O nacionalismo desenvolveu-se por meio de associações,
+                movimentos culturais, organizações políticas,
+                intelectuais, trabalhadores e posteriormente
+                movimentos de libertação.
+            </p>
+
+
+            <h3>8.1 Processo dos 50</h3>
+
+            <p>
+                Em 1959, autoridades coloniais prenderam vários
+                nacionalistas angolanos no episódio conhecido como
+                <strong>Processo dos 50</strong>.
+            </p>
+
+            <p>
+                O episódio tornou-se um dos acontecimentos associados
+                ao crescimento da repressão colonial e do nacionalismo
+                angolano no final da década de 1950.
+            </p>
+
+
+            <h3>8.2 Objectivo central do nacionalismo</h3>
+
+            <p>
+                Embora existissem diferentes correntes e organizações,
+                uma questão essencial unia os movimentos
+                anticoloniais:
+            </p>
+
+            <div class="box importante">
+
+                <strong class="titulo">
+                    Independência nacional
+                </strong>
+
+                A defesa do direito dos angolanos à autodeterminação,
+                soberania e constituição de um Estado independente.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             9 - MOVIMENTOS
+        ======================================================= -->
+
+        <section class="section" id="movimentos">
+
+            <span class="section-numero">Capítulo 09</span>
+
+            <h2>
+                Os principais movimentos de libertação
+            </h2>
+
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h4>MPLA</h4>
+
+                    <p>
+                        Movimento Popular de Libertação de Angola.
+                        Tornou-se uma das principais organizações
+                        da luta anticolonial e proclamou,
+                        em Luanda, a República Popular de Angola
+                        em 11 de Novembro de 1975.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>FNLA</h4>
+
+                    <p>
+                        Frente Nacional de Libertação de Angola.
+                        Foi uma das três organizações reconhecidas
+                        no processo de transição estabelecido
+                        pelos Acordos de Alvor.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>UNITA</h4>
+
+                    <p>
+                        União Nacional para a Independência Total de Angola.
+                        Fundada em 1966, tornou-se outro dos principais
+                        movimentos envolvidos tanto na luta anticolonial
+                        quanto no conflito político-militar posterior.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="box alerta">
+
+                <strong class="titulo">
+                    ⚠️ Não confundir
+                </strong>
+
+                MPLA, FNLA e UNITA participaram da luta contra
+                o colonialismo português, mas também passaram
+                a combater entre si durante a disputa pelo poder
+                no período de transição para a independência.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             10 - 1961
+        ======================================================= -->
+
+        <section class="section" id="1961">
+
+            <span class="section-numero">Capítulo 10</span>
+
+            <h2>
+                1961 — Um ano decisivo
+            </h2>
+
+            <p>
+                O ano de <strong>1961</strong> constitui um dos maiores
+                marcos da História contemporânea de Angola.
+            </p>
+
+
+            <h3>10.1 Baixa de Kasanje</h3>
+
+            <p>
+                No início de 1961 ocorreu uma revolta de trabalhadores
+                e camponeses na região da Baixa de Kasanje,
+                associada à contestação das condições de exploração
+                existentes na produção algodoeira.
+            </p>
+
+
+            <h3>10.2 4 de Fevereiro de 1961</h3>
+
+            <p>
+                Em 4 de Fevereiro ocorreram ataques contra estabelecimentos
+                prisionais e estruturas coloniais em Luanda.
+            </p>
+
+            <p>
+                Na memória histórica oficial angolana,
+                a data é assinalada como o
+                <strong>Início da Luta Armada de Libertação Nacional</strong>.
+            </p>
+
+
+            <h3>10.3 15 de Março de 1961</h3>
+
+            <p>
+                Em Março de 1961 registou-se uma grande insurreição
+                no norte de Angola, acompanhada de violência em larga escala,
+                repressão e agravamento do conflito.
+            </p>
+
+
+            <div class="box prova">
+
+                <strong class="titulo">
+                    🎯 Datas que podem aparecer directamente
+                </strong>
+
+                <strong>4 de Janeiro de 1961</strong> — acontecimentos
+                relacionados com a Baixa de Kasanje.
+
+                <br><br>
+
+                <strong>4 de Fevereiro de 1961</strong> —
+                marco oficial do início da luta armada
+                de libertação nacional.
+
+                <br><br>
+
+                <strong>15 de Março de 1961</strong> —
+                insurreição no norte de Angola.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             11 - PORTUGAL E ALVOR
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">Capítulo 11</span>
+
+            <h2>
+                Revolução dos Cravos e Acordos de Alvor
+            </h2>
+
+
+            <h3>11.1 25 de Abril de 1974</h3>
+
+            <p>
+                Em Portugal, a Revolução de 25 de Abril de 1974
+                derrubou o regime autoritário do Estado Novo.
+            </p>
+
+            <p>
+                A mudança política portuguesa acelerou o processo
+                de descolonização das colónias africanas,
+                incluindo Angola.
+            </p>
+
+
+            <h3>11.2 Acordos de Alvor</h3>
+
+            <p>
+                Em Janeiro de 1975, Portugal,
+                MPLA, FNLA e UNITA celebraram os
+                <strong>Acordos de Alvor</strong>.
+            </p>
+
+            <p>
+                Os acordos procuravam organizar a transição
+                para a independência.
+            </p>
+
+            <h4>Entre os objectivos estavam:</h4>
+
+            <ul>
+                <li>estabelecimento de um Governo de Transição;</li>
+                <li>partilha temporária de responsabilidades;</li>
+                <li>preparação do processo de independência;</li>
+                <li>
+                    definição de
+                    <strong>11 de Novembro de 1975</strong>
+                    como data da independência.
+                </li>
+            </ul>
+
+            <p>
+                O Governo de Transição, contudo,
+                rapidamente entrou em crise.
+            </p>
+
+            <p>
+                Os três movimentos passaram a combater entre si,
+                agravando a instabilidade militar.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================================
+             12 - INDEPENDÊNCIA
+        ======================================================= -->
+
+        <section class="section" id="independencia">
+
+            <span class="section-numero">Capítulo 12</span>
+
+            <h2>
+                11 de Novembro de 1975 — Independência Nacional
+            </h2>
+
+            <p>
+                Em <strong>11 de Novembro de 1975</strong>,
+                Angola alcançou formalmente a independência
+                do domínio colonial português.
+            </p>
+
+            <p>
+                Em Luanda,
+                <strong>António Agostinho Neto</strong>
+                proclamou a independência e tornou-se
+                o primeiro Presidente do novo Estado.
+            </p>
+
+            <p>
+                O país passou inicialmente a denominar-se
+                <strong>República Popular de Angola</strong>.
+            </p>
+
+
+            <div class="box importante">
+
+                <strong class="titulo">
+                    📌 Questão essencial
+                </strong>
+
+                <strong>Data da Independência:</strong>
+                11 de Novembro de 1975.
+
+                <br>
+
+                <strong>Primeiro Presidente:</strong>
+                António Agostinho Neto.
+
+            </div>
+
+
+            <h3>12.1 Significado histórico</h3>
+
+            <p>
+                A independência representou:
+            </p>
+
+            <ul>
+                <li>fim formal do domínio colonial português;</li>
+                <li>afirmação da soberania nacional;</li>
+                <li>criação do Estado angolano independente;</li>
+                <li>reconhecimento internacional progressivo;</li>
+                <li>assunção do controlo das instituições do Estado.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- ======================================================
+             13 - GUERRA
+        ======================================================= -->
+
+        <section class="section" id="guerra">
+
+            <span class="section-numero">Capítulo 13</span>
+
+            <h2>
+                O conflito armado após a independência
+            </h2>
+
+            <p>
+                A independência não trouxe imediatamente a paz.
+            </p>
+
+            <p>
+                O conflito entre movimentos angolanos,
+                especialmente entre o Governo dirigido pelo MPLA
+                e a UNITA, continuou durante vários anos.
+            </p>
+
+
+            <h3>13.1 Dimensão internacional</h3>
+
+            <p>
+                A guerra angolana também esteve inserida
+                no contexto internacional da
+                <strong>Guerra Fria</strong>.
+            </p>
+
+            <p>
+                Diferentes potências estrangeiras apoiaram
+                forças distintas no conflito.
+            </p>
+
+            <p>
+                Entre os actores estrangeiros envolvidos
+                encontravam-se:
+            </p>
+
+            <ul>
+                <li>União Soviética;</li>
+                <li>Cuba;</li>
+                <li>Estados Unidos;</li>
+                <li>África do Sul;</li>
+                <li>Zaire, actual República Democrática do Congo;</li>
+                <li>outros actores internacionais.</li>
+            </ul>
+
+
+            <div class="box conceito">
+
+                <strong class="titulo">
+                    🧠 Guerra Fria
+                </strong>
+
+                Período de forte rivalidade política,
+                ideológica, económica e militar,
+                principalmente entre Estados Unidos
+                e União Soviética, depois da Segunda Guerra Mundial.
+
+                <br><br>
+
+                Angola tornou-se um dos espaços africanos
+                onde essa rivalidade internacional teve grande impacto.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             14 - NETO E DOS SANTOS
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">Capítulo 14</span>
+
+            <h2>
+                Os primeiros Presidentes de Angola
+            </h2>
+
+
+            <h3>14.1 António Agostinho Neto</h3>
+
+            <p>
+                António Agostinho Neto foi o primeiro Presidente
+                de Angola independente.
+            </p>
+
+            <p>
+                Foi também médico, poeta e uma figura central
+                do nacionalismo angolano.
+            </p>
+
+            <p>
+                Morreu em 1979.
+            </p>
+
+
+            <h3>14.2 José Eduardo dos Santos</h3>
+
+            <p>
+                Após a morte de Agostinho Neto,
+                José Eduardo dos Santos assumiu a liderança do país
+                em 1979.
+            </p>
+
+            <p>
+                O seu período presidencial abrangeu grande parte
+                do conflito armado, o processo de transição
+                para o sistema multipartidário,
+                o estabelecimento da paz em 2002
+                e grande parte da reconstrução pós-guerra.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================================
+             15 - BICESSE
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">Capítulo 15</span>
+
+            <h2>
+                Acordos de Bicesse
+            </h2>
+
+            <p>
+                Em <strong>1991</strong> foram assinados
+                os <strong>Acordos de Bicesse</strong>
+                entre o Governo angolano e a UNITA.
+            </p>
+
+            <p>
+                Os acordos procuraram criar condições
+                para o fim do conflito armado e abertura
+                de uma nova fase política.
+            </p>
+
+            <h3>Consequências políticas importantes</h3>
+
+            <ul>
+                <li>cessar-fogo;</li>
+                <li>avanço do multipartidarismo;</li>
+                <li>preparação de eleições;</li>
+                <li>tentativa de integração das forças militares;</li>
+                <li>abertura de nova etapa constitucional e política.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- ======================================================
+             16 - ELEIÇÕES DE 1992
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">Capítulo 16</span>
+
+            <h2>
+                Eleições de 1992
+            </h2>
+
+            <p>
+                Em 1992 Angola realizou as suas primeiras
+                eleições gerais multipartidárias.
+            </p>
+
+            <p>
+                O processo representou uma mudança importante
+                na organização política do país.
+            </p>
+
+            <p>
+                Entretanto, as disputas políticas e militares
+                não foram definitivamente solucionadas.
+            </p>
+
+            <p>
+                O conflito armado voltou a intensificar-se.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================================
+             17 - LUSAKA
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">Capítulo 17</span>
+
+            <h2>
+                Protocolo de Lusaka
+            </h2>
+
+            <p>
+                Em <strong>20 de Novembro de 1994</strong>
+                foi assinado o
+                <strong>Protocolo de Lusaka</strong>.
+            </p>
+
+            <p>
+                O acordo constituiu mais uma tentativa
+                de pôr fim à guerra e promover
+                uma solução política para o conflito.
+            </p>
+
+            <p>
+                Apesar dos avanços,
+                o conflito voltou posteriormente a intensificar-se.
+            </p>
+
+        </section>
+
+
+        <!-- ======================================================
+             18 - PAZ
+        ======================================================= -->
+
+        <section class="section" id="paz">
+
+            <span class="section-numero">Capítulo 18</span>
+
+            <h2>
+                4 de Abril de 2002 — Paz e Reconciliação Nacional
+            </h2>
+
+            <p>
+                O ano de <strong>2002</strong> marcou uma transformação
+                decisiva da História contemporânea de Angola.
+            </p>
+
+            <p>
+                Após a morte de Jonas Savimbi em Fevereiro de 2002,
+                foram desenvolvidas negociações entre as partes
+                envolvidas no conflito.
+            </p>
+
+            <p>
+                Em <strong>4 de Abril de 2002</strong>,
+                foi assinado em Luena o
+                <strong>Memorando de Entendimento</strong>,
+                assinalando o fim do conflito armado
+                entre o Governo e a UNITA.
+            </p>
+
+
+            <div class="box importante">
+
+                <strong class="titulo">
+                    🇦🇴 4 de Abril
+                </strong>
+
+                A data é celebrada em Angola como
+                <strong>Dia da Paz e Reconciliação Nacional</strong>.
+
+            </div>
+
+
+            <h3>Consequências da paz</h3>
+
+            <ul>
+                <li>fim do conflito armado prolongado;</li>
+                <li>reintegração de antigos combatentes;</li>
+                <li>maior circulação de pessoas pelo território;</li>
+                <li>reconstrução de infra-estruturas;</li>
+                <li>retorno de populações deslocadas;</li>
+                <li>fortalecimento das instituições civis;</li>
+                <li>consolidação do processo político multipartidário.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- ======================================================
+             19 - RECONSTRUÇÃO
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">Capítulo 19</span>
+
+            <h2>
+                Angola no período pós-guerra
+            </h2>
+
+            <p>
+                Depois de 2002, Angola entrou numa nova etapa
+                caracterizada pela reconstrução nacional.
+            </p>
+
+            <p>
+                A guerra havia provocado enormes danos humanos,
+                económicos e materiais.
+            </p>
+
+            <h3>Desafios da reconstrução</h3>
+
+            <ul>
+                <li>reabilitação de estradas;</li>
+                <li>reconstrução de pontes;</li>
+                <li>expansão de escolas;</li>
+                <li>construção e recuperação de hospitais;</li>
+                <li>desminagem;</li>
+                <li>reassentamento das populações;</li>
+                <li>integração económica do território;</li>
+                <li>fortalecimento das instituições públicas.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- ======================================================
+             20 - CONSTITUIÇÃO DE 2010
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">Capítulo 20</span>
+
+            <h2>
+                Constituição da República de Angola de 2010
+            </h2>
+
+            <p>
+                Em <strong>2010</strong> entrou em vigor
+                a actual Constituição da República de Angola.
+            </p>
+
+            <p>
+                A Constituição constitui um dos principais marcos
+                jurídico-políticos da história recente do país.
+            </p>
+
+            <p>
+                Ela define, entre outras matérias:
+            </p>
+
+            <ul>
+                <li>os princípios fundamentais do Estado;</li>
+                <li>direitos e deveres fundamentais;</li>
+                <li>organização dos órgãos de soberania;</li>
+                <li>estrutura político-administrativa;</li>
+                <li>regras fundamentais do sistema político.</li>
+            </ul>
+
+            <div class="box alerta">
+
+                <strong class="titulo">
+                    ⚠️ Importante para o concurso
+                </strong>
+
+                A Constituição de 2010 pertence à História recente,
+                mas o seu conteúdo institucional será aprofundado
+                principalmente no tema
+                <strong>
+                    Organização Política e Administrativa
+                    da República de Angola
+                </strong>.
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             21 - CRONOLOGIA
+        ======================================================= -->
+
+        <section class="section" id="cronologia">
+
+            <span class="section-numero">Capítulo 21</span>
+
+            <h2>
+                Linha do tempo essencial
+            </h2>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        Antes do século XV
+                    </div>
+                    <p>
+                        Desenvolvimento de diversas comunidades,
+                        reinos e estruturas políticas africanas.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        Década de 1480
+                    </div>
+                    <p>
+                        Diogo Cão chega à região do rio Congo
+                        e iniciam-se contactos portugueses
+                        com o Reino do Kongo.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        Séculos XVI–XVII
+                    </div>
+                    <p>
+                        Expansão portuguesa, conflitos,
+                        comércio atlântico e resistência africana.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        Século XVII
+                    </div>
+                    <p>
+                        Njinga Mbande destaca-se na resistência
+                        contra a expansão portuguesa.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        1884–1885
+                    </div>
+                    <p>
+                        Conferência de Berlim.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        1959
+                    </div>
+                    <p>
+                        Processo dos 50.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        4 de Janeiro de 1961
+                    </div>
+                    <p>
+                        Acontecimentos da Baixa de Kasanje.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        4 de Fevereiro de 1961
+                    </div>
+                    <p>
+                        Início da Luta Armada
+                        de Libertação Nacional,
+                        segundo a memória oficial angolana.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        15 de Março de 1961
+                    </div>
+                    <p>
+                        Levantamento no norte de Angola.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        1966
+                    </div>
+                    <p>
+                        Fundação da UNITA.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        25 de Abril de 1974
+                    </div>
+                    <p>
+                        Revolução em Portugal acelera
+                        o processo de descolonização.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        Janeiro de 1975
+                    </div>
+                    <p>
+                        Acordos de Alvor.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        11 de Novembro de 1975
+                    </div>
+                    <p>
+                        Independência Nacional de Angola.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        1979
+                    </div>
+                    <p>
+                        Morte de Agostinho Neto
+                        e ascensão de José Eduardo dos Santos.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        1991
+                    </div>
+                    <p>
+                        Acordos de Bicesse.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        1992
+                    </div>
+                    <p>
+                        Primeiras eleições gerais multipartidárias.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        20 de Novembro de 1994
+                    </div>
+                    <p>
+                        Protocolo de Lusaka.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        4 de Abril de 2002
+                    </div>
+                    <p>
+                        Memorando de Entendimento do Luena
+                        e fim do conflito armado entre
+                        Governo e UNITA.
+                    </p>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-data">
+                        2010
+                    </div>
+                    <p>
+                        Constituição da República de Angola.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             22 - CONCEITOS
+        ======================================================= -->
+
+        <section class="section" id="conceitos">
+
+            <span class="section-numero">Capítulo 22</span>
+
+            <h2>
+                Conceitos que o candidato deve dominar
+            </h2>
+
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h4>Colonização</h4>
+
+                    <p>
+                        Processo pelo qual uma potência estabelece
+                        domínio sobre determinado território
+                        e a sua população.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>Colonialismo</h4>
+
+                    <p>
+                        Sistema político e económico
+                        baseado na dominação colonial.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>Nacionalismo</h4>
+
+                    <p>
+                        Movimento ou ideologia que valoriza
+                        a identidade nacional e pode defender
+                        autodeterminação e soberania.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>Independência</h4>
+
+                    <p>
+                        Condição política de um Estado
+                        que possui soberania e não se encontra
+                        subordinado a uma potência colonial.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>Soberania</h4>
+
+                    <p>
+                        Autoridade suprema do Estado
+                        sobre o seu território e organização política.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>Autodeterminação</h4>
+
+                    <p>
+                        Direito dos povos de determinar
+                        livremente o seu estatuto político
+                        e o seu desenvolvimento.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>Descolonização</h4>
+
+                    <p>
+                        Processo de fim do domínio colonial
+                        e formação ou recuperação
+                        de Estados soberanos.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h4>Reconciliação Nacional</h4>
+
+                    <p>
+                        Processo destinado à superação
+                        de divisões e conflitos internos,
+                        favorecendo convivência pacífica
+                        e unidade nacional.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             23 - NÃO CONFUNDIR
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">Capítulo 23</span>
+
+            <h2>
+                Não confunda na prova
+            </h2>
+
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Evento</th>
+                            <th>Data</th>
+                            <th>Não confundir com</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>Baixa de Kasanje</td>
+                            <td>Janeiro de 1961</td>
+                            <td>4 de Fevereiro</td>
+                        </tr>
+
+                        <tr>
+                            <td>Início da Luta Armada</td>
+                            <td>4 de Fevereiro de 1961</td>
+                            <td>Independência</td>
+                        </tr>
+
+                        <tr>
+                            <td>Revolução dos Cravos</td>
+                            <td>25 de Abril de 1974</td>
+                            <td>Paz de Angola</td>
+                        </tr>
+
+                        <tr>
+                            <td>Acordos de Alvor</td>
+                            <td>Janeiro de 1975</td>
+                            <td>Acordos de Bicesse</td>
+                        </tr>
+
+                        <tr>
+                            <td>Independência</td>
+                            <td>11 de Novembro de 1975</td>
+                            <td>4 de Fevereiro</td>
+                        </tr>
+
+                        <tr>
+                            <td>Acordos de Bicesse</td>
+                            <td>1991</td>
+                            <td>Protocolo de Lusaka</td>
+                        </tr>
+
+                        <tr>
+                            <td>Primeiras eleições gerais</td>
+                            <td>1992</td>
+                            <td>Independência</td>
+                        </tr>
+
+                        <tr>
+                            <td>Protocolo de Lusaka</td>
+                            <td>20 de Novembro de 1994</td>
+                            <td>Bicesse</td>
+                        </tr>
+
+                        <tr>
+                            <td>Paz e Reconciliação Nacional</td>
+                            <td>4 de Abril de 2002</td>
+                            <td>11 de Novembro</td>
+                        </tr>
+
+                        <tr>
+                            <td>Constituição actual</td>
+                            <td>2010</td>
+                            <td>Independência</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             24 - QUESTÕES
+        ======================================================= -->
+
+        <section class="section" id="questoes">
+
+            <span class="section-numero">Capítulo 24</span>
+
+            <h2>
+                Questões de preparação
+            </h2>
+
+
+            <!-- QUESTÃO 1 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 1
+                </div>
+
+                <p>
+                    Quem era conhecido pelo título de Manikongo?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) O chefe do Reino do Ndongo
+                    </div>
+
+                    <div class="alternativa">
+                        B) O soberano do Reino do Kongo
+                    </div>
+
+                    <div class="alternativa">
+                        C) O governador português
+                    </div>
+
+                    <div class="alternativa">
+                        D) O líder da UNITA
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: B.</strong>
+                        Manikongo era o título utilizado
+                        pelos soberanos do Reino do Kongo.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 2
+                </div>
+
+                <p>
+                    O nome Angola está historicamente associado
+                    a qual título político?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) Manikongo
+                    </div>
+
+                    <div class="alternativa">
+                        B) Soba
+                    </div>
+
+                    <div class="alternativa">
+                        C) Ngola
+                    </div>
+
+                    <div class="alternativa">
+                        D) Mwene
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: C — Ngola.</strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 3
+                </div>
+
+                <p>
+                    Qual personalidade está especialmente associada
+                    à resistência dos reinos do Ndongo e Matamba?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) Njinga Mbande
+                    </div>
+
+                    <div class="alternativa">
+                        B) Agostinho Neto
+                    </div>
+
+                    <div class="alternativa">
+                        C) Diogo Cão
+                    </div>
+
+                    <div class="alternativa">
+                        D) Jonas Savimbi
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: A — Njinga Mbande.</strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 4
+                </div>
+
+                <p>
+                    Qual data é oficialmente assinalada em Angola
+                    como início da Luta Armada de Libertação Nacional?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) 4 de Abril de 2002
+                    </div>
+
+                    <div class="alternativa">
+                        B) 11 de Novembro de 1975
+                    </div>
+
+                    <div class="alternativa">
+                        C) 4 de Fevereiro de 1961
+                    </div>
+
+                    <div class="alternativa">
+                        D) 25 de Abril de 1974
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: C.</strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 5
+                </div>
+
+                <p>
+                    Os Acordos de Alvor foram celebrados entre:
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) Angola e África do Sul apenas
+                    </div>
+
+                    <div class="alternativa">
+                        B) Portugal, MPLA, FNLA e UNITA
+                    </div>
+
+                    <div class="alternativa">
+                        C) MPLA e UNITA apenas
+                    </div>
+
+                    <div class="alternativa">
+                        D) Portugal e MPLA apenas
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: B.</strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 6
+                </div>
+
+                <p>
+                    Em que data Angola alcançou a independência?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) 4 de Fevereiro de 1961
+                    </div>
+
+                    <div class="alternativa">
+                        B) 25 de Abril de 1974
+                    </div>
+
+                    <div class="alternativa">
+                        C) 11 de Novembro de 1975
+                    </div>
+
+                    <div class="alternativa">
+                        D) 4 de Abril de 2002
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>
+                            Resposta correcta:
+                            C — 11 de Novembro de 1975.
+                        </strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 7
+                </div>
+
+                <p>
+                    Quem foi o primeiro Presidente
+                    da Angola independente?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) José Eduardo dos Santos
+                    </div>
+
+                    <div class="alternativa">
+                        B) Holden Roberto
+                    </div>
+
+                    <div class="alternativa">
+                        C) António Agostinho Neto
+                    </div>
+
+                    <div class="alternativa">
+                        D) Jonas Savimbi
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>
+                            Resposta correcta:
+                            C — António Agostinho Neto.
+                        </strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 8
+                </div>
+
+                <p>
+                    Os Acordos de Bicesse foram assinados em:
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) 1975
+                    </div>
+
+                    <div class="alternativa">
+                        B) 1991
+                    </div>
+
+                    <div class="alternativa">
+                        C) 1994
+                    </div>
+
+                    <div class="alternativa">
+                        D) 2002
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: B — 1991.</strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 9
+                </div>
+
+                <p>
+                    Em que ano Angola realizou as primeiras
+                    eleições gerais multipartidárias?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) 1975
+                    </div>
+
+                    <div class="alternativa">
+                        B) 1979
+                    </div>
+
+                    <div class="alternativa">
+                        C) 1992
+                    </div>
+
+                    <div class="alternativa">
+                        D) 2002
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: C — 1992.</strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 10
+                </div>
+
+                <p>
+                    O Protocolo de Lusaka foi assinado em:
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) 1994
+                    </div>
+
+                    <div class="alternativa">
+                        B) 1991
+                    </div>
+
+                    <div class="alternativa">
+                        C) 2002
+                    </div>
+
+                    <div class="alternativa">
+                        D) 1975
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>
+                            Resposta correcta:
+                            A — 20 de Novembro de 1994.
+                        </strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 11 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 11
+                </div>
+
+                <p>
+                    O Dia da Paz e Reconciliação Nacional
+                    é celebrado em:
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) 4 de Fevereiro
+                    </div>
+
+                    <div class="alternativa">
+                        B) 4 de Abril
+                    </div>
+
+                    <div class="alternativa">
+                        C) 11 de Novembro
+                    </div>
+
+                    <div class="alternativa">
+                        D) 17 de Setembro
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: B — 4 de Abril.</strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 12 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 12
+                </div>
+
+                <p>
+                    Qual destes acontecimentos ocorreu primeiro?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) Acordos de Bicesse
+                    </div>
+
+                    <div class="alternativa">
+                        B) Independência de Angola
+                    </div>
+
+                    <div class="alternativa">
+                        C) Protocolo de Lusaka
+                    </div>
+
+                    <div class="alternativa">
+                        D) Paz de 2002
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>
+                            Resposta correcta: B.
+                        </strong>
+
+                        A independência ocorreu em 1975;
+                        Bicesse em 1991;
+                        Lusaka em 1994;
+                        e o Memorando do Luena em 2002.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 13 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 13
+                </div>
+
+                <p>
+                    A Conferência de Berlim está relacionada principalmente com:
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) O processo europeu de ocupação colonial de África
+                    </div>
+
+                    <div class="alternativa">
+                        B) A independência de Angola
+                    </div>
+
+                    <div class="alternativa">
+                        C) As eleições de 1992
+                    </div>
+
+                    <div class="alternativa">
+                        D) O Protocolo de Lusaka
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: A.</strong>
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 14 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 14
+                </div>
+
+                <p>
+                    A Revolução dos Cravos ocorreu:
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A) Em Angola, em 1961
+                    </div>
+
+                    <div class="alternativa">
+                        B) Em Portugal, em 1974
+                    </div>
+
+                    <div class="alternativa">
+                        C) Em Angola, em 2002
+                    </div>
+
+                    <div class="alternativa">
+                        D) No Congo, no século XV
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>
+                            Resposta correcta: B.
+                        </strong>
+
+                        A Revolução de 25 de Abril de 1974
+                        ocorreu em Portugal.
+                    </p>
+                </details>
+
+            </div>
+
+
+            <!-- QUESTÃO 15 -->
+
+            <div class="questao">
+
+                <div class="questao-numero">
+                    Questão 15
+                </div>
+
+                <p>
+                    Qual afirmação é historicamente mais correcta?
+                </p>
+
+                <div class="alternativas">
+
+                    <div class="alternativa">
+                        A)
+                        Angola não possuía organizações políticas
+                        antes da chegada portuguesa.
+                    </div>
+
+                    <div class="alternativa">
+                        B)
+                        A história de Angola começou em 1975.
+                    </div>
+
+                    <div class="alternativa">
+                        C)
+                        Existiam reinos e estruturas políticas africanas
+                        antes da colonização portuguesa.
+                    </div>
+
+                    <div class="alternativa">
+                        D)
+                        Portugal controlava todo o actual território
+                        de Angola desde a chegada de Diogo Cão.
+                    </div>
+
+                </div>
+
+                <details>
+                    <summary>Ver resposta</summary>
+
+                    <p>
+                        <strong>Resposta correcta: C.</strong>
+
+                        Reinos e outras estruturas políticas
+                        existiam muito antes do domínio colonial.
+                    </p>
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             25 - RESUMO
+        ======================================================= -->
+
+        <section class="section resumo-final" id="resumo">
+
+            <span class="section-numero">
+                Revisão rápida
+            </span>
+
+            <h2>
+                O que precisa sair desta aula sabendo?
+            </h2>
+
+
+            <h3>Angola pré-colonial</h3>
+
+            <ul>
+                <li>
+                    Angola possui história anterior
+                    à presença portuguesa.
+                </li>
+
+                <li>
+                    Existiram diversos reinos
+                    e estruturas políticas africanas.
+                </li>
+
+                <li>
+                    Reino do Kongo → Manikongo.
+                </li>
+
+                <li>
+                    Ndongo → título Ngola.
+                </li>
+
+                <li>
+                    Njinga Mbande → resistência
+                    associada ao Ndongo e Matamba.
+                </li>
+            </ul>
+
+
+            <h3>Colonização</h3>
+
+            <ul>
+
+                <li>
+                    Portugueses chegaram à região
+                    no final do século XV.
+                </li>
+
+                <li>
+                    Diogo Cão é uma das figuras centrais
+                    desse primeiro contacto.
+                </li>
+
+                <li>
+                    A ocupação efectiva de todo o território
+                    foi gradual.
+                </li>
+
+                <li>
+                    O tráfico de pessoas escravizadas
+                    teve enorme impacto em Angola.
+                </li>
+
+                <li>
+                    Houve resistência africana
+                    durante diferentes períodos.
+                </li>
+
+            </ul>
+
+
+            <h3>Luta de libertação</h3>
+
+            <ul>
+
+                <li>
+                    1959 → Processo dos 50.
+                </li>
+
+                <li>
+                    Janeiro de 1961 →
+                    Baixa de Kasanje.
+                </li>
+
+                <li>
+                    4 de Fevereiro de 1961 →
+                    marco oficial do início
+                    da Luta Armada de Libertação Nacional.
+                </li>
+
+                <li>
+                    MPLA, FNLA e UNITA →
+                    principais movimentos políticos
+                    envolvidos no processo de independência.
+                </li>
+
+            </ul>
+
+
+            <h3>Independência e Estado</h3>
+
+            <ul>
+
+                <li>
+                    25 de Abril de 1974 →
+                    Revolução em Portugal.
+                </li>
+
+                <li>
+                    Janeiro de 1975 →
+                    Acordos de Alvor.
+                </li>
+
+                <li>
+                    11 de Novembro de 1975 →
+                    Independência Nacional.
+                </li>
+
+                <li>
+                    António Agostinho Neto →
+                    primeiro Presidente de Angola.
+                </li>
+
+            </ul>
+
+
+            <h3>Paz</h3>
+
+            <ul>
+
+                <li>
+                    1991 → Acordos de Bicesse.
+                </li>
+
+                <li>
+                    1992 → primeiras eleições gerais
+                    multipartidárias.
+                </li>
+
+                <li>
+                    1994 → Protocolo de Lusaka.
+                </li>
+
+                <li>
+                    4 de Abril de 2002 →
+                    fim do conflito armado
+                    entre Governo e UNITA
+                    e marco da Paz e Reconciliação Nacional.
+                </li>
+
+                <li>
+                    2010 →
+                    Constituição da República de Angola.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ======================================================
+             FONTES
+        ======================================================= -->
+
+        <section class="section">
+
+            <span class="section-numero">
+                Referências
+            </span>
+
+            <h2>
+                Fontes recomendadas para aprofundamento
+            </h2>
+
+            <p>
+                Para preparação rigorosa de concurso,
+                nenhuma apostila deve ser tratada como fonte absoluta.
+                Sempre que possível, confronte datas, legislação
+                e acontecimentos com fontes institucionais
+                e obras historiográficas.
+            </p>
+
+            <ul>
+
+                <li>
+                    Portal Oficial do Governo da República de Angola;
+                </li>
+
+                <li>
+                    Ministério da Administração do Território;
+                </li>
+
+                <li>
+                    arquivos e publicações sobre os
+                    50 anos da Independência Nacional;
+                </li>
+
+                <li>
+                    Constituição da República de Angola;
+                </li>
+
+                <li>
+                    documentos históricos das Nações Unidas
+                    relativos a Angola;
+                </li>
+
+                <li>
+                    manuais de História de Angola
+                    utilizados no sistema de ensino angolano.
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<button
+    id="btnTopo"
+    type="button"
+    title="Voltar ao topo"
+>
+    ↑
+</button>
+
+
+<script>
+
+    const btnTopo = document.getElementById('btnTopo');
+
+    window.addEventListener('scroll', function () {
+
+        if (window.scrollY > 500) {
+            btnTopo.style.display = 'block';
+        } else {
+            btnTopo.style.display = 'none';
+        }
+
+    });
+
+
+    btnTopo.addEventListener('click', function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

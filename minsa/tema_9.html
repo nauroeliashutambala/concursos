@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tema IX — IIMS 2023–2024 | Secretário Clínico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.7;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#111827,#1e3a8a,#312e81);
+    color:#fff;
+    padding:75px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+}
+
+.hero:before{
+    width:450px;
+    height:450px;
+    right:-180px;
+    top:-210px;
+}
+
+.hero:after{
+    width:300px;
+    height:300px;
+    left:-150px;
+    bottom:-180px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    background:#6366f1;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(34px,6vw,60px);
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:900px;
+    color:#e0e7ff;
+    font-size:18px;
+}
+
+/* NAV */
+
+.nav{
+    background:#fff;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-inner{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:12px 0;
+}
+
+.nav a{
+    color:#374151;
+    text-decoration:none;
+    white-space:nowrap;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav a:hover{
+    background:#eef2ff;
+    color:#4338ca;
+}
+
+/* CONTENT */
+
+section{
+    padding:55px 0;
+}
+
+.section-title{
+    font-size:31px;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.section-subtitle{
+    color:#6b7280;
+    margin-bottom:28px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+}
+
+.card h3{
+    color:#4338ca;
+    margin-bottom:12px;
+}
+
+.icon-title{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:15px;
+}
+
+.icon{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef2ff;
+    color:#4f46e5;
+    border-radius:12px;
+    font-size:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.mini-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:22px;
+}
+
+.mini-card i{
+    color:#4f46e5;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.big-number{
+    font-size:34px;
+    font-weight:800;
+    color:#4338ca;
+    margin:5px 0;
+}
+
+.highlight{
+    border-left:5px solid #4f46e5;
+    background:#eef2ff;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.warning{
+    border-left:5px solid #f59e0b;
+    background:#fffbeb;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.success{
+    border-left:5px solid #16a34a;
+    background:#f0fdf4;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.danger{
+    border-left:5px solid #dc2626;
+    background:#fef2f2;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+    margin:20px 0;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    margin-top:18px;
+}
+
+th,td{
+    padding:13px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+}
+
+th{
+    background:#eef2ff;
+    color:#3730a3;
+}
+
+.question{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:24px;
+    margin-bottom:18px;
+}
+
+.answer{
+    margin-top:12px;
+    background:#f0fdf4;
+    color:#166534;
+    padding:12px 15px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+footer{
+    background:#111827;
+    color:#cbd5e1;
+    text-align:center;
+    padding:40px 20px;
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:52px 15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    section{
+        padding:40px 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">
+<i class="fa-solid fa-heart-pulse"></i>
+CONCURSO — SECRETÁRIO CLÍNICO DE 3.ª CLASSE
+</span>
+
+<h1>IX — IIMS 2023–2024</h1>
+
+<p>
+Inquérito de Indicadores Múltiplos e de Saúde de Angola —
+principais conceitos, objetivos, metodologia e indicadores
+essenciais para o concurso público.
+</p>
+
+</div>
+
+</header>
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="#conceito">Conceito</a> <a href="#objetivos">Objetivos</a> <a href="#instituicoes">Instituições</a> <a href="#metodologia">Metodologia</a> <a href="#saude">Saúde</a> <a href="#infantil">Infantil</a> <a href="#materna">Materna</a> <a href="#nutricao">Nutrição</a> <a href="#hiv">HIV/SIDA</a> <a href="#agua">Água e Saneamento</a> <a href="#questoes">Questões</a>
+
+</div>
+
+</nav>
+
+<main class="container">
+
+<!-- CONCEITO -->
+
+<section id="conceito">
+
+<h2 class="section-title">
+1. O que é o IIMS?
+</h2>
+
+<p class="section-subtitle">
+Começar pelo significado da sigla é essencial.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-notes-medical"></i>
+</div>
+
+<h3>Definição</h3>
+
+</div>
+
+<p>
+O <strong>IIMS</strong> é o
+<strong>Inquérito de Indicadores Múltiplos e de Saúde</strong>,
+uma operação estatística realizada para produzir informações
+sobre a população, saúde, reprodução, mortalidade, nutrição,
+educação, condições de habitação e outros indicadores sociais.
+</p>
+
+<p style="margin-top:15px;">
+O IIMS 2023–2024 fornece informação fundamental para acompanhar
+as condições de vida da população angolana e apoiar a formulação
+de políticas públicas.
+</p>
+
+</div>
+
+<div class="danger">
+
+<strong>
+<i class="fa-solid fa-triangle-exclamation"></i>
+NÃO CONFUNDIR
+</strong>
+
+<p style="margin-top:10px;">
+<strong>IIMS ≠ Censo.</strong>
+</p>
+
+<p>
+O Censo procura realizar uma contagem e caracterização abrangente
+da população e habitação. O IIMS é um <strong>inquérito por amostragem</strong>,
+realizado em agregados familiares selecionados.
+</p>
+
+</div>
+
+</section>
+
+<!-- IDENTIFICAÇÃO -->
+
+<section>
+
+<h2 class="section-title">
+2. Identificação do IIMS 2023–2024
+</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Elemento</th>
+<th>Informação</th>
+</tr>
+
+<tr>
+<td>Nome</td>
+<td>Inquérito de Indicadores Múltiplos e de Saúde</td>
+</tr>
+
+<tr>
+<td>Sigla</td>
+<td><strong>IIMS</strong></td>
+</tr>
+
+<tr>
+<td>Edição</td>
+<td><strong>2023–2024</strong></td>
+</tr>
+
+<tr>
+<td>País</td>
+<td>Angola</td>
+</tr>
+
+<tr>
+<td>Tipo</td>
+<td>Inquérito por amostragem</td>
+</tr>
+
+<tr>
+<td>Unidade de análise</td>
+<td>Agregados familiares e indivíduos selecionados</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OBJETIVOS -->
+
+<section id="objetivos">
+
+<h2 class="section-title">
+3. Objetivos do IIMS
+</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hospital"></i>
+
+<h3>Saúde</h3>
+
+<p>
+Produzir indicadores sobre o estado de saúde da população.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-baby"></i>
+
+<h3>Saúde infantil</h3>
+
+<p>
+Avaliar indicadores relacionados com crianças e sobrevivência infantil.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-person-pregnant"></i>
+
+<h3>Saúde materna</h3>
+
+<p>
+Produzir dados sobre gravidez, parto e cuidados maternos.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-utensils"></i>
+
+<h3>Nutrição</h3>
+
+<p>
+Avaliar indicadores relacionados com o estado nutricional.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-virus"></i>
+
+<h3>Doenças</h3>
+
+<p>
+Recolher informações sobre doenças e fatores relacionados.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-faucet"></i>
+
+<h3>Condições de vida</h3>
+
+<p>
+Avaliar água, saneamento, habitação e condições socioeconómicas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INSTITUIÇÕES -->
+
+<section id="instituicoes">
+
+<h2 class="section-title">
+4. Instituições Envolvidas
+</h2>
+
+<div class="card">
+
+<h3>Instituto Nacional de Estatística — INE</h3>
+
+<p>
+O <strong>INE</strong> desempenha um papel central na produção
+e coordenação da informação estatística oficial de Angola.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Ministério da Saúde — MINSA</h3>
+
+<p>
+O Ministério da Saúde participa na produção e utilização dos
+indicadores relacionados com saúde.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Outros parceiros</h3>
+
+<p>
+O IIMS conta com a colaboração de instituições nacionais e
+parceiros de desenvolvimento ligados à produção de estatísticas
+sociais e de saúde.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>Para memorizar:</strong>
+
+<p style="margin-top:8px;">
+<strong>INE → estatística</strong><br>
+<strong>MINSA → saúde</strong>
+</p>
+
+</div>
+
+</section>
+
+<!-- METODOLOGIA -->
+
+<section id="metodologia">
+
+<h2 class="section-title">
+5. Como funciona um inquérito por amostragem?
+</h2>
+
+<div class="card">
+
+<h3>População-alvo</h3>
+
+<p>
+É o conjunto de pessoas ou unidades sobre as quais se pretende
+obter informação.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Amostra</h3>
+
+<p>
+É uma parte da população selecionada segundo métodos estatísticos
+para representar a população-alvo.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Questionário</h3>
+
+<p>
+Os entrevistadores utilizam instrumentos padronizados para recolher
+informações junto dos agregados familiares e indivíduos selecionados.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Estimativas</h3>
+
+<p>
+Os dados obtidos na amostra são utilizados para produzir estimativas
+sobre a população-alvo, respeitando os métodos estatísticos utilizados.
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>
+<i class="fa-solid fa-circle-exclamation"></i>
+Atenção:
+</strong>
+
+<p>
+Uma amostra não significa entrevistar todos os habitantes.
+É precisamente essa uma das diferenças fundamentais entre um
+inquérito amostral e um recenseamento geral.
+</p>
+
+</div>
+
+</section>
+
+<!-- SAUDE -->
+
+<section id="saude">
+
+<h2 class="section-title">
+6. Indicadores de Saúde
+</h2>
+
+<div class="card">
+
+<p>
+O IIMS produz informação sobre diversos aspetos da saúde da população.
+Entre os principais temas estão:
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Utilização dos serviços de saúde;</li>
+
+<li>Saúde materna;</li>
+
+<li>Saúde infantil;</li>
+
+<li>Saúde reprodutiva;</li>
+
+<li>Planeamento familiar;</li>
+
+<li>Vacinação;</li>
+
+<li>Doenças transmissíveis;</li>
+
+<li>HIV/SIDA;</li>
+
+<li>Malária;</li>
+
+<li>Nutrição;</li>
+
+<li>Mortalidade.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- INFANTIL -->
+
+<section id="infantil">
+
+<h2 class="section-title">
+7. Saúde Infantil
+</h2>
+
+<div class="card">
+
+<h3>Indicadores estudados</h3>
+
+<p>
+O IIMS analisa indicadores relacionados com a sobrevivência,
+saúde e desenvolvimento das crianças.
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Mortalidade infantil;</li>
+
+<li>Mortalidade na infância;</li>
+
+<li>Vacinação;</li>
+
+<li>Doenças da infância;</li>
+
+<li>Procura de cuidados de saúde;</li>
+
+<li>Nutrição infantil;</li>
+
+<li>Amamentação;</li>
+
+<li>Febre e doenças respiratórias;</li>
+
+<li>Diarreia;</li>
+
+<li>Tratamento e procura de assistência.</li>
+
+</ul>
+
+</div>
+
+<div class="highlight">
+
+<strong>Por que estes indicadores importam?</strong>
+
+<p>
+Permitem avaliar as condições de sobrevivência das crianças e
+orientar políticas de vacinação, nutrição, prevenção e assistência
+médica.
+</p>
+
+</div>
+
+</section>
+
+<!-- MATERNA -->
+
+<section id="materna">
+
+<h2 class="section-title">
+8. Saúde Materna e Reprodutiva
+</h2>
+
+<div class="card">
+
+<h3>Principais áreas</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Assistência pré-natal;</li>
+
+<li>Local do parto;</li>
+
+<li>Assistência por profissionais de saúde;</li>
+
+<li>Planeamento familiar;</li>
+
+<li>Necessidades não satisfeitas de planeamento familiar;</li>
+
+<li>Fecundidade;</li>
+
+<li>Saúde reprodutiva;</li>
+
+<li>Cuidados pós-natais.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Planeamento familiar</h3>
+
+<p>
+O inquérito recolhe informação sobre o conhecimento e utilização
+de métodos de planeamento familiar e sobre as necessidades da
+população nessa área.
+</p>
+
+</div>
+
+</section>
+
+<!-- NUTRIÇÃO -->
+
+<section id="nutricao">
+
+<h2 class="section-title">
+9. Nutrição
+</h2>
+
+<div class="card">
+
+<p>
+A nutrição constitui uma área fundamental do IIMS, especialmente
+na avaliação das crianças.
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Desnutrição;</li>
+
+<li>Baixo peso;</li>
+
+<li>Emagrecimento;</li>
+
+<li>Atraso de crescimento;</li>
+
+<li>Excesso de peso;</li>
+
+<li>Amamentação;</li>
+
+<li>Alimentação infantil.</li>
+
+</ul>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+Conceito importante:
+</strong>
+
+<p style="margin-top:8px;">
+A desnutrição infantil pode manifestar-se de diferentes formas,
+sendo importante distinguir problemas de crescimento crónico
+de problemas nutricionais agudos.
+</p>
+
+</div>
+
+</section>
+
+<!-- HIV -->
+
+<section id="hiv">
+
+<h2 class="section-title">
+10. HIV/SIDA
+</h2>
+
+<div class="card">
+
+<p>
+O IIMS também produz indicadores relacionados com o
+<strong>HIV/SIDA</strong>, permitindo compreender aspetos como
+conhecimento, prevenção, testagem e tratamento.
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Conhecimento sobre HIV;</li>
+
+<li>Formas de prevenção;</li>
+
+<li>Comportamentos relacionados com o risco;</li>
+
+<li>Testagem;</li>
+
+<li>Conhecimento do estado serológico;</li>
+
+<li>Acesso ao tratamento;</li>
+
+<li>Atitudes e perceções relacionadas com HIV.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- AGUA -->
+
+<section id="agua">
+
+<h2 class="section-title">
+11. Água, Saneamento e Condições de Vida
+</h2>
+
+<div class="card">
+
+<p>
+O IIMS também permite analisar condições ambientais e habitacionais
+que influenciam diretamente a saúde das famílias.
+</p>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Fonte de água;</li>
+
+<li>Acesso à água potável;</li>
+
+<li>Saneamento;</li>
+
+<li>Instalações sanitárias;</li>
+
+<li>Higiene;</li>
+
+<li>Condições de habitação;</li>
+
+<li>Eletricidade;</li>
+
+<li>Características socioeconómicas.</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<strong>
+Relação com a saúde:
+</strong>
+
+<p>
+Água segura, saneamento adequado e boas práticas de higiene
+reduzem o risco de várias doenças e são fundamentais para a
+saúde pública.
+</p>
+
+</div>
+
+</section>
+
+<!-- IMPORTANCIA -->
+
+<section>
+
+<h2 class="section-title">
+12. Importância do IIMS para Angola
+</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Planeamento</h3>
+
+<p>
+Ajuda o Estado a planear políticas públicas com base em evidências.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-stethoscope"></i>
+
+<h3>Saúde</h3>
+
+<p>
+Permite acompanhar indicadores essenciais de saúde.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-child"></i>
+
+<h3>Infância</h3>
+
+<p>
+Ajuda a identificar problemas de saúde e nutrição infantil.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-person-circle-check"></i>
+
+<h3>Mulheres</h3>
+
+<p>
+Produz indicadores sobre saúde materna e reprodutiva.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-faucet-drip"></i>
+
+<h3>Ambiente</h3>
+
+<p>
+Avalia água, saneamento e higiene.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>Dados</h3>
+
+<p>
+Produz informação estatística para decisões públicas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DIFERENCA -->
+
+<section>
+
+<h2 class="section-title">
+13. IIMS × Censo
+</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Característica</th>
+<th>Censo</th>
+<th>IIMS</th>
+</tr>
+
+<tr>
+<td>Natureza</td>
+<td>Recenseamento</td>
+<td>Inquérito</td>
+</tr>
+
+<tr>
+<td>Cobertura</td>
+<td>População abrangida pelo recenseamento</td>
+<td>Amostra de agregados/indivíduos</td>
+</tr>
+
+<tr>
+<td>Objetivo principal</td>
+<td>Contar e caracterizar população e habitação</td>
+<td>Produzir indicadores sociais e de saúde</td>
+</tr>
+
+<tr>
+<td>Periodicidade</td>
+<td>Geralmente decenal</td>
+<td>Realizado em ciclos específicos</td>
+</tr>
+
+<tr>
+<td>Exemplo</td>
+<td>Censo 2024</td>
+<td>IIMS 2023–2024</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<strong>
+Questão clássica:
+</strong>
+
+<p style="margin-top:8px;">
+<strong>
+“Qual é a diferença entre o Censo e o IIMS?”
+</strong>
+</p>
+
+<p style="margin-top:8px;">
+Censo = recenseamento da população e habitação.<br>
+IIMS = inquérito amostral para produzir indicadores múltiplos,
+com forte componente de saúde.
+</p>
+
+</div>
+
+</section>
+
+<!-- MEMORIZACAO -->
+
+<section>
+
+<h2 class="section-title">
+14. O que memorizar para a prova?
+</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Item</th>
+<th>Resposta</th>
+</tr>
+
+<tr>
+<td>Sigla</td>
+<td><strong>IIMS</strong></td>
+</tr>
+
+<tr>
+<td>Significado</td>
+<td>Inquérito de Indicadores Múltiplos e de Saúde</td>
+</tr>
+
+<tr>
+<td>Edição estudada</td>
+<td><strong>2023–2024</strong></td>
+</tr>
+
+<tr>
+<td>Natureza</td>
+<td><strong>Inquérito por amostragem</strong></td>
+</tr>
+
+<tr>
+<td>Instituição estatística principal</td>
+<td><strong>INE</strong></td>
+</tr>
+
+<tr>
+<td>Área central</td>
+<td>Saúde e indicadores sociais</td>
+</tr>
+
+<tr>
+<td>População estudada</td>
+<td>Agregados familiares e indivíduos selecionados</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<h3>
+Fórmula de memorização
+</h3>
+
+<p style="font-size:22px;font-weight:800;margin-top:10px;">
+
+IIMS → INQUÉRITO → AMOSTRA → SAÚDE → INDICADORES
+
+</p>
+
+</div>
+
+</section>
+
+<!-- QUESTOES -->
+
+<section id="questoes">
+
+<h2 class="section-title">
+15. Questões de Concurso
+</h2>
+
+<div class="question">
+
+<strong>
+1. O que significa IIMS?
+</strong>
+
+<div class="answer">
+Resposta: Inquérito de Indicadores Múltiplos e de Saúde.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+2. Qual é a edição abordada neste tema?
+</strong>
+
+<div class="answer">
+Resposta: IIMS 2023–2024.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+3. O IIMS é um recenseamento ou um inquérito?
+</strong>
+
+<div class="answer">
+Resposta: É um inquérito.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+4. O IIMS é realizado sobre toda a população?
+</strong>
+
+<div class="answer">
+Resposta: Não. É um inquérito por amostragem.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+5. Qual instituição desempenha papel central na produção da
+estatística oficial em Angola?
+</strong>
+
+<div class="answer">
+Resposta: Instituto Nacional de Estatística — INE.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+6. Cite três áreas estudadas pelo IIMS.
+</strong>
+
+<div class="answer">
+Resposta possível: saúde infantil, saúde materna, nutrição,
+HIV/SIDA, saúde reprodutiva, água e saneamento.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+7. O IIMS recolhe informações sobre vacinação?
+</strong>
+
+<div class="answer">
+Resposta: Sim.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+8. O IIMS estuda indicadores relacionados com saúde materna?
+</strong>
+
+<div class="answer">
+Resposta: Sim.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+9. O IIMS analisa questões relacionadas com nutrição infantil?
+</strong>
+
+<div class="answer">
+Resposta: Sim.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+10. Qual é a diferença fundamental entre Censo e IIMS?
+</strong>
+
+<div class="answer">
+Resposta: O Censo é um recenseamento da população e habitação,
+enquanto o IIMS é um inquérito por amostragem destinado a produzir
+indicadores múltiplos, especialmente de saúde e condições de vida.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+11. O IIMS pode produzir informação sobre água e saneamento?
+</strong>
+
+<div class="answer">
+Resposta: Sim.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+12. O IIMS pode fornecer indicadores sobre HIV/SIDA?
+</strong>
+
+<div class="answer">
+Resposta: Sim.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+13. Por que os dados do IIMS são importantes?
+</strong>
+
+<div class="answer">
+Resposta: Porque apoiam o planeamento, monitorização e avaliação
+das políticas públicas, especialmente na área da saúde e condições
+de vida.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+14. Qual é a principal característica metodológica do IIMS?
+</strong>
+
+<div class="answer">
+Resposta: Utilização de uma amostra para produzir estimativas
+sobre a população-alvo.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+15. Qual palavra deve ser associada imediatamente ao IIMS?
+</strong>
+
+<div class="answer">
+Resposta: Indicadores.
+</div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist final
+</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>☐ Sei o significado de IIMS.</li>
+
+<li>☐ Sei o que significa 2023–2024.</li>
+
+<li>☐ Sei que é um inquérito por amostragem.</li>
+
+<li>☐ Sei diferenciar IIMS e Censo.</li>
+
+<li>☐ Sei o papel do INE.</li>
+
+<li>☐ Conheço os principais objetivos do IIMS.</li>
+
+<li>☐ Conheço os indicadores de saúde infantil.</li>
+
+<li>☐ Conheço os indicadores de saúde materna.</li>
+
+<li>☐ Conheço os indicadores de nutrição.</li>
+
+<li>☐ Sei que o IIMS aborda HIV/SIDA.</li>
+
+<li>☐ Sei que aborda água, saneamento e higiene.</li>
+
+<li>☐ Sei explicar a importância do IIMS para as políticas públicas.</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<h3>
+<i class="fa-solid fa-star"></i>
+Resumo de 10 segundos
+</h3>
+
+<p style="font-size:20px;font-weight:800;margin-top:10px;">
+
+IIMS 2023–2024 =
+INQUÉRITO + AMOSTRA + SAÚDE + INDICADORES SOCIAIS
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+<strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong>
+</p>
+
+<p style="margin-top:8px;">
+Tema IX — IIMS 2023–2024
+</p>
+
+<p style="margin-top:15px;font-size:13px;">
+Estude • Memorize • Resolva questões • Revise
+</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Preparação para Concurso — Secretário Clínico</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",Arial,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.7;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at 80% 20%,rgba(59,130,246,.35),transparent 30%),
+    radial-gradient(circle at 10% 80%,rgba(16,185,129,.25),transparent 30%),
+    linear-gradient(135deg,#0f172a,#111827,#064e3b);
+    color:white;
+    padding:80px 20px 100px;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50%;
+    right:-150px;
+    top:-150px;
+}
+
+.hero-container{
+    width:min(1150px,92%);
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.15);
+    padding:9px 16px;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:25px;
+    backdrop-filter:blur(10px);
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,70px);
+    line-height:1.05;
+    max-width:900px;
+    margin-bottom:25px;
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:#34d399;
+}
+
+.hero p{
+    max-width:800px;
+    font-size:18px;
+    color:#d1fae5;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:13px 20px;
+    border-radius:10px;
+    font-weight:800;
+    font-size:14px;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#10b981;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#059669;
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    background:rgba(255,255,255,.08);
+    color:white;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,.15);
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+.nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e5e7eb;
+}
+
+.nav-container{
+    width:min(1150px,92%);
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    text-decoration:none;
+    color:#111827;
+    font-weight:900;
+    padding:17px 0;
+    white-space:nowrap;
+}
+
+.logo i{
+    color:#059669;
+    margin-right:8px;
+}
+
+.nav-links{
+    display:flex;
+    gap:5px;
+    overflow-x:auto;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#374151;
+    font-size:13px;
+    font-weight:700;
+    padding:10px 12px;
+    white-space:nowrap;
+    border-radius:8px;
+}
+
+.nav-links a:hover{
+    background:#ecfdf5;
+    color:#047857;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+section{
+    padding:65px 0;
+}
+
+.section-header{
+    margin-bottom:35px;
+}
+
+.section-header h2{
+    font-size:34px;
+    line-height:1.2;
+    color:#111827;
+}
+
+.section-header p{
+    color:#6b7280;
+    margin-top:8px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    margin-top:-45px;
+    position:relative;
+    z-index:5;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.stat{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+}
+
+.stat i{
+    color:#059669;
+    font-size:24px;
+    margin-bottom:13px;
+}
+
+.stat strong{
+    display:block;
+    font-size:28px;
+    color:#111827;
+}
+
+.stat span{
+    color:#6b7280;
+    font-size:13px;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(15,23,42,.05);
+}
+
+.card h3{
+    margin-bottom:13px;
+    color:#111827;
+}
+
+.card p{
+    color:#4b5563;
+}
+
+.highlight{
+    background:#ecfdf5;
+    border-left:5px solid #10b981;
+    padding:20px;
+    border-radius:0 12px 12px 0;
+}
+
+.highlight strong{
+    color:#065f46;
+}
+
+
+/* =========================
+   TEMAS
+========================= */
+
+.temas-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.tema{
+    position:relative;
+    overflow:hidden;
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:28px;
+    transition:.25s;
+    box-shadow:0 7px 25px rgba(15,23,42,.05);
+}
+
+.tema:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(15,23,42,.1);
+    border-color:#a7f3d0;
+}
+
+.tema-numero{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:55px;
+    font-weight:900;
+    color:#f1f5f9;
+    line-height:1;
+}
+
+.tema-icon{
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    background:#ecfdf5;
+    color:#059669;
+    font-size:22px;
+    margin-bottom:18px;
+    position:relative;
+}
+
+.tema h3{
+    font-size:20px;
+    margin-bottom:8px;
+    color:#111827;
+    position:relative;
+}
+
+.tema p{
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.tema ul{
+    margin:0 0 22px 20px;
+    color:#4b5563;
+    font-size:13px;
+}
+
+.tema li{
+    margin-bottom:4px;
+}
+
+.tema-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    background:#111827;
+    color:white;
+    padding:11px 16px;
+    border-radius:9px;
+    font-size:13px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.tema-link:hover{
+    background:#059669;
+}
+
+
+/* =========================
+   PROGRESSO
+========================= */
+
+.progress-card{
+    background:linear-gradient(135deg,#111827,#064e3b);
+    color:white;
+    border-radius:22px;
+    padding:32px;
+}
+
+.progress-top{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.progress-top h3{
+    font-size:21px;
+}
+
+.progress-percent{
+    font-size:30px;
+    font-weight:900;
+}
+
+.progress-bar{
+    height:13px;
+    background:rgba(255,255,255,.12);
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:71%;
+    height:100%;
+    background:#34d399;
+    border-radius:30px;
+}
+
+.progress-card p{
+    color:#a7f3d0;
+    font-size:13px;
+    margin-top:14px;
+}
+
+
+/* =========================
+   ESTRATÉGIA
+========================= */
+
+.strategy-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.strategy{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:25px;
+}
+
+.strategy i{
+    font-size:25px;
+    color:#059669;
+    margin-bottom:15px;
+}
+
+.strategy h3{
+    margin-bottom:8px;
+}
+
+.strategy p{
+    color:#6b7280;
+    font-size:14px;
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+.warning{
+    background:#fffbeb;
+    border-left:5px solid #f59e0b;
+    padding:22px;
+    border-radius:0 14px 14px 0;
+    margin-top:25px;
+}
+
+.warning strong{
+    color:#92400e;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#0f172a;
+    color:#cbd5e1;
+    padding:55px 20px;
+    margin-top:30px;
+}
+
+.footer-container{
+    width:min(1150px,92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:12px;
+}
+
+footer p{
+    font-size:13px;
+}
+
+.footer-bottom{
+    width:min(1150px,92%);
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    font-size:12px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:900px){
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+    .strategy-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .hero{
+        padding:60px 15px 85px;
+    }
+
+    .hero h1{
+        letter-spacing:-1px;
+    }
+
+    .nav-container{
+        display:block;
+    }
+
+    .logo{
+        display:block;
+        padding-bottom:8px;
+    }
+
+    .nav-links{
+        padding-bottom:8px;
+    }
+
+    .temas-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat{
+        padding:18px;
+    }
+
+    .stat strong{
+        font-size:23px;
+    }
+
+    section{
+        padding:45px 0;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+<div class="hero-container">
+
+<span class="badge">
+<i class="fa-solid fa-graduation-cap"></i>
+PLATAFORMA DE ESTUDO
+</span>
+
+<h1>
+Preparação para o Concurso de
+<span>Secretário Clínico</span>
+</h1>
+
+<p>
+Material completo de preparação para o concurso público,
+organizado por temas, aulas, subtemas, exemplos, estratégias
+e questões de revisão.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#temas" class="btn btn-primary">
+<i class="fa-solid fa-book-open"></i>
+Começar a estudar
+</a>
+
+<a href="provas.html" class="btn btn-secondary">
+<i class="fa-solid fa-lightbulb"></i>
+Provas práticas
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =========================
+     NAV
+========================= -->
+
+<nav class="nav">
+
+<div class="nav-container">
+
+<a href="#" class="logo">
+<i class="fa-solid fa-book-medical"></i>
+Secretário Clínico
+</a>
+
+<div class="nav-links">
+
+<a href="#inicio">Início</a> <a href="#temas">Temas</a> <a href="#progresso">Progresso</a> <a href="#estrategia">Estratégia</a> <a href="#sobre">Sobre</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<!-- =========================
+     ESTATÍSTICAS
+========================= -->
+
+<section class="stats" id="inicio">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<strong>7</strong>
+
+<span>Temas de estudo</span>
+
+</div>
+
+<div class="stat">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<strong>7</strong>
+
+<span>Aulas principais</span>
+
+</div>
+
+<div class="stat">
+
+<i class="fa-solid fa-circle-question"></i>
+
+<strong>100+</strong>
+
+<span>Questões previstas</span>
+
+</div>
+
+<div class="stat">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+<strong>HTML</strong>
+
+<span>Material digital</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     APRESENTAÇÃO
+========================= -->
+
+<section id="sobre">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Como estudar com este material?</h2>
+
+<p>
+Uma estrutura simples para transformar o conteúdo em preparação real.
+</p>
+
+</div>
+
+<div class="info">
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-route"></i>
+Estrutura do curso
+</h3>
+
+<p>
+O material está dividido em páginas independentes.
+Cada tema possui a sua própria aula em HTML, permitindo
+estudar um assunto de cada vez sem misturar os conteúdos.
+</p>
+
+<p style="margin-top:15px">
+
+Depois de abrir o <strong>index.html</strong>, basta escolher
+o tema desejado. A página correspondente será aberta
+automaticamente.
+
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>
+<i class="fa-solid fa-triangle-exclamation"></i>
+Importante
+</strong>
+
+<p style="margin-top:8px">
+
+Não basta ler. O objetivo é compreender o conteúdo,
+memorizar os pontos fundamentais e depois resolver
+questões sem consultar a resposta.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     TEMAS
+========================= -->
+
+<section id="temas">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Conteúdo programático</h2>
+
+<p>
+Explore as 10 aulas que compõem a preparação para o Concurso de
+Secretário Clínico. Cada aula possui uma página própria com conteúdo
+teórico, explicações, exemplos, revisão e questões de concurso.
+</p>
+
+</div>
+
+<div class="temas-grid">
+
+<!-- =====================================================
+     TEMA 1
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">01</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+<span class="status-badge status-complete">
+<i class="fa-solid fa-check"></i> Aula disponível
+</span>
+
+<h3>
+Noções Gerais sobre a Organização da Administração Pública
+</h3>
+
+<p>
+Fundamentos da Administração Pública, sua organização,
+estrutura, funcionamento e princípios fundamentais.
+</p>
+
+<ul>
+<li>Conceito de Administração Pública</li>
+<li>Organização administrativa</li>
+<li>Administração directa e indirecta</li>
+<li>Órgãos e entidades públicas</li>
+<li>Princípios da Administração Pública</li>
+<li>Função pública</li>
+<li>Agentes e funcionários públicos</li>
+<li>Interesse público</li>
+</ul>
+
+<a href="tema_1.html" class="tema-link">
+Abrir Aula 1
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 2
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">02</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-scale-balanced"></i>
+</div>
+
+<span class="status-badge status-complete">
+<i class="fa-solid fa-check"></i> Aula disponível
+</span>
+
+<h3>
+Pauta Deontológica da Função Pública
+</h3>
+
+<p>
+Princípios éticos, deveres, direitos, responsabilidades e regras
+de conduta aplicáveis ao funcionário público.
+</p>
+
+<ul>
+<li>Conceito de deontologia</li>
+<li>Ética profissional</li>
+<li>Deveres do funcionário público</li>
+<li>Direitos e responsabilidades</li>
+<li>Imparcialidade e isenção</li>
+<li>Integridade e probidade</li>
+<li>Sigilo profissional</li>
+<li>Responsabilidade disciplinar</li>
+<li>Conflito de interesses</li>
+<li>Atendimento ao cidadão</li>
+</ul>
+
+<a href="tema_2.html" class="tema-link">
+Abrir Aula 2
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 3
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">03</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-language"></i>
+</div>
+
+<span class="status-badge status-complete">
+<i class="fa-solid fa-check"></i> Aula disponível
+</span>
+
+<h3>
+Raciocínio Verbal
+</h3>
+
+<p>
+Desenvolvimento da capacidade de compreender, interpretar,
+analisar e relacionar informações apresentadas através da linguagem.
+</p>
+
+<ul>
+<li>Interpretação de textos</li>
+<li>Compreensão textual</li>
+<li>Ideia principal</li>
+<li>Ideias secundárias</li>
+<li>Inferência</li>
+<li>Conclusão</li>
+<li>Sinónimos e antónimos</li>
+<li>Homónimos e parónimos</li>
+<li>Vocabulário</li>
+<li>Gramática</li>
+<li>Classes gramaticais</li>
+<li>Estrutura das frases</li>
+<li>Raciocínio lógico-verbal</li>
+</ul>
+
+<a href="tema_3.html" class="tema-link">
+Abrir Aula 3
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 4
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">04</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-calculator"></i>
+</div>
+
+<span class="status-badge status-complete">
+<i class="fa-solid fa-check"></i> Aula disponível
+</span>
+
+<h3>
+Raciocínio Numérico
+</h3>
+
+<p>
+Aplicação do raciocínio matemático na resolução de problemas,
+operações e relações numéricas.
+</p>
+
+<ul>
+<li>Operações fundamentais</li>
+<li>Números naturais e inteiros</li>
+<li>Números decimais</li>
+<li>Frações</li>
+<li>Razão e proporção</li>
+<li>Regra de três</li>
+<li>Percentagens</li>
+<li>Aumentos e descontos</li>
+<li>Médias aritméticas</li>
+<li>Sequências numéricas</li>
+<li>Problemas matemáticos</li>
+<li>Interpretação de dados</li>
+</ul>
+
+<a href="tema_4.html" class="tema-link">
+Abrir Aula 4
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 5
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">05</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-virus"></i>
+</div>
+
+<span class="status-badge status-complete">
+<i class="fa-solid fa-check"></i> Aula disponível
+</span>
+
+<h3>
+COVID-19
+</h3>
+
+<p>
+Conhecimentos fundamentais sobre a COVID-19, SARS-CoV-2,
+transmissão, prevenção, vacinação e saúde pública.
+</p>
+
+<ul>
+<li>Conceito de COVID-19</li>
+<li>SARS-CoV-2</li>
+<li>Transmissão</li>
+<li>Período de incubação</li>
+<li>Sinais e sintomas</li>
+<li>Fatores de risco</li>
+<li>Prevenção</li>
+<li>Higiene e biossegurança</li>
+<li>Vacinação</li>
+<li>Diagnóstico</li>
+<li>Tratamento</li>
+<li>Vigilância epidemiológica</li>
+</ul>
+
+<a href="tema_5.html" class="tema-link">
+Abrir Aula 5
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 6
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">06</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-globe-africa"></i>
+</div>
+
+<span class="status-badge status-pending">
+<i class="fa-solid fa-book"></i> Em preparação
+</span>
+
+<h3>
+Cultura Geral
+</h3>
+
+<p>
+Conhecimentos gerais sobre Angola, África e o mundo, abrangendo
+história, geografia, cultura, ciência, sociedade e actualidade.
+</p>
+
+<ul>
+<li>História de Angola</li>
+<li>História de África</li>
+<li>Geografia de Angola</li>
+<li>Geografia mundial</li>
+<li>Cultura e património</li>
+<li>Símbolos nacionais</li>
+<li>Personalidades importantes</li>
+<li>Ciência e tecnologia</li>
+<li>Sociedade</li>
+<li>Economia</li>
+<li>Organizações internacionais</li>
+<li>Actualidades</li>
+</ul>
+
+<a href="tema_6.html" class="tema-link">
+Abrir Aula 6
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 7
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">07</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-map-location-dot"></i>
+</div>
+
+<span class="status-badge status-pending">
+<i class="fa-solid fa-book"></i> Em preparação
+</span>
+
+<h3>
+Divisão Político-Administrativa de Angola
+</h3>
+
+<p>
+Estudo da organização territorial e político-administrativa
+da República de Angola.
+</p>
+
+<ul>
+<li>Organização territorial</li>
+<li>Divisão político-administrativa</li>
+<li>Províncias</li>
+<li>Municípios</li>
+<li>Comunas</li>
+<li>Administração local</li>
+<li>Órgãos da Administração Local</li>
+<li>Localização das províncias</li>
+<li>Características territoriais</li>
+<li>Reorganização político-administrativa</li>
+</ul>
+
+<a href="tema_7.html" class="tema-link">
+Abrir Aula 7
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 8
+===================================================== -->
+
+<!-- =====================================================
+     TEMA 8 — CENSO
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">08</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-people-group"></i>
+</div>
+
+
+
+<h3>
+Censo Geral da População e Habitação
+</h3>
+
+<p>
+Conhecimentos fundamentais sobre o Recenseamento Geral da
+População e Habitação de Angola, sua finalidade, metodologia
+e importância para o desenvolvimento nacional.
+</p>
+
+<ul>
+<li>Conceito de Censo</li>
+<li>Objectivos do Censo</li>
+<li>Censo Geral da População e Habitação</li>
+<li>Importância do recenseamento</li>
+<li>População e habitação</li>
+<li>Recolha e tratamento de dados</li>
+<li>Indicadores demográficos</li>
+<li>Distribuição da população</li>
+<li>Estrutura da população</li>
+<li>Utilização dos dados censitários</li>
+<li>Importância do Censo para o planeamento nacional</li>
+<li>Questões de revisão</li>
+</ul>
+
+<a href="tema_8.html" class="tema-link">
+Abrir Aula 8
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 9 — IIMS
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">09</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-hospital-user"></i>
+</div>
+
+
+
+<h3>
+IIMS — Inquérito de Indicadores Múltiplos e de Saúde
+</h3>
+
+<p>
+Estudo dos principais conceitos, indicadores e resultados do
+Inquérito de Indicadores Múltiplos e de Saúde realizado em Angola.
+</p>
+
+<ul>
+<li>Conceito de IIMS</li>
+<li>Objectivos do inquérito</li>
+<li>IIMS 2023–2024</li>
+<li>População e agregados familiares</li>
+<li>Indicadores de saúde</li>
+<li>Saúde materna</li>
+<li>Saúde infantil</li>
+<li>Saúde reprodutiva</li>
+<li>Nutrição</li>
+<li>Mortalidade infantil</li>
+<li>Doenças e condições de saúde</li>
+<li>Acesso aos serviços de saúde</li>
+<li>Água, saneamento e higiene</li>
+<li>Importância dos indicadores para as políticas públicas</li>
+<li>Questões de revisão</li>
+</ul>
+
+<a href="tema_9.html" class="tema-link">
+Abrir Aula 9
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+<!-- =====================================================
+     TEMA 10 — INTELIGÊNCIA ARTIFICIAL
+===================================================== -->
+
+<article class="tema">
+
+<div class="tema-numero">10</div>
+
+<div class="tema-icon">
+<i class="fa-solid fa-robot"></i>
+</div>
+
+
+
+<h3>
+Inteligência Artificial
+</h3>
+
+<p>
+Introdução aos conceitos fundamentais da Inteligência Artificial,
+suas aplicações, evolução, benefícios, riscos e impacto na sociedade.
+</p>
+
+<ul>
+<li>Conceito de Inteligência Artificial</li>
+<li>História da Inteligência Artificial</li>
+<li>Aprendizagem Automática</li>
+<li>Aprendizagem Profunda</li>
+<li>Redes neurais artificiais</li>
+<li>Processamento de linguagem natural</li>
+<li>IA generativa</li>
+<li>Assistentes virtuais</li>
+<li>Aplicações da IA na saúde</li>
+<li>Aplicações da IA na Administração Pública</li>
+<li>Benefícios e limitações da IA</li>
+<li>Riscos e desafios</li>
+<li>Ética e responsabilidade no uso da IA</li>
+<li>Privacidade e segurança de dados</li>
+<li>Impacto da IA no futuro</li>
+<li>Questões de revisão</li>
+</ul>
+
+<a href="tema_10.html" class="tema-link">
+Abrir Aula 10
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     ESTILO DOS ESTADOS DAS AULAS
+===================================================== -->
+
+<style>
+
+.status-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:11px;
+    font-weight:800;
+    padding:6px 10px;
+    border-radius:20px;
+    margin-bottom:12px;
+}
+
+.status-complete{
+    background:#ecfdf5;
+    color:#047857;
+}
+
+.status-pending{
+    background:#fff7ed;
+    color:#c2410c;
+}
+
+</style>
+
+<!-- =========================
+     PROGRESSO
+========================= -->
+
+<section id="progresso">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Progresso dos estudos</h2>
+
+<p>
+Acompanhe a evolução do conteúdo.
+</p>
+
+</div>
+
+<div class="progress-card">
+
+<div class="progress-top">
+
+<div>
+
+<h3>Conteúdo disponibilizado</h3>
+
+</div>
+
+<div class="progress-percent">
+71%
+</div>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"></div>
+
+</div>
+
+<p>
+5 de 7 temas principais já estruturados. Continue avançando
+até completar todo o programa.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     ESTRATÉGIA
+========================= -->
+
+<section id="estrategia">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Estratégia para estudar</h2>
+
+<p>
+Não transforme preparação em simples leitura.
+</p>
+
+</div>
+
+<div class="strategy-grid">
+
+<div class="strategy">
+
+<i class="fa-solid fa-book-open"></i>
+
+<h3>1. Estude</h3>
+
+<p>
+Leia a aula inteira e procure compreender os conceitos,
+não apenas decorar frases.
+</p>
+
+</div>
+
+<div class="strategy">
+
+<i class="fa-solid fa-rotate"></i>
+
+<h3>2. Revise</h3>
+
+<p>
+Volte aos pontos principais e tente explicar o conteúdo
+sem consultar a página.
+</p>
+
+</div>
+
+<div class="strategy">
+
+<i class="fa-solid fa-circle-question"></i>
+
+<h3>3. Pratique</h3>
+
+<p>
+Resolva as questões. Se errar, volte ao conteúdo e descubra
+exatamente onde estava a falha.
+</p>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+<strong>
+<i class="fa-solid fa-triangle-exclamation"></i>
+Regra de ouro:
+</strong>
+
+<p style="margin-top:7px">
+
+Se você consegue reconhecer a resposta quando a vê,
+mas não consegue chegar à resposta sozinho, ainda não domina
+o assunto.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     GUIA DE ARQUIVOS
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Estrutura dos ficheiros</h2>
+
+<p>
+Todos os ficheiros devem ficar na mesma pasta.
+</p>
+
+</div>
+
+<div class="card">
+
+<div style="
+background:#111827;
+color:#d1fae5;
+padding:25px;
+border-radius:14px;
+font-family:monospace;
+font-size:14px;
+line-height:2;
+overflow-x:auto;
+">
+
+📁 concurso-secretario-clinico/<br>
+
+  📄 index.html<br>
+
+  📄 tema_1.html<br>
+
+  📄 tema_2.html<br>
+
+  📄 tema_3.html<br>
+
+  📄 tema_4.html<br>
+
+  📄 tema_5.html<br>
+
+  📄 tema_6.html<br>
+
+  📄 tema_7.html
+
+</div>
+
+<p style="margin-top:20px">
+
+<strong>Importante:</strong> os nomes dos ficheiros precisam
+ser exatamente iguais aos utilizados nos links.
+Por exemplo, o botão do Tema 5 procura:
+
+<strong>tema_5.html</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<h3>
+<i class="fa-solid fa-graduation-cap"></i>
+Preparação para o Concurso
+</h3>
+
+<p>
+Material digital de preparação para o concurso de
+Secretário Clínico de 3.ª Classe.
+</p>
+
+</div>
+
+<div>
+
+<h3>
+Objetivo
+</h3>
+
+<p>
+Compreender o conteúdo programático, desenvolver raciocínio,
+revisar os pontos fundamentais e aumentar o desempenho
+nas questões de concurso.
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 — Material de preparação para estudos
+
+</div>
+
+</footer>
+
+</body>
+</html>

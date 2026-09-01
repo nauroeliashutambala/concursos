@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema II — Pauta Deontológica da Função Pública</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',Arial,sans-serif;
+    background:#f5f7fb;
+    color:#172033;
+    line-height:1.75;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+.hero{
+    background:linear-gradient(135deg,#111827,#312e81,#4f46e5);
+    color:#fff;
+    padding:75px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+}
+
+.hero:before{
+    width:500px;
+    height:500px;
+    right:-220px;
+    top:-280px;
+}
+
+.hero:after{
+    width:350px;
+    height:350px;
+    left:-200px;
+    bottom:-250px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#6366f1;
+    padding:9px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(34px,6vw,60px);
+    line-height:1.08;
+    max-width:1000px;
+    margin-bottom:22px;
+}
+
+.hero p{
+    max-width:900px;
+    color:#dbeafe;
+    font-size:18px;
+}
+
+.nav{
+    background:#fff;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-inner{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    padding:12px 0;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#374151;
+    white-space:nowrap;
+    padding:9px 13px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav a:hover{
+    background:#eef2ff;
+    color:#4338ca;
+}
+
+section{
+    padding:55px 0;
+}
+
+.section-title{
+    font-size:32px;
+    line-height:1.2;
+    color:#111827;
+    margin-bottom:9px;
+}
+
+.section-subtitle{
+    color:#6b7280;
+    margin-bottom:28px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    box-shadow:0 8px 25px rgba(15,23,42,.06);
+}
+
+.card h3{
+    color:#4338ca;
+    margin-bottom:12px;
+}
+
+.card h4{
+    color:#1f2937;
+    margin-top:18px;
+    margin-bottom:8px;
+}
+
+.icon-title{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:15px;
+}
+
+.icon{
+    width:48px;
+    height:48px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef2ff;
+    color:#4f46e5;
+    font-size:21px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.mini-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:23px;
+    box-shadow:0 5px 18px rgba(15,23,42,.04);
+}
+
+.mini-card i{
+    color:#4f46e5;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.mini-card h3{
+    margin-bottom:8px;
+}
+
+.highlight,
+.warning,
+.success,
+.danger{
+    padding:20px;
+    margin:20px 0;
+    border-radius:0 12px 12px 0;
+}
+
+.highlight{
+    background:#eef2ff;
+    border-left:5px solid #4f46e5;
+}
+
+.warning{
+    background:#fffbeb;
+    border-left:5px solid #f59e0b;
+}
+
+.success{
+    background:#f0fdf4;
+    border-left:5px solid #16a34a;
+}
+
+.danger{
+    background:#fef2f2;
+    border-left:5px solid #dc2626;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+}
+
+th,td{
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+    vertical-align:top;
+}
+
+th{
+    background:#eef2ff;
+    color:#3730a3;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+.question{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:24px;
+    margin-bottom:18px;
+}
+
+.options{
+    margin-top:15px;
+    display:grid;
+    gap:8px;
+}
+
+.option{
+    padding:10px 13px;
+    background:#f8fafc;
+    border-radius:8px;
+}
+
+.answer{
+    margin-top:15px;
+    padding:13px 15px;
+    border-radius:9px;
+    background:#f0fdf4;
+    color:#166534;
+    font-weight:600;
+}
+
+.term{
+    display:inline-block;
+    background:#eef2ff;
+    color:#3730a3;
+    padding:4px 9px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:800;
+}
+
+footer{
+    background:#111827;
+    color:#cbd5e1;
+    text-align:center;
+    padding:45px 20px;
+}
+
+@media(max-width:600px){
+    .hero{
+        padding:55px 15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    section{
+        padding:42px 0;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<span class="badge">
+<i class="fa-solid fa-scale-balanced"></i>
+CONCURSO — SECRETÁRIO CLÍNICO DE 3.ª CLASSE
+</span>
+
+<h1>
+II — Pauta Deontológica da Função Pública
+</h1>
+
+<p>
+Ética, princípios, deveres, responsabilidade, comportamento,
+integridade, sigilo profissional e conduta do funcionário público.
+</p>
+
+</div>
+
+</header>
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="#introducao">Introdução</a> <a href="#deontologia">Deontologia</a> <a href="#principios">Princípios</a> <a href="#deveres">Deveres</a> <a href="#conduta">Conduta</a> <a href="#sigilo">Sigilo</a> <a href="#corrupcao">Integridade</a> <a href="#conflito">Conflitos</a> <a href="#utente">Utente</a> <a href="#responsabilidade">Responsabilidade</a> <a href="#secretario">Secretário Clínico</a> <a href="#questoes">Questões</a>
+
+</div>
+
+</nav>
+
+<main class="container">
+
+<!-- INTRODUÇÃO -->
+
+<section id="introducao">
+
+<h2 class="section-title">
+1. Introdução
+</h2>
+
+<p class="section-subtitle">
+A deontologia estabelece padrões de comportamento para o exercício correto da função pública.
+</p>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-user-tie"></i>
+</div>
+
+<h3>Por que existe uma pauta deontológica?</h3>
+
+</div>
+
+<p>
+O funcionário público exerce uma função que envolve poder,
+responsabilidade e acesso a recursos e informações de interesse
+público. Por isso, não basta simplesmente cumprir tarefas.
+É necessário agir de acordo com princípios éticos e profissionais.
+</p>
+
+<p style="margin-top:15px;">
+A pauta deontológica procura orientar o comportamento do funcionário
+para garantir que o exercício da função pública seja realizado com
+<strong>integridade, imparcialidade, responsabilidade e respeito pelo cidadão</strong>.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>Ideia central:</strong>
+
+<p style="font-size:21px;font-weight:800;margin-top:8px;">
+FUNÇÃO PÚBLICA = PODER + RESPONSABILIDADE + ÉTICA
+</p>
+
+</div>
+
+</section>
+
+<!-- DEONTOLOGIA -->
+
+<section id="deontologia">
+
+<h2 class="section-title">
+2. O que é Deontologia?
+</h2>
+
+<div class="card">
+
+<h3>Definição</h3>
+
+<p>
+<strong>Deontologia</strong> é o conjunto de princípios, deveres,
+regras e normas de conduta que orientam o exercício de determinada
+profissão ou função.
+</p>
+
+<p style="margin-top:15px;">
+No contexto da Administração Pública, a deontologia estabelece
+padrões de comportamento que devem orientar os agentes públicos
+no relacionamento com o Estado, colegas e cidadãos.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+<h3>Ética</h3>
+
+<p>
+Reflexão e orientação sobre o comportamento correto.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-book"></i>
+
+<h3>Normas</h3>
+
+<p>
+Regras que orientam o exercício da função.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-user-check"></i>
+
+<h3>Conduta</h3>
+
+<p>
+Forma como o funcionário efetivamente se comporta.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Integridade</h3>
+
+<p>
+Atuação honesta, coerente e livre de práticas indevidas.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRINCIPIOS -->
+
+<section id="principios">
+
+<h2 class="section-title">
+3. Princípios Deontológicos
+</h2>
+
+<p class="section-subtitle">
+Estes princípios são fundamentais para compreender a conduta esperada de um funcionário público.
+</p>
+
+<div class="card">
+
+<h3>3.1 Legalidade</h3>
+
+<p>
+O funcionário deve cumprir a Constituição, a lei e os regulamentos
+aplicáveis ao exercício das suas funções.
+</p>
+
+<div class="highlight">
+<strong>Regra:</strong>
+Não se deve praticar um ato apenas porque um superior ordenou,
+quando a ordem for manifestamente ilegal.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>3.2 Imparcialidade</h3>
+
+<p>
+O funcionário deve tomar decisões e prestar serviços sem favorecer
+ou prejudicar pessoas por razões pessoais, familiares, políticas,
+económicas ou outras razões indevidas.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3.3 Integridade</h3>
+
+<p>
+Significa atuar com honestidade, retidão e coerência, rejeitando
+vantagens indevidas e comportamentos desonestos.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3.4 Probidade</h3>
+
+<p>
+A probidade está relacionada com a honestidade, moralidade e
+correção no exercício da função pública.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3.5 Responsabilidade</h3>
+
+<p>
+O funcionário deve responder pelos atos que pratica no exercício
+das suas funções e cumprir adequadamente as responsabilidades
+que lhe foram atribuídas.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3.6 Isenção</h3>
+
+<p>
+O funcionário deve evitar interesses pessoais que possam interferir
+com o cumprimento objetivo das suas funções.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3.7 Transparência</h3>
+
+<p>
+A atuação administrativa deve permitir, nos termos da lei,
+controlo, fiscalização e compreensão dos procedimentos públicos.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3.8 Respeito pelo cidadão</h3>
+
+<p>
+O cidadão deve ser atendido com educação, dignidade, urbanidade
+e profissionalismo.
+</p>
+
+</div>
+
+<div class="highlight">
+
+<strong>Memorização:</strong>
+
+<p style="margin-top:8px;font-weight:800;">
+LEGALIDADE → IMPARCIALIDADE → INTEGRIDADE → PROBIDADE
+→ RESPONSABILIDADE → ISENÇÃO → TRANSPARÊNCIA → RESPEITO
+</p>
+
+</div>
+
+</section>
+
+<!-- DEVERES -->
+
+<section id="deveres">
+
+<h2 class="section-title">
+4. Deveres do Funcionário Público
+</h2>
+
+<div class="grid">
+
+<div class="mini-card">
+<i class="fa-solid fa-clock"></i>
+<h3>Assiduidade</h3>
+<p>
+Comparecer regularmente ao serviço e cumprir os horários estabelecidos.
+</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-check-double"></i>
+<h3>Pontualidade</h3>
+<p>
+Cumprir o horário de entrada, saída e demais obrigações temporais.
+</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-gavel"></i>
+<h3>Obediência legal</h3>
+<p>
+Cumprir ordens legítimas relacionadas com o serviço.
+</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-lock"></i>
+<h3>Sigilo</h3>
+<p>
+Proteger informações confidenciais obtidas no exercício da função.
+</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-people-arrows"></i>
+<h3>Urbanidade</h3>
+<p>
+Manter comportamento respeitoso com cidadãos e colegas.
+</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-briefcase"></i>
+<h3>Zelo</h3>
+<p>
+Cuidar adequadamente dos recursos e equipamentos públicos.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONDUTA -->
+
+<section id="conduta">
+
+<h2 class="section-title">
+5. Conduta no Exercício da Função
+</h2>
+
+<div class="card">
+
+<h3>Como deve comportar-se um funcionário público?</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Ser educado e profissional;</li>
+
+<li>Tratar todos os cidadãos com respeito;</li>
+
+<li>Não utilizar o cargo para benefício pessoal;</li>
+
+<li>Não aceitar vantagens indevidas;</li>
+
+<li>Preservar informações confidenciais;</li>
+
+<li>Utilizar corretamente os recursos públicos;</li>
+
+<li>Cumprir as normas internas;</li>
+
+<li>Evitar conflitos de interesses;</li>
+
+<li>Comunicar irregularidades pelos canais apropriados;</li>
+
+<li>Manter comportamento compatível com a dignidade da função.</li>
+
+</ul>
+
+</div>
+
+<div class="danger">
+
+<strong>Conduta proibida:</strong>
+
+<p style="margin-top:8px;">
+Usar o cargo público para obter vantagens pessoais,
+favorecer familiares ou amigos, intimidar cidadãos ou
+obter benefícios indevidos.
+</p>
+
+</div>
+
+</section>
+
+<!-- SIGILO -->
+
+<section id="sigilo">
+
+<h2 class="section-title">
+6. Sigilo e Confidencialidade
+</h2>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-lock"></i>
+</div>
+
+<h3>O que é sigilo profissional?</h3>
+
+</div>
+
+<p>
+É o dever de não divulgar informações confidenciais obtidas
+em razão do exercício da função, salvo quando a divulgação
+for legalmente autorizada ou exigida.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Informações que exigem cuidado</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>Dados pessoais;</li>
+
+<li>Dados de saúde;</li>
+
+<li>Processos administrativos;</li>
+
+<li>Documentos internos;</li>
+
+<li>Informações sobre funcionários;</li>
+
+<li>Informações sobre utentes;</li>
+
+<li>Credenciais e informações de sistemas;</li>
+
+<li>Qualquer informação protegida por lei ou regulamento.</li>
+
+</ul>
+
+</div>
+
+<div class="warning">
+
+<strong>Exemplo:</strong>
+
+<p style="margin-top:8px;">
+Um Secretário Clínico não deve comentar a doença ou situação
+clínica de um utente com pessoas que não estejam autorizadas
+a ter acesso à informação.
+</p>
+
+</div>
+
+</section>
+
+<!-- CORRUPÇÃO -->
+
+<section id="corrupcao">
+
+<h2 class="section-title">
+7. Integridade e Combate à Corrupção
+</h2>
+
+<div class="card">
+
+<h3>O que é corrupção?</h3>
+
+<p>
+De forma geral, corrupção envolve o uso indevido de uma função
+ou poder para obter vantagem indevida para si ou para terceiros.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+<h3>Suborno</h3>
+
+<p>
+Receber ou oferecer vantagem indevida para influenciar uma decisão.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-user-group"></i>
+
+<h3>Nepotismo</h3>
+
+<p>
+Favorecimento indevido de familiares no acesso a funções ou benefícios.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hand-holding-dollar"></i>
+
+<h3>Vantagem indevida</h3>
+
+<p>
+Receber benefícios por causa da posição ocupada.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-file-circle-exclamation"></i>
+
+<h3>Fraude</h3>
+
+<p>
+Manipulação ou falsificação para obter vantagem indevida.
+</p>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<strong>Regra prática:</strong>
+
+<p style="margin-top:8px;">
+Se a vantagem existe porque a pessoa ocupa determinado cargo
+público e não seria oferecida nas mesmas condições a um cidadão
+comum, deve ser tratada com extrema cautela e de acordo com
+as normas aplicáveis.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONFLITO -->
+
+<section id="conflito">
+
+<h2 class="section-title">
+8. Conflito de Interesses
+</h2>
+
+<div class="card">
+
+<h3>Conceito</h3>
+
+<p>
+Existe conflito de interesses quando interesses pessoais,
+familiares, económicos ou outros podem interferir com o exercício
+imparcial das funções públicas.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Exemplo</h3>
+
+<p>
+Um funcionário participa na decisão administrativa que beneficia
+diretamente uma empresa pertencente a um familiar próximo.
+</p>
+
+<div class="warning">
+
+<strong>Problema:</strong>
+
+<p style="margin-top:8px;">
+Mesmo que o funcionário diga que agiu corretamente, existe
+uma situação que pode comprometer a imparcialidade e deve
+ser tratada de acordo com as regras aplicáveis.
+</p>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<strong>Memoriza:</strong>
+
+<p style="font-weight:800;margin-top:8px;">
+INTERESSE PESSOAL ≠ INTERESSE PÚBLICO
+</p>
+
+</div>
+
+</section>
+
+<!-- UTENTE -->
+
+<section id="utente">
+
+<h2 class="section-title">
+9. Relação com o Utente
+</h2>
+
+<div class="card">
+
+<h3>O cidadão/utente deve ser tratado com:</h3>
+
+<div class="grid">
+
+<div class="mini-card">
+<i class="fa-solid fa-handshake"></i>
+<h3>Respeito</h3>
+<p>
+Sem humilhação, discriminação ou tratamento abusivo.
+</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-comments"></i>
+<h3>Urbanidade</h3>
+<p>
+Comunicação educada e profissional.
+</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-scale-balanced"></i>
+<h3>Igualdade</h3>
+<p>
+Sem favoritismo ou discriminação arbitrária.
+</p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-ear-listen"></i>
+<h3>Atenção</h3>
+<p>
+Escutar e orientar adequadamente dentro das competências.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<strong>Errado:</strong>
+
+<p style="margin-top:8px;">
+"Atender primeiro porque é meu amigo."
+</p>
+
+<strong>Correto:</strong>
+
+<p style="margin-top:8px;">
+Respeitar os critérios e procedimentos estabelecidos,
+sem favoritismo.
+</p>
+
+</div>
+
+</section>
+
+<!-- RESPONSABILIDADE -->
+
+<section id="responsabilidade">
+
+<h2 class="section-title">
+10. Responsabilidade do Funcionário
+</h2>
+
+<div class="card">
+
+<p>
+O exercício de uma função pública implica responsabilidade.
+O funcionário pode responder pelas consequências dos seus atos
+ou omissões quando atua em desconformidade com as normas aplicáveis.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-building-shield"></i>
+
+<h3>Responsabilidade disciplinar</h3>
+
+<p>
+Relacionada com infrações aos deveres funcionais e regras disciplinares.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-scale-balanced"></i>
+
+<h3>Responsabilidade civil</h3>
+
+<p>
+Pode surgir quando são causados danos que geram obrigação de reparação,
+nos termos da lei.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-gavel"></i>
+
+<h3>Responsabilidade criminal</h3>
+
+<p>
+Pode existir quando uma conduta constitui crime previsto na legislação penal.
+</p>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+<strong>Atenção para a prova:</strong>
+
+<p style="margin-top:8px;">
+Responsabilidade disciplinar, civil e criminal são conceitos
+diferentes. Uma mesma conduta pode, dependendo das circunstâncias,
+produzir consequências em mais de uma esfera.
+</p>
+
+</div>
+
+</section>
+
+<!-- SECRETARIO -->
+
+<section id="secretario">
+
+<h2 class="section-title">
+11. Deontologia do Secretário Clínico
+</h2>
+
+<div class="card">
+
+<div class="icon-title">
+
+<div class="icon">
+<i class="fa-solid fa-hospital-user"></i>
+</div>
+
+<h3>Aplicação prática</h3>
+
+</div>
+
+<p>
+Para o Secretário Clínico, a deontologia assume especial importância
+porque o trabalho envolve contacto direto com utentes, documentos,
+dados pessoais e informações relacionadas com saúde.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-lock"></i>
+
+<h3>Confidencialidade</h3>
+
+<p>
+Não divulgar informações dos utentes sem fundamento legítimo.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>Atendimento</h3>
+
+<p>
+Atender com respeito, paciência e profissionalismo.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-file-shield"></i>
+
+<h3>Documentação</h3>
+
+<p>
+Manter documentos organizados e protegidos.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>Informação</h3>
+
+<p>
+Tratar os dados de forma responsável e segura.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-ban"></i>
+
+<h3>Não favorecer</h3>
+
+<p>
+Não dar tratamento privilegiado por amizade, parentesco ou influência.
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<h3>Dignidade</h3>
+
+<p>
+Respeitar a dignidade e privacidade dos utentes.
+</p>
+
+</div>
+
+</div>
+
+<div class="success">
+
+<strong>Regra de ouro do Secretário Clínico:</strong>
+
+<p style="font-size:20px;font-weight:800;margin-top:10px;">
+ATENDER COM RESPEITO • TRABALHAR COM RIGOR •
+GUARDAR SIGILO • AGIR COM IMPARCIALIDADE
+</p>
+
+</div>
+
+</section>
+
+<!-- TABELA -->
+
+<section>
+
+<h2 class="section-title">
+12. Resumo dos Princípios
+</h2>
+
+<div class="card">
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Princípio</th>
+<th>Significado</th>
+<th>Exemplo</th>
+</tr>
+
+<tr>
+<td>Legalidade</td>
+<td>Agir conforme a lei.</td>
+<td>Seguir os procedimentos administrativos.</td>
+</tr>
+
+<tr>
+<td>Imparcialidade</td>
+<td>Não favorecer indevidamente.</td>
+<td>Atender sem favoritismo.</td>
+</tr>
+
+<tr>
+<td>Integridade</td>
+<td>Agir com honestidade.</td>
+<td>Recusar vantagem indevida.</td>
+</tr>
+
+<tr>
+<td>Probidade</td>
+<td>Atuar com correção e honestidade.</td>
+<td>Não utilizar recursos públicos para benefício pessoal.</td>
+</tr>
+
+<tr>
+<td>Responsabilidade</td>
+<td>Responder pelos atos praticados.</td>
+<td>Cuidar corretamente dos documentos.</td>
+</tr>
+
+<tr>
+<td>Sigilo</td>
+<td>Proteger informações confidenciais.</td>
+<td>Não divulgar dados de um utente.</td>
+</tr>
+
+<tr>
+<td>Urbanidade</td>
+<td>Tratar os outros com respeito.</td>
+<td>Atender educadamente.</td>
+</tr>
+
+<tr>
+<td>Isenção</td>
+<td>Evitar interesses pessoais na decisão.</td>
+<td>Não interferir em processo que envolva familiar.</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SITUAÇÕES -->
+
+<section>
+
+<h2 class="section-title">
+13. Situações Práticas
+</h2>
+
+<div class="card">
+
+<h3>Situação 1 — Oferta de dinheiro</h3>
+
+<p>
+Um utente oferece dinheiro ao funcionário para ser atendido
+antes das outras pessoas.
+</p>
+
+<div class="answer">
+Conduta correta: rejeitar a vantagem e seguir os procedimentos
+estabelecidos. A oferta não deve determinar a prioridade do atendimento.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Situação 2 — Amigo no atendimento</h3>
+
+<p>
+Um amigo pede para passar à frente dos outros utentes.
+</p>
+
+<div class="answer">
+Conduta correta: não conceder tratamento privilegiado. A amizade
+não justifica violação dos critérios de atendimento.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Situação 3 — Informação clínica</h3>
+
+<p>
+Uma pessoa pergunta ao funcionário qual é a doença de determinado utente.
+</p>
+
+<div class="answer">
+Conduta correta: não divulgar informação confidencial a pessoa
+não autorizada.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Situação 4 — Documento interno</h3>
+
+<p>
+Um funcionário encontra um documento administrativo confidencial.
+</p>
+
+<div class="answer">
+Conduta correta: proteger o documento e encaminhá-lo de acordo
+com os procedimentos internos, sem divulgar o seu conteúdo.
+</div>
+
+</div>
+
+</section>
+
+<!-- QUESTÕES -->
+
+<section id="questoes">
+
+<h2 class="section-title">
+14. Questões de Concurso
+</h2>
+
+<p class="section-subtitle">
+Teste o seu domínio do Tema II.
+</p>
+
+<div class="question">
+
+<strong>
+1. O que é deontologia?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Conjunto de regras de trânsito</div>
+<div class="option">B) Conjunto de princípios e deveres que orientam uma profissão ou função</div>
+<div class="option">C) Sistema de impostos</div>
+<div class="option">D) Organização territorial</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+2. Qual princípio exige que o funcionário atue de acordo com a lei?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Favoritismo</div>
+<div class="option">B) Legalidade</div>
+<div class="option">C) Nepotismo</div>
+<div class="option">D) Interesse pessoal</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+3. O funcionário público deve utilizar o cargo para obter vantagens pessoais?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Sim</div>
+<div class="option">B) Não</div>
+<div class="option">C) Apenas quando ninguém estiver a observar</div>
+<div class="option">D) Apenas se for uma pequena vantagem</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+4. O sigilo profissional significa:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Divulgar todas as informações</div>
+<div class="option">B) Proteger informações confidenciais obtidas no exercício da função</div>
+<div class="option">C) Esconder qualquer erro</div>
+<div class="option">D) Não prestar nenhum serviço</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+5. Um funcionário deve favorecer um amigo no atendimento?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Sim</div>
+<div class="option">B) Não</div>
+<div class="option">C) Apenas se o amigo pedir</div>
+<div class="option">D) Sempre</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+6. O que caracteriza um conflito de interesses?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Quando interesses pessoais podem interferir no exercício imparcial da função</div>
+<div class="option">B) Quando o funcionário chega cedo</div>
+<div class="option">C) Quando existe muito trabalho</div>
+<div class="option">D) Quando o cidadão apresenta documentos</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+7. A probidade está relacionada principalmente com:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Honestidade e correção</div>
+<div class="option">B) Favoritismo</div>
+<div class="option">C) Suborno</div>
+<div class="option">D) Interesse particular</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+8. O funcionário público deve tratar os cidadãos:
+</strong>
+
+<div class="options">
+
+<div class="option">A) De acordo com amizades</div>
+<div class="option">B) Com respeito e imparcialidade</div>
+<div class="option">C) Conforme a aparência</div>
+<div class="option">D) De forma arbitrária</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+9. Um Secretário Clínico pode divulgar a doença de um utente a qualquer pessoa?
+</strong>
+
+<div class="options">
+
+<div class="option">A) Sim</div>
+<div class="option">B) Não</div>
+<div class="option">C) Apenas aos amigos</div>
+<div class="option">D) Apenas nas redes sociais</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+10. Receber dinheiro para alterar a ordem normal de atendimento é:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Boa prática</div>
+<div class="option">B) Conduta incompatível com a integridade da função</div>
+<div class="option">C) Um direito do funcionário</div>
+<div class="option">D) Um procedimento normal</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+11. A responsabilidade disciplinar está relacionada:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Às infrações dos deveres funcionais</div>
+<div class="option">B) Apenas a crimes</div>
+<div class="option">C) Apenas a impostos</div>
+<div class="option">D) À organização territorial</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>
+12. A imparcialidade exige:
+</strong>
+
+<div class="options">
+
+<div class="option">A) Favorecimento de familiares</div>
+<div class="option">B) Atuação objetiva e sem favoritismo indevido</div>
+<div class="option">C) Defesa de interesses pessoais</div>
+<div class="option">D) Recebimento de presentes</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B</strong>.
+</div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist de domínio
+</h3>
+
+<ul style="margin:15px 0 0 25px;">
+
+<li>☐ Sei definir deontologia.</li>
+<li>☐ Sei explicar ética e conduta profissional.</li>
+<li>☐ Conheço os principais princípios deontológicos.</li>
+<li>☐ Sei explicar legalidade.</li>
+<li>☐ Sei explicar imparcialidade.</li>
+<li>☐ Sei explicar integridade e probidade.</li>
+<li>☐ Compreendo o dever de sigilo.</li>
+<li>☐ Sei identificar conflito de interesses.</li>
+<li>☐ Sei reconhecer situações de corrupção e vantagem indevida.</li>
+<li>☐ Sei como tratar corretamente o utente.</li>
+<li>☐ Conheço as principais responsabilidades do funcionário.</li>
+<li>☐ Sei aplicar a deontologia ao trabalho do Secretário Clínico.</li>
+
+</ul>
+
+</div>
+
+<div class="success">
+
+<h3>
+<i class="fa-solid fa-star"></i>
+Resumo de 30 segundos
+</h3>
+
+<p style="font-size:19px;font-weight:800;margin-top:10px;">
+
+LEGALIDADE + IMPARCIALIDADE + INTEGRIDADE +
+SIGILO + RESPONSABILIDADE + RESPEITO
+
+</p>
+
+<p style="margin-top:12px;">
+O funcionário público deve colocar o <strong>interesse público</strong>
+acima do interesse pessoal e exercer a sua função com honestidade,
+responsabilidade e respeito pelo cidadão.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+<strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong>
+</p>
+
+<p style="margin-top:8px;">
+Tema II — Pauta Deontológica da Função Pública
+</p>
+
+<p style="margin-top:15px;font-size:13px;">
+Estude • Memorize • Revise • Resolva questões
+</p>
+
+</footer>
+
+</body>
+</html>

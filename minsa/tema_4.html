@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema IV — Raciocínio Numérico</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Inter,Arial,sans-serif;
+background:#f5f7fb;
+color:#172033;
+line-height:1.75
+}
+
+.container{
+width:min(1150px,92%);
+margin:auto
+}
+
+.hero{
+background:linear-gradient(135deg,#111827,#065f46,#059669);
+color:white;
+padding:75px 20px;
+overflow:hidden
+}
+
+.badge{
+display:inline-flex;
+gap:8px;
+align-items:center;
+background:#10b981;
+padding:9px 16px;
+border-radius:30px;
+font-size:13px;
+font-weight:800;
+margin-bottom:22px
+}
+
+.hero h1{
+font-size:clamp(36px,6vw,62px);
+line-height:1.08;
+margin-bottom:20px
+}
+
+.hero p{
+font-size:18px;
+color:#d1fae5;
+max-width:850px
+}
+
+.nav{
+background:#fff;
+border-bottom:1px solid #e5e7eb;
+position:sticky;
+top:0;
+z-index:100
+}
+
+.nav-inner{
+display:flex;
+gap:7px;
+overflow-x:auto;
+padding:12px 0
+}
+
+.nav a{
+white-space:nowrap;
+text-decoration:none;
+color:#374151;
+padding:9px 13px;
+border-radius:8px;
+font-size:13px;
+font-weight:700
+}
+
+.nav a:hover{
+background:#ecfdf5;
+color:#047857
+}
+
+section{padding:55px 0}
+
+.section-title{
+font-size:32px;
+line-height:1.2;
+margin-bottom:8px;
+color:#111827
+}
+
+.section-subtitle{
+color:#6b7280;
+margin-bottom:28px
+}
+
+.card{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:18px;
+padding:28px;
+margin-bottom:22px;
+box-shadow:0 8px 25px rgba(15,23,42,.06)
+}
+
+.card h3{
+color:#047857;
+margin-bottom:12px
+}
+
+.card h4{
+margin-top:18px;
+margin-bottom:8px
+}
+
+.icon-title{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:15px
+}
+
+.icon{
+width:48px;
+height:48px;
+border-radius:13px;
+background:#ecfdf5;
+color:#059669;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:21px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px
+}
+
+.mini-card{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:16px;
+padding:23px;
+box-shadow:0 5px 18px rgba(15,23,42,.04)
+}
+
+.mini-card i{
+font-size:25px;
+color:#059669;
+margin-bottom:12px
+}
+
+.mini-card h3{margin-bottom:8px}
+
+.highlight,.warning,.success,.danger{
+padding:20px;
+border-radius:0 12px 12px 0;
+margin:20px 0
+}
+
+.highlight{
+background:#ecfdf5;
+border-left:5px solid #059669
+}
+
+.warning{
+background:#fffbeb;
+border-left:5px solid #f59e0b
+}
+
+.success{
+background:#f0fdf4;
+border-left:5px solid #16a34a
+}
+
+.danger{
+background:#fef2f2;
+border-left:5px solid #dc2626
+}
+
+.example{
+background:#f8fafc;
+border:1px dashed #cbd5e1;
+padding:18px;
+border-radius:12px;
+margin-top:15px
+}
+
+.formula{
+background:#111827;
+color:#fff;
+padding:18px 22px;
+border-radius:12px;
+font-size:20px;
+font-weight:800;
+margin:18px 0;
+overflow-x:auto
+}
+
+table{
+width:100%;
+border-collapse:collapse
+}
+
+th,td{
+padding:14px;
+border-bottom:1px solid #e5e7eb;
+text-align:left;
+vertical-align:top
+}
+
+th{
+background:#ecfdf5;
+color:#065f46
+}
+
+.table-wrap{overflow-x:auto}
+
+.question{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:16px;
+padding:24px;
+margin-bottom:18px
+}
+
+.options{
+display:grid;
+gap:8px;
+margin-top:15px
+}
+
+.option{
+background:#f8fafc;
+padding:10px 13px;
+border-radius:8px
+}
+
+.answer{
+margin-top:15px;
+padding:14px;
+background:#f0fdf4;
+color:#166534;
+border-radius:9px;
+font-weight:600
+}
+
+ul,ol{margin-left:25px}
+
+footer{
+background:#111827;
+color:#cbd5e1;
+padding:45px 20px;
+text-align:center
+}
+
+@media(max-width:600px){
+.hero{padding:55px 15px}
+.card{padding:20px}
+section{padding:42px 0}
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="hero">
+<div class="container">
+
+<span class="badge">
+<i class="fa-solid fa-calculator"></i>
+TEMA IV — PREPARAÇÃO PARA O CONCURSO
+</span>
+
+<h1>Raciocínio Numérico</h1>
+
+<p>
+Desenvolvimento da capacidade de resolver problemas utilizando
+números, operações, proporções, percentagens, médias, sequências
+e relações matemáticas.
+</p>
+
+</div>
+</header>
+
+<nav class="nav">
+<div class="container nav-inner">
+
+<a href="#base">Base</a> <a href="#operacoes">Operações</a> <a href="#fracoes">Frações</a> <a href="#percentagem">Percentagem</a> <a href="#razao">Razão</a> <a href="#regra3">Regra de 3</a> <a href="#media">Médias</a> <a href="#sequencias">Sequências</a> <a href="#problemas">Problemas</a> <a href="#questoes">Questões</a>
+
+</div>
+</nav>
+
+<main class="container">
+
+<section id="base">
+
+<h2 class="section-title">1. Fundamentos Numéricos</h2>
+
+<p class="section-subtitle">
+Antes dos problemas, é necessário dominar as operações básicas.
+</p>
+
+<div class="grid">
+
+<div class="mini-card">
+<i class="fa-solid fa-plus"></i>
+<h3>Adição</h3>
+<p>Usada para juntar quantidades.</p>
+<p><strong>25 + 15 = 40</strong></p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-minus"></i>
+<h3>Subtração</h3>
+<p>Usada para determinar diferenças.</p>
+<p><strong>40 − 15 = 25</strong></p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-xmark"></i>
+<h3>Multiplicação</h3>
+<p>Representa uma soma repetida.</p>
+<p><strong>5 × 4 = 20</strong></p>
+</div>
+
+<div class="mini-card">
+<i class="fa-solid fa-divide"></i>
+<h3>Divisão</h3>
+<p>Distribui uma quantidade em partes.</p>
+<p><strong>20 ÷ 4 = 5</strong></p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>1.1 Ordem das operações</h3>
+
+<p>
+Quando uma expressão possui várias operações, elas não são
+resolvidas simplesmente da esquerda para a direita.
+</p>
+
+<ol>
+<li>Parênteses</li>
+<li>Potências e raízes</li>
+<li>Multiplicações e divisões</li>
+<li>Adições e subtrações</li>
+</ol>
+
+<div class="example">
+
+<p><strong>Exemplo:</strong></p>
+
+<p style="font-size:22px">
+8 + 2 × 5
+</p>
+
+<p>
+Primeiro fazemos a multiplicação:
+</p>
+
+<p>
+2 × 5 = 10
+</p>
+
+<p>
+Depois:
+</p>
+
+<p>
+8 + 10 = <strong>18</strong>
+</p>
+
+</div>
+
+<div class="warning">
+<strong>Erro comum:</strong> fazer 8 + 2 primeiro e depois multiplicar.
+Isso produziria 50, que está errado.
+</div>
+
+</div>
+
+</section>
+
+<section id="operacoes">
+
+<h2 class="section-title">2. Operações Fundamentais</h2>
+
+<div class="card">
+
+<h3>2.1 Números positivos e negativos</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Operação</th>
+<th>Regra</th>
+</tr>
+
+<tr>
+<td>(+) + (+)</td>
+<td>Soma os valores.</td>
+</tr>
+
+<tr>
+<td>(−) + (−)</td>
+<td>Soma os valores e mantém o sinal negativo.</td>
+</tr>
+
+<tr>
+<td>(+) + (−)</td>
+<td>Subtrai os valores e fica o sinal do maior valor absoluto.</td>
+</tr>
+
+<tr>
+<td>(−) × (−)</td>
+<td>Resultado positivo.</td>
+</tr>
+
+<tr>
+<td>(−) × (+)</td>
+<td>Resultado negativo.</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="example">
+
+<p>−5 + 8 = <strong>3</strong></p>
+
+<p>−5 − 8 = <strong>−13</strong></p>
+
+<p>−4 × −3 = <strong>12</strong></p>
+
+<p>−4 × 3 = <strong>−12</strong></p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>2.2 Potenciação</h3>
+
+<p>
+Potenciação representa uma multiplicação repetida.
+</p>
+
+<div class="formula">
+2³ = 2 × 2 × 2 = 8
+</div>
+
+<p>
+<strong>Base:</strong> 2<br>
+<strong>Expoente:</strong> 3
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>2.3 Raiz quadrada</h3>
+
+<p>
+A raiz quadrada de um número é o valor que, multiplicado por si
+mesmo, produz esse número.
+</p>
+
+<div class="formula">
+√25 = 5
+</div>
+
+<p>
+Porque:
+</p>
+
+<div class="formula">
+5 × 5 = 25
+</div>
+
+</div>
+
+</section>
+
+<section id="fracoes">
+
+<h2 class="section-title">3. Frações</h2>
+
+<div class="card">
+
+<h3>3.1 Conceito</h3>
+
+<p>
+Uma fração representa uma parte de um todo.
+</p>
+
+<div class="formula">
+3 / 4
+</div>
+
+<p>
+3 = numerador<br>
+4 = denominador
+</p>
+
+<p style="margin-top:12px">
+Significa que consideramos 3 partes de um total dividido
+em 4 partes iguais.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3.2 Adição de frações</h3>
+
+<p>
+Com denominadores iguais, somamos os numeradores.
+</p>
+
+<div class="formula">
+2/7 + 3/7 = 5/7
+</div>
+
+<p>
+Com denominadores diferentes, precisamos encontrar um denominador comum.
+</p>
+
+<div class="example">
+
+<p>
+1/2 + 1/4
+</p>
+
+<p>
+1/2 = 2/4
+</p>
+
+<p>
+Portanto:
+</p>
+
+<p>
+2/4 + 1/4 = <strong>3/4</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>3.3 Multiplicação de frações</h3>
+
+<div class="formula">
+2/3 × 4/5 = 8/15
+</div>
+
+<p>
+Multiplicamos numerador com numerador e denominador com denominador.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>3.4 Divisão de frações</h3>
+
+<p>
+Na divisão, multiplicamos pela fração inversa.
+</p>
+
+<div class="formula">
+2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6
+</div>
+
+</div>
+
+</section>
+
+<section id="percentagem">
+
+<h2 class="section-title">4. Percentagem</h2>
+
+<p class="section-subtitle">
+Um dos assuntos mais importantes para problemas de concurso.
+</p>
+
+<div class="card">
+
+<h3>4.1 O que é percentagem?</h3>
+
+<p>
+Percentagem significa "por cem".
+</p>
+
+<div class="formula">
+20% = 20/100 = 0,20
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>4.2 Calcular uma percentagem</h3>
+
+<div class="formula">
+x% de N = (x ÷ 100) × N
+</div>
+
+<div class="example">
+
+<p>
+<strong>Quanto é 20% de 500?</strong>
+</p>
+
+<p>
+20 ÷ 100 = 0,20
+</p>
+
+<p>
+0,20 × 500 = <strong>100</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>4.3 Aumento percentual</h3>
+
+<div class="example">
+
+<p>
+Um produto custa 10.000 Kz e aumenta 20%.
+</p>
+
+<p>
+20% de 10.000 = 2.000 Kz
+</p>
+
+<p>
+Novo preço:
+</p>
+
+<p>
+10.000 + 2.000 = <strong>12.000 Kz</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>4.4 Desconto percentual</h3>
+
+<div class="example">
+
+<p>
+Um produto custa 20.000 Kz e recebe desconto de 15%.
+</p>
+
+<p>
+15% de 20.000 = 3.000 Kz
+</p>
+
+<p>
+Preço final:
+</p>
+
+<p>
+20.000 − 3.000 = <strong>17.000 Kz</strong>
+</p>
+
+</div>
+
+<div class="warning">
+
+<strong>Cuidado:</strong> aumento de 20% seguido de redução de 20%
+não devolve necessariamente o valor original.
+
+</div>
+
+</div>
+
+</section>
+
+<section id="razao">
+
+<h2 class="section-title">5. Razão e Proporção</h2>
+
+<div class="card">
+
+<h3>5.1 Razão</h3>
+
+<p>
+Razão é a comparação entre duas grandezas através de uma divisão.
+</p>
+
+<div class="formula">
+Razão = a / b
+</div>
+
+<div class="example">
+
+<p>
+Uma escola possui 20 homens e 30 mulheres.
+</p>
+
+<p>
+Razão homens : mulheres:
+</p>
+
+<p>
+20 : 30 = 2 : 3
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>5.2 Proporção</h3>
+
+<p>
+Uma proporção estabelece igualdade entre duas razões.
+</p>
+
+<div class="formula">
+2/3 = 4/6
+</div>
+
+<p>
+Podemos verificar através da multiplicação cruzada:
+</p>
+
+<div class="formula">
+2 × 6 = 3 × 4
+</div>
+
+<p>
+12 = 12
+</p>
+
+</div>
+
+</section>
+
+<section id="regra3">
+
+<h2 class="section-title">6. Regra de Três</h2>
+
+<p class="section-subtitle">
+Ferramenta essencial para resolver problemas envolvendo grandezas proporcionais.
+</p>
+
+<div class="card">
+
+<h3>6.1 Regra de três simples direta</h3>
+
+<p>
+Usamos quando duas grandezas aumentam ou diminuem juntas.
+</p>
+
+<div class="example">
+
+<p>
+Se 4 cadernos custam 2.000 Kz, quanto custam 10 cadernos?
+</p>
+
+<div class="formula">
+4 → 2.000<br>
+10 → x
+</div>
+
+<p>
+Multiplicação cruzada:
+</p>
+
+<div class="formula">
+4x = 10 × 2.000
+</div>
+
+<p>
+4x = 20.000
+</p>
+
+<p>
+x = <strong>5.000 Kz</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>6.2 Regra de três inversa</h3>
+
+<p>
+É usada quando uma grandeza aumenta enquanto a outra diminui.
+</p>
+
+<div class="example">
+
+<p>
+Se 4 trabalhadores fazem determinado trabalho em 12 dias,
+quantos dias seriam necessários para 8 trabalhadores,
+mantendo a mesma produtividade?
+</p>
+
+<p>
+Mais trabalhadores → menos dias.
+</p>
+
+<div class="formula">
+4 × 12 = 8 × x
+</div>
+
+<p>
+48 = 8x
+</p>
+
+<p>
+x = <strong>6 dias</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="danger">
+
+<strong>Como saber se é direta ou inversa?</strong>
+
+<p>
+Pergunte:
+</p>
+
+<p>
+<strong>"Se uma grandeza aumentar, a outra também aumenta?"</strong>
+</p>
+
+<p>
+Se sim → provavelmente é <strong>direta</strong>.
+</p>
+
+<p>
+Se uma aumenta e a outra diminui → provavelmente é <strong>inversa</strong>.
+</p>
+
+</div>
+
+</section>
+
+<section id="media">
+
+<h2 class="section-title">7. Médias</h2>
+
+<div class="card">
+
+<h3>7.1 Média aritmética simples</h3>
+
+<p>
+A média é obtida somando os valores e dividindo pelo número de valores.
+</p>
+
+<div class="formula">
+Média = Soma dos valores / Quantidade de valores
+</div>
+
+<div class="example">
+
+<p>
+Notas: 10, 12, 14 e 16.
+</p>
+
+<p>
+Soma:
+10 + 12 + 14 + 16 = 52
+</p>
+
+<p>
+Quantidade = 4
+</p>
+
+<p>
+Média:
+52 ÷ 4 = <strong>13</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>7.2 Descobrir um valor desconhecido</h3>
+
+<div class="example">
+
+<p>
+A média de 4 números é 15.
+Três deles são 10, 15 e 20.
+Qual é o quarto número?
+</p>
+
+<p>
+A soma total precisa ser:
+</p>
+
+<div class="formula">
+15 × 4 = 60
+</div>
+
+<p>
+Soma conhecida:
+</p>
+
+<div class="formula">
+10 + 15 + 20 = 45
+</div>
+
+<p>
+Número desconhecido:
+</p>
+
+<div class="formula">
+60 − 45 = 15
+</div>
+
+<p>
+<strong>Resposta: 15.</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="sequencias">
+
+<h2 class="section-title">8. Sequências Numéricas</h2>
+
+<div class="card">
+
+<h3>8.1 Identificar padrões</h3>
+
+<p>
+Observe como um termo é transformado no seguinte.
+</p>
+
+<div class="example">
+
+<p>
+2, 4, 6, 8, 10, ___
+</p>
+
+<p>
+A sequência aumenta sempre 2.
+</p>
+
+<p>
+Resposta: <strong>12</strong>.
+</p>
+
+</div>
+
+<div class="example">
+
+<p>
+3, 6, 12, 24, 48, ___
+</p>
+
+<p>
+Cada termo é multiplicado por 2.
+</p>
+
+<p>
+Resposta: <strong>96</strong>.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>8.2 Sequências com diferenças</h3>
+
+<div class="example">
+
+<p>
+5, 8, 12, 17, 23, ___
+</p>
+
+<p>
+Diferenças:
+</p>
+
+<p>
++3, +4, +5, +6
+</p>
+
+<p>
+A próxima diferença será +7.
+</p>
+
+<p>
+23 + 7 = <strong>30</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+<strong>Estratégia:</strong>
+Não procure apenas uma operação. Verifique também diferenças,
+multiplicações, alternâncias e padrões entre posições.
+
+</div>
+
+</section>
+
+<section id="problemas">
+
+<h2 class="section-title">9. Resolução de Problemas</h2>
+
+<div class="card">
+
+<h3>9.1 Método em 4 passos</h3>
+
+<ol>
+<li><strong>Leia</strong> o problema cuidadosamente.</li>
+<li><strong>Identifique</strong> os dados fornecidos.</li>
+<li><strong>Descubra</strong> o que está sendo pedido.</li>
+<li><strong>Escolha</strong> a operação adequada e calcule.</li>
+</ol>
+
+<div class="highlight">
+
+<strong>Não faça contas imediatamente.</strong>
+
+<p>
+Primeiro compreenda a situação.
+Muitos erros em concursos não são erros de cálculo;
+são erros de interpretação.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>9.2 Problema com dinheiro</h3>
+
+<div class="example">
+
+<p>
+Um candidato possui 25.000 Kz.
+Gasta 7.500 Kz em transporte e 5.000 Kz em alimentação.
+Quanto resta?
+</p>
+
+<p>
+25.000 − 7.500 = 17.500
+</p>
+
+<p>
+17.500 − 5.000 = <strong>12.500 Kz</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>9.3 Problema com percentagem</h3>
+
+<div class="example">
+
+<p>
+Em uma turma com 200 candidatos, 35% foram aprovados.
+Quantos foram aprovados?
+</p>
+
+<p>
+35% × 200
+</p>
+
+<div class="formula">
+0,35 × 200 = 70
+</div>
+
+<p>
+<strong>Resposta: 70 candidatos.</strong>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>9.4 Problema combinado</h3>
+
+<div class="example">
+
+<p>
+Um produto custa 50.000 Kz.
+Recebe um desconto de 10%.
+Depois, sobre o preço com desconto, é aplicado um aumento de 5%.
+Qual será o preço final?
+</p>
+
+<p>
+Primeiro, desconto:
+</p>
+
+<p>
+10% de 50.000 = 5.000
+</p>
+
+<p>
+Preço:
+</p>
+
+<p>
+50.000 − 5.000 = 45.000
+</p>
+
+<p>
+Agora aumento de 5%:
+</p>
+
+<p>
+5% de 45.000 = 2.250
+</p>
+
+<p>
+Preço final:
+</p>
+
+<p>
+45.000 + 2.250 = <strong>47.250 Kz</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="questoes">
+
+<h2 class="section-title">10. Questões de Concurso</h2>
+
+<p class="section-subtitle">
+Tente resolver antes de consultar a resposta.
+</p>
+
+<div class="question">
+
+<strong>1. Quanto é 25% de 400?</strong>
+
+<div class="options">
+<div class="option">A) 50</div>
+<div class="option">B) 75</div>
+<div class="option">C) 100</div>
+<div class="option">D) 125</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>C — 100</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>2. Calcule: 8 + 4 × 3.</strong>
+
+<div class="options">
+<div class="option">A) 36</div>
+<div class="option">B) 20</div>
+<div class="option">C) 24</div>
+<div class="option">D) 12</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>B — 20</strong>.
+Primeiro 4 × 3 = 12; depois 8 + 12 = 20.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>3. Qual é a média de 10, 12, 14 e 16?</strong>
+
+<div class="options">
+<div class="option">A) 12</div>
+<div class="option">B) 13</div>
+<div class="option">C) 14</div>
+<div class="option">D) 15</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>B — 13</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>4. Se 5 livros custam 10.000 Kz, quanto custam 8 livros?</strong>
+
+<div class="options">
+<div class="option">A) 12.000 Kz</div>
+<div class="option">B) 14.000 Kz</div>
+<div class="option">C) 16.000 Kz</div>
+<div class="option">D) 18.000 Kz</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>C — 16.000 Kz</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>5. Complete: 4, 8, 16, 32, ___</strong>
+
+<div class="options">
+<div class="option">A) 40</div>
+<div class="option">B) 48</div>
+<div class="option">C) 56</div>
+<div class="option">D) 64</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>D — 64</strong>.
+Cada termo é multiplicado por 2.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>6. Um produto custa 20.000 Kz e recebe desconto de 15%.
+Qual é o novo preço?</strong>
+
+<div class="options">
+<div class="option">A) 16.000 Kz</div>
+<div class="option">B) 17.000 Kz</div>
+<div class="option">C) 18.000 Kz</div>
+<div class="option">D) 19.000 Kz</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>B — 17.000 Kz</strong>.
+15% de 20.000 = 3.000; 20.000 − 3.000 = 17.000.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>7. Se 4 trabalhadores realizam uma tarefa em 12 dias,
+quantos dias levarão 8 trabalhadores, nas mesmas condições?</strong>
+
+<div class="options">
+<div class="option">A) 3 dias</div>
+<div class="option">B) 4 dias</div>
+<div class="option">C) 6 dias</div>
+<div class="option">D) 8 dias</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>C — 6 dias</strong>.
+É uma relação inversamente proporcional.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>8. Quanto é 3/4 + 1/4?</strong>
+
+<div class="options">
+<div class="option">A) 1/2</div>
+<div class="option">B) 1</div>
+<div class="option">C) 3/8</div>
+<div class="option">D) 4/8</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>B — 1</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>9. Um salário de 100.000 Kz sofre aumento de 12%.
+Qual passa a ser o salário?</strong>
+
+<div class="options">
+<div class="option">A) 102.000 Kz</div>
+<div class="option">B) 110.000 Kz</div>
+<div class="option">C) 112.000 Kz</div>
+<div class="option">D) 120.000 Kz</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>C — 112.000 Kz</strong>.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>10. Qual é o próximo número?
+5, 9, 14, 20, 27, ___</strong>
+
+<div class="options">
+<div class="option">A) 32</div>
+<div class="option">B) 34</div>
+<div class="option">C) 35</div>
+<div class="option">D) 36</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>C — 35</strong>.
+As diferenças são +4, +5, +6, +7; portanto, +8:
+27 + 8 = 35.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>11. Uma instituição possui 600 funcionários.
+Se 40% são homens, quantos são mulheres?</strong>
+
+<div class="options">
+<div class="option">A) 240</div>
+<div class="option">B) 300</div>
+<div class="option">C) 360</div>
+<div class="option">D) 400</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>C — 360</strong>.
+40% são homens, portanto 60% são mulheres.
+60% de 600 = 360.
+</div>
+
+</div>
+
+<div class="question">
+
+<strong>12. Uma pessoa tinha 50.000 Kz.
+Gastou 30% desse valor. Quanto gastou?</strong>
+
+<div class="options">
+<div class="option">A) 10.000 Kz</div>
+<div class="option">B) 15.000 Kz</div>
+<div class="option">C) 20.000 Kz</div>
+<div class="option">D) 25.000 Kz</div>
+</div>
+
+<div class="answer">
+Resposta: <strong>B — 15.000 Kz</strong>.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-list-check"></i>
+Checklist de domínio
+</h3>
+
+<ul>
+<li>☐ Domino as quatro operações.</li>
+<li>☐ Sei respeitar a ordem das operações.</li>
+<li>☐ Sei trabalhar com números positivos e negativos.</li>
+<li>☐ Sei calcular potências e raízes simples.</li>
+<li>☐ Sei somar, multiplicar e dividir frações.</li>
+<li>☐ Sei calcular percentagens.</li>
+<li>☐ Sei resolver aumentos e descontos.</li>
+<li>☐ Sei trabalhar com razões e proporções.</li>
+<li>☐ Sei aplicar regra de três direta.</li>
+<li>☐ Sei identificar regra de três inversa.</li>
+<li>☐ Sei calcular médias.</li>
+<li>☐ Consigo identificar padrões em sequências.</li>
+<li>☐ Sei interpretar problemas antes de fazer os cálculos.</li>
+</ul>
+
+</div>
+
+<div class="success">
+
+<h3>
+<i class="fa-solid fa-bullseye"></i>
+Fórmulas essenciais para memorizar
+</h3>
+
+<div class="formula">
+Percentagem = (percentagem ÷ 100) × valor
+</div>
+
+<div class="formula">
+Média = soma dos valores ÷ quantidade de valores
+</div>
+
+<div class="formula">
+Proporção: a/b = c/d → a × d = b × c
+</div>
+
+<div class="formula">
+Regra de 3 → identificar primeiro se a relação é direta ou inversa
+</div>
+
+<p style="margin-top:15px">
+<strong>Estratégia de prova:</strong> leia o enunciado,
+separe os dados, descubra o que é pedido, escolha a operação
+e só depois faça o cálculo.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p><strong>Preparação para o Concurso de Secretário Clínico de 3.ª Classe</strong></p>
+<p style="margin-top:8px">Tema IV — Raciocínio Numérico</p>
+<p style="margin-top:15px;font-size:13px">
+Estudar • Praticar • Revisar • Resolver questões
+</p>
+
+</footer>
+
+</body>
+</html>
