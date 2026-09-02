@@ -296,6 +296,7 @@ footer{
 }
 
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -326,7 +327,7 @@ essenciais para o concurso público.
 
 <div class="container nav-inner">
 
-<a href="#conceito">Conceito</a> <a href="#objetivos">Objetivos</a> <a href="#instituicoes">Instituições</a> <a href="#metodologia">Metodologia</a> <a href="#saude">Saúde</a> <a href="#infantil">Infantil</a> <a href="#materna">Materna</a> <a href="#nutricao">Nutrição</a> <a href="#hiv">HIV/SIDA</a> <a href="#agua">Água e Saneamento</a> <a href="#questoes">Questões</a>
+<a href="#conceito">Conceito</a> <a href="#objetivos">Objetivos</a> <a href="#instituicoes">Instituições</a> <a href="#metodologia">Metodologia</a> <a href="#saude">Saúde</a> <a href="#infantil">Infantil</a> <a href="#materna">Materna</a> <a href="#nutricao">Nutrição</a> <a href="#hiv">HIV/SIDA</a> <a href="#agua">Água e Saneamento</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#questoes">Questões</a>
 
 </div>
 
@@ -1194,6 +1195,20 @@ IIMS → INQUÉRITO → AMOSTRA → SAÚDE → INDICADORES
 
 </section>
 
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Veja explicações sobre IIMS, amostragem e indicadores de saúde em Angola.</p>
+<div class="card"><iframe src="https://www.youtube.com/embed/nL7uSVdVfWE" title="Indicadores de saúde: morbidade e mortalidade" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=IIMS+Angola+2023+2024+indicadores+de+saúde" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p></div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">15. Aprofundamento: metodologia e indicadores</h2>
+<p class="section-subtitle">Saber como o indicador foi produzido é tão importante quanto memorizar o seu valor.</p>
+<div class="card"><h3>O que significa uma estimativa</h3><p>Como o IIMS estuda uma amostra, os resultados são estimativas da população-alvo. A amostragem exige seleção representativa, ponderação e análise das limitações.</p><table><tr><th>Termo</th><th>Significado</th></tr><tr><td>População-alvo</td><td>Grupo sobre o qual se pretende concluir.</td></tr><tr><td>Amostra</td><td>Parte selecionada para participar.</td></tr><tr><td>Indicador</td><td>Medida que resume uma característica.</td></tr><tr><td>Viés</td><td>Erro sistemático que afasta o resultado.</td></tr></table></div>
+<div class="card"><h3>Leitura responsável de percentagens</h3><p>“40% das crianças” não informa, sozinho, quantas foram observadas, em que período, faixa etária ou território. Procure denominador, população, local, data e definição operacional.</p><div class="highlight"><strong>Sequência:</strong> indicador → denominador → período → território → interpretação.</div></div>
+<div class="card"><h3>Do dado à decisão</h3><p>Um resultado alto ou baixo sinaliza uma realidade a investigar; não prova automaticamente a causa. Políticas devem combinar indicador, contexto, equidade e avaliação de impacto.</p></div>
+</section>
+
 <!-- QUESTOES -->
 
 <section id="questoes">
@@ -1464,5 +1479,9 @@ Estude • Memorize • Resolva questões • Revise
 
 </footer>
 
+<script>
+(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review">Revisão</button><button type="button" data-action="print">Imprimir</button><button type="button" data-action="top">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_8.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_10.html">Próximo tema</a>';footer.appendChild(navigation);}})();
+</script>
+<script src="study-tools.js"></script>
 </body>
 </html>

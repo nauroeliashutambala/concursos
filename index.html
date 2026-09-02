@@ -9,16 +9,26 @@
     <meta name="description" content="Tópicos de estudo atualizados 2026 para concursos públicos em Angola. Resumos, aulas e materiais para MINSA, Educação, AGT e outros concursos por Nauro Elias Hutambala.">
     <meta name="keywords" content="topicos concurso angola, resumo minsa 2026, estudar para concurso, apostila concurso angola, questoes concurso">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://nauroeliashutambala.github.io/concursos/">
+    <link rel="canonical" href="https://topicos-concursos.vercel.app/">
     <meta property="og:title" content="Tópicos para Concursos Angola 2026">
     <meta property="og:description" content="Resumos e tópicos para passar em concursos públicos em Angola. Material focado em MINSA, Educação e AGT.">
-    <meta property="og:url" content="https://nauroeliashutambala.github.io/concursos/">
+    <meta property="og:url" content="https://topicos-concursos.vercel.app/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
 <title>Preparação para Concursos Públicos</title>
 
 <style>
+    :root {
+        --ink:#173238; --muted:#61777b; --paper:#edf5f3; --glass:rgba(255,255,255,.68);
+        --line:rgba(255,255,255,.8); --brand:#087f78; --brand-dark:#064d4b;
+        --gold:#dda63a; --shadow:0 22px 55px rgba(17,66,68,.12);
+    }
+
     * {
         box-sizing: border-box;
     }
@@ -26,35 +36,40 @@
     body {
         margin: 0;
         padding: 20px;
-        background: #e9edf2;
-        color: #111;
-        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(circle at 12% 8%,rgba(123,205,190,.36),transparent 28%), radial-gradient(circle at 92% 22%,rgba(221,166,58,.18),transparent 25%), linear-gradient(135deg,#eaf5f2,#f7fbfa 52%,#e6f0f0);
+        color: var(--ink);
+        font-family: 'DM Sans','Segoe UI',sans-serif;
         line-height: 1.6;
     }
 
     .container {
-        max-width: 1100px;
+        width: min(1160px,100%);
         margin: auto;
     }
 
     header {
-        background: #111;
+        background: linear-gradient(135deg,rgba(6,63,67,.94),rgba(8,127,120,.8));
         color: #fff;
-        padding: 45px 30px;
-        border-radius: 14px;
-        text-align: center;
-        margin-bottom: 25px;
+        padding: clamp(48px,8vw,88px) clamp(24px,6vw,68px);
+        border: 1px solid rgba(255,255,255,.3);
+        border-radius: 24px;
+        text-align: left;
+        margin-bottom: 28px;
+        box-shadow: 0 25px 60px rgba(6,63,67,.18);
+        backdrop-filter: blur(18px);
     }
 
     header h1 {
         margin: 0 0 10px;
-        font-size: 32px;
+        font-size: clamp(2.4rem,6vw,4.8rem);
+        line-height: 1.04;
     }
 
     header p {
         margin: 0;
-        color: #ddd;
-        font-size: 17px;
+        color: #d9f4ef;
+        font-size: 18px;
+        max-width: 680px;
     }
 
     .tag {
@@ -69,16 +84,18 @@
     }
 
     section {
-        background: #fff;
-        padding: 30px;
+        background: var(--glass);
+        padding: clamp(22px, 4vw, 36px);
         margin-bottom: 25px;
-        border-radius: 14px;
-        box-shadow: 0 3px 12px rgba(0,0,0,.06);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
     }
 
     h2 {
         margin-top: 0;
-        border-left: 5px solid #e8a400;
+        border-left: 5px solid var(--brand);
         padding-left: 12px;
     }
 
@@ -87,23 +104,23 @@
     }
 
     .definition {
-        background: #f4f6f8;
-        border-left: 4px solid #111;
+        background: rgba(255,255,255,.5);
+        border-left: 4px solid var(--brand-dark);
         padding: 18px;
         margin: 20px 0;
         border-radius: 8px;
     }
 
     .highlight {
-        background: #fff4d6;
-        border-left: 4px solid #e8a400;
+        background: rgba(255,239,193,.72);
+        border-left: 4px solid var(--gold);
         padding: 20px;
         margin: 20px 0;
         border-radius: 8px;
     }
 
     .question {
-        background: #f4f6f8;
+        background: rgba(255,255,255,.5);
         padding: 18px;
         margin: 15px 0;
         border-radius: 8px;
@@ -118,11 +135,13 @@
     }
 
     .concurso {
-        border: 1px solid #d9dde3;
+        border: 1px solid rgba(255,255,255,.92);
         padding: 25px;
         margin-top: 20px;
         border-radius: 12px;
         transition: .2s;
+        background: rgba(255,255,255,.55);
+        box-shadow: 0 8px 25px rgba(17,66,68,.05);
     }
 
     .concurso:hover {
@@ -136,7 +155,7 @@
 
     .botao {
         display: inline-block;
-        background: #111;
+        background: var(--brand);
         color: #fff;
         text-decoration: none;
         padding: 11px 20px;
@@ -146,8 +165,8 @@
     }
 
     .botao:hover {
-        background: #e8a400;
-        color: #111;
+        background: var(--brand-dark);
+        color: #fff;
     }
 
     footer {
@@ -156,6 +175,15 @@
         padding: 20px 0;
         font-size: 14px;
     }
+    footer a { color: var(--brand-dark); font-weight: 800; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .hero-actions a { padding: 12px 17px; border-radius: 10px; text-decoration: none; font-weight: 800; }
+    .hero-actions .primary { background: var(--gold); color: var(--brand-dark); }
+    .hero-actions .secondary { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.4); color: #fff; }
+    .concurso p { color: var(--muted); }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin-top: 18px; }
 
     @media (max-width: 700px) {
         body {
@@ -193,6 +221,11 @@
         Plataforma de estudo, revisão e preparação para os concursos
         do Ministério do Interior e do Ministério da Saúde.
     </p>
+
+    <div class="hero-actions">
+        <a href="minsa/index.html" class="primary">Começar pelo MINSA →</a>
+        <a href="minint/index.html" class="secondary">Explorar o MININT →</a>
+    </div>
 </header>
 
 
@@ -252,7 +285,7 @@
         </p>
 
         <a href="minsa/index.html" class="botao">
-            Entrar na preparação do MINSA →
+            Começar a estudar MINSA →
         </a>
 
     </div>
@@ -277,7 +310,7 @@
         </p>
 
         <a href="minint/index.html" class="botao">
-            Entrar na preparação do MININT →
+            Começar a estudar MININT →
         </a>
 
     </div>
@@ -364,6 +397,11 @@
 <footer>
     Sistema de Preparação para Concursos Públicos<br>
     Conteúdo criado por Nauro Elias Hutambala © 2026
+
+    <nav class="footer-links" aria-label="Navegação entre materiais">
+        <a href="minsa/index.html">Material MINSA</a>
+        <a href="minint/index.html">Material MININT</a>
+    </nav>
 </footer>
 
 

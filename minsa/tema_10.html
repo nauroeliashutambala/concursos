@@ -306,6 +306,7 @@ footer{
 }
 
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -340,7 +341,7 @@ aprendizagem automática, IA generativa, vantagens, riscos,
 
 <div class="container nav-inner">
 
-<a href="#conceito">Conceito</a> <a href="#historia">História</a> <a href="#funcionamento">Funcionamento</a> <a href="#tipos">Tipos</a> <a href="#machine">Machine Learning</a> <a href="#generativa">IA Generativa</a> <a href="#aplicacoes">Aplicações</a> <a href="#saude">Saúde</a> <a href="#vantagens">Vantagens</a> <a href="#riscos">Riscos</a> <a href="#etica">Ética</a> <a href="#angola">Angola</a> <a href="#questoes">Questões</a>
+<a href="#conceito">Conceito</a> <a href="#historia">História</a> <a href="#funcionamento">Funcionamento</a> <a href="#tipos">Tipos</a> <a href="#machine">Machine Learning</a> <a href="#generativa">IA Generativa</a> <a href="#aplicacoes">Aplicações</a> <a href="#saude">Saúde</a> <a href="#vantagens">Vantagens</a> <a href="#riscos">Riscos</a> <a href="#etica">Ética</a> <a href="#angola">Angola</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#questoes">Questões</a>
 
 </div>
 
@@ -1416,6 +1417,20 @@ IA → DADOS → ALGORITMOS → MODELOS → PREVISÕES/GERAÇÃO → SUPERVISÃO
 
 </section>
 
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Aprofunde inteligência artificial, aprendizagem automática, ética e aplicações na saúde.</p>
+<div class="card"><iframe src="https://www.youtube.com/embed/95fxjI6tCpw" title="Considerações éticas para IA na saúde" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=inteligência+artificial+ética+saúde+machine+learning" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p></div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">17. Aprofundamento: avaliar uma solução de IA</h2>
+<p class="section-subtitle">A pergunta não é apenas “a IA consegue?”, mas “deve ser usada assim, com que controlo e para quem?”.</p>
+<div class="card"><h3>Pipeline de um sistema</h3><ol><li>Definir o problema e o resultado esperado.</li><li>Recolher dados pertinentes, legais e representativos.</li><li>Treinar ou configurar o modelo.</li><li>Validar em dados que não foram usados no treino.</li><li>Implementar com supervisão, registos e revisão humana.</li><li>Monitorizar erros, enviesamentos e mudanças de contexto.</li></ol><div class="warning"><strong>Falha comum:</strong> alta precisão média pode esconder desempenho ruim para um grupo específico ou casos raros.</div></div>
+<div class="card"><h3>IA em saúde e administração</h3><table><tr><th>Questão</th><th>O que verificar</th></tr><tr><td>Privacidade</td><td>Minimização, acesso autorizado e proteção dos dados.</td></tr><tr><td>Explicabilidade</td><td>Compreender e contestar o resultado.</td></tr><tr><td>Responsabilidade</td><td>Quem valida, autoriza e responde?</td></tr><tr><td>Equidade</td><td>Funcionamento adequado para grupos diferentes.</td></tr><tr><td>Segurança</td><td>Prevenção de manipulação, fuga e uso indevido.</td></tr></table></div>
+<div class="card"><h3>Uso seguro pelo secretário clínico</h3><p>Uma ferramenta pode ajudar a organizar texto, agenda ou estatísticas, mas não deve receber dados identificáveis sem autorização institucional nem substituir decisões clínicas. Confirme o resultado em fonte oficial e mantenha a revisão humana.</p></div>
+</section>
+
 <!-- QUESTOES -->
 
 <section id="questoes">
@@ -1704,5 +1719,9 @@ Estude • Memorize • Resolva questões • Revise
 
 </footer>
 
+<script>
+(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review">Revisão</button><button type="button" data-action="print">Imprimir</button><button type="button" data-action="top">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_9.html">Tema anterior</a>';footer.appendChild(navigation);}})();
+</script>
+<script src="study-tools.js"></script>
 </body>
 </html>

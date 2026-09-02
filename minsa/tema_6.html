@@ -297,6 +297,7 @@ footer{
 }
 
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -331,7 +332,7 @@ ciência, sociedade, história, geografia, instituições e atualidade.
 
 <div class="container nav-inner">
 
-<a href="#introducao">Introdução</a> <a href="#angola">Angola</a> <a href="#africa">África</a> <a href="#mundo">Mundo</a> <a href="#historia">História</a> <a href="#geografia">Geografia</a> <a href="#ciencia">Ciência</a> <a href="#sociedade">Sociedade</a> <a href="#revisao">Revisão</a>
+<a href="#introducao">Introdução</a> <a href="#angola">Angola</a> <a href="#africa">África</a> <a href="#mundo">Mundo</a> <a href="#historia">História</a> <a href="#geografia">Geografia</a> <a href="#ciencia">Ciência</a> <a href="#sociedade">Sociedade</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#revisao">Revisão</a>
 
 </div>
 
@@ -1030,6 +1031,20 @@ importância.
 
 </section>
 
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Explore cultura geral, Angola, África, geografia e saúde pública.</p>
+<div class="card"><iframe src="https://www.youtube.com/embed/RXPl4NBXM7Q" title="Quiz Angola: Cultura Geral Para Concursos" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=cultura+geral+Angola+África+concurso+público" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p></div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">10. Aprofundamento: cultura, cidadania e saúde</h2>
+<p class="section-subtitle">Cultura geral ganha valor quando ajuda a interpretar o território e o serviço público.</p>
+<div class="card"><h3>Como estudar factos</h3><p>Associe cada dado a uma categoria: território, população, história, economia, instituições ou saúde. Depois compare conceitos próximos e confirme a data. Capital, moeda, língua oficial e independência são informações diferentes.</p><div class="highlight"><strong>Método:</strong> facto + contexto + consequência.</div></div>
+<div class="card"><h3>Cultura geral aplicada ao secretário clínico</h3><table><tr><th>Conhecimento</th><th>Aplicação</th></tr><tr><td>Geografia</td><td>Compreender origem e referência territorial do utente.</td></tr><tr><td>Cidadania</td><td>Atender com igualdade e respeito.</td></tr><tr><td>Saúde pública</td><td>Reforçar prevenção e vacinação.</td></tr><tr><td>Instituições</td><td>Encaminhar pedidos ao órgão competente.</td></tr></table></div>
+<div class="card"><h3>Armadilhas frequentes</h3><p>Desconfie de “sempre”, “nunca”, “exclusivamente” ou números sem data e fonte. Confundir país, capital, rio, província, continente ou instituição costuma alterar a resposta.</p></div>
+</section>
+
 <!-- REVISÃO -->
 
 <section id="revisao">
@@ -1238,5 +1253,9 @@ Estude • Revise • Pratique • Repita
 
 </footer>
 
+<script>
+(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review">Revisão</button><button type="button" data-action="print">Imprimir</button><button type="button" data-action="top">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_5.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_7.html">Próximo tema</a>';footer.appendChild(navigation);}})();
+</script>
+<script src="study-tools.js"></script>
 </body>
 </html>

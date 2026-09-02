@@ -273,6 +273,7 @@ text-align:center
 section{padding:42px 0}
 }
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -299,7 +300,7 @@ analisar e relacionar informações apresentadas através da linguagem.
 <nav class="nav">
 <div class="container nav-inner">
 
-<a href="#introducao">Introdução</a> <a href="#interpretacao">Interpretação</a> <a href="#vocabulario">Vocabulário</a> <a href="#gramatica">Gramática</a> <a href="#frases">Frases</a> <a href="#logica">Lógica Verbal</a> <a href="#pegadinhas">Pegadinhas</a> <a href="#questoes">Questões</a>
+<a href="#introducao">Introdução</a> <a href="#interpretacao">Interpretação</a> <a href="#vocabulario">Vocabulário</a> <a href="#gramatica">Gramática</a> <a href="#frases">Frases</a> <a href="#logica">Lógica Verbal</a> <a href="#pegadinhas">Pegadinhas</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#questoes">Questões</a>
 
 </div>
 </nav>
@@ -1417,6 +1418,23 @@ mas não serem substituíveis em todos os contextos.
 
 </section>
 
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Reveja interpretação textual, gramática e raciocínio verbal para concursos.</p>
+<div class="card">
+<iframe src="https://www.youtube.com/embed/ATvIkuVfCeI" title="Raciocínio verbal para concurso" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=interpretação+de+texto+português+concursos+raciocínio+verbal" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p>
+</div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">8. Aprofundamento: leitura de prova</h2>
+<p class="section-subtitle">Ler bem é identificar o que o texto afirma, o que sugere e o que não permite concluir.</p>
+<div class="card"><h3>Mapa de leitura em quatro perguntas</h3><ol><li>Qual é o tema e qual é a finalidade do texto?</li><li>Qual ideia é apresentada como principal?</li><li>Que palavras limitam o sentido: apenas, sempre, nunca, provavelmente?</li><li>A alternativa repete o texto ou acrescenta uma conclusão não autorizada?</li></ol><div class="warning"><strong>Atenção:</strong> “pode” indica possibilidade; “deve” indica obrigação; “sempre” e “nunca” exigem prova forte.</div></div>
+<div class="card"><h3>Coesão, coerência e conectores</h3><table><tr><th>Conector</th><th>Relação</th><th>Leitura prática</th></tr><tr><td>porque, visto que</td><td>Causa</td><td>Explica o motivo.</td></tr><tr><td>portanto, logo</td><td>Conclusão</td><td>Apresenta consequência.</td></tr><tr><td>mas, contudo</td><td>Oposição</td><td>Contrasta ideias.</td></tr><tr><td>se, caso</td><td>Condição</td><td>O resultado depende de hipótese.</td></tr></table></div>
+<div class="card"><h3>Exemplo de inferência</h3><p>“O arquivo foi reorganizado porque o acesso aos processos demorava.” É possível concluir que a reorganização pretendia melhorar o acesso. Não é possível concluir que todos os atrasos acabaram.</p></div>
+</section>
+
 <!-- QUESTÕES -->
 
 <section id="questoes">
@@ -1823,6 +1841,10 @@ Estudar • Praticar • Revisar • Resolver questões
 </p>
 
 </footer>
+<script>
+(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review" title="Mostrar apenas títulos e pontos principais">Revisão</button><button type="button" data-action="print" title="Imprimir esta aula">Imprimir</button><button type="button" data-action="top" title="Voltar ao topo">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}[data-action]:hover{background:#ccfbf1}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_2.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_4.html">Próximo tema</a>';footer.appendChild(navigation);}})();
+</script>
 
+<script src="study-tools.js"></script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root { --mi-ink:#183238; --mi-muted:#60757a; --mi-paper:#f4f8f7; --mi-surface:#fff; --mi-line:#d9e6e3; --mi-brand:#087f78; --mi-dark:#064c4a; --mi-gold:#dfa53b; --mi-soft:#e8f5f1; --mi-shadow:0 16px 40px rgba(22,61,62,.09); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--mi-paper)!important; color:var(--mi-ink)!important; font-family:'DM Sans',sans-serif!important; line-height:1.7; }
+h1,h2,h3,h4,.logo { font-family:'Space Grotesk',sans-serif!important; letter-spacing:0!important; }
+a { color:var(--mi-brand); font-weight:700; }
+.container, .header-content, .topo-inner, .layout { width:min(1160px,calc(100% - 32px)); max-width:1160px; margin-inline:auto; }
+header, .topo { background:linear-gradient(130deg,#063f43,#087f78 62%,#14695f)!important; border-bottom:4px solid var(--mi-gold); }
+header h1,.topo h1 { color:#fff!important; line-height:1.06!important; }
+header p,.topo p { color:#d8f2ed!important; }
+.badge,.etiqueta { border-radius:999px!important; background:rgba(255,255,255,.14)!important; border-color:rgba(255,255,255,.25)!important; color:#fff!important; }
+.nav,.sidebar { border-color:var(--mi-line)!important; }
+.nav { background:rgba(255,255,255,.94)!important; box-shadow:0 4px 18px rgba(16,57,57,.06); backdrop-filter:blur(12px); }
+.nav a,.nav-links a,.sidebar-nav a { border-radius:8px; }
+.nav a:hover,.nav-links a:hover,.sidebar-nav a:hover { background:var(--mi-soft)!important; color:var(--mi-brand)!important; }
+.section,.card,.mini-card,.purpose-card,.lesson,.intro-card,.question,.question-box,.stat,.mini { background:var(--mi-surface)!important; border:1px solid var(--mi-line)!important; border-radius:14px!important; box-shadow:var(--mi-shadow)!important; }
+.section { padding:clamp(22px,4vw,34px)!important; }
+.section h2,.section-title { color:var(--mi-dark)!important; }
+.section h3,.card h3,.mini-card h3,.purpose-card h3 { color:var(--mi-dark)!important; }
+.grid,.purpose-grid,.lessons,.stats-grid { gap:18px!important; }
+.icon { background:var(--mi-soft)!important; }
+.highlight { background:#e8f5f1!important; border-left-color:var(--mi-brand)!important; }
+.warning { background:#fff7e4!important; border-left-color:var(--mi-gold)!important; }
+.success { background:#eaf7ee!important; border-left-color:#2d9a5d!important; }
+.danger { background:#fff0ed!important; border-left-color:#d25d4c!important; }
+table { border-color:var(--mi-line)!important; }
+th { background:var(--mi-dark)!important; color:#fff!important; }
+th,td { border-color:var(--mi-line)!important; }
+td { background:#fff!important; }
+.btn { background:var(--mi-brand)!important; color:#fff!important; border-radius:8px!important; }
+.btn:hover { background:var(--mi-dark)!important; }
+footer,.footer { background:#063f43!important; color:#d8eeea!important; border-top:4px solid var(--mi-gold); padding:44px 20px!important; text-align:center; }
+footer a,.footer a { color:#a9e2d8; }
+iframe { display:block; width:100%; max-width:100%; aspect-ratio:16/9; height:auto; border:0; border-radius:12px; background:#dcebea; }
+.study-progress { position:fixed; top:0; left:0; z-index:2000; width:0; height:4px; background:var(--mi-gold); }
+.study-toolbar { position:fixed; right:18px; bottom:18px; z-index:1900; display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; max-width:calc(100% - 36px); }
+.study-toolbar button { border:1px solid var(--mi-brand); border-radius:8px; padding:9px 12px; background:#fff; color:var(--mi-dark); font:700 12px 'DM Sans',sans-serif; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,.12); }
+.study-toolbar button:hover { background:var(--mi-soft); transform:translateY(-1px); }
+.course-progress { display:inline-block; margin:0 0 18px; padding:8px 12px; border:1px solid var(--mi-line); border-radius:999px; background:var(--mi-soft); color:var(--mi-dark); font-weight:700; }
+.lesson.is-complete { border-color:#71b99a!important; background:#f2fbf6!important; }
+.completion-label { display:inline-block; margin-bottom:6px; color:#218052; font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; }
+.subtopic-videos { margin-top:18px; padding:12px 15px; border:1px solid var(--mi-line); border-radius:9px; background:#f4faf8; }
+.subtopic-videos summary { cursor:pointer; color:var(--mi-dark); font-weight:700; }
+.subtopic-videos ul { display:flex; flex-wrap:wrap; gap:6px 22px; margin:9px 0 0; padding-left:20px; }
+.subtopic-videos li { font-size:.88rem; }
+.minint-sidebar { position:fixed; top:112px; left:16px; z-index:900; width:252px; max-height:calc(100vh - 132px); overflow:auto; padding:18px; background:#fff; border:1px solid var(--mi-line); border-radius:14px; box-shadow:var(--mi-shadow); }
+.minint-sidebar h3 { margin:0 0 12px; color:var(--mi-dark); font:700 1rem 'Space Grotesk',sans-serif; }
+.minint-sidebar-nav { display:flex; flex-direction:column; gap:3px; }
+.minint-sidebar-nav a { padding:8px 9px; color:var(--mi-ink); border-radius:7px; font-size:.82rem; line-height:1.35; text-decoration:none; }
+.minint-sidebar-nav a:hover { color:var(--mi-brand); background:var(--mi-soft); }
+.has-minint-sidebar > main { width:min(880px,calc(100% - 330px)); margin-left:300px; }
+.layout .sidebar { top:112px; }
+.layout main { min-width:0; }
+@media (max-width:700px) { .container,.header-content,.topo-inner,.layout { width:calc(100% - 24px); } .section { padding:20px!important; } table { min-width:490px; } iframe { min-height:210px; } .study-toolbar { right:12px; bottom:12px; } }
+@media (max-width:900px) { .minint-sidebar { position:sticky; top:8px; width:calc(100% - 24px); max-height:none; margin:12px auto 0; } .minint-sidebar-nav { flex-direction:row; overflow-x:auto; } .minint-sidebar-nav a { min-width:max-content; } .has-minint-sidebar > main { width:calc(100% - 24px); margin:0 auto; } }
+@media print { .nav,.study-toolbar,.study-progress,iframe,.sidebar { display:none!important; } body,.section,.card,.lesson,.purpose-card { background:#fff!important; box-shadow:none!important; } header,.topo { background:#fff!important; color:#000!important; } header h1,.topo h1,header p,.topo p { color:#000!important; } }

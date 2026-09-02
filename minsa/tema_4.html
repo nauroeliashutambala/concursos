@@ -267,6 +267,7 @@ text-align:center
 section{padding:42px 0}
 }
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -294,7 +295,7 @@ e relações matemáticas.
 <nav class="nav">
 <div class="container nav-inner">
 
-<a href="#base">Base</a> <a href="#operacoes">Operações</a> <a href="#fracoes">Frações</a> <a href="#percentagem">Percentagem</a> <a href="#razao">Razão</a> <a href="#regra3">Regra de 3</a> <a href="#media">Médias</a> <a href="#sequencias">Sequências</a> <a href="#problemas">Problemas</a> <a href="#questoes">Questões</a>
+<a href="#base">Base</a> <a href="#operacoes">Operações</a> <a href="#fracoes">Frações</a> <a href="#percentagem">Percentagem</a> <a href="#razao">Razão</a> <a href="#regra3">Regra de 3</a> <a href="#media">Médias</a> <a href="#sequencias">Sequências</a> <a href="#problemas">Problemas</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#questoes">Questões</a>
 
 </div>
 </nav>
@@ -1173,6 +1174,23 @@ Preço final:
 
 </section>
 
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Veja resoluções de percentagem, proporção, regra de três e problemas de concurso.</p>
+<div class="card">
+<iframe src="https://www.youtube.com/embed/FMTZR0kfBjk" title="Porcentagem e Regra de Três para Concursos" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=raciocínio+numérico+percentagem+regra+de+três+concursos" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p>
+</div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">10. Aprofundamento: estratégia de resolução</h2>
+<p class="section-subtitle">Antes de calcular, traduza o enunciado para uma operação e confira a unidade da resposta.</p>
+<div class="card"><h3>Checklist de qualquer problema</h3><ol><li>Liste os dados e o que é pedido.</li><li>Verifique se as unidades são compatíveis.</li><li>Escolha a operação ou relação adequada.</li><li>Estime o resultado para detetar absurdos.</li><li>Releia a resposta no contexto.</li></ol></div>
+<div class="card"><h3>Erros que mais custam pontos</h3><table><tr><th>Erro</th><th>Como evitar</th></tr><tr><td>Confundir aumento de 20% com 20 pontos percentuais</td><td>Percentagem é relativa ao valor de referência.</td></tr><tr><td>Usar regra direta numa relação inversa</td><td>Veja se o aumento de uma grandeza reduz a outra.</td></tr><tr><td>Somar denominadores de frações</td><td>Encontre denominador comum.</td></tr><tr><td>Arredondar cedo demais</td><td>Arredonde apenas na etapa final.</td></tr></table></div>
+<div class="card"><h3>Exemplo integrado</h3><p>Uma unidade atende 80 utentes por dia e aumenta a produção em 25%. O aumento é 80 × 0,25 = 20; a nova capacidade é 80 + 20 = <strong>100 utentes</strong>.</p></div>
+</section>
+
 <section id="questoes">
 
 <h2 class="section-title">10. Questões de Concurso</h2>
@@ -1468,6 +1486,10 @@ Estudar • Praticar • Revisar • Resolver questões
 </p>
 
 </footer>
+<script>
+(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review">Revisão</button><button type="button" data-action="print">Imprimir</button><button type="button" data-action="top">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_3.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_5.html">Próximo tema</a>';footer.appendChild(navigation);}})();
+</script>
 
+<script src="study-tools.js"></script>
 </body>
 </html>

@@ -312,6 +312,7 @@ footer{
 }
 
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -346,7 +347,7 @@ demográficos e números que podem ser cobrados no concurso.
 
 <div class="container nav-inner">
 
-<a href="#conceito">Conceito</a> <a href="#identificacao">Identificação</a> <a href="#populacao">População</a> <a href="#sexo">Sexo</a> <a href="#provincias">Províncias</a> <a href="#urbano">Urbano/Rural</a> <a href="#idade">Idade</a> <a href="#familias">Agregados</a> <a href="#densidade">Densidade</a> <a href="#habitação">Habitação</a> <a href="#questoes">Questões</a>
+<a href="#conceito">Conceito</a> <a href="#identificacao">Identificação</a> <a href="#populacao">População</a> <a href="#sexo">Sexo</a> <a href="#provincias">Províncias</a> <a href="#urbano">Urbano/Rural</a> <a href="#idade">Idade</a> <a href="#familias">Agregados</a> <a href="#densidade">Densidade</a> <a href="#habitação">Habitação</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#questoes">Questões</a>
 
 </div>
 
@@ -1163,6 +1164,20 @@ SUPER-MEMORIZAÇÃO
 
 </section>
 
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Use este vídeo como apoio para interpretar indicadores; consulte também a pesquisa específica sobre o Censo 2024.</p>
+<div class="card"><iframe src="https://www.youtube.com/embed/nL7uSVdVfWE" title="Indicadores de saúde e interpretação de dados" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=Censo+2024+Angola+população+indicadores" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p></div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">13. Aprofundamento: interpretar um Censo</h2>
+<p class="section-subtitle">Um número só ganha significado quando sabemos quem foi contado, onde, quando e por qual unidade.</p>
+<div class="card"><h3>Indicador, proporção e densidade</h3><table><tr><th>Medida</th><th>Fórmula ou leitura</th><th>Cuidado</th></tr><tr><td>Percentagem</td><td>Parte ÷ total × 100</td><td>O denominador precisa ser identificado.</td></tr><tr><td>Índice de masculinidade</td><td>Homens ÷ mulheres × 100</td><td>Não é a percentagem de homens na população.</td></tr><tr><td>Densidade demográfica</td><td>População ÷ área</td><td>Indica habitantes por unidade de área.</td></tr><tr><td>Variação</td><td>(valor novo − valor antigo) ÷ valor antigo × 100</td><td>Use o valor antigo como referência.</td></tr></table></div>
+<div class="card"><h3>Exemplo de interpretação</h3><p>Se uma província tem 2 milhões de habitantes e 10.000 km², a densidade média é 2.000.000 ÷ 10.000 = <strong>200 habitantes por km²</strong>. Isso não significa que todos os pontos do território tenham 200 habitantes por km²: é uma média.</p><div class="warning"><strong>Não confundir:</strong> população absoluta mede pessoas; densidade relaciona pessoas e área; distribuição percentual compara partes com o total.</div></div>
+<div class="card"><h3>Qualidade do dado</h3><p>Ao usar resultados censitários, verifique referência temporal, unidade geográfica, definição do indicador e arredondamentos. O Censo é uma fotografia estatística de um período; não deve ser tratado como contagem atualizada diariamente.</p></div>
+</section>
+
 <!-- QUESTÕES -->
 
 <section id="questoes">
@@ -1436,5 +1451,9 @@ Estude • Memorize • Resolva questões • Revise
 
 </footer>
 
+<script>
+(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review">Revisão</button><button type="button" data-action="print">Imprimir</button><button type="button" data-action="top">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_7.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_9.html">Próximo tema</a>';footer.appendChild(navigation);}})();
+</script>
+<script src="study-tools.js"></script>
 </body>
 </html>

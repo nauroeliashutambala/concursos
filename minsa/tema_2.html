@@ -316,6 +316,7 @@ footer{
     }
 }
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -347,7 +348,7 @@ integridade, sigilo profissional e conduta do funcionário público.
 
 <div class="container nav-inner">
 
-<a href="#introducao">Introdução</a> <a href="#deontologia">Deontologia</a> <a href="#principios">Princípios</a> <a href="#deveres">Deveres</a> <a href="#conduta">Conduta</a> <a href="#sigilo">Sigilo</a> <a href="#corrupcao">Integridade</a> <a href="#conflito">Conflitos</a> <a href="#utente">Utente</a> <a href="#responsabilidade">Responsabilidade</a> <a href="#secretario">Secretário Clínico</a> <a href="#questoes">Questões</a>
+<a href="#introducao">Introdução</a> <a href="#deontologia">Deontologia</a> <a href="#principios">Princípios</a> <a href="#deveres">Deveres</a> <a href="#conduta">Conduta</a> <a href="#sigilo">Sigilo</a> <a href="#corrupcao">Integridade</a> <a href="#conflito">Conflitos</a> <a href="#utente">Utente</a> <a href="#responsabilidade">Responsabilidade</a> <a href="#secretario">Secretário Clínico</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#questoes">Questões</a>
 
 </div>
 
@@ -1336,6 +1337,37 @@ com os procedimentos internos, sem divulgar o seu conteúdo.
 
 </section>
 
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Reforce ética, deontologia, integridade e sigilo profissional.</p>
+<div class="card">
+<iframe src="https://www.youtube.com/embed/Osk4UOb65T8" title="Ética e função pública" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=ética+função+pública+sigilo+profissional+concurso" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p>
+</div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">14. Aprofundamento e casos éticos</h2>
+<p class="section-subtitle">A prova costuma avaliar a decisão correta diante de pressão, conflito e informação sensível.</p>
+<div class="card">
+<h3>Como decidir diante de um dilema</h3>
+<ol>
+<li>Identifique o facto, o risco e as pessoas afetadas.</li>
+<li>Consulte a lei, o regulamento interno e a competência atribuída.</li>
+<li>Separe informação necessária de curiosidade ou interesse pessoal.</li>
+<li>Escolha a solução imparcial, proporcional e documentável.</li>
+<li>Peça orientação superior quando houver dúvida legítima, sem transferir a responsabilidade por uma conduta manifestamente ilegal.</li>
+</ol>
+<div class="highlight"><strong>Regra de ouro:</strong> uma ordem superior não transforma uma prática ilegal, discriminatória ou lesiva do utente em conduta correta.</div>
+</div>
+<div class="card">
+<h3>Sigilo no atendimento clínico</h3>
+<p>O sigilo protege a intimidade do utente. A informação deve ser acessada apenas por necessidade funcional e partilhada somente com destinatários autorizados, no limite necessário ao cuidado ou ao procedimento administrativo.</p>
+<table><tr><th>Situação</th><th>Conduta</th></tr><tr><td>Familiar pede o diagnóstico</td><td>Não revelar sem autorização ou fundamento institucional.</td></tr><tr><td>Colega solicita dados para o serviço</td><td>Confirmar a necessidade e transmitir apenas o indispensável.</td></tr><tr><td>Erro no processo</td><td>Comunicar pelos canais definidos e corrigir sem ocultar o facto.</td></tr></table>
+</div>
+<div class="card"><h3>Caso para raciocinar</h3><p>Um conhecido pede que o seu processo seja alterado e oferece uma vantagem. A resposta correta é recusar, preservar o registo original, comunicar a tentativa pelos canais próprios e manter o atendimento respeitoso. Isto concretiza integridade, imparcialidade, probidade e responsabilidade.</p></div>
+</section>
+
 <!-- QUESTÕES -->
 
 <section id="questoes">
@@ -1669,6 +1701,10 @@ Estude • Memorize • Revise • Resolva questões
 </p>
 
 </footer>
+<script>
+(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review" title="Mostrar apenas títulos e pontos principais">Revisão</button><button type="button" data-action="print" title="Imprimir esta aula">Imprimir</button><button type="button" data-action="top" title="Voltar ao topo">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}[data-action]:hover{background:#ccfbf1}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_1.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_3.html">Próximo tema</a>';footer.appendChild(navigation);}})();
+</script>
 
+<script src="study-tools.js"></script>
 </body>
 </html>

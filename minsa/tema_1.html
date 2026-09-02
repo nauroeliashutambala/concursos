@@ -338,6 +338,7 @@ footer{
 }
 
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -378,7 +379,7 @@ NAV
 
 <div class="container nav-inner">
 
-<a href="#introducao">Introdução</a> <a href="#administracao">Administração Pública</a> <a href="#estado">Estado</a> <a href="#principios">Princípios</a> <a href="#organizacao">Organização</a> <a href="#central">Administração Central</a> <a href="#local">Administração Local</a> <a href="#servicos">Serviços Públicos</a> <a href="#funcao">Função Pública</a> <a href="#servidor">Servidor Público</a> <a href="#secretario">Secretário Clínico</a> <a href="#questoes">Questões</a>
+<a href="#introducao">Introdução</a> <a href="#administracao">Administração Pública</a> <a href="#estado">Estado</a> <a href="#principios">Princípios</a> <a href="#organizacao">Organização</a> <a href="#central">Administração Central</a> <a href="#local">Administração Local</a> <a href="#servicos">Serviços Públicos</a> <a href="#funcao">Função Pública</a> <a href="#servidor">Servidor Público</a> <a href="#secretario">Secretário Clínico</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#questoes">Questões</a>
 
 </div>
 
@@ -1439,7 +1440,88 @@ particularmente importantes.
 </section>
 
 <!-- =====================================================
-16 QUESTOES
+APROFUNDAMENTO
+===================================================== -->
+
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Assista a explicações adicionais sobre Administração Pública e preparação para concursos.</p>
+<div class="card">
+<iframe src="https://www.youtube.com/embed/BmIVRxZd_Cg" title="Como deve atuar a Administração Pública em Angola" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=administração+pública+Angola+concurso+secretário+clínico" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p>
+</div>
+</section>
+
+<section id="aprofundamento">
+
+<h2 class="section-title">
+16. Aprofundamento e aplicação
+</h2>
+
+<p class="section-subtitle">
+Use esta seção para ligar os conceitos abstratos às decisões administrativas do dia a dia.
+</p>
+
+<div class="card">
+
+<h3>Ato administrativo: decisão, competência e finalidade</h3>
+
+<p>
+Um ato administrativo é uma manifestação da Administração Pública no exercício da função administrativa. Para ser válido, não basta que produza um resultado aparentemente útil: deve ser praticado por autoridade competente, seguir a forma exigida, apoiar-se em motivo legítimo e perseguir a finalidade pública prevista na lei.
+</p>
+
+<div class="table-wrap">
+<table>
+<tr><th>Elemento</th><th>Pergunta de controlo</th><th>Exemplo no serviço de saúde</th></tr>
+<tr><td>Competência</td><td>Quem pode praticar o ato?</td><td>Quem está habilitado a autorizar ou assinar o documento?</td></tr>
+<tr><td>Finalidade</td><td>Para que serve o ato?</td><td>Organizar o atendimento, e não favorecer um conhecido.</td></tr>
+<tr><td>Motivo</td><td>Que facto e fundamento justificam a decisão?</td><td>Existência de vaga, escala ou documento exigido.</td></tr>
+<tr><td>Forma</td><td>Como o ato deve ser formalizado?</td><td>Registo correto no formulário ou sistema institucional.</td></tr>
+<tr><td>Objeto</td><td>Qual é o efeito concreto?</td><td>Marcar, encaminhar, deferir ou indeferir um pedido.</td></tr>
+</table>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Interesse público não é vontade do funcionário</h3>
+
+<p>
+O interesse público orienta a atuação administrativa, mas não autoriza decisões arbitrárias. O servidor deve aplicar critérios gerais, tratar situações equivalentes de modo equivalente e justificar diferenças objetivas. A urgência, a vulnerabilidade clínica e as regras de prioridade podem justificar tratamento diferenciado; amizade, pressão ou vantagem pessoal não podem.
+</p>
+
+<div class="warning">
+<strong>Armadilha de prova:</strong> discricionariedade não significa liberdade absoluta. Mesmo quando a lei permite escolher entre alternativas, a escolha continua limitada pela competência, pela finalidade, pelos princípios e pelos factos do caso.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Caso prático do secretário clínico</h3>
+
+<p>
+Um utente pede para passar à frente da fila porque conhece um funcionário. Ao mesmo tempo, chega uma pessoa encaminhada como caso urgente pela equipa de saúde.
+</p>
+
+<ol>
+<li>Conferir o critério institucional de prioridade e a documentação disponível.</li>
+<li>Encaminhar o caso urgente pelo fluxo definido, sem realizar avaliação clínica por conta própria.</li>
+<li>Recusar o favorecimento pessoal com urbanidade e explicar o procedimento aplicável.</li>
+<li>Registar o atendimento de forma objetiva, protegendo os dados do utente.</li>
+</ol>
+
+<div class="success">
+<strong>Raciocínio esperado:</strong> legalidade + imparcialidade + continuidade do serviço + respeito pelo utente. A boa administração é simultaneamente eficiente e controlável.
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+17 QUESTOES
 ===================================================== -->
 
 <section id="questoes">
@@ -1860,6 +1942,23 @@ Estude • Memorize • Revise • Resolva questões
 </p>
 
 </footer>
+<script>
+(() => {
+    const toolbar = document.createElement('div');
+    toolbar.setAttribute('aria-label', 'Ferramentas de estudo');
+    toolbar.style.cssText = 'position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);';
+    toolbar.innerHTML = '<button type="button" data-action="review" title="Mostrar apenas títulos e pontos principais">Revisão</button><button type="button" data-action="print" title="Imprimir esta aula">Imprimir</button><button type="button" data-action="top" title="Voltar ao topo">Topo</button>';
+    document.body.appendChild(toolbar);
+    const style = document.createElement('style');
+    style.textContent = '[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}[data-action]:hover{background:#ccfbf1}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0;transition:width .15s}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}body.review-mode .card{padding-top:16px;padding-bottom:16px}';
+    document.head.appendChild(style);
+    const progress = document.createElement('div'); progress.className = 'study-progress'; document.body.appendChild(progress);
+    window.addEventListener('scroll', () => { const total = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = `${total > 0 ? window.scrollY / total * 100 : 0}%`; }, { passive: true });
+    toolbar.addEventListener('click', event => { const action = event.target.dataset.action; if (action === 'review') document.body.classList.toggle('review-mode'); if (action === 'print') window.print(); if (action === 'top') window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    const footer = document.querySelector('footer'); if (footer) { const navigation = document.createElement('p'); navigation.style.marginTop = '18px'; navigation.innerHTML = '<a href="tema_2.html">Próximo tema</a>'; footer.appendChild(navigation); }
+})();
+</script>
 
+<script src="study-tools.js"></script>
 </body>
 </html>

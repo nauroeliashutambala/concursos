@@ -7,6 +7,7 @@
 <title>Tema V — COVID-19 | Secretário Clínico</title>
 
 <style>
+<link rel="stylesheet" href="styles.css">
 :root{
     --bg:#07111f;
     --card:#0f1b2d;
@@ -481,6 +482,7 @@ Tema V — COVID-19
 <a href="#prevencao">🛡️ Prevenção</a>
 <a href="#secretario">📋 Papel do secretário</a>
 <a href="#resumo">🧠 Resumo</a>
+<a href="#aprofundamento">🧠 Aprofundamento</a>
 <a href="#quiz">🏆 Mini-teste</a>
 
 <div class="progress">
@@ -1456,6 +1458,23 @@ O secretário clínico deve trabalhar dentro das suas competências, respeitando
 </section>
 
 
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Aprofunde COVID-19, prevenção, diagnóstico e sinais de alarme.</p>
+<div class="card">
+<iframe src="https://www.youtube.com/embed/1mEAdYaWie8" title="Como funcionam os exames de COVID-19" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=COVID-19+prevenção+diagnóstico+saúde+pública" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p>
+</div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">13. Aprofundamento: raciocínio clínico e administrativo</h2>
+<p class="section-subtitle">O secretário clínico organiza informação e fluxo; não substitui a avaliação do profissional de saúde.</p>
+<div class="card"><h3>Da chegada ao encaminhamento</h3><ol><li>Confirmar a identificação do utente e os dados mínimos do registo.</li><li>Observar sinais de alarme e comunicar imediatamente à equipa clínica quando existirem.</li><li>Aplicar o fluxo institucional, respeitando prioridade clínica e medidas de prevenção.</li><li>Registar data, hora, orientação recebida e encaminhamento, sem inventar diagnóstico.</li><li>Proteger a informação e evitar exposição desnecessária na sala de espera.</li></ol><div class="danger"><strong>Sinais de alarme:</strong> dificuldade respiratória, alteração de consciência, dor torácica intensa, cianose ou agravamento rápido exigem avaliação imediata, conforme o protocolo local.</div></div>
+<div class="card"><h3>Diagnóstico não é sinónimo de triagem</h3><table><tr><th>Atividade</th><th>Objetivo</th><th>Quem decide</th></tr><tr><td>Triagem administrativa</td><td>Confirmar dados, agenda e fluxo.</td><td>Secretaria conforme norma.</td></tr><tr><td>Avaliação clínica</td><td>Interpretar sintomas e sinais.</td><td>Profissional habilitado.</td></tr><tr><td>Teste laboratorial</td><td>Detetar material ou componentes do vírus.</td><td>Serviço/laboratório competente.</td></tr><tr><td>Conduta terapêutica</td><td>Definir tratamento e seguimento.</td><td>Profissional de saúde.</td></tr></table></div>
+<div class="card"><h3>Prevenção em camadas</h3><p>Nenhuma medida isolada elimina todo o risco. Ventilação, higiene das mãos, etiqueta respiratória, afastamento quando indicado, vacinação conforme orientação vigente e uso adequado de equipamentos formam barreiras complementares. A comunicação deve ser clara, não alarmista e baseada no protocolo atualizado.</p></div>
+</section>
+
 <!-- ================= QUIZ ================= -->
 
 <section id="quiz">
@@ -1916,5 +1935,9 @@ questions.forEach(question => {
 
 </script>
 
+<script>
+(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review">Revisão</button><button type="button" data-action="print">Imprimir</button><button type="button" data-action="top">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_4.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_6.html">Próximo tema</a>';footer.appendChild(navigation);}})();
+</script>
+<script src="study-tools.js"></script>
 </body>
 </html>

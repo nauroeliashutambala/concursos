@@ -289,6 +289,7 @@ footer{
 }
 
 </style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -319,7 +320,7 @@ essenciais para concursos públicos.
 
 <div class="container nav-inner">
 
-<a href="#conceito">Conceito</a> <a href="#lei">Lei 14/24</a> <a href="#estrutura">Estrutura</a> <a href="#novidades">Novidades</a> <a href="#provincias">Províncias</a> <a href="#municipios">Municípios</a> <a href="#comunas">Comunas</a> <a href="#objetivos">Objetivos</a> <a href="#questoes">Questões</a>
+<a href="#conceito">Conceito</a> <a href="#lei">Lei 14/24</a> <a href="#estrutura">Estrutura</a> <a href="#novidades">Novidades</a> <a href="#provincias">Províncias</a> <a href="#municipios">Municípios</a> <a href="#comunas">Comunas</a> <a href="#objetivos">Objetivos</a> <a href="#aprofundamento">Aprofundamento</a> <a href="#questoes">Questões</a>
 
 </div>
 
@@ -983,6 +984,26 @@ Lei da Divisão Político-Administrativa.
 
 </section>
 
+<section id="revisao-ativa">
+<h2 class="section-title">Objetivos e revisão ativa</h2>
+<p class="section-subtitle">Ao terminar esta aula, deverá reconhecer a hierarquia territorial, as alterações legais e a sua aplicação no atendimento.</p>
+<div class="grid"><div class="mini-card"><h3>Objetivos</h3><ul><li>Identificar província, município e comuna.</li><li>Relacionar a Lei n.º 14/24 com a nova organização.</li><li>Registar corretamente a localização do utente.</li></ul></div><div class="mini-card"><h3>Glossário</h3><p><strong>DPA:</strong> divisão político-administrativa.</p><p><strong>Município:</strong> unidade integrante de uma província.</p><p><strong>Comuna:</strong> unidade integrante de um município.</p></div></div>
+<div class="card"><h3>Flashcards</h3><details><summary>Qual é a sequência territorial?</summary><p>Província → município → comuna.</p></details><details><summary>Qual lei deve ser memorizada?</summary><p>Lei n.º 14/24, de 5 de Setembro.</p></details><details><summary>Por que a localização correta importa?</summary><p>Evita erros de encaminhamento e melhora os registos estatísticos.</p></details></div>
+</section>
+<section id="videos">
+<h2 class="section-title">Vídeos complementares</h2>
+<p class="section-subtitle">Reforce a divisão político-administrativa e a organização territorial de Angola.</p>
+<div class="card"><iframe src="https://www.youtube.com/embed/lLN4k1cCgmk" title="Divisão Político-Administrativa de Angola" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=divisão+político+administrativa+Angola+províncias+municípios+comunas" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p></div>
+</section>
+
+<section id="aprofundamento">
+<h2 class="section-title">12. Aprofundamento: leitura territorial</h2>
+<p class="section-subtitle">A divisão político-administrativa organiza competências e serviços no território.</p>
+<div class="card"><h3>Hierarquia e escala</h3><table><tr><th>Unidade</th><th>Relação</th><th>Pergunta</th></tr><tr><td>Província</td><td>Unidade territorial de maior escala entre as estudadas.</td><td>Qual é a província?</td></tr><tr><td>Município</td><td>Integra uma província.</td><td>A que província pertence?</td></tr><tr><td>Comuna</td><td>Integra um município.</td><td>Em que município está?</td></tr></table></div>
+<div class="card"><h3>Como interpretar uma alteração</h3><p>A criação ou reorganização de unidades pode aproximar serviços, melhorar planeamento e facilitar a gestão. Não se deve concluir automaticamente que uma nova unidade elimina problemas ou altera todos os limites sem consultar a norma correspondente.</p><div class="warning"><strong>Prova:</strong> diferencie existência legal, localização e competência dos órgãos.</div></div>
+<div class="card"><h3>Aplicação ao atendimento</h3><p>Identificar corretamente província, município e comuna reduz erros de encaminhamento, apoia estatísticas e melhora a continuidade do serviço. Registe a nomenclatura oficial do formulário.</p></div>
+</section>
+
 <!-- QUESTÕES -->
 
 <section id="questoes">
@@ -1189,5 +1210,40 @@ Estude • Memorize • Resolva questões • Revise
 
 </footer>
 
+<script>
+(() => {
+    const themeNumber = 7;
+    const toolbar = document.createElement('div');
+    toolbar.setAttribute('aria-label', 'Ferramentas de estudo');
+    toolbar.style.cssText = 'position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);';
+    toolbar.innerHTML = '<button type="button" data-action="review" title="Mostrar apenas títulos e pontos principais">Revisão</button><button type="button" data-action="print" title="Imprimir esta aula">Imprimir</button><button type="button" data-action="top" title="Voltar ao topo">Topo</button>';
+    document.body.appendChild(toolbar);
+    const style = document.createElement('style');
+    style.textContent = '[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}[data-action]:hover{background:#ccfbf1}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0;transition:width .15s}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini-card p{display:none}body.review-mode .card{padding-top:16px;padding-bottom:16px}';
+    document.head.appendChild(style);
+    const progress = document.createElement('div');
+    progress.className = 'study-progress';
+    document.body.appendChild(progress);
+    window.addEventListener('scroll', () => {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = `${total > 0 ? window.scrollY / total * 100 : 0}%`;
+    }, { passive: true });
+    toolbar.addEventListener('click', event => {
+        const action = event.target.dataset.action;
+        if (action === 'review') document.body.classList.toggle('review-mode');
+        if (action === 'print') window.print();
+        if (action === 'top') window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    const footer = document.querySelector('footer');
+    if (footer) {
+        const navigation = document.createElement('p');
+        navigation.style.marginTop = '18px';
+        navigation.innerHTML = `<a href="tema_${themeNumber - 1}.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_${themeNumber + 1}.html">Próximo tema</a>`;
+        footer.appendChild(navigation);
+    }
+})();
+</script>
+
+<script src="study-tools.js"></script>
 </body>
 </html>
