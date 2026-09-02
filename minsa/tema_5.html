@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Tema V — COVID-19 | Secretário Clínico</title>
 
+<meta name="description" content="Tema V — COVID-19 para preparação do concurso de Secretário Clínico de 3.ª Classe. Estude transmissão, sintomas, diagnóstico, prevenção, complicações e atuação do secretário clínico.">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
 
 body{
 font-family:Inter,Arial,sans-serif;
@@ -85,7 +95,9 @@ background:#ecfdf5;
 color:#047857
 }
 
-section{padding:55px 0}
+section{
+padding:55px 0
+}
 
 .section-title{
 font-size:32px;
@@ -157,9 +169,14 @@ color:#059669;
 margin-bottom:12px
 }
 
-.mini-card h3{margin-bottom:8px}
+.mini-card h3{
+margin-bottom:8px
+}
 
-.highlight,.warning,.success,.danger{
+.highlight,
+.warning,
+.success,
+.danger{
 padding:20px;
 border-radius:0 12px 12px 0;
 margin:20px 0
@@ -209,7 +226,8 @@ width:100%;
 border-collapse:collapse
 }
 
-th,td{
+th,
+td{
 padding:14px;
 border-bottom:1px solid #e5e7eb;
 text-align:left;
@@ -221,7 +239,9 @@ background:#ecfdf5;
 color:#065f46
 }
 
-.table-wrap{overflow-x:auto}
+.table-wrap{
+overflow-x:auto
+}
 
 .question{
 background:#fff;
@@ -252,7 +272,79 @@ border-radius:9px;
 font-weight:600
 }
 
-ul,ol{margin-left:25px}
+ul,
+ol{
+margin-left:25px
+}
+
+.term{
+font-weight:700;
+color:#047857
+}
+
+.video{
+position:relative;
+width:100%;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:14px;
+background:#111827;
+margin-top:15px
+}
+
+.video iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:0
+}
+
+.study-tools{
+position:fixed;
+right:18px;
+bottom:18px;
+z-index:999;
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+justify-content:flex-end
+}
+
+.study-tools button{
+border:0;
+background:#111827;
+color:white;
+padding:11px 14px;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 5px 20px rgba(0,0,0,.15)
+}
+
+.study-tools button:hover{
+background:#047857
+}
+
+.study-progress{
+position:fixed;
+left:0;
+top:0;
+height:4px;
+background:#10b981;
+width:0%;
+z-index:1000
+}
+
+.review-mode .card{
+background:#f8fafc
+}
+
+.review-mode .answer{
+display:none
+}
 
 footer{
 background:#111827;
@@ -261,154 +353,248 @@ padding:45px 20px;
 text-align:center
 }
 
-@media(max-width:600px){
-.hero{padding:55px 15px}
-.card{padding:20px}
-section{padding:42px 0}
+footer a{
+color:#a7f3d0;
+text-decoration:none;
+font-weight:700
 }
+
+.footer-nav{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-top:18px
+}
+
+@media(max-width:600px){
+
+.hero{
+padding:55px 15px
+}
+
+.card{
+padding:20px
+}
+
+section{
+padding:42px 0
+}
+
+.section-title{
+font-size:27px
+}
+
+.study-tools{
+right:10px;
+bottom:10px
+}
+
+.study-tools button{
+padding:9px 11px;
+font-size:12px
+}
+
+}
+
+@media print{
+
+.nav,
+.study-tools,
+.study-progress{
+display:none!important
+}
+
+.hero{
+padding:30px;
+}
+
+.card,
+.question,
+.mini-card{
+box-shadow:none;
+break-inside:avoid
+}
+
+section{
+padding:25px 0
+}
+
+}
+
 </style>
+
 <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="study-progress" id="studyProgress"></div>
 
-<!-- ================= SIDEBAR ================= -->
-
-<aside class="sidebar">
-
-<div class="logo">
-
-<div class="logo-icon">🦠</div>
-
-<div>
-<h2>Secretário Clínico</h2>
-<small>Preparação para concurso</small>
-</div>
-
-</div>
-
-<div class="menu-title">
-Tema V — COVID-19
-</div>
-
-<a href="#conceito">🦠 Conceito</a>
-<a href="#etiologia">🔬 Etiologia</a>
-<a href="#clinico">🩺 Quadro clínico</a>
-<a href="#classificacao">📊 Classificação</a>
-<a href="#diagnostico">🔎 Diagnóstico</a>
-<a href="#complicacoes">⚠️ Complicações</a>
-<a href="#conduta">💊 Conduta</a>
-<a href="#prognostico">📈 Prognóstico</a>
-<a href="#prevencao">🛡️ Prevenção</a>
-<a href="#secretario">📋 Papel do secretário</a>
-<a href="#resumo">🧠 Resumo</a>
-<a href="#aprofundamento">🧠 Aprofundamento</a>
-<a href="#quiz">🏆 Mini-teste</a>
-
-<div class="progress">
-
-<small>Programa estudado</small>
-
-<div class="progress-bar">
-<div></div>
-</div>
-
-<strong>5 de 10 temas</strong>
-
-</div>
-
-</aside>
-
-
-<!-- ================= MAIN ================= -->
-
-<main>
 
 <header class="hero">
 
-<span class="tag">
-Tema V · COVID-19
+<div class="container">
+
+<span class="badge">
+
+<i class="fa-solid fa-virus"></i>
+
+TEMA V — PREPARAÇÃO PARA O CONCURSO
+
 </span>
 
-<h1>
-COVID-19
-</h1>
+<h1>COVID-19</h1>
 
 <p>
-Estudo dos conceitos fundamentais da COVID-19: agente causador, manifestações clínicas, classificação, diagnóstico, complicações, conduta e prognóstico.
+Conceitos fundamentais sobre COVID-19, agente causador,
+transmissão, manifestações clínicas, diagnóstico, prevenção,
+complicações e atuação do Secretário Clínico.
 </p>
-
-<div class="badges">
-
-<span>🦠 SARS-CoV-2</span>
-<span>🩺 Quadro clínico</span>
-<span>🔎 Diagnóstico</span>
-<span>⚠️ Complicações</span>
-<span>💊 Conduta</span>
-<span>📈 Prognóstico</span>
 
 </div>
 
 </header>
 
 
-<!-- ================= 1 CONCEITO ================= -->
+<nav class="nav">
 
-<section id="conceito">
+<div class="container nav-inner">
+
+<a href="#introducao">Introdução</a>
+
+<a href="#agente">Agente</a>
+
+<a href="#transmissao">Transmissão</a>
+
+<a href="#clinica">Clínica</a>
+
+<a href="#gravidade">Gravidade</a>
+
+<a href="#diagnostico">Diagnóstico</a>
+
+<a href="#complicacoes">Complicações</a>
+
+<a href="#conduta">Conduta</a>
+
+<a href="#prevencao">Prevenção</a>
+
+<a href="#secretario">Secretário</a>
+
+<a href="#resumo">Resumo</a>
+
+<a href="#questoes">Questões</a>
+
+</div>
+
+</nav>
+
+
+<main class="container">
+
+
+<section id="introducao">
 
 <h2 class="section-title">
-1. Conceito
+1. Introdução à COVID-19
 </h2>
+
+<p class="section-subtitle">
+Conceitos essenciais que devem ser dominados para a prova.
+</p>
+
 
 <div class="card">
 
-<p>
-A <strong>COVID-19</strong> é uma doença infecciosa causada pelo vírus
-<strong>SARS-CoV-2</strong>, um coronavírus identificado inicialmente no final de 2019.
-</p>
+<div class="icon-title">
 
-<p>
-A doença pode apresentar manifestações que variam desde ausência de sintomas ou sintomas ligeiros até formas graves com comprometimento respiratório e sistémico.
-</p>
+<div class="icon">
+<i class="fa-solid fa-virus-covid"></i>
+</div>
+
+<div>
+<h3>O que é COVID-19?</h3>
+</div>
 
 </div>
+
+<p>
+A <strong>COVID-19</strong> é uma doença infecciosa causada pelo
+vírus <strong>SARS-CoV-2</strong>, um coronavírus identificado
+inicialmente no final de 2019.
+</p>
+
+<p style="margin-top:12px">
+A doença pode apresentar manifestações clínicas variadas,
+desde ausência de sintomas ou quadros leves até formas graves
+com comprometimento respiratório e de outros órgãos.
+</p>
 
 <div class="highlight">
 
-<strong>🎯 Para memorizar:</strong>
+<strong>Ponto de prova:</strong>
+
+COVID-19 é o nome da doença.
+
+SARS-CoV-2 é o nome do vírus que causa a doença.
+
+</div>
+
+</div>
+
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-virus"></i>
+
+<h3>Vírus</h3>
 
 <p>
-<strong>COVID-19 = doença.</strong><br>
-<strong>SARS-CoV-2 = vírus que causa a doença.</strong>
+SARS-CoV-2.
 </p>
 
 </div>
 
-<div class="grid">
 
-<div class="mini">
+<div class="mini-card">
 
-<div class="icon">🦠</div>
+<i class="fa-solid fa-lungs"></i>
 
 <h3>Doença</h3>
 
 <p>
-COVID-19 é o nome da doença provocada pela infecção pelo SARS-CoV-2.
+COVID-19.
 </p>
 
 </div>
 
-<div class="mini">
 
-<div class="icon">🔬</div>
+<div class="mini-card">
 
-<h3>Agente</h3>
+<i class="fa-solid fa-people-group"></i>
+
+<h3>Transmissibilidade</h3>
 
 <p>
-O agente etiológico é o coronavírus SARS-CoV-2.
+Pode ocorrer principalmente por partículas respiratórias
+expelidas por pessoas infectadas.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-shield-virus"></i>
+
+<h3>Prevenção</h3>
+
+<p>
+Inclui vacinação, higiene das mãos e medidas respiratórias
+adequadas conforme o contexto epidemiológico.
 </p>
 
 </div>
@@ -418,85 +604,74 @@ O agente etiológico é o coronavírus SARS-CoV-2.
 </section>
 
 
-<!-- ================= 2 ETIOLOGIA ================= -->
 
-<section id="etiologia">
+<section id="agente">
 
 <h2 class="section-title">
-2. Etiologia
+2. Agente Etiológico
 </h2>
+
+<p class="section-subtitle">
+Conhecer o agente causador é fundamental para compreender a doença.
+</p>
+
 
 <div class="card">
 
-<p>
-A COVID-19 é causada pelo <strong>SARS-CoV-2</strong>, pertencente à família dos coronavírus.
-</p>
+<h3>2.1 SARS-CoV-2</h3>
 
 <p>
-Os coronavírus são vírus que podem causar infecções respiratórias em seres humanos e também em outros animais.
+O agente etiológico da COVID-19 é o
+<strong>SARS-CoV-2</strong>, pertencente à família dos
+coronavírus.
 </p>
 
-</div>
-
-<div class="grid">
-
-<div class="mini">
-
-<div class="icon">🧬</div>
-
-<h3>Material genético</h3>
-
-<p>
-O SARS-CoV-2 possui genoma constituído por RNA.
+<p style="margin-top:12px">
+O vírus possui material genético constituído por
+<strong>RNA</strong>.
 </p>
 
-</div>
-
-<div class="mini">
-
-<div class="icon">🫁</div>
-
-<h3>Sistema respiratório</h3>
-
-<p>
-A infecção pode atingir principalmente o sistema respiratório, embora possa envolver outros órgãos.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">👥</div>
-
-<h3>Transmissão</h3>
-
-<p>
-A transmissão ocorre principalmente através de partículas respiratórias e aerossóis produzidos por pessoas infectadas.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">⏱️</div>
-
-<h3>Período de incubação</h3>
-
-<p>
-É o intervalo entre a exposição ao vírus e o aparecimento dos sintomas. A duração pode variar.
-</p>
-
+<div class="formula">
+COVID-19 → doença<br>
+SARS-CoV-2 → vírus
 </div>
 
 </div>
 
-<div class="highlight warning">
 
-<strong>⚠️ Atenção para a prova:</strong>
+<div class="card">
+
+<h3>2.2 Coronavírus</h3>
 
 <p>
-Não confunda <strong>etiologia</strong> com sintomas. Etiologia responde à pergunta:
-<strong>"Qual é a causa da doença?"</strong>
+Os coronavírus constituem uma família de vírus que pode
+causar infecções respiratórias e outras manifestações
+em seres humanos e animais.
+</p>
+
+<p style="margin-top:12px">
+Alguns coronavírus humanos causam doenças relativamente
+ligeiras, enquanto outros podem provocar doenças respiratórias
+graves.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>Não confundir:</strong>
+
+<p style="margin-top:8px">
+SARS-CoV-2 não é sinónimo de COVID-19.
+</p>
+
+<p>
+O primeiro é o <strong>vírus</strong>.
+</p>
+
+<p>
+O segundo é a <strong>doença</strong>.
 </p>
 
 </div>
@@ -504,581 +679,360 @@ Não confunda <strong>etiologia</strong> com sintomas. Etiologia responde à per
 </section>
 
 
-<!-- ================= 3 QUADRO CLINICO ================= -->
 
-<section id="clinico">
+<section id="transmissao">
 
 <h2 class="section-title">
-3. Quadro clínico
+3. Transmissão
 </h2>
+
+<p class="section-subtitle">
+A transmissão ocorre principalmente através de partículas respiratórias.
+</p>
+
 
 <div class="card">
 
+<h3>3.1 Como ocorre a transmissão?</h3>
+
 <p>
-O quadro clínico da COVID-19 é variável. Algumas pessoas podem permanecer assintomáticas, enquanto outras desenvolvem doença grave.
+Uma pessoa infectada pode libertar partículas respiratórias
+contendo o vírus durante ações como:
+</p>
+
+<ul>
+
+<li>Respirar;</li>
+
+<li>Falar;</li>
+
+<li>Tossir;</li>
+
+<li>Espirrar;</li>
+
+<li>Cantar.</li>
+
+</ul>
+
+<p style="margin-top:15px">
+O risco de transmissão tende a aumentar em determinadas
+situações, especialmente em ambientes fechados, com pouca
+ventilação e proximidade entre pessoas.
 </p>
 
 </div>
+
 
 <div class="grid">
 
-<div class="mini">
+<div class="mini-card">
 
-<div class="icon">🌡️</div>
+<i class="fa-solid fa-lungs"></i>
 
-<h3>Febre</h3>
+<h3>Respiração</h3>
 
 <p>
-Pode ocorrer durante a infecção, embora não esteja presente em todos os casos.
+Partículas respiratórias podem transportar o vírus.
 </p>
 
 </div>
 
-<div class="mini">
 
-<div class="icon">😷</div>
+<div class="mini-card">
+
+<i class="fa-solid fa-comment"></i>
+
+<h3>Fala</h3>
+
+<p>
+Falar também pode libertar partículas respiratórias.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-head-side-cough"></i>
 
 <h3>Tosse</h3>
 
 <p>
-A tosse é uma manifestação respiratória frequente.
+Pode aumentar a dispersão de partículas respiratórias.
 </p>
 
 </div>
 
-<div class="mini">
 
-<div class="icon">😴</div>
+<div class="mini-card">
 
-<h3>Fadiga</h3>
-
-<p>
-Cansaço ou sensação de falta de energia podem ocorrer.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🫁</div>
-
-<h3>Falta de ar</h3>
-
-<p>
-Pode indicar comprometimento respiratório, especialmente nas formas mais graves.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🤕</div>
-
-<h3>Dor de cabeça</h3>
-
-<p>
-Cefaleia pode aparecer como manifestação associada à infecção.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">👃</div>
-
-<h3>Alterações do olfacto</h3>
-
-<p>
-Alterações do olfacto e do paladar podem ocorrer, embora a frequência varie conforme a variante e o contexto epidemiológico.
-</p>
-
-</div>
-
-</div>
-
-<div class="highlight danger">
-
-<strong>🚨 Sinais de alerta:</strong>
-
-<ul>
-<li>Dificuldade para respirar.</li>
-<li>Dor ou pressão persistente no peito.</li>
-<li>Confusão ou alteração importante do estado mental.</li>
-<li>Incapacidade de permanecer acordado.</li>
-<li>Sinais de baixa oxigenação ou agravamento importante do estado geral.</li>
-</ul>
-
-<p>
-Na presença de sinais de gravidade, é necessária avaliação médica urgente.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ================= 4 CLASSIFICACAO ================= -->
-
-<section id="classificacao">
-
-<h2 class="section-title">
-4. Classificação
-</h2>
-
-<div class="card">
-
-<p>
-A gravidade da COVID-19 pode ser classificada de acordo com manifestações clínicas, oxigenação, envolvimento pulmonar e necessidade de suporte hospitalar.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🟢 1. Doença assintomática</h3>
-
-<p>
-A pessoa está infectada, mas não apresenta sintomas.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🟢 2. Doença ligeira</h3>
-
-<p>
-Existem sintomas, mas sem sinais de pneumonia ou comprometimento respiratório grave.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🟡 3. Doença moderada</h3>
-
-<p>
-Pode existir pneumonia ou envolvimento pulmonar, exigindo avaliação clínica mais cuidadosa.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🟠 4. Doença grave</h3>
-
-<p>
-Caracteriza-se por comprometimento respiratório importante, podendo ocorrer hipoxemia e necessidade de oxigénio.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🔴 5. Doença crítica</h3>
-
-<p>
-Pode envolver insuficiência respiratória grave, choque, falência de órgãos ou necessidade de cuidados intensivos.
-</p>
-
-</div>
-
-<div class="highlight">
-
-<strong>🧠 Sequência para memorizar:</strong>
-
-<p>
-Assintomática → Ligeira → Moderada → Grave → Crítica
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ================= 5 DIAGNOSTICO ================= -->
-
-<section id="diagnostico">
-
-<h2 class="section-title">
-5. Critérios de diagnóstico
-</h2>
-
-<div class="card">
-
-<p>
-O diagnóstico da COVID-19 resulta da combinação entre <strong>história clínica, avaliação epidemiológica, exame físico e testes laboratoriais</strong>, conforme a situação clínica.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="mini">
-
-<div class="icon">🧪</div>
-
-<h3>Teste molecular</h3>
-
-<p>
-Testes de amplificação de ácido nucleico, como RT-PCR, podem detectar material genético viral.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">⚡</div>
-
-<h3>Teste rápido de antigénio</h3>
-
-<p>
-Pode detectar proteínas virais e apresenta utilidade principalmente quando existe infecção activa.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🩺</div>
-
-<h3>Avaliação clínica</h3>
-
-<p>
-Sintomas, sinais, história de exposição e factores de risco ajudam a orientar a avaliação.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🫁</div>
-
-<h3>Imagem</h3>
-
-<p>
-Radiografia ou tomografia podem ser utilizadas em situações seleccionadas para avaliar comprometimento pulmonar.
-</p>
-
-</div>
-
-</div>
-
-<div class="highlight warning">
-
-<strong>⚠️ Importante:</strong>
-
-<p>
-Um exame de imagem pulmonar, isoladamente, não substitui necessariamente o teste laboratorial para confirmar a infecção pelo SARS-CoV-2.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ================= 6 COMPLICACOES ================= -->
-
-<section id="complicacoes">
-
-<h2 class="section-title">
-6. Complicações
-</h2>
-
-<div class="card">
-
-<p>
-Casos graves podem provocar complicações respiratórias e sistémicas, principalmente em pessoas com factores de risco.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="mini">
-
-<div class="icon">🫁</div>
-
-<h3>Pneumonia</h3>
-
-<p>
-Inflamação e infecção pulmonar podem comprometer as trocas gasosas.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🫁</div>
-
-<h3>Insuficiência respiratória</h3>
-
-<p>
-O organismo pode não conseguir manter uma oxigenação adequada.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🩸</div>
-
-<h3>Alterações da coagulação</h3>
-
-<p>
-A doença grave pode estar associada a maior risco de eventos trombóticos.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">❤️</div>
-
-<h3>Complicações cardiovasculares</h3>
-
-<p>
-Podem ocorrer alterações cardiovasculares, especialmente em casos graves.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🧠</div>
-
-<h3>Complicações neurológicas</h3>
-
-<p>
-Alguns pacientes podem apresentar manifestações neurológicas.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🧬</div>
-
-<h3>Falência de órgãos</h3>
-
-<p>
-Em situações críticas, vários órgãos podem ser afectados.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= 7 CONDUTA ================= -->
-
-<section id="conduta">
-
-<h2 class="section-title">
-7. Conduta
-</h2>
-
-<div class="card">
-
-<p>
-A conduta depende da gravidade, idade, factores de risco, estado clínico e recursos disponíveis.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🟢 Casos ligeiros</h3>
-
-<p>
-Geralmente requerem tratamento de suporte, controlo dos sintomas, hidratação adequada quando apropriada e acompanhamento conforme orientação clínica.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🟡 Casos com factores de risco</h3>
-
-<p>
-Devem ser avaliados precocemente para determinar se existe indicação para tratamento específico e monitorização mais próxima.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🔴 Casos graves</h3>
-
-<p>
-Podem necessitar de oxigénio, monitorização hospitalar e tratamento específico conforme protocolos clínicos actualizados.
-</p>
-
-</div>
-
-<div class="level">
-
-<h3>🚨 Casos críticos</h3>
-
-<p>
-Podem necessitar de cuidados intensivos, suporte ventilatório e tratamento das complicações e falência de órgãos.
-</p>
-
-</div>
-
-<div class="highlight danger">
-
-<strong>⚠️ Muito importante para a prova:</strong>
-
-<p>
-O tratamento da COVID-19 <strong>não deve ser reduzido a um único medicamento</strong>. A conduta depende da gravidade e da situação clínica.
-</p>
-
-<p>
-Protocolos terapêuticos podem mudar com novas evidências científicas. Em contexto real, deve-se seguir a orientação clínica e os protocolos nacionais vigentes.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ================= 8 PROGNOSTICO ================= -->
-
-<section id="prognostico">
-
-<h2 class="section-title">
-8. Prognóstico
-</h2>
-
-<div class="card">
-
-<p>
-O prognóstico é variável. A maioria das pessoas apresenta recuperação, mas algumas desenvolvem doença grave ou complicações prolongadas.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="mini">
-
-<div class="icon">🟢</div>
-
-<h3>Bom prognóstico</h3>
-
-<p>
-É mais provável em pessoas sem factores de risco e com doença ligeira.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">⚠️</div>
-
-<h3>Maior risco</h3>
-
-<p>
-Idade avançada e determinadas doenças crónicas podem aumentar o risco de doença grave.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🏥</div>
-
-<h3>Hospitalização</h3>
-
-<p>
-Casos com comprometimento respiratório importante podem necessitar de internamento.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🔄</div>
-
-<h3>Sintomas prolongados</h3>
-
-<p>
-Algumas pessoas podem apresentar sintomas persistentes após a fase aguda da infecção.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= 9 PREVENCAO ================= -->
-
-<section id="prevencao">
-
-<h2 class="section-title">
-9. Prevenção e controlo
-</h2>
-
-<div class="card">
-
-<p>
-A prevenção da COVID-19 envolve medidas de saúde pública e medidas individuais adaptadas ao contexto epidemiológico.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="mini">
-
-<div class="icon">💉</div>
-
-<h3>Vacinação</h3>
-
-<p>
-A vacinação reduz o risco de doença grave e outras consequências da infecção.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">😷</div>
-
-<h3>Máscaras</h3>
-
-<p>
-Podem ser recomendadas em determinados contextos para reduzir a transmissão.
-</p>
-
-</div>
-
-<div class="mini">
-
-<div class="icon">🌬️</div>
+<i class="fa-solid fa-wind"></i>
 
 <h3>Ventilação</h3>
 
 <p>
-Ambientes bem ventilados podem reduzir a concentração de partículas respiratórias.
+Ambientes adequadamente ventilados podem reduzir a concentração
+de partículas respiratórias no ar.
 </p>
 
 </div>
 
-<div class="mini">
+</div>
 
-<div class="icon">🧼</div>
 
-<h3>Higiene</h3>
+<div class="card">
+
+<h3>3.2 Fatores que favorecem a transmissão</h3>
+
+<table>
+
+<tr>
+<th>Fator</th>
+<th>Por que importa?</th>
+</tr>
+
+<tr>
+<td>Ambiente fechado</td>
+<td>Pode favorecer a acumulação de partículas respiratórias.</td>
+</tr>
+
+<tr>
+<td>Má ventilação</td>
+<td>Reduz a renovação do ar.</td>
+</tr>
+
+<tr>
+<td>Proximidade</td>
+<td>Aumenta a exposição a partículas emitidas por outra pessoa.</td>
+</tr>
+
+<tr>
+<td>Grande concentração de pessoas</td>
+<td>Aumenta as oportunidades de contacto e exposição.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="highlight">
+
+<strong>Para memorizar:</strong>
+
+Quanto maior a exposição a partículas respiratórias em
+ambientes favoráveis à transmissão, maior pode ser o risco
+de infecção.
+
+</div>
+
+</section>
+
+
+
+<section id="clinica">
+
+<h2 class="section-title">
+4. Quadro Clínico
+</h2>
+
+<p class="section-subtitle">
+Os sinais e sintomas podem variar bastante entre os indivíduos.
+</p>
+
+
+<div class="card">
+
+<h3>4.1 Sintomas frequentes</h3>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-temperature-half"></i>
+
+<h3>Febre</h3>
 
 <p>
-A higiene das mãos continua a ser uma medida importante contra diversas infecções.
+Pode ocorrer durante a infecção.
 </p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-head-side-cough"></i>
+
+<h3>Tosse</h3>
+
+<p>
+É uma manifestação respiratória frequente.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-person-walking"></i>
+
+<h3>Fadiga</h3>
+
+<p>
+Sensação de cansaço ou falta de energia.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-head-side-virus"></i>
+
+<h3>Outros sintomas</h3>
+
+<p>
+Dor de garganta, dores musculares, cefaleia e outros sintomas
+podem ocorrer.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>4.2 Manifestações respiratórias</h3>
+
+<p>
+Em alguns casos podem ocorrer sintomas respiratórios como:
+</p>
+
+<ul>
+
+<li>Tosse;</li>
+
+<li>Falta de ar;</li>
+
+<li>Desconforto respiratório;</li>
+
+<li>Redução da oxigenação em quadros mais graves.</li>
+
+</ul>
+
+</div>
+
+
+<div class="danger">
+
+<strong>Sinal de alerta:</strong>
+
+<p style="margin-top:8px">
+Dificuldade respiratória importante ou agravamento do estado
+geral exige avaliação clínica adequada e não deve ser tratado
+apenas como um sintoma banal.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section id="gravidade">
+
+<h2 class="section-title">
+5. Gravidade e Classificação Clínica
+</h2>
+
+<p class="section-subtitle">
+A COVID-19 pode apresentar diferentes níveis de gravidade.
+</p>
+
+
+<div class="card">
+
+<h3>5.1 Formas assintomáticas e sintomáticas</h3>
+
+<table>
+
+<tr>
+<th>Apresentação</th>
+<th>Características</th>
+</tr>
+
+<tr>
+<td>Assintomática</td>
+<td>A pessoa está infectada, mas não apresenta sintomas.</td>
+</tr>
+
+<tr>
+<td>Sintomática ligeira</td>
+<td>Apresenta sintomas sem sinais de doença grave.</td>
+</tr>
+
+<tr>
+<td>Moderada</td>
+<td>Pode apresentar comprometimento respiratório ou pulmonar que exige avaliação.</td>
+</tr>
+
+<tr>
+<td>Grave</td>
+<td>Apresenta sinais de doença respiratória importante ou comprometimento sistémico.</td>
+</tr>
+
+<tr>
+<td>Crítica</td>
+<td>Pode apresentar insuficiência respiratória ou falência de órgãos, exigindo cuidados intensivos.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="card">
+
+<h3>5.2 Fatores associados a maior risco</h3>
+
+<p>
+O risco de evolução grave pode ser maior em determinados
+grupos, dependendo da idade, vacinação, doenças pré-existentes
+e outros fatores individuais.
+</p>
+
+<p style="margin-top:12px">
+Entre os fatores frequentemente considerados estão:
+</p>
+
+<ul>
+
+<li>Idade avançada;</li>
+
+<li>Doenças cardiovasculares;</li>
+
+<li>Diabetes;</li>
+
+<li>Doenças respiratórias crónicas;</li>
+
+<li>Imunossupressão;</li>
+
+<li>Obesidade;</li>
+
+<li>Outras condições clínicas relevantes.</li>
+
+</ul>
+
+<div class="warning">
+
+<strong>Importante:</strong>
+
+A presença de um fator de risco não significa que a pessoa
+necessariamente desenvolverá doença grave.
 
 </div>
 
@@ -1087,7 +1041,391 @@ A higiene das mãos continua a ser uma medida importante contra diversas infecç
 </section>
 
 
-<!-- ================= 10 SECRETARIO ================= -->
+
+<section id="diagnostico">
+
+<h2 class="section-title">
+6. Diagnóstico
+</h2>
+
+<p class="section-subtitle">
+O diagnóstico deve ser realizado de acordo com avaliação clínica
+e métodos laboratoriais apropriados.
+</p>
+
+
+<div class="card">
+
+<h3>6.1 Diagnóstico clínico</h3>
+
+<p>
+A avaliação clínica considera sintomas, sinais, histórico,
+contactos, contexto epidemiológico e outros elementos
+relevantes.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>6.2 Testes laboratoriais</h3>
+
+<table>
+
+<tr>
+<th>Método</th>
+<th>O que pode identificar?</th>
+</tr>
+
+<tr>
+<td>Teste molecular</td>
+<td>Material genético do vírus.</td>
+</tr>
+
+<tr>
+<td>Teste de antigénio</td>
+<td>Componentes antigénicos do vírus.</td>
+</tr>
+
+<tr>
+<td>Testes serológicos</td>
+<td>Resposta imunológica, como anticorpos, dependendo do teste e do momento da infecção.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="highlight">
+
+<strong>Regra importante:</strong>
+
+O resultado de um teste deve ser interpretado de acordo com
+o tipo de teste, momento da exposição, sintomas e contexto clínico.
+
+</div>
+
+
+<div class="card">
+
+<h3>6.3 RT-PCR</h3>
+
+<p>
+Os testes moleculares, como a RT-PCR, procuram material
+genético do vírus na amostra recolhida.
+</p>
+
+<div class="formula">
+Teste molecular → procura material genético viral
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="complicacoes">
+
+<h2 class="section-title">
+7. Complicações
+</h2>
+
+<p class="section-subtitle">
+A maioria dos casos não evolui para complicações graves,
+mas alguns pacientes podem apresentar doença importante.
+</p>
+
+
+<div class="card">
+
+<h3>7.1 Principais complicações</h3>
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-lungs"></i>
+
+<h3>Pneumonia</h3>
+
+<p>
+Comprometimento pulmonar que pode ocorrer em casos de maior gravidade.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-wind"></i>
+
+<h3>Insuficiência respiratória</h3>
+
+<p>
+Pode ocorrer quando o sistema respiratório não consegue manter
+adequadamente as trocas gasosas.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>Complicações cardiovasculares</h3>
+
+<p>
+Podem ocorrer alterações cardiovasculares em determinados pacientes.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hospital"></i>
+
+<h3>Internamento</h3>
+
+<p>
+Alguns casos necessitam de cuidados hospitalares.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>7.2 COVID longa</h3>
+
+<p>
+Algumas pessoas podem apresentar sintomas persistentes ou
+novos problemas de saúde após a fase inicial da infecção.
+Esse conjunto de manifestações é frequentemente referido como
+<strong>condição pós-COVID</strong> ou COVID longa.
+</p>
+
+<p style="margin-top:12px">
+Os sintomas podem variar e podem incluir fadiga, alterações
+cognitivas, falta de ar e outros problemas persistentes.
+</p>
+
+</div>
+
+
+<div class="warning">
+
+<strong>Atenção:</strong>
+
+COVID-19 não afeta necessariamente apenas os pulmões.
+Pode envolver diferentes sistemas do organismo.
+
+</div>
+
+</section>
+
+
+
+<section id="conduta">
+
+<h2 class="section-title">
+8. Conduta e Princípios de Tratamento
+</h2>
+
+<p class="section-subtitle">
+A conduta depende da gravidade, do risco individual e dos protocolos clínicos.
+</p>
+
+
+<div class="card">
+
+<h3>8.1 Casos ligeiros</h3>
+
+<p>
+Em casos ligeiros, a conduta pode envolver acompanhamento
+clínico, hidratação, repouso e tratamento sintomático,
+conforme orientação profissional.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>8.2 Casos graves</h3>
+
+<p>
+Casos graves podem necessitar de avaliação hospitalar,
+oxigénio suplementar, monitorização e outras intervenções
+conforme a situação clínica.
+</p>
+
+</div>
+
+
+<div class="danger">
+
+<strong>Importante para a prova:</strong>
+
+O Secretário Clínico não deve diagnosticar, prescrever
+medicamentos ou substituir o profissional responsável pela
+avaliação e tratamento do paciente.
+
+</div>
+
+
+<div class="card">
+
+<h3>8.3 Uso racional de medicamentos</h3>
+
+<p>
+Medicamentos devem ser utilizados de acordo com indicação
+profissional e protocolos aplicáveis.
+</p>
+
+<p style="margin-top:12px">
+A automedicação pode causar riscos e não substitui uma
+avaliação clínica adequada.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section id="prevencao">
+
+<h2 class="section-title">
+9. Prevenção e Controlo
+</h2>
+
+<p class="section-subtitle">
+A prevenção combina vacinação, medidas respiratórias e higiene.
+</p>
+
+
+<div class="grid">
+
+<div class="mini-card">
+
+<i class="fa-solid fa-syringe"></i>
+
+<h3>Vacinação</h3>
+
+<p>
+A vacinação reduz o risco de formas graves da doença e deve
+seguir as recomendações das autoridades de saúde.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-hands-bubbles"></i>
+
+<h3>Higiene das mãos</h3>
+
+<p>
+A higiene adequada das mãos é importante para reduzir a
+transmissão de vários agentes infecciosos.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-mask-face"></i>
+
+<h3>Proteção respiratória</h3>
+
+<p>
+Em situações apropriadas, máscaras podem fazer parte das
+medidas de controlo da transmissão.
+</p>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="fa-solid fa-wind"></i>
+
+<h3>Ventilação</h3>
+
+<p>
+A renovação adequada do ar contribui para reduzir a concentração
+de partículas respiratórias.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>9.1 Vacinação</h3>
+
+<p>
+As vacinas contra COVID-19 foram desenvolvidas para estimular
+uma resposta imunológica contra o SARS-CoV-2.
+</p>
+
+<p style="margin-top:12px">
+A vacinação continua a ser uma das principais ferramentas
+de saúde pública para reduzir o risco de doença grave,
+hospitalização e morte.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>9.2 Higiene respiratória</h3>
+
+<ul>
+
+<li>Cobrir a boca e o nariz ao tossir ou espirrar;</li>
+
+<li>Evitar tossir diretamente sobre outras pessoas;</li>
+
+<li>Higienizar as mãos adequadamente;</li>
+
+<li>Manter ventilação adequada dos ambientes;</li>
+
+<li>Seguir as orientações de saúde pública aplicáveis.</li>
+
+</ul>
+
+</div>
+
+
+<div class="success">
+
+<strong>Ideia-chave:</strong>
+
+Prevenção não depende de uma única medida.
+
+É a combinação de diferentes estratégias que permite
+reduzir o risco de transmissão e de doença grave.
+
+</div>
+
+</section>
+
+
 
 <section id="secretario">
 
@@ -1095,72 +1433,129 @@ A higiene das mãos continua a ser uma medida importante contra diversas infecç
 10. Papel do Secretário Clínico
 </h2>
 
+<p class="section-subtitle">
+A atuação administrativa e de apoio é fundamental para o funcionamento dos serviços de saúde.
+</p>
+
+
 <div class="card">
 
+<h3>10.1 Receção do utente</h3>
+
 <p>
-Embora o secretário clínico não substitua o profissional responsável pelo diagnóstico e tratamento, pode desempenhar funções administrativas e de apoio fundamentais para o funcionamento dos serviços.
+O Secretário Clínico pode participar no acolhimento e orientação
+administrativa dos utentes, respeitando os procedimentos
+estabelecidos pela instituição.
 </p>
 
 </div>
 
-<div class="grid">
 
-<div class="mini">
+<div class="card">
 
-<div class="icon">📋</div>
+<h3>10.2 Registo e organização</h3>
 
-<h3>Registo</h3>
+<ul>
+
+<li>Registo dos dados do utente;</li>
+
+<li>Organização dos processos clínicos;</li>
+
+<li>Gestão documental;</li>
+
+<li>Encaminhamento adequado;</li>
+
+<li>Agendamento de consultas e procedimentos;</li>
+
+<li>Atualização de informações administrativas;</li>
+
+<li>Preservação da confidencialidade.</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>10.3 Confidencialidade</h3>
 
 <p>
-Organização correcta dos dados e documentos dos utentes conforme os procedimentos institucionais.
+Informações relativas à saúde do utente são dados de natureza
+sensível e devem ser tratados com responsabilidade e
+confidencialidade.
+</p>
+
+<div class="highlight">
+
+<strong>Princípio:</strong>
+
+O profissional deve partilhar informações apenas quando
+existir fundamento profissional, institucional ou legal
+adequado.
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>10.4 Comunicação com o utente</h3>
+
+<p>
+O atendimento deve ser realizado com respeito, educação,
+clareza e profissionalismo.
+</p>
+
+<ul>
+
+<li>Escutar o utente;</li>
+
+<li>Fornecer orientações administrativas claras;</li>
+
+<li>Evitar informações clínicas para as quais não esteja habilitado;</li>
+
+<li>Encaminhar dúvidas clínicas para o profissional competente;</li>
+
+<li>Respeitar a privacidade.</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>10.5 Controlo de infeções</h3>
+
+<p>
+Nos serviços de saúde, o Secretário Clínico deve conhecer e
+cumprir as medidas institucionais de prevenção e controlo de
+infecções aplicáveis ao seu local de trabalho.
 </p>
 
 </div>
 
-<div class="mini">
 
-<div class="icon">🔒</div>
+<div class="danger">
 
-<h3>Confidencialidade</h3>
+<strong>Questão clássica de concurso:</strong>
 
-<p>
-Protecção das informações pessoais e clínicas dos utentes.
+<p style="margin-top:8px">
+Qual destas atividades pertence ao Secretário Clínico?
 </p>
 
-</div>
-
-<div class="mini">
-
-<div class="icon">📞</div>
-
-<h3>Comunicação</h3>
-
 <p>
-Encaminhamento adequado de informações e orientações dentro das suas competências.
+<strong>
+Organizar documentação, efetuar registos administrativos,
+acolher e encaminhar o utente.
+</strong>
 </p>
 
-</div>
-
-<div class="mini">
-
-<div class="icon">🗂️</div>
-
-<h3>Organização</h3>
-
-<p>
-Gestão documental e apoio ao fluxo de atendimento da unidade sanitária.
-</p>
-
-</div>
-
-</div>
-
-<div class="highlight success">
-
-<strong>🎯 Ideia-chave:</strong>
-
-<p>
-O secretário clínico deve trabalhar dentro das suas competências, respeitando a confidencialidade, os procedimentos institucionais e as orientações dos profissionais de saúde responsáveis.
+<p style="margin-top:8px">
+Diagnóstico e prescrição de medicamentos não constituem
+atribuições administrativas do Secretário Clínico.
 </p>
 
 </div>
@@ -1168,599 +1563,857 @@ O secretário clínico deve trabalhar dentro das suas competências, respeitando
 </section>
 
 
-<!-- ================= RESUMO ================= -->
 
 <section id="resumo">
 
 <h2 class="section-title">
-11. Resumo de alta prioridade
+11. Resumo de Alta Prioridade
 </h2>
 
-<div class="table-wrap">
+<p class="section-subtitle">
+Memorize estes pontos antes de fazer as questões.
+</p>
+
+
+<div class="card">
+
+<h3>11.1 Conceitos essenciais</h3>
 
 <table>
 
-<thead>
-
 <tr>
-<th>Ponto</th>
-<th>O que memorizar</th>
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-<td>Conceito</td>
-<td>COVID-19 é a doença causada pelo SARS-CoV-2.</td>
+<th>Pergunta</th>
+<th>Resposta</th>
 </tr>
 
 <tr>
-<td>Etiologia</td>
-<td>Agente causador: SARS-CoV-2.</td>
+<td>O que é COVID-19?</td>
+<td>Doença infecciosa causada pelo SARS-CoV-2.</td>
 </tr>
 
 <tr>
-<td>Quadro clínico</td>
-<td>Pode variar de assintomático a doença grave.</td>
+<td>Qual é o vírus?</td>
+<td>SARS-CoV-2.</td>
 </tr>
 
 <tr>
-<td>Classificação</td>
-<td>Assintomática, ligeira, moderada, grave e crítica.</td>
+<td>Qual é o material genético?</td>
+<td>RNA.</td>
 </tr>
 
 <tr>
-<td>Diagnóstico</td>
-<td>Avaliação clínica + testes laboratoriais conforme o caso.</td>
+<td>Principal via de transmissão</td>
+<td>Partículas respiratórias.</td>
 </tr>
 
 <tr>
-<td>Complicações</td>
-<td>Pneumonia, insuficiência respiratória, eventos trombóticos e falência de órgãos, entre outras.</td>
+<td>Um infectado pode não apresentar sintomas?</td>
+<td>Sim.</td>
 </tr>
 
 <tr>
-<td>Conduta</td>
-<td>Depende da gravidade e dos factores de risco.</td>
+<td>A doença pode ser grave?</td>
+<td>Sim.</td>
 </tr>
 
 <tr>
-<td>Prognóstico</td>
-<td>Variável; doença grave pode ocorrer principalmente em pessoas de maior risco.</td>
+<td>Existe vacinação?</td>
+<td>Sim.</td>
 </tr>
 
-</tbody>
+<tr>
+<td>O Secretário Clínico diagnostica?</td>
+<td>Não.</td>
+</tr>
+
+<tr>
+<td>O Secretário Clínico prescreve medicamentos?</td>
+<td>Não.</td>
+</tr>
+
+<tr>
+<td>Uma função importante do Secretário?</td>
+<td>Registo, organização, acolhimento e encaminhamento administrativo.</td>
+</tr>
 
 </table>
 
 </div>
 
-</section>
 
-
-<!-- ================= MEMORIZACAO ================= -->
-
-<section>
-
-<h2 class="section-title">
-12. O que pode cair na prova?
-</h2>
-
-<div class="highlight">
-
-<strong>🧠 Decore estas relações:</strong>
-
-<p>
-<strong>COVID-19 → doença</strong>
-</p>
-
-<p>
-<strong>SARS-CoV-2 → agente etiológico</strong>
-</p>
-
-<p>
-<strong>RT-PCR / testes moleculares → detecção de material genético viral</strong>
-</p>
-
-<p>
-<strong>Antigénio → detecção de componentes virais</strong>
-</p>
-
-<p>
-<strong>Doença grave → comprometimento respiratório / hipoxemia</strong>
-</p>
-
-<p>
-<strong>Doença crítica → possibilidade de falência de órgãos e cuidados intensivos</strong>
-</p>
-
-</div>
-
-</section>
-
-
-<section id="videos">
-<h2 class="section-title">Vídeos complementares</h2>
-<p class="section-subtitle">Aprofunde COVID-19, prevenção, diagnóstico e sinais de alarme.</p>
 <div class="card">
-<iframe src="https://www.youtube.com/embed/1mEAdYaWie8" title="Como funcionam os exames de COVID-19" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<p style="margin-top:12px;">Se o vídeo não carregar, <a href="https://www.youtube.com/results?search_query=COVID-19+prevenção+diagnóstico+saúde+pública" target="_blank" rel="noopener">abra os resultados no YouTube</a>.</p>
+
+<h3>11.2 Associação rápida</h3>
+
+<div class="formula">
+COVID-19 → doença<br>
+SARS-CoV-2 → vírus<br>
+RNA → material genético<br>
+Respiratório → principal forma de transmissão<br>
+Vacinação → prevenção da doença grave<br>
+Secretário Clínico → apoio administrativo e organização
 </div>
+
+</div>
+
+
+<div class="card">
+
+<h3>11.3 Checklist de revisão</h3>
+
+<ul>
+
+<li>☐ Sei diferenciar COVID-19 de SARS-CoV-2.</li>
+
+<li>☐ Sei explicar como ocorre a transmissão.</li>
+
+<li>☐ Conheço os principais sintomas.</li>
+
+<li>☐ Sei diferenciar casos ligeiros de graves.</li>
+
+<li>☐ Conheço os principais métodos de diagnóstico.</li>
+
+<li>☐ Conheço as principais complicações.</li>
+
+<li>☐ Conheço as medidas de prevenção.</li>
+
+<li>☐ Sei a importância da vacinação.</li>
+
+<li>☐ Conheço o papel do Secretário Clínico.</li>
+
+<li>☐ Sei a importância da confidencialidade.</li>
+
+</ul>
+
+</div>
+
 </section>
+
+
 
 <section id="aprofundamento">
-<h2 class="section-title">13. Aprofundamento: raciocínio clínico e administrativo</h2>
-<p class="section-subtitle">O secretário clínico organiza informação e fluxo; não substitui a avaliação do profissional de saúde.</p>
-<div class="card"><h3>Da chegada ao encaminhamento</h3><ol><li>Confirmar a identificação do utente e os dados mínimos do registo.</li><li>Observar sinais de alarme e comunicar imediatamente à equipa clínica quando existirem.</li><li>Aplicar o fluxo institucional, respeitando prioridade clínica e medidas de prevenção.</li><li>Registar data, hora, orientação recebida e encaminhamento, sem inventar diagnóstico.</li><li>Proteger a informação e evitar exposição desnecessária na sala de espera.</li></ol><div class="danger"><strong>Sinais de alarme:</strong> dificuldade respiratória, alteração de consciência, dor torácica intensa, cianose ou agravamento rápido exigem avaliação imediata, conforme o protocolo local.</div></div>
-<div class="card"><h3>Diagnóstico não é sinónimo de triagem</h3><table><tr><th>Atividade</th><th>Objetivo</th><th>Quem decide</th></tr><tr><td>Triagem administrativa</td><td>Confirmar dados, agenda e fluxo.</td><td>Secretaria conforme norma.</td></tr><tr><td>Avaliação clínica</td><td>Interpretar sintomas e sinais.</td><td>Profissional habilitado.</td></tr><tr><td>Teste laboratorial</td><td>Detetar material ou componentes do vírus.</td><td>Serviço/laboratório competente.</td></tr><tr><td>Conduta terapêutica</td><td>Definir tratamento e seguimento.</td><td>Profissional de saúde.</td></tr></table></div>
-<div class="card"><h3>Prevenção em camadas</h3><p>Nenhuma medida isolada elimina todo o risco. Ventilação, higiene das mãos, etiqueta respiratória, afastamento quando indicado, vacinação conforme orientação vigente e uso adequado de equipamentos formam barreiras complementares. A comunicação deve ser clara, não alarmista e baseada no protocolo atualizado.</p></div>
-</section>
-
-<!-- ================= QUIZ ================= -->
-
-<section id="quiz">
 
 <h2 class="section-title">
-13. Mini-teste
+12. Aprofundamento
 </h2>
 
-<p style="color:#a8b7c8;margin-bottom:18px;">
-Tente responder sem consultar o conteúdo.
+<p class="section-subtitle">
+Questões que exigem mais do que simples memorização.
 </p>
 
-<div class="quiz">
 
+<div class="card">
 
-<div class="question-box">
+<h3>12.1 Por que a ventilação é importante?</h3>
 
-<h3>
-1. Qual é o agente causador da COVID-19?
-</h3>
-
-<button class="option" data-correct="false">
-A) Influenza A
-</button>
-
-<button class="option" data-correct="true">
-B) SARS-CoV-2
-</button>
-
-<button class="option" data-correct="false">
-C) VIH
-</button>
-
-<button class="option" data-correct="false">
-D) Mycobacterium tuberculosis
-</button>
-
-<div class="feedback">
-<strong>Resposta: B.</strong>
-COVID-19 é causada pelo SARS-CoV-2.
-</div>
+<p>
+Em ambientes fechados, a renovação insuficiente do ar pode
+permitir maior concentração de partículas respiratórias.
+A ventilação adequada contribui para reduzir essa concentração.
+</p>
 
 </div>
 
 
-<div class="question-box">
+<div class="card">
 
-<h3>
-2. COVID-19 corresponde:
-</h3>
+<h3>12.2 Por que pessoas diferentes podem apresentar sintomas diferentes?</h3>
 
-<button class="option" data-correct="true">
-A) À doença
-</button>
-
-<button class="option" data-correct="false">
-B) Ao nome do vírus
-</button>
-
-<button class="option" data-correct="false">
-C) Ao nome de uma bactéria
-</button>
-
-<button class="option" data-correct="false">
-D) Ao nome de uma vacina
-</button>
-
-<div class="feedback">
-<strong>Resposta: A.</strong>
-COVID-19 é a doença; SARS-CoV-2 é o vírus.
-</div>
+<p>
+A manifestação da doença depende de vários fatores, incluindo
+idade, estado imunológico, vacinação, condições de saúde
+pré-existentes e características individuais.
+</p>
 
 </div>
 
 
-<div class="question-box">
+<div class="card">
 
-<h3>
-3. Qual pode ser uma manifestação da COVID-19?
-</h3>
+<h3>12.3 Por que a vacinação continua importante?</h3>
 
-<button class="option" data-correct="false">
-A) Tosse
-</button>
-
-<button class="option" data-correct="false">
-B) Febre
-</button>
-
-<button class="option" data-correct="false">
-C) Fadiga
-</button>
-
-<button class="option" data-correct="true">
-D) Todas as anteriores
-</button>
-
-<div class="feedback">
-<strong>Resposta: D.</strong>
-A COVID-19 pode apresentar diferentes manifestações clínicas.
-</div>
+<p>
+A vacinação prepara o sistema imunitário para responder ao
+agente infeccioso e contribui para reduzir o risco de
+formas graves da doença.
+</p>
 
 </div>
 
 
-<div class="question-box">
+<div class="card">
 
-<h3>
-4. Qual situação indica maior gravidade?
-</h3>
+<h3>12.4 Qual é a importância do Secretário Clínico?</h3>
 
-<button class="option" data-correct="false">
-A) Ausência de sintomas
-</button>
-
-<button class="option" data-correct="false">
-B) Tosse ligeira sem sinais de gravidade
-</button>
-
-<button class="option" data-correct="true">
-C) Insuficiência respiratória importante
-</button>
-
-<button class="option" data-correct="false">
-D) Ausência completa de sintomas
-</button>
-
-<div class="feedback">
-<strong>Resposta: C.</strong>
-O comprometimento respiratório importante pode indicar doença grave.
-</div>
+<p>
+O Secretário Clínico contribui para que o atendimento seja
+organizado, os dados sejam registados corretamente, os
+processos sejam encaminhados e a comunicação administrativa
+com o utente seja eficiente.
+</p>
 
 </div>
-
-
-<div class="question-box">
-
-<h3>
-5. Qual exame pode detectar directamente material genético do SARS-CoV-2?
-</h3>
-
-<button class="option" data-correct="true">
-A) Teste molecular como RT-PCR
-</button>
-
-<button class="option" data-correct="false">
-B) Hemograma isoladamente
-</button>
-
-<button class="option" data-correct="false">
-C) Medição da pressão arterial
-</button>
-
-<button class="option" data-correct="false">
-D) Electrocardiograma isoladamente
-</button>
-
-<div class="feedback">
-<strong>Resposta: A.</strong>
-Testes moleculares podem detectar material genético viral.
-</div>
-
-</div>
-
-
-<div class="question-box">
-
-<h3>
-6. Uma possível complicação grave da COVID-19 é:
-</h3>
-
-<button class="option" data-correct="false">
-A) Insuficiência respiratória
-</button>
-
-<button class="option" data-correct="false">
-B) Pneumonia
-</button>
-
-<button class="option" data-correct="false">
-C) Falência de órgãos
-</button>
-
-<button class="option" data-correct="true">
-D) Todas as anteriores
-</button>
-
-<div class="feedback">
-<strong>Resposta: D.</strong>
-Todas podem ocorrer em situações graves ou críticas.
-</div>
-
-</div>
-
-
-<div class="question-box">
-
-<h3>
-7. A conduta perante COVID-19:
-</h3>
-
-<button class="option" data-correct="false">
-A) É sempre exactamente igual para todos
-</button>
-
-<button class="option" data-correct="true">
-B) Depende da gravidade e das características do paciente
-</button>
-
-<button class="option" data-correct="false">
-C) Depende apenas da idade
-</button>
-
-<button class="option" data-correct="false">
-D) Nunca necessita de avaliação médica
-</button>
-
-<div class="feedback">
-<strong>Resposta: B.</strong>
-A conduta deve considerar gravidade, factores de risco e situação clínica.
-</div>
-
-</div>
-
-
-<div class="question-box">
-
-<h3>
-8. Qual é uma função importante do secretário clínico?
-</h3>
-
-<button class="option" data-correct="false">
-A) Prescrever medicamentos
-</button>
-
-<button class="option" data-correct="true">
-B) Organizar dados e documentação dentro das suas competências
-</button>
-
-<button class="option" data-correct="false">
-C) Fazer diagnóstico médico
-</button>
-
-<button class="option" data-correct="false">
-D) Alterar tratamentos sem orientação
-</button>
-
-<div class="feedback">
-<strong>Resposta: B.</strong>
-O secretário clínico deve actuar dentro das suas competências profissionais.
-</div>
-
-</div>
-
-
-<div class="question-box">
-
-<h3>
-9. Qual afirmação está correcta?
-</h3>
-
-<button class="option" data-correct="false">
-A) COVID-19 e SARS-CoV-2 são exactamente a mesma coisa
-</button>
-
-<button class="option" data-correct="true">
-B) COVID-19 é a doença causada pelo SARS-CoV-2
-</button>
-
-<button class="option" data-correct="false">
-C) SARS-CoV-2 é uma bactéria
-</button>
-
-<button class="option" data-correct="false">
-D) COVID-19 é uma vacina
-</button>
-
-<div class="feedback">
-<strong>Resposta: B.</strong>
-Esta é uma distinção básica e muito importante.
-</div>
-
-</div>
-
-
-<div class="question-box">
-
-<h3>
-10. Qual sequência representa correctamente uma progressão de gravidade?
-</h3>
-
-<button class="option" data-correct="true">
-A) Assintomática → ligeira → moderada → grave → crítica
-</button>
-
-<button class="option" data-correct="false">
-B) Crítica → ligeira → moderada → assintomática
-</button>
-
-<button class="option" data-correct="false">
-C) Grave → assintomática → crítica → ligeira
-</button>
-
-<button class="option" data-correct="false">
-D) Moderada → assintomática → grave → ligeira
-</button>
-
-<div class="feedback">
-<strong>Resposta: A.</strong>
-Essa é a sequência lógica de aumento da gravidade utilizada neste material.
-</div>
-
-</div>
-
-</div>
-
-<div class="result" id="result"></div>
 
 </section>
+
+
+
+<section id="questoes">
+
+<h2 class="section-title">
+13. Questões de Concurso
+</h2>
+
+<p class="section-subtitle">
+Teste o seu conhecimento sobre COVID-19.
+</p>
+
+
+<div class="question">
+
+<h3>Questão 1</h3>
+
+<p>
+Qual é o vírus responsável pela COVID-19?
+</p>
+
+<div class="options">
+
+<div class="option">A) Influenza A</div>
+
+<div class="option">B) SARS-CoV-2</div>
+
+<div class="option">C) HIV</div>
+
+<div class="option">D) Mycobacterium tuberculosis</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B) SARS-CoV-2.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 2</h3>
+
+<p>
+COVID-19 é:
+</p>
+
+<div class="options">
+
+<div class="option">A) O nome do vírus</div>
+
+<div class="option">B) O nome da doença</div>
+
+<div class="option">C) O nome de uma bactéria</div>
+
+<div class="option">D) O nome de uma vacina</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B) O nome da doença.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 3</h3>
+
+<p>
+O SARS-CoV-2 possui material genético constituído por:
+</p>
+
+<div class="options">
+
+<div class="option">A) DNA</div>
+
+<div class="option">B) RNA</div>
+
+<div class="option">C) Proteína</div>
+
+<div class="option">D) Lipídio</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B) RNA.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 4</h3>
+
+<p>
+Qual é uma das principais formas de transmissão do SARS-CoV-2?
+</p>
+
+<div class="options">
+
+<div class="option">A) Partículas respiratórias</div>
+
+<div class="option">B) Picada de mosquito</div>
+
+<div class="option">C) Mordida de cão</div>
+
+<div class="option">D) Apenas água contaminada</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A) Partículas respiratórias.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 5</h3>
+
+<p>
+Uma pessoa infectada pelo SARS-CoV-2 pode não apresentar sintomas?
+</p>
+
+<div class="options">
+
+<div class="option">A) Não</div>
+
+<div class="option">B) Sim</div>
+
+<div class="option">C) Apenas crianças podem ser assintomáticas</div>
+
+<div class="option">D) Apenas idosos</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B) Sim.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 6</h3>
+
+<p>
+Qual das seguintes medidas pode contribuir para reduzir a
+transmissão respiratória?
+</p>
+
+<div class="options">
+
+<div class="option">A) Má ventilação</div>
+
+<div class="option">B) Aumento da lotação</div>
+
+<div class="option">C) Ventilação adequada</div>
+
+<div class="option">D) Ignorar sintomas</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C) Ventilação adequada.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 7</h3>
+
+<p>
+Qual dos seguintes pode ser um sintoma da COVID-19?
+</p>
+
+<div class="options">
+
+<div class="option">A) Tosse</div>
+
+<div class="option">B) Fratura óssea obrigatória</div>
+
+<div class="option">C) Cegueira obrigatória</div>
+
+<div class="option">D) Paralisia obrigatória</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A) Tosse.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 8</h3>
+
+<p>
+Qual situação pode estar associada a maior risco de transmissão?
+</p>
+
+<div class="options">
+
+<div class="option">A) Ambiente fechado e mal ventilado</div>
+
+<div class="option">B) Ambiente aberto e bem ventilado</div>
+
+<div class="option">C) Ausência completa de pessoas</div>
+
+<div class="option">D) Nenhuma das anteriores</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A) Ambiente fechado e mal ventilado.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 9</h3>
+
+<p>
+A RT-PCR é um método que pode ser utilizado para:
+</p>
+
+<div class="options">
+
+<div class="option">A) Procurar material genético viral</div>
+
+<div class="option">B) Medir a pressão arterial</div>
+
+<div class="option">C) Determinar a altura</div>
+
+<div class="option">D) Medir a temperatura corporal</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A) Procurar material genético viral.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 10</h3>
+
+<p>
+Qual das seguintes pode ser uma complicação de uma COVID-19 grave?
+</p>
+
+<div class="options">
+
+<div class="option">A) Insuficiência respiratória</div>
+
+<div class="option">B) Aumento obrigatório da visão</div>
+
+<div class="option">C) Crescimento ósseo instantâneo</div>
+
+<div class="option">D) Nenhuma</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A) Insuficiência respiratória.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 11</h3>
+
+<p>
+Qual medida é importante para prevenção da COVID-19?
+</p>
+
+<div class="options">
+
+<div class="option">A) Vacinação conforme recomendação</div>
+
+<div class="option">B) Automedicação obrigatória</div>
+
+<div class="option">C) Ignorar sintomas</div>
+
+<div class="option">D) Evitar qualquer ventilação</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A) Vacinação conforme recomendação.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 12</h3>
+
+<p>
+Qual é uma função adequada do Secretário Clínico?
+</p>
+
+<div class="options">
+
+<div class="option">A) Prescrever medicamentos</div>
+
+<div class="option">B) Realizar diagnóstico médico</div>
+
+<div class="option">C) Organizar registos e documentação</div>
+
+<div class="option">D) Substituir o médico</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C) Organizar registos e documentação.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 13</h3>
+
+<p>
+A confidencialidade no atendimento significa:
+</p>
+
+<div class="options">
+
+<div class="option">A) Divulgar todos os dados dos utentes</div>
+
+<div class="option">B) Proteger as informações do utente</div>
+
+<div class="option">C) Publicar processos clínicos</div>
+
+<div class="option">D) Partilhar informações sem necessidade</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>B) Proteger as informações do utente.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 14</h3>
+
+<p>
+Qual das seguintes afirmações está correta?
+</p>
+
+<div class="options">
+
+<div class="option">A) COVID-19 é o nome do vírus.</div>
+
+<div class="option">B) SARS-CoV-2 é o nome da doença.</div>
+
+<div class="option">C) SARS-CoV-2 é o vírus que causa a COVID-19.</div>
+
+<div class="option">D) COVID-19 é uma bactéria.</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>C) SARS-CoV-2 é o vírus que causa a COVID-19.</strong>
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<h3>Questão 15</h3>
+
+<p>
+Em relação ao Secretário Clínico, qual afirmação é correta?
+</p>
+
+<div class="options">
+
+<div class="option">
+A) Deve manter confidencialidade e organizar adequadamente os processos.
+</div>
+
+<div class="option">
+B) Deve divulgar os dados dos pacientes.
+</div>
+
+<div class="option">
+C) Deve prescrever medicamentos.
+</div>
+
+<div class="option">
+D) Deve substituir todos os profissionais clínicos.
+</div>
+
+</div>
+
+<div class="answer">
+Resposta: <strong>A) Deve manter confidencialidade e organizar adequadamente os processos.</strong>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="revisao">
+
+<h2 class="section-title">
+14. Revisão Final
+</h2>
+
+<p class="section-subtitle">
+Antes de passar para o próximo tema, tente responder mentalmente.
+</p>
+
+
+<div class="card">
+
+<h3>Se você dominar estes pontos, estará bem preparado:</h3>
+
+<ol>
+
+<li>Definição de COVID-19.</li>
+
+<li>Identificação do SARS-CoV-2.</li>
+
+<li>Diferença entre vírus e doença.</li>
+
+<li>Principais formas de transmissão.</li>
+
+<li>Principais sintomas.</li>
+
+<li>Classificação da gravidade.</li>
+
+<li>Principais métodos de diagnóstico.</li>
+
+<li>Complicações da doença.</li>
+
+<li>Prevenção e vacinação.</li>
+
+<li>Papel do Secretário Clínico.</li>
+
+<li>Confidencialidade dos dados do utente.</li>
+
+</ol>
+
+</div>
+
+
+<div class="formula">
+
+COVID-19 = doença
+
+<br><br>
+
+SARS-CoV-2 = vírus
+
+<br><br>
+
+Prevenção = vacinação + medidas respiratórias + higiene + ventilação adequada
+
+<br><br>
+
+Secretário Clínico = organização + registo + acolhimento + encaminhamento + confidencialidade
+
+</div>
+
+
+<div class="success">
+
+<strong>Mensagem final:</strong>
+
+O objetivo deste tema não é apenas decorar definições.
+
+Para a prova, procure compreender a relação entre
+agente, transmissão, manifestações clínicas, prevenção
+e organização dos serviços de saúde.
+
+</div>
+
+</section>
+
+
+
+</main>
+
 
 
 <footer>
 
-Secretário Clínico · Preparação para Concurso<br>
+<div class="container">
+
+<p>
+<strong>
+Preparação para o Concurso de Secretário Clínico de 3.ª Classe
+</strong>
+</p>
+
+<p style="margin-top:8px">
 Tema V — COVID-19
+</p>
 
-</footer>
+<p style="margin-top:8px">
+Estudar • Praticar • Revisar • Resolver questões
+</p>
 
-</main>
+
+<div class="footer-nav">
+
+<a href="tema_4.html">
+<i class="fa-solid fa-arrow-left"></i>
+Tema anterior
+</a>
+
+<a href="tema_6.html">
+Próximo tema
+<i class="fa-solid fa-arrow-right"></i>
+</a>
 
 </div>
 
+</div>
+
+</footer>
+
+
 
 <script>
 
-const questions =
-document.querySelectorAll(".question-box");
+(function(){
 
-let answered = 0;
-let score = 0;
+const body=document.body;
 
-questions.forEach(question => {
-
-    const options =
-    question.querySelectorAll(".option");
-
-    const feedback =
-    question.querySelector(".feedback");
-
-    options.forEach(option => {
-
-        option.addEventListener("click", () => {
-
-            if(question.dataset.answered === "true"){
-                return;
-            }
-
-            question.dataset.answered = "true";
-
-            answered++;
-
-            const correct =
-            option.dataset.correct === "true";
-
-            options.forEach(btn => {
-
-                btn.disabled = true;
-
-                if(btn.dataset.correct === "true"){
-                    btn.classList.add("correct");
-                }
-
-            });
-
-            if(correct){
-
-                option.classList.add("correct");
-
-                score++;
-
-            }else{
-
-                option.classList.add("wrong");
-
-            }
-
-            feedback.style.display = "block";
+const progress=document.getElementById("studyProgress");
 
 
-            if(answered === questions.length){
+window.addEventListener("scroll",function(){
 
-                const result =
-                document.getElementById("result");
+const scrollTop=window.scrollY;
 
-                const percentage =
-                Math.round(
-                    (score / questions.length) * 100
-                );
+const height=document.documentElement.scrollHeight-window.innerHeight;
 
-                let message;
+const percent=height>0 ? (scrollTop/height)*100 : 0;
 
-                if(percentage >= 90){
-
-                    message =
-                    "🏆 Excelente! Domínio muito forte do tema.";
-
-                }else if(percentage >= 70){
-
-                    message =
-                    "🔥 Bom resultado. Faça uma revisão antes de avançar.";
-
-                }else if(percentage >= 50){
-
-                    message =
-                    "📚 Resultado mediano. Reveja classificação, diagnóstico e conduta.";
-
-                }else{
-
-                    message =
-                    "⚠️ É necessário rever o conteúdo com mais atenção.";
-
-                }
-
-                result.innerHTML = `
-
-                    <h2>Resultado Final</h2>
-
-                    <p>
-                    Acertos:
-                    <strong>${score}</strong>
-                    /
-                    <strong>${questions.length}</strong>
-                    </p>
-
-                    <p>
-                    Aproveitamento:
-                    <strong>${percentage}%</strong>
-                    </p>
-
-                    <p>${message}</p>
-
-                `;
-
-                result.style.display = "block";
-
-                result.scrollIntoView({
-                    behavior:"smooth",
-                    block:"center"
-                });
-
-            }
-
-        });
-
-    });
+progress.style.width=percent+"%";
 
 });
 
+
+const tools=document.createElement("div");
+
+tools.className="study-tools";
+
+tools.innerHTML=`
+
+<button type="button" id="reviewBtn">
+
+<i class="fa-solid fa-eye"></i>
+Revisão
+
+</button>
+
+<button type="button" id="printBtn">
+
+<i class="fa-solid fa-print"></i>
+Imprimir
+
+</button>
+
+<button type="button" id="topBtn">
+
+<i class="fa-solid fa-arrow-up"></i>
+Topo
+
+</button>
+
+`;
+
+body.appendChild(tools);
+
+
+document.getElementById("reviewBtn").addEventListener("click",function(){
+
+body.classList.toggle("review-mode");
+
+this.innerHTML=body.classList.contains("review-mode")
+
+? '<i class="fa-solid fa-eye-slash"></i> Ver respostas'
+
+: '<i class="fa-solid fa-eye"></i> Revisão';
+
+});
+
+
+document.getElementById("printBtn").addEventListener("click",function(){
+
+window.print();
+
+});
+
+// Gooo add an action
+document.getElementById("topBtn").addEventListener("click",function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+
+})();
+
 </script>
 
-<script>
-(() => { const toolbar=document.createElement('div'); toolbar.setAttribute('aria-label','Ferramentas de estudo'); toolbar.style.cssText='position:fixed;right:18px;bottom:18px;z-index:1000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 36px);'; toolbar.innerHTML='<button type="button" data-action="review">Revisão</button><button type="button" data-action="print">Imprimir</button><button type="button" data-action="top">Topo</button>'; document.body.appendChild(toolbar); const style=document.createElement('style'); style.textContent='[data-action]{border:1px solid #0f766e;background:#fff;color:#115e59;border-radius:8px;padding:9px 12px;font:700 12px inherit;cursor:pointer;box-shadow:0 4px 14px #0f172a20}.study-progress{position:fixed;top:0;left:0;height:4px;background:#14b8a6;z-index:1001;width:0}body.review-mode .card p,body.review-mode .card table,body.review-mode .card ol,body.review-mode .card ul,body.review-mode .mini p{display:none}'; document.head.appendChild(style); const progress=document.createElement('div'); progress.className='study-progress'; document.body.appendChild(progress); window.addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-window.innerHeight; progress.style.width=`${total>0?window.scrollY/total*100:0}%`},{passive:true}); toolbar.addEventListener('click',event=>{const action=event.target.dataset.action;if(action==='review')document.body.classList.toggle('review-mode');if(action==='print')window.print();if(action==='top')window.scrollTo({top:0,behavior:'smooth'});}); const footer=document.querySelector('footer'); if(footer){const navigation=document.createElement('p');navigation.style.marginTop='18px';navigation.innerHTML='<a href="tema_4.html">Tema anterior</a> &nbsp; | &nbsp; <a href="tema_6.html">Próximo tema</a>';footer.appendChild(navigation);}})();
-</script>
-<script src="study-tools.js"></script>
+
 </body>
 </html>
+ 
